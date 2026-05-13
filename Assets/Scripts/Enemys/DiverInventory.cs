@@ -41,7 +41,8 @@ public class DiverInventory : MonoBehaviour
     {
         allFish.Add(fishType);
 
-        if (equippedFish.Count < maxEquipped)
+        // Solo equipamos si hay hueco Y no tenemos ya ese tipo equipado
+        if (equippedFish.Count < maxEquipped && !equippedFish.Contains(fishType))
         {
             equippedFish.Add(fishType);
 
