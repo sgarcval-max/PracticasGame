@@ -15,17 +15,22 @@ public class FishCard : MonoBehaviour
     private int fishIndex;
     private BaseManager baseManager;
 
-    public void Setup(FishType type, int index, BaseManager manager, bool isEquipped)
+    public void Setup(FishType type, int index, BaseManager manager, bool isEquipped, int count)
     {
         fishType = type;
         fishIndex = index;
         baseManager = manager;
 
-        // Poner color del pez
+        // Color del pez
         fishIcon.color = FishData.GetColor(type);
 
-        // Poner nombre y descripción
-        fishName.text = FishData.GetName(type);
+        // Nombre con contador si hay más de uno
+        if (count > 1)
+            fishName.text = FishData.GetName(type) + " x" + count;
+        else
+            fishName.text = FishData.GetName(type);
+
+        // Descripción
         fishDescription.text = FishData.GetDescription(type);
 
         // Mostrar botón correcto
@@ -40,7 +45,6 @@ public class FishCard : MonoBehaviour
             unequipButton.gameObject.SetActive(false);
         }
 
-        // Conectar botones
         equipButton.onClick.AddListener(Equip);
         unequipButton.onClick.AddListener(Unequip);
     }

@@ -64,23 +64,28 @@ public class BaseManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        // Crear una tarjeta por cada pez capturado
-        List<FishType> allFish = GameManager.Instance.allFish;
+        if (GameManager.Instance.allFish.Count == 0) return;
 
-        for (int i = 0; i < allFish.Count; i++)
+        // Contar cuantos peces hay de cada tipo
+        Dictionary<FishType, int> fishCount = new Dictionary<FishType, int>();
+        foreach (FishType fish in GameManager.Instance.allFish)
         {
-            GameObject card = Instantiate(fishCardPrefab, fishScrollContent);
-            FishCard fishCard = card.GetComponent<FishCard>();
-
-            bool isEquipped = GameManager.Instance.equippedFish.Contains(allFish[i]);
-            fishCard.Setup(allFish[i], i, this, isEquipped);
+            if (fishCount.ContainsKey(fish))
+                fishCount[fish]++;
+            else
+                fishCount[fish] = 1;
         }
 
-        if (allFish.Count == 0)
+        // Crear una tarjeta por tipo
+        int index = 0;
+        foreach (KeyValuePair<FishType, int> entry in fishCount)
         {
-            // Mensaje si no hay peces
             GameObject card = Instantiate(fishCardPrefab, fishScrollContent);
             FishCard fishCard = card.GetComponent<FishCard>();
+
+            bool isEquipped = GameManager.Instance.equippedFish.Contains(entry.Key);
+            fishCard.Setup(entry.Key, index, this, isEquipped, entry.Value);
+            index++;
         }
     }
 
@@ -120,7 +125,11 @@ public class BaseManager : MonoBehaviour
             return;
         }
 
-        FishType fish = GameManager.Instance.allFish[fishIndex];
+        // Buscamos el tipo de pez por tipo único no por índice
+        List<FishType> uniqueFish = GetUniqueFish();
+        if (fishIndex >= uniqueFish.Count) return;
+
+        FishType fish = uniqueFish[fishIndex];
 
         if (!GameManager.Instance.equippedFish.Contains(fish))
         {
@@ -131,9 +140,24 @@ public class BaseManager : MonoBehaviour
 
     public void UnequipFish(int fishIndex)
     {
-        FishType fish = GameManager.Instance.allFish[fishIndex];
+        List<FishType> uniqueFish = GetUniqueFish();
+        if (fishIndex >= uniqueFish.Count) return;
+
+        FishType fish = uniqueFish[fishIndex];
         GameManager.Instance.equippedFish.Remove(fish);
         RefreshUI();
+    }
+
+    // Devuelve una lista de tipos únicos de peces
+    List<FishType> GetUniqueFish()
+    {
+        List<FishType> unique = new List<FishType>();
+        foreach (FishType fish in GameManager.Instance.allFish)
+        {
+            if (!unique.Contains(fish))
+                unique.Add(fish);
+        }
+        return unique;
     }
 
     void GoToSea()
