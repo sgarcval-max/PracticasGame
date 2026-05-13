@@ -18,6 +18,9 @@ public class GameUI : MonoBehaviour
     public Image slot1;
     public Image slot2;
     public Image slot3;
+    public TextMeshProUGUI slot1Text;
+    public TextMeshProUGUI slot2Text;
+    public TextMeshProUGUI slot3Text;
 
     [Header("Game Over")]
     public GameObject gameOverPanel;
@@ -43,14 +46,10 @@ public class GameUI : MonoBehaviour
     {
         UpdateSlots(0);
 
-        // Conectar botones Game Over
         restartButton.onClick.AddListener(Restart);
         baseButton.onClick.AddListener(GoToBase);
-
-        // Conectar botón Victoria
         victoryBaseButton.onClick.AddListener(GoToBase);
 
-        // Aseguramos que los paneles están ocultos
         gameOverPanel.SetActive(false);
         victoryPanel.SetActive(false);
     }
@@ -64,21 +63,30 @@ public class GameUI : MonoBehaviour
     {
         if (abilityManager == null) return;
 
-        UpdateSlotColor(slot1, abilityManager.GetSlot(0));
-        UpdateSlotColor(slot2, abilityManager.GetSlot(1));
-        UpdateSlotColor(slot3, abilityManager.GetSlot(2));
+        UpdateSlotColor(slot1, slot1Text, abilityManager.GetSlot(0));
+        UpdateSlotColor(slot2, slot2Text, abilityManager.GetSlot(1));
+        UpdateSlotColor(slot3, slot3Text, abilityManager.GetSlot(2));
     }
 
-    void UpdateSlotColor(Image slot, FishAbility ability)
+    void UpdateSlotColor(Image slot, TextMeshProUGUI text, FishAbility ability)
     {
         if (slot == null) return;
 
         if (ability == null)
+        {
             slot.color = slotEmpty;
+            if (text != null) text.text = "Vacío";
+        }
         else if (ability.IsReady())
-            slot.color = slotReady;
+        {
+            slot.color = FishData.GetColor(ability.fishType);
+            if (text != null) text.text = FishData.GetName(ability.fishType);
+        }
         else
+        {
             slot.color = slotCooldown;
+            if (text != null) text.text = FishData.GetName(ability.fishType) + "\n⏳";
+        }
     }
 
     public void UpdateHealth(int current, int max)
@@ -105,9 +113,7 @@ public class GameUI : MonoBehaviour
 
     public void UpdateSlots(int equippedCount)
     {
-        slot1.color = equippedCount >= 1 ? slotReady : slotEmpty;
-        slot2.color = equippedCount >= 2 ? slotReady : slotEmpty;
-        slot3.color = equippedCount >= 3 ? slotReady : slotEmpty;
+        // Se actualiza solo en RefreshSlotColors
     }
 
     public void ShowGameOver()

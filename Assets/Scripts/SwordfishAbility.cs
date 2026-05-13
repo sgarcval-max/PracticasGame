@@ -14,6 +14,7 @@ public class SwordfishAbility : FishAbility
         cooldown = 6f;
         duration = 0f;
         rb = GetComponent<Rigidbody2D>();
+        fishType = FishType.Pufferfish; // <- añade esta línea
     }
 
     protected override void Activate()

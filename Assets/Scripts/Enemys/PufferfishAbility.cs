@@ -16,6 +16,7 @@ public class PufferfishAbility : FishAbility
         abilityName = "Explosion";
         cooldown = 8f;
         duration = 0f;
+        fishType = FishType.Pufferfish; // <- añade esta línea
     }
 
     protected override void Activate()

@@ -11,6 +11,7 @@ public class SquidAbility : FishAbility
         abilityName = "Nube de tinta";
         cooldown = 10f;
         duration = slowDuration;
+        fishType = FishType.Pufferfish; // <- añade esta línea
     }
 
     protected override void Activate()

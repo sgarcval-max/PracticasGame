@@ -14,6 +14,7 @@ public class SharkAbility : FishAbility
         abilityName = "Escudo";
         cooldown = 12f;
         duration = shieldDuration;
+        fishType = FishType.Pufferfish; // <- añade esta línea
 
         diverHealth = GetComponent<DiverHealth>();
         sr = GetComponent<SpriteRenderer>();

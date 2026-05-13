@@ -47,21 +47,32 @@ public class AbilityManager : MonoBehaviour
 
     FishAbility CreateAbility(FishType fishType)
     {
+        FishAbility ability = null;
+
         switch (fishType)
         {
             case FishType.Pufferfish:
-                return gameObject.AddComponent<PufferfishAbility>();
+                ability = gameObject.AddComponent<PufferfishAbility>();
+                break;
             case FishType.Shark:
-                return gameObject.AddComponent<SharkAbility>();
+                ability = gameObject.AddComponent<SharkAbility>();
+                break;
             case FishType.Clownfish:
-                return gameObject.AddComponent<ClownfishAbility>();
+                ability = gameObject.AddComponent<ClownfishAbility>();
+                break;
             case FishType.Squid:
-                return gameObject.AddComponent<SquidAbility>();
+                ability = gameObject.AddComponent<SquidAbility>();
+                break;
             case FishType.Swordfish:
-                return gameObject.AddComponent<SwordfishAbility>();
-            default:
-                return null;
+                ability = gameObject.AddComponent<SwordfishAbility>();
+                break;
         }
+
+        // Asignamos el fishType correctamente
+        if (ability != null)
+            ability.fishType = fishType;
+
+        return ability;
     }
 
     public FishAbility GetSlot(int index)

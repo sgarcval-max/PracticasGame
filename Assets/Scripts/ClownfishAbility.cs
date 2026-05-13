@@ -9,6 +9,7 @@ public class ClownfishAbility : FishAbility
         abilityName = "Señuelo";
         cooldown = 10f;
         duration = decoyDuration;
+        fishType = FishType.Pufferfish; // <- añade esta línea
     }
 
     protected override void Activate()
