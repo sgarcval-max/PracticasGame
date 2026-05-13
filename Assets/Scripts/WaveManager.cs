@@ -3,9 +3,9 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
     [Header("Configuración de oleadas")]
-    public GameObject[] fishPrefabs; // Array con todos los prefabs de peces
+    public GameObject[] fishPrefabs;
     public int fishPerWave = 5;
-    public int fishIncreasePerWave = 2;
+    public int fishIncreaseEvery5Waves = 3;
 
     private int currentWave = 0;
     private int fishAlive = 0;
@@ -28,8 +28,24 @@ public class WaveManager : MonoBehaviour
         currentWave++;
         gameUI?.UpdateWave(currentWave);
 
-        int fishCount = fishPerWave + (currentWave - 1) * fishIncreasePerWave;
+        // Avisamos al TreasureManager
+        TreasureManager tm = FindFirstObjectByType<TreasureManager>();
+        if (tm != null)
+        {
+            tm.OnWaveStart(currentWave);
+        }
+
+        // Calculamos cuantos peces salen
+        // Cada 5 oleadas aumenta la cantidad
+        // Oleadas 1-5 -> fishPerWave
+        // Oleadas 6-10 -> fishPerWave + fishIncreaseEvery5Waves
+        // Oleadas 11-15 -> fishPerWave + fishIncreaseEvery5Waves * 2
+        int increments = (currentWave - 1) / 5;
+        int fishCount = fishPerWave + increments * fishIncreaseEvery5Waves;
+
         fishAlive = fishCount;
+
+        Debug.Log("Oleada " + currentWave + " — Peces: " + fishCount);
 
         for (int i = 0; i < fishCount; i++)
         {
@@ -62,7 +78,6 @@ public class WaveManager : MonoBehaviour
                 break;
         }
 
-        // Elegimos un prefab aleatorio del array
         GameObject randomFish = fishPrefabs[Random.Range(0, fishPrefabs.Length)];
         Instantiate(randomFish, spawnPos, Quaternion.identity);
     }
@@ -73,7 +88,16 @@ public class WaveManager : MonoBehaviour
 
         if (fishAlive <= 0)
         {
-            StartNextWave();
+            // Mostramos el mensaje de oleada completada
+            GameUI gameUI = FindFirstObjectByType<GameUI>();
+            if (gameUI != null)
+            {
+                gameUI.ShowWaveComplete(currentWave, StartNextWave);
+            }
+            else
+            {
+                StartNextWave();
+            }
         }
     }
 
