@@ -55,13 +55,11 @@ public class AquariumManager : MonoBehaviour
             if (Camera.main == null) return;
 
             Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(
-                UnityEngine.InputSystem.Mouse.current.position.ReadValue()
-             );
+       UnityEngine.InputSystem.Mouse.current.position.ReadValue()
+   );
             mouseWorld.z = 0f;
-            Debug.Log("Mouse en: " + mouseWorld);
 
             RaycastHit2D hit = Physics2D.Raycast(mouseWorld, Vector2.zero);
-            Debug.Log("Hit: " + (hit.collider != null ? hit.collider.name : "nada"));
 
             if (hit.collider != null)
             {
@@ -78,7 +76,8 @@ public class AquariumManager : MonoBehaviour
             }
             else
             {
-                if (lastHovered != null)
+                // Solo ocultamos el panel si el ratón no está encima del panel de info
+                if (lastHovered != null && !IsMouseOverInfoPanel())
                 {
                     lastHovered.OnHoverExit();
                     lastHovered = null;
@@ -90,6 +89,16 @@ public class AquariumManager : MonoBehaviour
         {
             Debug.LogError("Error en Update: " + e.Message);
         }
+    }
+
+    bool IsMouseOverInfoPanel()
+    {
+        if (!fishInfoPanel.activeSelf) return false;
+
+        Vector2 mousePos = UnityEngine.InputSystem.Mouse.current.position.ReadValue();
+        RectTransform rect = fishInfoPanel.GetComponent<RectTransform>();
+
+        return RectTransformUtility.RectangleContainsScreenPoint(rect, mousePos);
     }
 
     public void SpawnFish(FishType fishType)
