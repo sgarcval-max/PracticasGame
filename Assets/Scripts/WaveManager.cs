@@ -79,7 +79,15 @@ public class WaveManager : MonoBehaviour
         }
 
         GameObject randomFish = fishPrefabs[Random.Range(0, fishPrefabs.Length)];
-        Instantiate(randomFish, spawnPos, Quaternion.identity);
+        GameObject spawnedFish = Instantiate(randomFish, spawnPos, Quaternion.identity);
+
+        // Decidimos si este pez es domesticable desde el principio
+        FishEnemy fishEnemy = spawnedFish.GetComponent<FishEnemy>();
+        if (fishEnemy != null)
+        {
+            bool isTameable = Random.value <= fishEnemy.tameChance;
+            fishEnemy.SetTameable(isTameable);
+        }
     }
 
     public void OnFishDied()

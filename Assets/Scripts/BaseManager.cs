@@ -44,14 +44,21 @@ public class BaseManager : MonoBehaviour
     {
         if (missionText == null) return;
 
+        int collected = GameManager.Instance.collectedTreasure;
+        int total = 5;
+
         if (GameManager.Instance.missionCompleted)
         {
-            missionText.text = "Misión:\n" + GameManager.Instance.currentMission + "\n\n✓ COMPLETADA!";
+            missionText.text = "Misión:\n" + GameManager.Instance.currentMission +
+                               "\n\n💎 " + collected + "/" + total +
+                               "\n\n✓ COMPLETADA!";
             missionText.color = new Color(0.2f, 0.8f, 0.2f);
         }
         else
         {
-            missionText.text = "Misión:\n" + GameManager.Instance.currentMission + "\n\nPendiente...";
+            missionText.text = "Misión:\n" + GameManager.Instance.currentMission +
+                               "\n\n💎 " + collected + "/" + total +
+                               "\n\nPendiente...";
             missionText.color = Color.white;
         }
     }
@@ -162,6 +169,9 @@ public class BaseManager : MonoBehaviour
 
     void GoToSea()
     {
-        SceneManager.LoadScene("GameScene");
+        if (SceneTransition.Instance != null)
+            SceneTransition.Instance.TransitionToScene("GameScene");
+        else
+            SceneManager.LoadScene("GameScene");
     }
 }

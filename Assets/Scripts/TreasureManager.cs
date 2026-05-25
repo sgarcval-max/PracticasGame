@@ -29,7 +29,10 @@ public class TreasureManager : MonoBehaviour
 
     void Start()
     {
-        // Actualizamos la UI al inicio
+        // Cargamos el progreso del tesoro del GameManager
+        if (GameManager.Instance != null)
+            collectedTreasure = GameManager.Instance.collectedTreasure;
+
         gameUI?.UpdateTreasure(collectedTreasure, totalTreasure);
     }
 
@@ -75,20 +78,19 @@ public class TreasureManager : MonoBehaviour
     public void CollectTreasure(int value)
     {
         collectedTreasure += value;
-
         gameUI?.UpdateTreasure(collectedTreasure, totalTreasure);
+
+        // Guardamos el progreso en el GameManager
+        if (GameManager.Instance != null)
+            GameManager.Instance.collectedTreasure = collectedTreasure;
 
         Debug.Log("Tesoro recogido: " + collectedTreasure + "/" + totalTreasure);
 
         if (collectedTreasure >= totalTreasure)
         {
-            Debug.Log("Tesoro completo! Vuelve a la base!");
-
+            Debug.Log("Tesoro completo! Aparece el boss!");
             if (GameManager.Instance != null)
-            {
                 GameManager.Instance.missionCompleted = true;
-            }
-
             gameUI?.ShowVictory();
         }
     }

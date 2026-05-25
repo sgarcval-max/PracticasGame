@@ -168,6 +168,7 @@ MonoBehaviour:
   speed: 3
   health: 1
   damage: 1
-  tameChance: 0.1
+  tameChance: 0.07
   tameableFishPrefab: {fileID: 5037416867543361480, guid: c0eecec56e6eed24799f33ef133e7633, type: 3}
   fishType: 1
+  tameableColor: {r: 1, g: 0.9, b: 0, a: 1}

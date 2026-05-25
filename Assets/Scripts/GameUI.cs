@@ -178,11 +178,17 @@ public class GameUI : MonoBehaviour
 
     void Restart()
     {
-        SceneManager.LoadScene("GameScene");
+        if (SceneTransition.Instance != null)
+            SceneTransition.Instance.TransitionToScene("GameScene");
+        else
+            SceneManager.LoadScene("GameScene");
     }
 
     void GoToBase()
     {
-        SceneManager.LoadScene("BaseScene");
+        if (SceneTransition.Instance != null)
+            SceneTransition.Instance.TransitionToScene("BaseScene");
+        else
+            SceneManager.LoadScene("BaseScene");
     }
 }

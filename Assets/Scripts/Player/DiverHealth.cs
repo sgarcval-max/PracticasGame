@@ -72,15 +72,13 @@ public class DiverHealth : MonoBehaviour
             GameManager.Instance.SavePlayerData(inventory, waveManager);
         }
 
-        // Mostrar pantalla de Game Over
-        GameUI gameUI = FindFirstObjectByType<GameUI>();
-        if (gameUI != null)
-        {
-            gameUI.ShowGameOver();
-        }
-
-        // Desactivar al buzo
         gameObject.SetActive(false);
+
+        // Transición a la base
+        if (SceneTransition.Instance != null)
+            SceneTransition.Instance.TransitionToScene("BaseScene");
+        else
+            UnityEngine.SceneManagement.SceneManager.LoadScene("BaseScene");
     }
 
     // Permite activar o desactivar la invencibilidad desde fuera

@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public List<FishType> allFish = new List<FishType>();
     public List<FishType> equippedFish = new List<FishType>();
     public int currentWave = 0;
+    public int collectedTreasure = 0;
 
     // Misión actual
     public string currentMission = "Encuentra el cofre dorado";
