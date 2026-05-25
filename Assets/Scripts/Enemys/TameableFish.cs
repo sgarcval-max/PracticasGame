@@ -51,11 +51,11 @@ public class TameableFish : MonoBehaviour
 
     void Collect()
     {
-        // Avisamos al inventario del buzo
         DiverInventory inventory = player.GetComponent<DiverInventory>();
         if (inventory != null)
         {
-            inventory.AddFish(fishType);
+            // Ahora va a la mochila, no al inventario directamente
+            inventory.CatchFish(fishType);
         }
 
         Destroy(gameObject);

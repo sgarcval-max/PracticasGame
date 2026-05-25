@@ -4,8 +4,15 @@ using System.Collections.Generic;
 public class DiverInventory : MonoBehaviour
 {
     public int maxEquipped = 3;
+
+    // Peces capturados en el mar sin domesticar
+    public List<FishType> caughtFish = new List<FishType>();
+
+    // Peces domesticados
+    public List<FishType> tamedFish = new List<FishType>();
+
+    // Peces equipados
     public List<FishType> equippedFish = new List<FishType>();
-    public List<FishType> allFish = new List<FishType>();
 
     private AbilityManager abilityManager;
     private GameUI gameUI;
@@ -18,50 +25,77 @@ public class DiverInventory : MonoBehaviour
 
     void Start()
     {
-        // Cargar datos del GameManager al empezar la escena
         if (GameManager.Instance != null)
         {
-            allFish = new List<FishType>(GameManager.Instance.allFish);
+            caughtFish = new List<FishType>(GameManager.Instance.caughtFish);
+            tamedFish = new List<FishType>(GameManager.Instance.tamedFish);
             equippedFish = new List<FishType>(GameManager.Instance.equippedFish);
 
-            // Añadir las habilidades de los peces equipados
             foreach (FishType fish in equippedFish)
             {
                 abilityManager?.AddAbility(fish);
             }
 
-            // Actualizar slots de la UI
             gameUI?.UpdateSlots(equippedFish.Count);
-
-            Debug.Log("Peces cargados: " + equippedFish.Count + " equipados");
         }
     }
 
-    public void AddFish(FishType fishType)
+    // Capturar pez en el mar (va a la mochila)
+    public void CatchFish(FishType fishType)
     {
-        allFish.Add(fishType);
+        caughtFish.Add(fishType);
+        Debug.Log("Pez capturado en mochila: " + fishType);
 
-        // Solo equipamos si hay hueco Y no tenemos ya ese tipo equipado
-        if (equippedFish.Count < maxEquipped && !equippedFish.Contains(fishType))
-        {
-            equippedFish.Add(fishType);
-
-            abilityManager?.AddAbility(fishType);
-            gameUI?.UpdateSlots(equippedFish.Count);
-
-            Debug.Log("Pez equipado: " + fishType);
-        }
-        else
-        {
-            Debug.Log("Pez guardado en base: " + fishType);
-        }
-
-        // Guardar en el GameManager
+        // Guardamos en GameManager
         if (GameManager.Instance != null)
+            GameManager.Instance.caughtFish = new List<FishType>(caughtFish);
+    }
+
+    // Domesticar pez (va al acuario)
+    public void TameFish(FishType fishType)
+    {
+        if (caughtFish.Contains(fishType))
         {
-            GameManager.Instance.allFish = new List<FishType>(allFish);
-            GameManager.Instance.equippedFish = new List<FishType>(equippedFish);
+            caughtFish.Remove(fishType);
+            tamedFish.Add(fishType);
+
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.caughtFish = new List<FishType>(caughtFish);
+                GameManager.Instance.tamedFish = new List<FishType>(tamedFish);
+            }
+
+            Debug.Log("Pez domesticado: " + fishType);
         }
+    }
+
+    // Perder pez al fallar el minijuego
+    public void LoseFish(FishType fishType)
+    {
+        if (caughtFish.Contains(fishType))
+        {
+            caughtFish.Remove(fishType);
+
+            if (GameManager.Instance != null)
+                GameManager.Instance.caughtFish = new List<FishType>(caughtFish);
+
+            Debug.Log("Pez perdido: " + fishType);
+        }
+    }
+
+    // Equipar pez domesticado
+    public void EquipFish(FishType fishType)
+    {
+        if (equippedFish.Count >= maxEquipped) return;
+        if (equippedFish.Contains(fishType)) return;
+        if (!tamedFish.Contains(fishType)) return;
+
+        equippedFish.Add(fishType);
+        abilityManager?.AddAbility(fishType);
+        gameUI?.UpdateSlots(equippedFish.Count);
+
+        if (GameManager.Instance != null)
+            GameManager.Instance.equippedFish = new List<FishType>(equippedFish);
     }
 
     public bool HasEquipped(FishType fishType)

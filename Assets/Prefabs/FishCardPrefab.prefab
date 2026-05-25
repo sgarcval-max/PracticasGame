@@ -549,7 +549,7 @@ MonoBehaviour:
   fishIcon: {fileID: 4255514294654525981}
   fishName: {fileID: 3460827944842639303}
   fishDescription: {fileID: 6049801834846824162}
-  equipButton: {fileID: 5827910073673391464}
+  actionButton: {fileID: 5827910073673391464}
   unequipButton: {fileID: 6514862532914105540}
 --- !u!1 &7476788348879705046
 GameObject:

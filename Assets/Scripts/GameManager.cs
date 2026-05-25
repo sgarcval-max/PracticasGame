@@ -3,36 +3,39 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
-    // Instancia única del GameManager
     public static GameManager Instance;
 
-    // Datos del jugador que se guardan entre escenas
-    public List<FishType> allFish = new List<FishType>();
-    public List<FishType> equippedFish = new List<FishType>();
-    public int currentWave = 0;
-    public int collectedTreasure = 0;
+    // Peces capturados en el mar (sin domesticar)
+    public List<FishType> caughtFish = new List<FishType>();
 
-    // Misión actual
+    // Peces domesticados (en el acuario)
+    public List<FishType> tamedFish = new List<FishType>();
+
+    // Peces equipados
+    public List<FishType> equippedFish = new List<FishType>();
+
+    // Progreso
+    public int collectedTreasure = 0;
+    public int currentWave = 0;
     public string currentMission = "Encuentra el cofre dorado";
     public bool missionCompleted = false;
 
     void Awake()
     {
-        // Si ya existe un GameManager no creamos otro
         if (Instance != null)
         {
             Destroy(gameObject);
             return;
         }
 
-        // Este objeto no se destruye al cambiar de escena
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
     public void SavePlayerData(DiverInventory inventory, WaveManager waveManager)
     {
-        allFish = new List<FishType>(inventory.allFish);
+        caughtFish = new List<FishType>(inventory.caughtFish);
+        tamedFish = new List<FishType>(inventory.tamedFish);
         equippedFish = new List<FishType>(inventory.equippedFish);
         currentWave = waveManager != null ? waveManager.GetCurrentWave() : 0;
     }

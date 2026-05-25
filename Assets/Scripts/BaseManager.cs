@@ -9,9 +9,12 @@ public class BaseManager : MonoBehaviour
     [Header("Mission")]
     public TextMeshProUGUI missionText;
 
-    [Header("Fish Collection")]
-    public Transform fishScrollContent;
+    [Header("Mochila - Peces capturados sin domesticar")]
+    public Transform bagScrollContent;
     public GameObject fishCardPrefab;
+
+    [Header("Acuario - Peces domesticados")]
+    public Transform aquariumScrollContent;
 
     [Header("Equipped Panel")]
     public TextMeshProUGUI equippedTitle;
@@ -25,9 +28,12 @@ public class BaseManager : MonoBehaviour
     [Header("Buttons")]
     public Button playButton;
 
+    private TamingMinigame tamingMinigame;
+
     void Start()
     {
         playButton.onClick.AddListener(GoToSea);
+        tamingMinigame = FindFirstObjectByType<TamingMinigame>();
         RefreshUI();
     }
 
@@ -36,7 +42,8 @@ public class BaseManager : MonoBehaviour
         if (GameManager.Instance == null) return;
 
         UpdateMission();
-        UpdateFishCollection();
+        UpdateBag();
+        UpdateAquarium();
         UpdateEquippedPanel();
     }
 
@@ -63,19 +70,14 @@ public class BaseManager : MonoBehaviour
         }
     }
 
-    void UpdateFishCollection()
+    // Mochila: peces capturados sin domesticar
+    void UpdateBag()
     {
-        // Limpiar tarjetas anteriores
-        foreach (Transform child in fishScrollContent)
-        {
+        foreach (Transform child in bagScrollContent)
             Destroy(child.gameObject);
-        }
 
-        if (GameManager.Instance.allFish.Count == 0) return;
-
-        // Contar cuantos peces hay de cada tipo
         Dictionary<FishType, int> fishCount = new Dictionary<FishType, int>();
-        foreach (FishType fish in GameManager.Instance.allFish)
+        foreach (FishType fish in GameManager.Instance.caughtFish)
         {
             if (fishCount.ContainsKey(fish))
                 fishCount[fish]++;
@@ -83,27 +85,28 @@ public class BaseManager : MonoBehaviour
                 fishCount[fish] = 1;
         }
 
-        // Crear una tarjeta por tipo
         int index = 0;
         foreach (KeyValuePair<FishType, int> entry in fishCount)
         {
-            GameObject card = Instantiate(fishCardPrefab, fishScrollContent);
+            GameObject card = Instantiate(fishCardPrefab, bagScrollContent);
             FishCard fishCard = card.GetComponent<FishCard>();
-
-            bool isEquipped = GameManager.Instance.equippedFish.Contains(entry.Key);
-            fishCard.Setup(entry.Key, index, this, isEquipped, entry.Value);
+            fishCard.SetupBagCard(entry.Key, entry.Value, index, this);
             index++;
         }
+    }
+
+    // Acuario: peces domesticados
+    void UpdateAquarium()
+    {
+        AquariumManager aquariumManager = FindFirstObjectByType<AquariumManager>();
+        aquariumManager?.RefreshAquarium();
     }
 
     void UpdateEquippedPanel()
     {
         List<FishType> equipped = GameManager.Instance.equippedFish;
-
-        // Actualizar título
         equippedTitle.text = "⚔️ Peces Equipados (" + equipped.Count + "/3)";
 
-        // Actualizar slots
         UpdateSlot(equippedSlot1, equippedSlot1Text, equipped, 0);
         UpdateSlot(equippedSlot2, equippedSlot2Text, equipped, 1);
         UpdateSlot(equippedSlot3, equippedSlot3Text, equipped, 2);
@@ -124,19 +127,44 @@ public class BaseManager : MonoBehaviour
         }
     }
 
+    // Iniciar minijuego de domesticación
+    public void StartTaming(int fishIndex)
+    {
+        List<FishType> uniqueFish = GetUniqueCaughtFish();
+        if (fishIndex >= uniqueFish.Count) return;
+
+        FishType fish = uniqueFish[fishIndex];
+
+        tamingMinigame?.StartMinigame(fish, (success) =>
+        {
+            if (success)
+            {
+                // Domesticado con éxito
+                GameManager.Instance.caughtFish.Remove(fish);
+                GameManager.Instance.tamedFish.Add(fish);
+            }
+            else
+            {
+                // Fallo, perdemos el pez
+                GameManager.Instance.caughtFish.Remove(fish);
+            }
+
+            RefreshUI();
+        });
+    }
+
     public void EquipFish(int fishIndex)
     {
+        List<FishType> uniqueFish = GetUniqueTamedFish();
+        if (fishIndex >= uniqueFish.Count) return;
+
+        FishType fish = uniqueFish[fishIndex];
+
         if (GameManager.Instance.equippedFish.Count >= 3)
         {
             Debug.Log("Ya tienes 3 peces equipados!");
             return;
         }
-
-        // Buscamos el tipo de pez por tipo único no por índice
-        List<FishType> uniqueFish = GetUniqueFish();
-        if (fishIndex >= uniqueFish.Count) return;
-
-        FishType fish = uniqueFish[fishIndex];
 
         if (!GameManager.Instance.equippedFish.Contains(fish))
         {
@@ -147,7 +175,7 @@ public class BaseManager : MonoBehaviour
 
     public void UnequipFish(int fishIndex)
     {
-        List<FishType> uniqueFish = GetUniqueFish();
+        List<FishType> uniqueFish = GetUniqueTamedFish();
         if (fishIndex >= uniqueFish.Count) return;
 
         FishType fish = uniqueFish[fishIndex];
@@ -155,11 +183,21 @@ public class BaseManager : MonoBehaviour
         RefreshUI();
     }
 
-    // Devuelve una lista de tipos únicos de peces
-    List<FishType> GetUniqueFish()
+    List<FishType> GetUniqueCaughtFish()
     {
         List<FishType> unique = new List<FishType>();
-        foreach (FishType fish in GameManager.Instance.allFish)
+        foreach (FishType fish in GameManager.Instance.caughtFish)
+        {
+            if (!unique.Contains(fish))
+                unique.Add(fish);
+        }
+        return unique;
+    }
+
+    List<FishType> GetUniqueTamedFish()
+    {
+        List<FishType> unique = new List<FishType>();
+        foreach (FishType fish in GameManager.Instance.tamedFish)
         {
             if (!unique.Contains(fish))
                 unique.Add(fish);

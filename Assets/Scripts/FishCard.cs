@@ -8,54 +8,70 @@ public class FishCard : MonoBehaviour
     public Image fishIcon;
     public TextMeshProUGUI fishName;
     public TextMeshProUGUI fishDescription;
-    public Button equipButton;
+    public Button actionButton;
     public Button unequipButton;
 
-    private FishType fishType;
     private int fishIndex;
     private BaseManager baseManager;
 
-    public void Setup(FishType type, int index, BaseManager manager, bool isEquipped, int count)
+    // Tarjeta de mochila (pez sin domesticar)
+    public void SetupBagCard(FishType type, int count, int index, BaseManager manager)
     {
-        fishType = type;
         fishIndex = index;
         baseManager = manager;
 
-        // Color del pez
         fishIcon.color = FishData.GetColor(type);
 
-        // Nombre con contador si hay más de uno
-        if (count > 1)
-            fishName.text = FishData.GetName(type) + " x" + count;
-        else
-            fishName.text = FishData.GetName(type);
+        fishName.text = count > 1 ?
+            FishData.GetName(type) + " x" + count :
+            FishData.GetName(type);
 
-        // Descripción
+        fishDescription.text = "Sin domesticar\nPulsa para intentarlo";
+
+        actionButton.gameObject.SetActive(true);
+        unequipButton.gameObject.SetActive(false);
+
+        // Botón naranja de domesticar
+        actionButton.GetComponent<Image>().color = new Color(0.8f, 0.5f, 0.1f);
+        actionButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Domesticar";
+
+        actionButton.onClick.AddListener(Tame);
+    }
+
+    // Tarjeta de acuario (pez domesticado)
+    public void SetupAquariumCard(FishType type, int count, int index, BaseManager manager, bool isEquipped)
+    {
+        fishIndex = index;
+        baseManager = manager;
+
+        fishIcon.color = FishData.GetColor(type);
+
+        fishName.text = count > 1 ?
+            FishData.GetName(type) + " x" + count :
+            FishData.GetName(type);
+
         fishDescription.text = FishData.GetDescription(type);
 
-        // Mostrar botón correcto
         if (isEquipped)
         {
-            equipButton.gameObject.SetActive(false);
+            actionButton.gameObject.SetActive(false);
             unequipButton.gameObject.SetActive(true);
+            unequipButton.onClick.AddListener(Unequip);
         }
         else
         {
-            equipButton.gameObject.SetActive(true);
+            actionButton.gameObject.SetActive(true);
             unequipButton.gameObject.SetActive(false);
+
+            // Botón verde de equipar
+            actionButton.GetComponent<Image>().color = new Color(0.2f, 0.7f, 0.2f);
+            actionButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Equipar";
+
+            actionButton.onClick.AddListener(Equip);
         }
-
-        equipButton.onClick.AddListener(Equip);
-        unequipButton.onClick.AddListener(Unequip);
     }
 
-    void Equip()
-    {
-        baseManager.EquipFish(fishIndex);
-    }
-
-    void Unequip()
-    {
-        baseManager.UnequipFish(fishIndex);
-    }
+    void Tame() => baseManager.StartTaming(fishIndex);
+    void Equip() => baseManager.EquipFish(fishIndex);
+    void Unequip() => baseManager.UnequipFish(fishIndex);
 }
