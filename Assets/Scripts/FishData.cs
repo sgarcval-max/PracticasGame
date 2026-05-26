@@ -12,7 +12,7 @@ public static class FishData
             case FishType.Clownfish: return "Pez Payaso";
             case FishType.Squid: return "Calamar";
             case FishType.Swordfish: return "Pez Espada";
-            case FishType.Dori: return "Dori";
+            case FishType.Cirujano: return "Cirujano";
             default: return "Desconocido";
         }
     }
@@ -31,8 +31,9 @@ public static class FishData
                 return "🌑 Tinta\nRalentiza a todos los enemigos cercanos.";
             case FishType.Swordfish:
                 return "⚡ Dash\nSales disparado hacia el cursor dañando enemigos.";
-            case FishType.Dori:
+            case FishType.Cirujano:
                 return "💙 Curación\nRecupera 1 punto de vida.";
+           
             default:
                 return "Habilidad desconocida.";
 
@@ -48,7 +49,7 @@ public static class FishData
             case FishType.Clownfish: return new Color(1f, 0.55f, 0f);
             case FishType.Squid: return new Color(0.6f, 0f, 0.8f);
             case FishType.Swordfish: return new Color(0f, 0.7f, 1f);
-            case FishType.Dori: return new Color(0.1f, 0.4f, 0.9f);
+            case FishType.Cirujano: return new Color(0.1f, 0.4f, 0.9f);
             default: return Color.white;
         }
     }

@@ -9,7 +9,7 @@ public class DoriAbility : FishAbility
         abilityName = "Curación";
         cooldown = 15f;
         duration = 0f;
-        fishType = FishType.Dori;
+        fishType = FishType.Cirujano;
     }
 
     protected override void Activate()

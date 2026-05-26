@@ -66,7 +66,7 @@ public class AbilityManager : MonoBehaviour
             case FishType.Swordfish:
                 ability = gameObject.AddComponent<SwordfishAbility>();
                 break;
-            case FishType.Dori:
+            case FishType.Cirujano:
                 ability = gameObject.AddComponent<DoriAbility>();
                 break;
         }
