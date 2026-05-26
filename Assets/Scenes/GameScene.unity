@@ -867,6 +867,7 @@ GameObject:
   m_Component:
   - component: {fileID: 267463663}
   - component: {fileID: 267463662}
+  - component: {fileID: 267463670}
   - component: {fileID: 267463661}
   - component: {fileID: 267463660}
   - component: {fileID: 267463659}
@@ -931,8 +932,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
+  m_Offset: {x: -0.09267929, y: 0.04633963}
+  m_Size: {x: 0.7576081, y: 2.247606}
   m_Direction: 0
 --- !u!50 &267463661
 Rigidbody2D:
@@ -1005,7 +1006,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 4515987651703003969, guid: 0dcc7af353f60264dbd8e731b5f89bb5, type: 3}
   m_Color: {r: 1, g: 0.8627451, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1116,8 +1117,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxEquipped: 3
+  caughtFish: 
+  tamedFish: 
   equippedFish: 
-  allFish: 
 --- !u!114 &267463669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1130,6 +1132,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d499eb895a62d934cb74b35812b6042f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &267463670
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267463658}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1e10495ed348de3468ef92a23746831a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &285035931
 GameObject:
   m_ObjectHideFlags: 0
@@ -4146,10 +4170,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f788e9f73810a964d982c1c7a6267c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allFish: 
+  caughtFish: 
+  tamedFish: 
   equippedFish: 
-  currentWave: 0
   collectedTreasure: 0
+  currentWave: 0
   currentMission: Encuentra el cofre dorado
   missionCompleted: 0
 --- !u!4 &1223951209

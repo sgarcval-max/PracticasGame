@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using System.Collections;
 
 public class SceneTransition : MonoBehaviour
@@ -12,6 +13,7 @@ public class SceneTransition : MonoBehaviour
     public VideoClip transitionIn;
 
     private VideoPlayer videoPlayer;
+    private RawImage videoImage;
     private GameObject transitionCanvas;
     private bool isTransitioning = false;
 
@@ -25,33 +27,47 @@ public class SceneTransition : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
-        // Creamos el canvas de transición por código
-        // así no depende de la escena
         CreateTransitionCanvas();
     }
 
     void CreateTransitionCanvas()
     {
-        // Creamos el canvas
         transitionCanvas = new GameObject("TransitionCanvas");
         transitionCanvas.transform.SetParent(transform);
 
         Canvas canvas = transitionCanvas.AddComponent<Canvas>();
         canvas.renderMode = RenderMode.ScreenSpaceOverlay;
         canvas.sortingOrder = 999;
+        transitionCanvas.AddComponent<CanvasScaler>();
+        transitionCanvas.AddComponent<GraphicRaycaster>();
 
-        transitionCanvas.AddComponent<UnityEngine.UI.CanvasScaler>();
-        transitionCanvas.AddComponent<UnityEngine.UI.GraphicRaycaster>();
+        GameObject imageObj = new GameObject("VideoImage");
+        imageObj.transform.SetParent(transitionCanvas.transform, false);
 
-        // Añadimos el VideoPlayer
+        videoImage = imageObj.AddComponent<RawImage>();
+        videoImage.color = Color.white;
+
+        RectTransform rt = imageObj.GetComponent<RectTransform>();
+        rt.anchorMin = Vector2.zero;
+        rt.anchorMax = Vector2.one;
+        rt.offsetMin = Vector2.zero;
+        rt.offsetMax = Vector2.zero;
+
+        // RenderTexture con canal alpha para transparencia
+        RenderTexture renderTexture = new RenderTexture(1920, 1080, 0, RenderTextureFormat.ARGB32);
+        renderTexture.antiAliasing = 1;
+        videoImage.texture = renderTexture;
+
         videoPlayer = transitionCanvas.AddComponent<VideoPlayer>();
-        videoPlayer.renderMode = VideoRenderMode.CameraFarPlane;
-        videoPlayer.targetCamera = Camera.main;
+        videoPlayer.renderMode = VideoRenderMode.RenderTexture;
+        videoPlayer.targetTexture = renderTexture;
         videoPlayer.audioOutputMode = VideoAudioOutputMode.None;
         videoPlayer.isLooping = false;
+        videoPlayer.playOnAwake = false;
 
-        // Lo ocultamos al inicio
+        // Importante para transparencia en WebM
+        videoPlayer.skipOnDrop = true;
+
         transitionCanvas.SetActive(false);
     }
 
@@ -67,9 +83,6 @@ public class SceneTransition : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Actualizamos la cámara del VideoPlayer al cargar nueva escena
-        if (videoPlayer != null)
-            videoPlayer.targetCamera = Camera.main;
     }
 
     public void TransitionToScene(string sceneName)
@@ -82,32 +95,41 @@ public class SceneTransition : MonoBehaviour
     {
         isTransitioning = true;
         transitionCanvas.SetActive(true);
+        Debug.Log("Transicion iniciada");
 
-        // Video de salida
         if (transitionOut != null)
         {
+            Debug.Log("Reproduciendo video OUT");
             videoPlayer.clip = transitionOut;
+            videoPlayer.Prepare();
+            yield return new WaitUntil(() => videoPlayer.isPrepared);
+            Debug.Log("Video OUT preparado, reproduciendo...");
             videoPlayer.Play();
             yield return new WaitUntil(() => !videoPlayer.isPlaying);
+            Debug.Log("Video OUT terminado");
         }
         else
         {
+            Debug.Log("No hay video OUT asignado");
             yield return new WaitForSeconds(0.5f);
         }
 
-        // Cargamos la escena
         SceneManager.LoadScene(sceneName);
         yield return null;
 
-        // Video de entrada
         if (transitionIn != null)
         {
+            Debug.Log("Reproduciendo video IN");
             videoPlayer.clip = transitionIn;
+            videoPlayer.Prepare();
+            yield return new WaitUntil(() => videoPlayer.isPrepared);
             videoPlayer.Play();
             yield return new WaitUntil(() => !videoPlayer.isPlaying);
+            Debug.Log("Video IN terminado");
         }
         else
         {
+            Debug.Log("No hay video IN asignado");
             yield return new WaitForSeconds(0.5f);
         }
 

@@ -174,6 +174,9 @@ public class GameUI : MonoBehaviour
     public void ShowVictory()
     {
         victoryPanel.SetActive(true);
+
+        // Pausamos el juego para que no pueda seguir jugando
+        Time.timeScale = 0f;
     }
 
     void Restart()
@@ -186,6 +189,8 @@ public class GameUI : MonoBehaviour
 
     void GoToBase()
     {
+        Time.timeScale = 1f;
+
         if (SceneTransition.Instance != null)
             SceneTransition.Instance.TransitionToScene("BaseScene");
         else

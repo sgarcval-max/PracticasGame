@@ -1436,8 +1436,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a229e4e9beb47a64b92d0b54965c451e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionOut: {fileID: 0}
-  transitionIn: {fileID: 0}
+  transitionOut: {fileID: 32900000, guid: bab7401edbfb27647b4cf2425ddfded8, type: 3}
+  transitionIn: {fileID: 32900000, guid: 61781a48d8aa4964ab1f8b1f7d173777, type: 3}
 --- !u!4 &273763710
 Transform:
   m_ObjectHideFlags: 0
@@ -3873,10 +3873,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

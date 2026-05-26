@@ -154,12 +154,27 @@ public class AquariumManager : MonoBehaviour
             GameManager.Instance.equippedFish.Add(currentHoveredFish);
             baseManager?.RefreshUI();
         }
+
+        // Cerramos el panel después de equipar
+        if (lastHovered != null)
+        {
+            lastHovered.OnHoverExit();
+            lastHovered = null;
+        }
+        HideFishInfo();
     }
 
     void UnequipCurrentFish()
     {
         GameManager.Instance.equippedFish.Remove(currentHoveredFish);
         baseManager?.RefreshUI();
+
+        // Cerramos el panel después de desequipar
+        if (lastHovered != null)
+        {
+            lastHovered.OnHoverExit();
+            lastHovered = null;
+        }
         HideFishInfo();
     }
 
