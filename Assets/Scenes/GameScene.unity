@@ -5175,6 +5175,7 @@ MonoBehaviour:
   - {fileID: 473454235709534082, guid: 45ce139cc38d0c94eb684a644e0706f1, type: 3}
   - {fileID: 473454235709534082, guid: 9e1a0700bd4169f4d93cc541bbe5321c, type: 3}
   - {fileID: 473454235709534082, guid: 91c67bcb46aaeaa4a88e1bf296279fd0, type: 3}
+  - {fileID: 473454235709534082, guid: 8d10a905254982f4798e9e6feaa4304e, type: 3}
   fishPerWave: 5
   fishIncreaseEvery5Waves: 3
 --- !u!4 &1801860542

@@ -91,4 +91,11 @@ public class DiverHealth : MonoBehaviour
         }
     }
 
+    public void Heal(int amount)
+    {
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+        gameUI?.UpdateHealth(currentHealth, maxHealth);
+        Debug.Log("Vida actual: " + currentHealth + "/" + maxHealth);
+    }
+
 }

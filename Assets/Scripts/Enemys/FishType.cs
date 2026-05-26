@@ -5,5 +5,6 @@ public enum FishType
     Shark,        // Tiburón — escudo temporal
     Clownfish,    // Pez payaso — señuelo
     Squid,        // Calamar — nube de tinta
-    Swordfish     // Pez espada — dash
+    Swordfish,     // Pez espada — dash
+    Dori          // Nuevo pez - recupera 1 de vida
 }
