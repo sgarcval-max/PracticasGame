@@ -1436,8 +1436,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a229e4e9beb47a64b92d0b54965c451e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionOut: {fileID: 32900000, guid: bab7401edbfb27647b4cf2425ddfded8, type: 3}
-  transitionIn: {fileID: 32900000, guid: 61781a48d8aa4964ab1f8b1f7d173777, type: 3}
+  transitionOut: {fileID: 32900000, guid: 42dde64cd8a55624a8e93c88e1e139b6, type: 3}
+  transitionIn: {fileID: 32900000, guid: c55324278e591ef44b87005536a79733, type: 3}
 --- !u!4 &273763710
 Transform:
   m_ObjectHideFlags: 0
@@ -5769,7 +5769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1968337797
 RectTransform:
   m_ObjectHideFlags: 0

@@ -1,23 +1,32 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class DiverController : MonoBehaviour
 {
+    [Header("Movimiento")]
     public float moveSpeed = 8f;
     public float maxSpeed = 12f;
+    public float linearDrag = 3f;
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
+    private Animator animator;
     private Vector2 moveInput;
+
+    // Para detectar cuando empieza y para de moverse
+    private bool wasMoving = false;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+
+        rb.gravityScale = 0f;
+        rb.linearDamping = linearDrag;
     }
 
-    // Este método lo llama automáticamente el componente PlayerInput
-    // cuando detecta movimiento en WASD o flechas
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
@@ -25,17 +34,22 @@ public class DiverController : MonoBehaviour
 
     void Update()
     {
-        // Voltear sprite según dirección horizontal
+        // Voltear sprite según dirección
         if (moveInput.x > 0) sr.flipX = false;
         if (moveInput.x < 0) sr.flipX = true;
+
+        // Detectar si está presionando teclas
+        bool isPressingKeys = moveInput.magnitude > 0.1f;
+
+        // Actualizar Animator
+        animator.SetFloat("Speed", rb.linearVelocity.magnitude);
+        animator.SetBool("IsMoving", isPressingKeys);
     }
 
     void FixedUpdate()
     {
-        // Empujar el rigidbody en la dirección del input
         rb.AddForce(moveInput * moveSpeed, ForceMode2D.Force);
 
-        // Limitar velocidad máxima
         if (rb.linearVelocity.magnitude > maxSpeed)
         {
             rb.linearVelocity = rb.linearVelocity.normalized * maxSpeed;
