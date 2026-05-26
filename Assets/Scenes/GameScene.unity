@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 68390804}
   - component: {fileID: 68390803}
   - component: {fileID: 68390802}
+  - component: {fileID: 68390805}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -376,6 +377,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68390800}
   m_CullTransparentMesh: 1
+--- !u!114 &68390805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68390800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7221e28f7d78cd489df3cc0b7477cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: 1.1
+  animSpeed: 8
 --- !u!1 &140256993
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +403,7 @@ GameObject:
   - component: {fileID: 140256997}
   - component: {fileID: 140256996}
   - component: {fileID: 140256995}
+  - component: {fileID: 140256998}
   m_Layer: 5
   m_Name: VictoryBaseButton
   m_TagString: Untagged
@@ -497,6 +513,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140256993}
   m_CullTransparentMesh: 1
+--- !u!114 &140256998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140256993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7221e28f7d78cd489df3cc0b7477cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: 1.1
+  animSpeed: 8
 --- !u!1 &218590489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,7 +1037,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 4515987651703003969, guid: 0dcc7af353f60264dbd8e731b5f89bb5, type: 3}
+  m_Sprite: {fileID: 4851895158568914151, guid: bbf3ef714f0557e428e6b8360b3754dd, type: 3}
   m_Color: {r: 1, g: 0.8627451, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1940,6 +1970,7 @@ GameObject:
   - component: {fileID: 683292839}
   - component: {fileID: 683292838}
   - component: {fileID: 683292837}
+  - component: {fileID: 683292840}
   m_Layer: 5
   m_Name: BaseButton
   m_TagString: Untagged
@@ -2049,6 +2080,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683292835}
   m_CullTransparentMesh: 1
+--- !u!114 &683292840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683292835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7221e28f7d78cd489df3cc0b7477cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: 1.1
+  animSpeed: 8
 --- !u!1 &684657882
 GameObject:
   m_ObjectHideFlags: 0
@@ -3565,6 +3610,7 @@ GameObject:
   - component: {fileID: 1109814883}
   - component: {fileID: 1109814882}
   - component: {fileID: 1109814881}
+  - component: {fileID: 1109814884}
   m_Layer: 5
   m_Name: ResumeButton
   m_TagString: Untagged
@@ -3674,6 +3720,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109814879}
   m_CullTransparentMesh: 1
+--- !u!114 &1109814884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109814879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7221e28f7d78cd489df3cc0b7477cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: 1.1
+  animSpeed: 8
 --- !u!1 &1123130010
 GameObject:
   m_ObjectHideFlags: 0
@@ -4341,6 +4401,7 @@ GameObject:
   - component: {fileID: 1353822943}
   - component: {fileID: 1353822942}
   - component: {fileID: 1353822941}
+  - component: {fileID: 1353822944}
   m_Layer: 5
   m_Name: PauseOptionsButton
   m_TagString: Untagged
@@ -4450,6 +4511,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353822939}
   m_CullTransparentMesh: 1
+--- !u!114 &1353822944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353822939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7221e28f7d78cd489df3cc0b7477cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: 1.1
+  animSpeed: 8
 --- !u!1 &1387643567
 GameObject:
   m_ObjectHideFlags: 0
@@ -4784,6 +4859,7 @@ GameObject:
   - component: {fileID: 1676567844}
   - component: {fileID: 1676567843}
   - component: {fileID: 1676567842}
+  - component: {fileID: 1676567845}
   m_Layer: 5
   m_Name: PauseMenuButton (1)
   m_TagString: Untagged
@@ -4893,6 +4969,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676567840}
   m_CullTransparentMesh: 1
+--- !u!114 &1676567845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676567840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7221e28f7d78cd489df3cc0b7477cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: 1.1
+  animSpeed: 8
 --- !u!1 &1700696303
 GameObject:
   m_ObjectHideFlags: 0
@@ -5031,6 +5121,7 @@ GameObject:
   - component: {fileID: 1800621623}
   - component: {fileID: 1800621622}
   - component: {fileID: 1800621621}
+  - component: {fileID: 1800621624}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -5140,6 +5231,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800621619}
   m_CullTransparentMesh: 1
+--- !u!114 &1800621624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800621619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7221e28f7d78cd489df3cc0b7477cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: 1.1
+  animSpeed: 8
 --- !u!1 &1801860540
 GameObject:
   m_ObjectHideFlags: 0
@@ -5374,6 +5479,7 @@ GameObject:
   - component: {fileID: 1940144404}
   - component: {fileID: 1940144403}
   - component: {fileID: 1940144402}
+  - component: {fileID: 1940144405}
   m_Layer: 5
   m_Name: PauseBaseButton
   m_TagString: Untagged
@@ -5483,6 +5589,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940144400}
   m_CullTransparentMesh: 1
+--- !u!114 &1940144405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940144400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7221e28f7d78cd489df3cc0b7477cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverScale: 1.1
+  animSpeed: 8
 --- !u!1 &1957992466
 GameObject:
   m_ObjectHideFlags: 0
