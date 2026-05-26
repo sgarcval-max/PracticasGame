@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4190407858135318682}
   - component: {fileID: 7025325821153861919}
   m_Layer: 8
-  m_Name: Fish_Dori
+  m_Name: Fish_Cirujano
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
