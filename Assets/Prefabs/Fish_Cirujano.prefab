@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 527937137474927449}
   - component: {fileID: 1155707006035470874}
   - component: {fileID: 866027431928703670}
-  - component: {fileID: 4190407858135318682}
+  - component: {fileID: 2086398225296719892}
   - component: {fileID: 7025325821153861919}
   m_Layer: 8
   m_Name: Fish_Cirujano
@@ -79,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.09803922, g: 0.39215687, b: 0.9019608, a: 1}
+  m_Sprite: {fileID: -8535986941928477678, guid: 96ed2aef084710e4589520cdbe1b3ae6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -117,7 +117,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &4190407858135318682
+--- !u!58 &2086398225296719892
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,8 +151,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Offset: {x: -0.1479137, y: 0.061630607}
+  m_Radius: 0.63904285
 --- !u!114 &7025325821153861919
 MonoBehaviour:
   m_ObjectHideFlags: 0
