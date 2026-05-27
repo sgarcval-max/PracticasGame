@@ -181,8 +181,9 @@ public class GameUI : MonoBehaviour
 
     void Restart()
     {
+        Time.timeScale = 1f;
         if (SceneTransition.Instance != null)
-            SceneTransition.Instance.TransitionToScene("GameScene");
+            SceneTransition.Instance.TransitionToGame();
         else
             SceneManager.LoadScene("GameScene");
     }
@@ -190,9 +191,8 @@ public class GameUI : MonoBehaviour
     void GoToBase()
     {
         Time.timeScale = 1f;
-
         if (SceneTransition.Instance != null)
-            SceneTransition.Instance.TransitionToScene("BaseScene");
+            SceneTransition.Instance.TransitionToBase();
         else
             SceneManager.LoadScene("BaseScene");
     }

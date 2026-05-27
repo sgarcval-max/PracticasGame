@@ -9,7 +9,6 @@ public class MenuManager : MonoBehaviour
     [Header("Panels")]
     public GameObject mainPanel;
     public GameObject optionsPanel;
-    public GameObject howToPlayPanel;
 
     [Header("Buttons")]
     public Button playButton;
@@ -23,33 +22,45 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
-        // Conectar botones
         playButton.onClick.AddListener(Play);
         optionsButton.onClick.AddListener(OpenOptions);
         quitButton.onClick.AddListener(Quit);
         optionsBackButton.onClick.AddListener(CloseOptions);
 
-        // Panels
         mainPanel.SetActive(true);
         optionsPanel.SetActive(false);
 
-        // Animar entrada de botones
         StartCoroutine(AnimateButtonsIn());
     }
 
     IEnumerator AnimateButtonsIn()
     {
+        // Desactivamos ButtonAnimator y ocultamos botones
         foreach (RectTransform btn in buttons)
         {
             btn.localScale = Vector3.zero;
+            ButtonAnimator ba = btn.GetComponent<ButtonAnimator>();
+            if (ba != null) ba.enabled = false;
         }
 
-        yield return new WaitForSeconds(1f);
+        // Esperamos a que el título termine su animación
+        yield return new WaitForSeconds(2f);
 
-        for (int i = 0; i < buttons.Length; i++)
+        // Animamos todos los botones casi a la vez
+        foreach (RectTransform btn in buttons)
         {
-            StartCoroutine(ScaleIn(buttons[i], 0.3f));
-            yield return new WaitForSeconds(buttonDelay);
+            StartCoroutine(ScaleIn(btn, 0.3f));
+            yield return new WaitForSeconds(0.05f); // Pequeño delay entre cada uno
+        }
+
+        // Esperamos a que terminen todos
+        yield return new WaitForSeconds(0.3f);
+
+        // Activamos ButtonAnimator
+        foreach (RectTransform btn in buttons)
+        {
+            ButtonAnimator ba = btn.GetComponent<ButtonAnimator>();
+            if (ba != null) ba.enabled = true;
         }
     }
 
@@ -59,9 +70,14 @@ public class MenuManager : MonoBehaviour
         while (timer < duration)
         {
             timer += Time.deltaTime;
-            float t = timer / duration;
-            // Efecto de rebote
-            float scale = Mathf.Sin(t * Mathf.PI * 0.5f);
+            float t = Mathf.Clamp01(timer / duration);
+            // Efecto de rebote suave
+            float scale = 1f + Mathf.Sin(t * Mathf.PI) * 0.1f;
+            if (t < 0.6f)
+                scale = Mathf.Lerp(0f, 1.1f, t / 0.6f);
+            else
+                scale = Mathf.Lerp(1.1f, 1f, (t - 0.6f) / 0.4f);
+
             rt.localScale = Vector3.one * scale;
             yield return null;
         }

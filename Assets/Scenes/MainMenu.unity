@@ -437,7 +437,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainPanel: {fileID: 972649358}
   optionsPanel: {fileID: 1730737017}
-  howToPlayPanel: {fileID: 0}
   playButton: {fileID: 1553217190}
   optionsButton: {fileID: 1872401709}
   quitButton: {fileID: 1864637885}

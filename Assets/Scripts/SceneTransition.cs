@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,9 +8,13 @@ public class SceneTransition : MonoBehaviour
 {
     public static SceneTransition Instance;
 
-    [Header("Videos")]
-    public VideoClip transitionOut;
-    public VideoClip transitionIn;
+    [Header("Transición Base → Mar")]
+    public VideoClip baseToGameOut;
+    public VideoClip baseToGameIn;
+
+    [Header("Transición Mar → Base")]
+    public VideoClip gameToBaseOut;
+    public VideoClip gameToBaseIn;
 
     private VideoPlayer videoPlayer;
     private RawImage videoImage;
@@ -43,7 +47,6 @@ public class SceneTransition : MonoBehaviour
 
         GameObject imageObj = new GameObject("VideoImage");
         imageObj.transform.SetParent(transitionCanvas.transform, false);
-
         videoImage = imageObj.AddComponent<RawImage>();
         videoImage.color = Color.white;
 
@@ -53,9 +56,7 @@ public class SceneTransition : MonoBehaviour
         rt.offsetMin = Vector2.zero;
         rt.offsetMax = Vector2.zero;
 
-        // RenderTexture con canal alpha para transparencia
         RenderTexture renderTexture = new RenderTexture(1920, 1080, 0, RenderTextureFormat.ARGB32);
-        renderTexture.antiAliasing = 1;
         videoImage.texture = renderTexture;
 
         videoPlayer = transitionCanvas.AddComponent<VideoPlayer>();
@@ -64,73 +65,78 @@ public class SceneTransition : MonoBehaviour
         videoPlayer.audioOutputMode = VideoAudioOutputMode.None;
         videoPlayer.isLooping = false;
         videoPlayer.playOnAwake = false;
-
-        // Importante para transparencia en WebM
         videoPlayer.skipOnDrop = true;
 
         transitionCanvas.SetActive(false);
     }
 
-    void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
+    void OnEnable() { SceneManager.sceneLoaded += OnSceneLoaded; }
+    void OnDisable() { SceneManager.sceneLoaded -= OnSceneLoaded; }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode) { }
 
-    void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-    }
-
-    public void TransitionToScene(string sceneName)
+    // Llamar cuando vas de Base a Mar
+    public void TransitionToGame()
     {
         if (isTransitioning) return;
-        StartCoroutine(DoTransition(sceneName));
+        StartCoroutine(DoTransition("GameScene", baseToGameOut, baseToGameIn));
     }
 
-    IEnumerator DoTransition(string sceneName)
+    // Llamar cuando vas de Mar a Base
+    public void TransitionToBase()
+    {
+        if (isTransitioning) return;
+        StartCoroutine(DoTransition("BaseScene", gameToBaseOut, gameToBaseIn));
+    }
+
+    // Llamar para ir al menú principal
+    public void TransitionToMenu()
+    {
+        if (isTransitioning) return;
+        StartCoroutine(DoTransition("MainMenu", gameToBaseOut, gameToBaseIn));
+    }
+
+    IEnumerator DoTransition(string sceneName, VideoClip outClip, VideoClip inClip)
     {
         isTransitioning = true;
         transitionCanvas.SetActive(true);
-        Debug.Log("Transicion iniciada");
 
-        if (transitionOut != null)
+        // Video OUT
+        if (outClip != null)
         {
-            Debug.Log("Reproduciendo video OUT");
-            videoPlayer.clip = transitionOut;
-            videoPlayer.Prepare();
-            yield return new WaitUntil(() => videoPlayer.isPrepared);
-            Debug.Log("Video OUT preparado, reproduciendo...");
-            videoPlayer.Play();
-            yield return new WaitUntil(() => !videoPlayer.isPlaying);
-            Debug.Log("Video OUT terminado");
-        }
-        else
-        {
-            Debug.Log("No hay video OUT asignado");
-            yield return new WaitForSeconds(0.5f);
-        }
-
-        SceneManager.LoadScene(sceneName);
-        yield return null;
-
-        if (transitionIn != null)
-        {
-            Debug.Log("Reproduciendo video IN");
-            videoPlayer.clip = transitionIn;
+            videoPlayer.clip = outClip;
             videoPlayer.Prepare();
             yield return new WaitUntil(() => videoPlayer.isPrepared);
             videoPlayer.Play();
+
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+            asyncLoad.allowSceneActivation = false;
             yield return new WaitUntil(() => !videoPlayer.isPlaying);
-            Debug.Log("Video IN terminado");
+            asyncLoad.allowSceneActivation = true;
+            yield return new WaitUntil(() => asyncLoad.isDone);
         }
         else
         {
-            Debug.Log("No hay video IN asignado");
-            yield return new WaitForSeconds(0.5f);
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+            asyncLoad.allowSceneActivation = false;
+            yield return new WaitForSecondsRealtime(0.3f);
+            asyncLoad.allowSceneActivation = true;
+            yield return new WaitUntil(() => asyncLoad.isDone);
+        }
+
+        yield return new WaitForEndOfFrame();
+
+        // Video IN
+        if (inClip != null)
+        {
+            videoPlayer.clip = inClip;
+            videoPlayer.Prepare();
+            yield return new WaitUntil(() => videoPlayer.isPrepared);
+            videoPlayer.Play();
+            yield return new WaitUntil(() => !videoPlayer.isPlaying);
+        }
+        else
+        {
+            yield return new WaitForSecondsRealtime(0.3f);
         }
 
         transitionCanvas.SetActive(false);

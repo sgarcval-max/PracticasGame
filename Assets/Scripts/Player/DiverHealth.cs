@@ -64,21 +64,30 @@ public class DiverHealth : MonoBehaviour
 
     void Die()
     {
+        // Activar animación de muerte
+        DiverController controller = GetComponent<DiverController>();
+        if (controller != null)
+            controller.TriggerDeath();
+
         DiverInventory inventory = GetComponent<DiverInventory>();
         WaveManager waveManager = FindFirstObjectByType<WaveManager>();
 
         if (GameManager.Instance != null)
-        {
             GameManager.Instance.SavePlayerData(inventory, waveManager);
-        }
+
+        // Esperamos a que termine la animación antes de mostrar Game Over
+        StartCoroutine(DeathCoroutine());
+    }
+
+    System.Collections.IEnumerator DeathCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
+
+        GameUI gameUI = FindFirstObjectByType<GameUI>();
+        if (gameUI != null)
+            gameUI.ShowGameOver();
 
         gameObject.SetActive(false);
-
-        // Transición a la base
-        if (SceneTransition.Instance != null)
-            SceneTransition.Instance.TransitionToScene("BaseScene");
-        else
-            UnityEngine.SceneManagement.SceneManager.LoadScene("BaseScene");
     }
 
     // Permite activar o desactivar la invencibilidad desde fuera

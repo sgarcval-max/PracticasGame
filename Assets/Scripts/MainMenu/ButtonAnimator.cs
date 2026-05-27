@@ -17,10 +17,11 @@ public class ButtonAnimator : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     void Update()
     {
+        // Usamos unscaledDeltaTime para que funcione aunque el juego esté pausado
         transform.localScale = Vector3.Lerp(
             transform.localScale,
             targetScale,
-            Time.deltaTime * animSpeed
+            Time.unscaledDeltaTime * animSpeed
         );
     }
 

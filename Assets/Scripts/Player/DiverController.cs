@@ -19,6 +19,7 @@ public class DiverController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+
         rb.gravityScale = 0f;
         rb.linearDamping = linearDrag;
     }
@@ -30,7 +31,7 @@ public class DiverController : MonoBehaviour
 
     void Update()
     {
-        // Voltear sprite según dirección
+        // Voltear sprite según dirección horizontal
         if (moveInput.x > 0) sr.flipX = false;
         if (moveInput.x < 0) sr.flipX = true;
 
@@ -40,30 +41,21 @@ public class DiverController : MonoBehaviour
         // Actualizar Animator
         animator.SetFloat("Speed", rb.linearVelocity.magnitude);
         animator.SetBool("IsMoving", isPressingKeys);
-        animator.SetFloat("MoveY", moveInput.y);
+        animator.SetFloat("VerticalSpeed", moveInput.y);
     }
 
     void FixedUpdate()
     {
         rb.AddForce(moveInput * moveSpeed, ForceMode2D.Force);
+
         if (rb.linearVelocity.magnitude > maxSpeed)
         {
             rb.linearVelocity = rb.linearVelocity.normalized * maxSpeed;
         }
     }
 
-    // Llama a este método desde cualquier sitio cuando el jugador muera
-    public void Die()
+    public void TriggerDeath()
     {
-        // Desactivar input
-        moveInput = Vector2.zero;
-        enabled = false; // desactiva Update y FixedUpdate
-
-        // Parar el rigidbody
-        rb.linearVelocity = Vector2.zero;
-        rb.bodyType = RigidbodyType2D.Static;
-
-        // Lanzar animación de muerte
-        animator.SetTrigger("Death");
+        animator.SetTrigger("Die");
     }
 }

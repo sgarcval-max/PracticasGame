@@ -61,14 +61,10 @@ public class PauseManager : MonoBehaviour
 
     void GoToBase()
     {
-        // Importante resetear el timeScale antes de cambiar de escena
         Time.timeScale = 1f;
-
-        // Guardamos el progreso del tesoro
         SaveProgress();
-
         if (SceneTransition.Instance != null)
-            SceneTransition.Instance.TransitionToScene("BaseScene");
+            SceneTransition.Instance.TransitionToBase();
         else
             SceneManager.LoadScene("BaseScene");
     }
@@ -76,9 +72,8 @@ public class PauseManager : MonoBehaviour
     void GoToMenu()
     {
         Time.timeScale = 1f;
-
         if (SceneTransition.Instance != null)
-            SceneTransition.Instance.TransitionToScene("MainMenu");
+            SceneTransition.Instance.TransitionToMenu();
         else
             SceneManager.LoadScene("MainMenu");
     }

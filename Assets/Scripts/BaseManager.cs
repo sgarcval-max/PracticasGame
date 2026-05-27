@@ -208,7 +208,7 @@ public class BaseManager : MonoBehaviour
     void GoToSea()
     {
         if (SceneTransition.Instance != null)
-            SceneTransition.Instance.TransitionToScene("GameScene");
+            SceneTransition.Instance.TransitionToGame();
         else
             SceneManager.LoadScene("GameScene");
     }
