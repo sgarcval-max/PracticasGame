@@ -95,10 +95,12 @@ public class CinematicManager : MonoBehaviour
         yield return new WaitUntil(() => videoPlayer.isPrepared);
         videoPlayer.Play();
 
+        // Esperamos a que termine el video
         yield return new WaitUntil(() => !videoPlayer.isPlaying);
 
+        // Si no se ha saltado mostramos el menú directamente sin fade
         if (!isSkipping)
-            StartCoroutine(FadeToMenu());
+            EndCinematic();
     }
 
     IEnumerator FadeSkipText(bool fadeIn)
