@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public int currentWave = 0;
     public string currentMission = "Encuentra el cofre dorado";
     public bool missionCompleted = false;
+    public bool comingFromMenu = false;
 
     void Awake()
     {

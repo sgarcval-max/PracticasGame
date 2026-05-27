@@ -86,6 +86,9 @@ public class MenuManager : MonoBehaviour
 
     void Play()
     {
+        // Guardamos en PlayerPrefs para que persista entre escenas
+        PlayerPrefs.SetInt("ComingFromMenu", 1);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("BaseScene");
     }
 
