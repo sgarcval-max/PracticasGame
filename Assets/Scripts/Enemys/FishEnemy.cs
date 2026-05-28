@@ -63,10 +63,11 @@ public class FishEnemy : MonoBehaviour
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         if (sr != null)
         {
+            Debug.Log("Direction.x: " + direction.x + " FlipX: " + sr.flipX);
             if (direction.x > 0)
-                sr.flipX = true;  // Va hacia la derecha, volteamos
+                sr.flipX = true;  // Va derecha, volteamos porque el sprite mira izquierda
             else if (direction.x < 0)
-                sr.flipX = false; // Va hacia la izquierda, normal
+                sr.flipX = false; // Va izquierda, normal
         }
     }
 

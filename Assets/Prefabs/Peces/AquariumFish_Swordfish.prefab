@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 527937137474927449}
   - component: {fileID: 1155707006035470874}
-  - component: {fileID: 866027431928703670}
+  - component: {fileID: 1203473421301509866}
   - component: {fileID: 4190407858135318682}
-  - component: {fileID: 7025325821153861919}
+  - component: {fileID: 3481744878716076486}
+  - component: {fileID: -4928017565070834707}
   m_Layer: 8
   m_Name: AquariumFish_Swordfish
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.24, y: -2.49, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -6526044893282130732, guid: ed2ceb519c86ab44680de535e72abcfc, type: 3}
   m_Color: {r: 0, g: 0.7058824, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -90,33 +91,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &866027431928703670
-Rigidbody2D:
-  serializedVersion: 5
+--- !u!95 &1203473421301509866
+Animator:
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473454235709534082}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 1
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1bec602b8be5ffe4f929e7f40e5c30ef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!58 &4190407858135318682
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -151,9 +147,9 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
---- !u!114 &7025325821153861919
+  m_Offset: {x: -0.007202029, y: -0.0036013126}
+  m_Radius: 0.489195
+--- !u!114 &3481744878716076486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,13 +158,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 473454235709534082}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb1aeee65fe283e4999996fbde9cfa79, type: 3}
+  m_Script: {fileID: 11500000, guid: a3c3b6ec395350640b9898926bd913f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  health: 1
-  damage: 1
-  tameChance: 0.07
-  tameableFishPrefab: {fileID: 5037416867543361480, guid: c0eecec56e6eed24799f33ef133e7633, type: 3}
+--- !u!114 &-4928017565070834707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473454235709534082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ce48c219f4681443b88a89d78ec88d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   fishType: 4
-  tameableColor: {r: 1, g: 0.9, b: 0, a: 1}
+  moveSpeed: 1.5
+  changeDirectionTime: 2

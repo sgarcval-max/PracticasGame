@@ -35,13 +35,17 @@ public class DiverController : MonoBehaviour
         if (moveInput.x > 0) sr.flipX = false;
         if (moveInput.x < 0) sr.flipX = true;
 
-        // Detectar si está presionando teclas
         bool isPressingKeys = moveInput.magnitude > 0.1f;
 
-        // Actualizar Animator
+        // Valor absoluto del input horizontal
+        float absHorizontal = Mathf.Abs(moveInput.x);
+
         animator.SetFloat("Speed", rb.linearVelocity.magnitude);
         animator.SetBool("IsMoving", isPressingKeys);
         animator.SetFloat("VerticalSpeed", moveInput.y);
+        animator.SetFloat("HorizontalSpeed", absHorizontal);
+
+        Debug.Log("VerticalSpeed: " + moveInput.y + " HorizontalSpeed: " + Mathf.Abs(moveInput.x));
     }
 
     void FixedUpdate()

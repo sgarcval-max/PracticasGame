@@ -23,6 +23,56 @@ public class TameableFish : MonoBehaviour
         timer = lifetime;
     }
 
+    void Start()
+    {
+        // Ahora fishType ya está asignado
+        SetFishSprite();
+    }
+
+    void SetFishSprite()
+    {
+        WaveManager waveManager = FindFirstObjectByType<WaveManager>();
+        if (waveManager == null)
+        {
+            Debug.Log("WaveManager no encontrado");
+            return;
+        }
+
+        Debug.Log("Buscando sprite para: " + fishType);
+
+        foreach (GameObject prefab in waveManager.fishPrefabs)
+        {
+            FishEnemy fe = prefab.GetComponent<FishEnemy>();
+            if (fe != null)
+            {
+                Debug.Log("Prefab encontrado: " + fe.fishType);
+                if (fe.fishType == fishType)
+                {
+                    SpriteRenderer prefabSr = prefab.GetComponent<SpriteRenderer>();
+                    if (prefabSr != null && prefabSr.sprite != null)
+                    {
+                        Debug.Log("Sprite asignado: " + prefabSr.sprite.name);
+                        sr.sprite = prefabSr.sprite;
+                        sr.color = Color.white;
+                        StartCoroutine(GlowEffect());
+                    }
+                    transform.localScale = prefab.transform.localScale;
+                    return;
+                }
+            }
+        }
+    }
+
+    System.Collections.IEnumerator GlowEffect()
+    {
+        while (true)
+        {
+            float t = Mathf.Sin(Time.time * 3f) * 0.5f + 0.5f;
+            sr.color = Color.Lerp(Color.white, new Color(1f, 1f, 0.5f), t);
+            yield return null;
+        }
+    }
+
     void Update()
     {
         if (player == null) return;

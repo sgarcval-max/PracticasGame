@@ -17,11 +17,7 @@ public class FishAnimator : MonoBehaviour
     {
         if (rb == null || animator == null) return;
 
-        // Voltear sprite según dirección
-        if (rb.linearVelocity.x > 0.1f)
-            sr.flipX = false;
-        else if (rb.linearVelocity.x < -0.1f)
-            sr.flipX = true;
+        // No tocamos el flip aquí, lo maneja FishEnemy
     }
 
     public void TriggerAttack()
