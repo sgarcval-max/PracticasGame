@@ -90,7 +90,7 @@ public class GameUI : MonoBehaviour
         else
         {
             slot.color = slotCooldown;
-            if (text != null) text.text = FishData.GetName(ability.fishType) + "\n⏳";
+            if (text != null) text.text = FishData.GetName(ability.fishType) + "\n";
         }
     }
 
@@ -110,7 +110,7 @@ public class GameUI : MonoBehaviour
     public void UpdateTreasure(int collected, int total)
     {
         if (treasureText == null) return;
-        treasureText.text = "💎 " + collected + "/" + total;
+        treasureText.text = " " + collected + "/" + total;
 
         if (collected >= total)
             treasureText.color = new Color(1f, 0.8f, 0f);

@@ -57,14 +57,14 @@ public class BaseManager : MonoBehaviour
         if (GameManager.Instance.missionCompleted)
         {
             missionText.text = "Misión:\n" + GameManager.Instance.currentMission +
-                               "\n\n💎 " + collected + "/" + total +
+                               "\n\n " + collected + "/" + total +
                                "\n\n✓ COMPLETADA!";
             missionText.color = new Color(0.2f, 0.8f, 0.2f);
         }
         else
         {
             missionText.text = "Misión:\n" + GameManager.Instance.currentMission +
-                               "\n\n💎 " + collected + "/" + total +
+                               "\n\n " + collected + "/" + total +
                                "\n\nPendiente...";
             missionText.color = Color.white;
         }
@@ -105,7 +105,7 @@ public class BaseManager : MonoBehaviour
     void UpdateEquippedPanel()
     {
         List<FishType> equipped = GameManager.Instance.equippedFish;
-        equippedTitle.text = "⚔️ Peces Equipados (" + equipped.Count + "/3)";
+        equippedTitle.text = "Peces Equipados (" + equipped.Count + "/3)";
 
         UpdateSlot(equippedSlot1, equippedSlot1Text, equipped, 0);
         UpdateSlot(equippedSlot2, equippedSlot2Text, equipped, 1);
