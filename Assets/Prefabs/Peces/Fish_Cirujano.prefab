@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 527937137474927449}
   - component: {fileID: 1155707006035470874}
+  - component: {fileID: 7773639215321637640}
   - component: {fileID: 866027431928703670}
   - component: {fileID: 2086398225296719892}
   - component: {fileID: 7025325821153861919}
+  - component: {fileID: 8259434218229795921}
   m_Layer: 8
   m_Name: Fish_Cirujano
   m_TagString: Untagged
@@ -90,6 +92,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7773639215321637640
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473454235709534082}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ca51fc62c62cf354d836a231bec1258d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!50 &866027431928703670
 Rigidbody2D:
   serializedVersion: 5
@@ -172,3 +196,15 @@ MonoBehaviour:
   tameableFishPrefab: {fileID: 5037416867543361480, guid: c0eecec56e6eed24799f33ef133e7633, type: 3}
   fishType: 5
   tameableColor: {r: 1, g: 0.9, b: 0, a: 1}
+--- !u!114 &8259434218229795921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473454235709534082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c3b6ec395350640b9898926bd913f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

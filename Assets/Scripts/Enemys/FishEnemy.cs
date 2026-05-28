@@ -59,8 +59,15 @@ public class FishEnemy : MonoBehaviour
         Vector2 direction = (target.position - transform.position).normalized;
         rb.linearVelocity = direction * speed;
 
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        // Voltear sprite según dirección sin rotar el objeto
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null)
+        {
+            if (direction.x > 0)
+                sr.flipX = true;  // Va hacia la derecha, volteamos
+            else if (direction.x < 0)
+                sr.flipX = false; // Va hacia la izquierda, normal
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -69,7 +76,23 @@ public class FishEnemy : MonoBehaviour
         if (diver != null)
         {
             diver.TakeDamage(damage);
+
+            // Activar animación de ataque
+            FishAnimator fishAnimator = GetComponent<FishAnimator>();
+            if (fishAnimator != null)
+                fishAnimator.TriggerAttack();
+
+            // Volver a move después de un momento
+            StartCoroutine(StopAttackAfterDelay());
         }
+    }
+
+    System.Collections.IEnumerator StopAttackAfterDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+        FishAnimator fishAnimator = GetComponent<FishAnimator>();
+        if (fishAnimator != null)
+            fishAnimator.StopAttack();
     }
 
     public void TakeDamage(int damage)

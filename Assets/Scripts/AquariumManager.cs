@@ -7,7 +7,14 @@ public class AquariumManager : MonoBehaviour
 {
     [Header("Acuario")]
     public GameObject aquariumObject;
-    public GameObject fishPrefab;
+
+    [Header("Prefabs de peces del acuario")]
+    public GameObject pufferfishPrefab;
+    public GameObject sharkPrefab;
+    public GameObject clownfishPrefab;
+    public GameObject squidPrefab;
+    public GameObject swordfishPrefab;
+    public GameObject cirujanoPrefa;
 
     [Header("Panel de info del pez")]
     public GameObject fishInfoPanel;
@@ -48,46 +55,34 @@ public class AquariumManager : MonoBehaviour
 
     void Update()
     {
-        try
+        Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(
+            Mouse.current.position.ReadValue()
+        );
+        mouseWorld.z = 0f;
+
+        RaycastHit2D hit = Physics2D.Raycast(mouseWorld, Vector2.zero);
+
+        if (hit.collider != null)
         {
-            Debug.Log("Update ejecutandose");
-
-            if (Camera.main == null) return;
-
-            Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(
-       UnityEngine.InputSystem.Mouse.current.position.ReadValue()
-   );
-            mouseWorld.z = 0f;
-
-            RaycastHit2D hit = Physics2D.Raycast(mouseWorld, Vector2.zero);
-
-            if (hit.collider != null)
+            AquariumFish fish = hit.collider.GetComponent<AquariumFish>();
+            if (fish != null && fish != lastHovered)
             {
-                AquariumFish fish = hit.collider.GetComponent<AquariumFish>();
-                if (fish != null && fish != lastHovered)
-                {
-                    if (lastHovered != null)
-                        lastHovered.OnHoverExit();
-
-                    lastHovered = fish;
-                    fish.OnHoverEnter();
-                    ShowFishInfo(fish.fishType, fish.transform.position);
-                }
-            }
-            else
-            {
-                // Solo ocultamos el panel si el ratón no está encima del panel de info
-                if (lastHovered != null && !IsMouseOverInfoPanel())
-                {
+                if (lastHovered != null)
                     lastHovered.OnHoverExit();
-                    lastHovered = null;
-                    HideFishInfo();
-                }
+
+                lastHovered = fish;
+                fish.OnHoverEnter();
+                ShowFishInfo(fish.fishType, fish.transform.position);
             }
         }
-        catch (System.Exception e)
+        else
         {
-            Debug.LogError("Error en Update: " + e.Message);
+            if (lastHovered != null && !IsMouseOverInfoPanel())
+            {
+                lastHovered.OnHoverExit();
+                lastHovered = null;
+                HideFishInfo();
+            }
         }
     }
 
@@ -95,7 +90,7 @@ public class AquariumManager : MonoBehaviour
     {
         if (!fishInfoPanel.activeSelf) return false;
 
-        Vector2 mousePos = UnityEngine.InputSystem.Mouse.current.position.ReadValue();
+        Vector2 mousePos = Mouse.current.position.ReadValue();
         RectTransform rect = fishInfoPanel.GetComponent<RectTransform>();
 
         return RectTransformUtility.RectangleContainsScreenPoint(rect, mousePos);
@@ -103,11 +98,27 @@ public class AquariumManager : MonoBehaviour
 
     public void SpawnFish(FishType fishType)
     {
-        if (fishPrefab == null) return;
+        GameObject prefab = GetPrefabForType(fishType);
+        if (prefab == null) return;
 
-        GameObject fish = Instantiate(fishPrefab, transform);
+        GameObject fish = Instantiate(prefab, transform);
         AquariumFish af = fish.GetComponent<AquariumFish>();
-        af.Setup(fishType, minBounds, maxBounds);
+        if (af != null)
+            af.Setup(fishType, minBounds, maxBounds);
+    }
+
+    GameObject GetPrefabForType(FishType fishType)
+    {
+        switch (fishType)
+        {
+            case FishType.Pufferfish: return pufferfishPrefab;
+            case FishType.Shark: return sharkPrefab;
+            case FishType.Clownfish: return clownfishPrefab;
+            case FishType.Squid: return squidPrefab;
+            case FishType.Swordfish: return swordfishPrefab;
+            case FishType.Cirujano: return cirujanoPrefa;
+            default: return null;
+        }
     }
 
     public void ClearFish()
@@ -155,7 +166,6 @@ public class AquariumManager : MonoBehaviour
             baseManager?.RefreshUI();
         }
 
-        // Cerramos el panel después de equipar
         if (lastHovered != null)
         {
             lastHovered.OnHoverExit();
@@ -169,7 +179,6 @@ public class AquariumManager : MonoBehaviour
         GameManager.Instance.equippedFish.Remove(currentHoveredFish);
         baseManager?.RefreshUI();
 
-        // Cerramos el panel después de desequipar
         if (lastHovered != null)
         {
             lastHovered.OnHoverExit();
@@ -182,10 +191,17 @@ public class AquariumManager : MonoBehaviour
     {
         ClearFish();
 
-        if (GameManager.Instance == null) return;
+        if (GameManager.Instance == null)
+        {
+            Debug.Log("GameManager es null");
+            return;
+        }
+
+        Debug.Log("Peces domesticados: " + GameManager.Instance.tamedFish.Count);
 
         foreach (FishType fish in GameManager.Instance.tamedFish)
         {
+            Debug.Log("Spawneando: " + fish);
             SpawnFish(fish);
         }
     }
