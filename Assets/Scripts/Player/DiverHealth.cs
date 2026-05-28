@@ -69,13 +69,16 @@ public class DiverHealth : MonoBehaviour
         if (controller != null)
             controller.TriggerDeath();
 
+        // Perdemos los peces capturados en el mar
+        if (GameManager.Instance != null)
+            GameManager.Instance.caughtFish.Clear();
+
         DiverInventory inventory = GetComponent<DiverInventory>();
         WaveManager waveManager = FindFirstObjectByType<WaveManager>();
 
         if (GameManager.Instance != null)
             GameManager.Instance.SavePlayerData(inventory, waveManager);
 
-        // Esperamos a que termine la animación antes de mostrar Game Over
         StartCoroutine(DeathCoroutine());
     }
 
