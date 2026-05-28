@@ -78,13 +78,23 @@ public class FishEnemy : MonoBehaviour
         {
             diver.TakeDamage(damage);
 
-            // Activar animación de ataque
             FishAnimator fishAnimator = GetComponent<FishAnimator>();
             if (fishAnimator != null)
                 fishAnimator.TriggerAttack();
 
-            // Volver a move después de un momento
             StartCoroutine(StopAttackAfterDelay());
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D other)
+    {
+        // Cuando deja de tocar al player para la animación de ataque
+        DiverHealth diver = other.gameObject.GetComponent<DiverHealth>();
+        if (diver != null)
+        {
+            FishAnimator fishAnimator = GetComponent<FishAnimator>();
+            if (fishAnimator != null)
+                fishAnimator.StopAttack();
         }
     }
 
