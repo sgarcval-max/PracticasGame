@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     public bool missionCompleted = false;
     public bool comingFromMenu = false;
 
+    // Copia de los peces antes de entrar al mar
+    public List<FishType> caughtFishBackup = new List<FishType>();
+
     void Awake()
     {
         if (Instance != null)
@@ -33,9 +36,14 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void SavePlayerData(DiverInventory inventory, WaveManager waveManager)
+    public void SavePlayerData(DiverInventory inventory, WaveManager waveManager, bool died = false)
     {
-        caughtFish = new List<FishType>(inventory.caughtFish);
+        // Si ha muerto usamos el backup, si no guardamos los peces actuales
+        if (died)
+            caughtFish = new List<FishType>(caughtFishBackup);
+        else
+            caughtFish = new List<FishType>(inventory.caughtFish);
+
         tamedFish = new List<FishType>(inventory.tamedFish);
         equippedFish = new List<FishType>(inventory.equippedFish);
         currentWave = waveManager != null ? waveManager.GetCurrentWave() : 0;

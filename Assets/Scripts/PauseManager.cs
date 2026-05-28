@@ -80,12 +80,12 @@ public class PauseManager : MonoBehaviour
 
     void SaveProgress()
     {
-        // Guardamos inventario y oleada
         DiverInventory inventory = FindFirstObjectByType<DiverInventory>();
         WaveManager waveManager = FindFirstObjectByType<WaveManager>();
 
         if (GameManager.Instance != null)
         {
+            // Guardamos todo incluyendo los peces capturados
             GameManager.Instance.SavePlayerData(inventory, waveManager);
         }
     }

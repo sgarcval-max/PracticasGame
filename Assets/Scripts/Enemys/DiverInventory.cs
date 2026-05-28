@@ -4,14 +4,8 @@ using System.Collections.Generic;
 public class DiverInventory : MonoBehaviour
 {
     public int maxEquipped = 3;
-
-    // Peces capturados en el mar sin domesticar
     public List<FishType> caughtFish = new List<FishType>();
-
-    // Peces domesticados
     public List<FishType> tamedFish = new List<FishType>();
-
-    // Peces equipados
     public List<FishType> equippedFish = new List<FishType>();
 
     private AbilityManager abilityManager;
@@ -27,31 +21,29 @@ public class DiverInventory : MonoBehaviour
     {
         if (GameManager.Instance != null)
         {
-            caughtFish = new List<FishType>(GameManager.Instance.caughtFish);
-            tamedFish = new List<FishType>(GameManager.Instance.tamedFish);
             equippedFish = new List<FishType>(GameManager.Instance.equippedFish);
+            tamedFish = new List<FishType>(GameManager.Instance.tamedFish);
+            caughtFish = new List<FishType>(GameManager.Instance.caughtFish);
+
+            // Guardamos backup al entrar al mar
+            GameManager.Instance.caughtFishBackup = new List<FishType>(GameManager.Instance.caughtFish);
 
             foreach (FishType fish in equippedFish)
-            {
                 abilityManager?.AddAbility(fish);
-            }
 
             gameUI?.UpdateSlots(equippedFish.Count);
         }
     }
 
-    // Capturar pez en el mar (va a la mochila)
     public void CatchFish(FishType fishType)
     {
         caughtFish.Add(fishType);
         Debug.Log("Pez capturado en mochila: " + fishType);
 
-        // Guardamos en GameManager
         if (GameManager.Instance != null)
             GameManager.Instance.caughtFish = new List<FishType>(caughtFish);
     }
 
-    // Domesticar pez (va al acuario)
     public void TameFish(FishType fishType)
     {
         if (caughtFish.Contains(fishType))
@@ -69,7 +61,6 @@ public class DiverInventory : MonoBehaviour
         }
     }
 
-    // Perder pez al fallar el minijuego
     public void LoseFish(FishType fishType)
     {
         if (caughtFish.Contains(fishType))
@@ -83,7 +74,6 @@ public class DiverInventory : MonoBehaviour
         }
     }
 
-    // Equipar pez domesticado
     public void EquipFish(FishType fishType)
     {
         if (equippedFish.Count >= maxEquipped) return;

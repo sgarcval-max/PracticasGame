@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class DiverHealth : MonoBehaviour
 {
@@ -27,10 +28,20 @@ public class DiverHealth : MonoBehaviour
 
     void Update()
     {
-        // Tecla B para volver a la base (fuera del if de invencibilidad)
         if (Keyboard.current.bKey.wasPressedThisFrame)
         {
-            Die();
+            DiverInventory inventory = GetComponent<DiverInventory>();
+            WaveManager waveManager = FindFirstObjectByType<WaveManager>();
+
+            if (GameManager.Instance != null)
+                GameManager.Instance.SavePlayerData(inventory, waveManager);
+
+            Time.timeScale = 1f;
+
+            if (SceneTransition.Instance != null)
+                SceneTransition.Instance.TransitionToBase();
+            else
+                UnityEngine.SceneManagement.SceneManager.LoadScene("BaseScene");
         }
 
         if (isInvincible)
@@ -57,27 +68,22 @@ public class DiverHealth : MonoBehaviour
         gameUI?.UpdateHealth(currentHealth, maxHealth);
 
         if (currentHealth <= 0)
-        {
             Die();
-        }
     }
 
     void Die()
     {
-        // Activar animación de muerte
         DiverController controller = GetComponent<DiverController>();
         if (controller != null)
             controller.TriggerDeath();
 
-        // Perdemos los peces capturados en el mar
         if (GameManager.Instance != null)
-            GameManager.Instance.caughtFish.Clear();
-
-        DiverInventory inventory = GetComponent<DiverInventory>();
-        WaveManager waveManager = FindFirstObjectByType<WaveManager>();
-
-        if (GameManager.Instance != null)
-            GameManager.Instance.SavePlayerData(inventory, waveManager);
+        {
+            DiverInventory inventory = GetComponent<DiverInventory>();
+            WaveManager waveManager = FindFirstObjectByType<WaveManager>();
+            // Pasamos died = true para que use el backup
+            GameManager.Instance.SavePlayerData(inventory, waveManager, true);
+        }
 
         StartCoroutine(DeathCoroutine());
     }
@@ -93,14 +99,11 @@ public class DiverHealth : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    // Permite activar o desactivar la invencibilidad desde fuera
     public void SetInvincible(bool value)
     {
         isInvincible = value;
         if (!value)
-        {
             sr.enabled = true;
-        }
     }
 
     public void Heal(int amount)
@@ -109,5 +112,4 @@ public class DiverHealth : MonoBehaviour
         gameUI?.UpdateHealth(currentHealth, maxHealth);
         Debug.Log("Vida actual: " + currentHealth + "/" + maxHealth);
     }
-
 }
