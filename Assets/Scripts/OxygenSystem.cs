@@ -94,9 +94,9 @@ public class OxygenSystem : MonoBehaviour
         {
             int seconds = Mathf.CeilToInt(currentOxygen / oxygenDecreaseRate);
             if (currentOxygen <= 0f)
-                oxygenText.text = "🤿 SIN O2!";
+                oxygenText.text = "SIN o2!";
             else
-                oxygenText.text = "🤿 O2";
+                oxygenText.text = "o2";
 
             // Parpadeo cuando queda poco
             if (currentOxygen <= lowOxygenThreshold)
