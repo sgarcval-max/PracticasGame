@@ -1,40 +1,34 @@
 fileFormatVersion: 2
-guid: bbaeb4efae5dd134897bc8780f8452d1
+guid: a4ed82b3928e54b4cb5b0ef9f668f10a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2369513427233505270
-    second: medusa sprite sheet _0
+      213: -6458848057179346485
+    second: tiburon sprite sheet_0
   - first:
-      213: -6818359189464112612
-    second: medusa sprite sheet _1
+      213: 8635699375052943686
+    second: tiburon sprite sheet_1
   - first:
-      213: -1054775533910032135
-    second: medusa sprite sheet _2
+      213: -7718448269241216963
+    second: tiburon sprite sheet_2
   - first:
-      213: 8347975227293401208
-    second: medusa sprite sheet _3
+      213: -2257206972307902310
+    second: tiburon sprite sheet_3
   - first:
-      213: 8866503816962254284
-    second: medusa sprite sheet _4
+      213: 3531809452082218442
+    second: tiburon sprite sheet_4
   - first:
-      213: -2226300823352680500
-    second: medusa sprite sheet _5
+      213: -4924684873475285108
+    second: tiburon sprite sheet_5
   - first:
-      213: 6328809257469950111
-    second: medusa sprite sheet _6
+      213: 6649640304507032165
+    second: tiburon sprite sheet_6
   - first:
-      213: 1130054062173410910
-    second: medusa sprite sheet _7
+      213: 3187567745026282810
+    second: tiburon sprite sheet_7
   - first:
-      213: 1565944613582996307
-    second: medusa sprite sheet _8
-  - first:
-      213: -5502893051401360685
-    second: medusa sprite sheet _9
-  - first:
-      213: -6308510876033134928
-    second: medusa sprite sheet _10
+      213: -6907862712760631043
+    second: tiburon sprite sheet_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -143,7 +137,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: medusa sprite sheet _0
+      name: tiburon sprite sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -158,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ff75c868e332e020800000000000000
-      internalID: 2369513427233505270
+      spriteID: bc96a9599ef8d56a0800000000000000
+      internalID: -6458848057179346485
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: medusa sprite sheet _1
+      name: tiburon sprite sheet_1
       rect:
         serializedVersion: 2
         x: 256
@@ -180,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c12a8f041725061a0800000000000000
-      internalID: -6818359189464112612
+      spriteID: 641f715e3da28d770800000000000000
+      internalID: 8635699375052943686
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: medusa sprite sheet _2
+      name: tiburon sprite sheet_2
       rect:
         serializedVersion: 2
         x: 512
@@ -202,14 +196,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9f005878d3fac51f0800000000000000
-      internalID: -1054775533910032135
+      spriteID: d3016a6713092e490800000000000000
+      internalID: -7718448269241216963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: medusa sprite sheet _3
+      name: tiburon sprite sheet_3
       rect:
         serializedVersion: 2
         x: 768
@@ -224,14 +218,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 87085906d37f9d370800000000000000
-      internalID: 8347975227293401208
+      spriteID: a907d07c73acca0e0800000000000000
+      internalID: -2257206972307902310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: medusa sprite sheet _4
+      name: tiburon sprite sheet_4
       rect:
         serializedVersion: 2
         x: 1024
@@ -246,36 +240,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cc52ea9ae362c0b70800000000000000
-      internalID: 8866503816962254284
+      spriteID: ac54abdfbf1830130800000000000000
+      internalID: 3531809452082218442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: medusa sprite sheet _5
-      rect:
-        serializedVersion: 2
-        x: 1280
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ccf57e452379a11e0800000000000000
-      internalID: -2226300823352680500
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: medusa sprite sheet _6
+      name: tiburon sprite sheet_5
       rect:
         serializedVersion: 2
         x: 0
@@ -290,14 +262,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f9833bafc7274d750800000000000000
-      internalID: 6328809257469950111
+      spriteID: c8f14cd133108abb0800000000000000
+      internalID: -4924684873475285108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: medusa sprite sheet _7
+      name: tiburon sprite sheet_6
       rect:
         serializedVersion: 2
         x: 256
@@ -312,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e5655d8ae22ceaf00800000000000000
-      internalID: 1130054062173410910
+      spriteID: 562134a20a4484c50800000000000000
+      internalID: 6649640304507032165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: medusa sprite sheet _8
+      name: tiburon sprite sheet_7
       rect:
         serializedVersion: 2
         x: 512
@@ -334,14 +306,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3530d8e445a5bb510800000000000000
-      internalID: 1565944613582996307
+      spriteID: a35d8c3c9f38c3c20800000000000000
+      internalID: 3187567745026282810
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: medusa sprite sheet _9
+      name: tiburon sprite sheet_8
       rect:
         serializedVersion: 2
         x: 768
@@ -356,30 +328,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3daa142ecebc1a3b0800000000000000
-      internalID: -5502893051401360685
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: medusa sprite sheet _10
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0be4b5c38caa378a0800000000000000
-      internalID: -6308510876033134928
+      spriteID: df08cb056775220a0800000000000000
+      internalID: -6907862712760631043
       vertices: []
       indices: 
       edges: []
@@ -388,7 +338,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 4cca2d4053b3a554495cc45e27d57eee
+    spriteID: 3fdc90fceabaaab4d891d265c3c5c22a
     internalID: 0
     vertices: []
     indices: 
@@ -400,17 +350,15 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      medusa sprite sheet _0: 2369513427233505270
-      medusa sprite sheet _1: -6818359189464112612
-      medusa sprite sheet _10: -6308510876033134928
-      medusa sprite sheet _2: -1054775533910032135
-      medusa sprite sheet _3: 8347975227293401208
-      medusa sprite sheet _4: 8866503816962254284
-      medusa sprite sheet _5: -2226300823352680500
-      medusa sprite sheet _6: 6328809257469950111
-      medusa sprite sheet _7: 1130054062173410910
-      medusa sprite sheet _8: 1565944613582996307
-      medusa sprite sheet _9: -5502893051401360685
+      tiburon sprite sheet_0: -6458848057179346485
+      tiburon sprite sheet_1: 8635699375052943686
+      tiburon sprite sheet_2: -7718448269241216963
+      tiburon sprite sheet_3: -2257206972307902310
+      tiburon sprite sheet_4: 3531809452082218442
+      tiburon sprite sheet_5: -4924684873475285108
+      tiburon sprite sheet_6: 6649640304507032165
+      tiburon sprite sheet_7: 3187567745026282810
+      tiburon sprite sheet_8: -6907862712760631043
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

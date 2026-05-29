@@ -1,40 +1,40 @@
 fileFormatVersion: 2
-guid: ed2ceb519c86ab44680de535e72abcfc
+guid: 731b38e02faf65940a3ff16d9a21a1f4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6526044893282130732
-    second: pez espada sprite sheet_0
+      213: 7839788048838787142
+    second: pez cirujano shiny_0
   - first:
-      213: -8804570801097687517
-    second: pez espada sprite sheet_1
+      213: -6232292917402061516
+    second: pez cirujano shiny_1
   - first:
-      213: -4773368331588781824
-    second: pez espada sprite sheet_2
+      213: -1931884903440774420
+    second: pez cirujano shiny_2
   - first:
-      213: -248597639865332989
-    second: pez espada sprite sheet_3
+      213: 548855252344035707
+    second: pez cirujano shiny_3
   - first:
-      213: 6389233787089577805
-    second: pez espada sprite sheet_4
+      213: 3309765107693457960
+    second: pez cirujano shiny_4
   - first:
-      213: -5992183331477615031
-    second: pez espada sprite sheet_5
+      213: 5319224349659234298
+    second: pez cirujano shiny_5
   - first:
-      213: 6255387465537869690
-    second: pez espada sprite sheet_6
+      213: 8696379499971322378
+    second: pez cirujano shiny_6
   - first:
-      213: -6280584527918093494
-    second: pez espada sprite sheet_7
+      213: 1921175730198950665
+    second: pez cirujano shiny_7
   - first:
-      213: 5231199548044398345
-    second: pez espada sprite sheet_8
+      213: 2790480594898705885
+    second: pez cirujano shiny_8
   - first:
-      213: 7708872372505308565
-    second: pez espada sprite sheet_9
+      213: -6796327928254319944
+    second: pez cirujano shiny_9
   - first:
-      213: -4066024578172789746
-    second: pez espada sprite sheet_10
+      213: -6445538307463934548
+    second: pez cirujano shiny_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -143,7 +143,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pez espada sprite sheet_0
+      name: pez cirujano shiny_0
       rect:
         serializedVersion: 2
         x: 0
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4d4aaabfeb4de65a0800000000000000
-      internalID: -6526044893282130732
+      spriteID: 640836581b58ccc60800000000000000
+      internalID: 7839788048838787142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez espada sprite sheet_1
+      name: pez cirujano shiny_1
       rect:
         serializedVersion: 2
         x: 256
@@ -180,14 +180,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32ebbc84181efc580800000000000000
-      internalID: -8804570801097687517
+      spriteID: 435311a9c927289a0800000000000000
+      internalID: -6232292917402061516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez espada sprite sheet_2
+      name: pez cirujano shiny_2
       rect:
         serializedVersion: 2
         x: 512
@@ -202,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0093d85fac691cdb0800000000000000
-      internalID: -4773368331588781824
+      spriteID: cea09777ae09035e0800000000000000
+      internalID: -1931884903440774420
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez espada sprite sheet_3
+      name: pez cirujano shiny_3
       rect:
         serializedVersion: 2
         x: 768
@@ -224,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 30b83df73cdcc8cf0800000000000000
-      internalID: -248597639865332989
+      spriteID: b79d21da1fced9700800000000000000
+      internalID: 548855252344035707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez espada sprite sheet_4
+      name: pez cirujano shiny_4
       rect:
         serializedVersion: 2
         x: 1024
@@ -246,127 +246,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d47e56a174e1ba850800000000000000
-      internalID: 6389233787089577805
+      spriteID: 8221d0e54d5aeed20800000000000000
+      internalID: 3309765107693457960
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez espada sprite sheet_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 94e824a020d77dca0800000000000000
-      internalID: -5992183331477615031
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pez espada sprite sheet_6
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a77d0d7e1c99fc650800000000000000
-      internalID: 6255387465537869690
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pez espada sprite sheet_7
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a4ba0a7d5a1e6d8a0800000000000000
-      internalID: -6280584527918093494
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pez espada sprite sheet_8
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 90fce5ad544f89840800000000000000
-      internalID: 5231199548044398345
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pez espada sprite sheet_9
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 59d6006549a6bfa60800000000000000
-      internalID: 7708872372505308565
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pez espada sprite sheet_10
+      name: pez cirujano shiny_5
       rect:
         serializedVersion: 2
         x: 1280
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afffb021d5ea1d940800000000000000
+      internalID: 5319224349659234298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pez cirujano shiny_6
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
         width: 256
         height: 256
@@ -378,8 +290,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e0cd00a50349297c0800000000000000
-      internalID: -4066024578172789746
+      spriteID: a02a7cf641fbfa870800000000000000
+      internalID: 8696379499971322378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pez cirujano shiny_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9033c95d52369aa10800000000000000
+      internalID: 1921175730198950665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pez cirujano shiny_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dddde830157c9b620800000000000000
+      internalID: 2790480594898705885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pez cirujano shiny_9
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b2b55bf1c79ea1a0800000000000000
+      internalID: -6796327928254319944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pez cirujano shiny_10
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cad807d2f09dc86a0800000000000000
+      internalID: -6445538307463934548
       vertices: []
       indices: 
       edges: []
@@ -388,7 +388,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e5721fbacdcfc2741acb555ec1c08179
+    spriteID: 2c5a300361ac05847b7f76bf14b3af8f
     internalID: 0
     vertices: []
     indices: 
@@ -400,17 +400,17 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      pez espada sprite sheet_0: -6526044893282130732
-      pez espada sprite sheet_1: -8804570801097687517
-      pez espada sprite sheet_10: -4066024578172789746
-      pez espada sprite sheet_2: -4773368331588781824
-      pez espada sprite sheet_3: -248597639865332989
-      pez espada sprite sheet_4: 6389233787089577805
-      pez espada sprite sheet_5: -5992183331477615031
-      pez espada sprite sheet_6: 6255387465537869690
-      pez espada sprite sheet_7: -6280584527918093494
-      pez espada sprite sheet_8: 5231199548044398345
-      pez espada sprite sheet_9: 7708872372505308565
+      pez cirujano shiny_0: 7839788048838787142
+      pez cirujano shiny_1: -6232292917402061516
+      pez cirujano shiny_10: -6445538307463934548
+      pez cirujano shiny_2: -1931884903440774420
+      pez cirujano shiny_3: 548855252344035707
+      pez cirujano shiny_4: 3309765107693457960
+      pez cirujano shiny_5: 5319224349659234298
+      pez cirujano shiny_6: 8696379499971322378
+      pez cirujano shiny_7: 1921175730198950665
+      pez cirujano shiny_8: 2790480594898705885
+      pez cirujano shiny_9: -6796327928254319944
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

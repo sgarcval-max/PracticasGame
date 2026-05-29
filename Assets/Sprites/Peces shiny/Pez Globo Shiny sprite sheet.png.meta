@@ -1,55 +1,61 @@
 fileFormatVersion: 2
-guid: 309a66ec5cb475f4794411d804616672
+guid: a03cdb82e0b84f54c8f753d6bc0c3b66
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -634901393530976119
-    second: Pez Payaso Shiny sprite sheet_0
+      213: 6004200339970504124
+    second: Pez Globo Shiny sprite sheet_0
   - first:
-      213: 5393066531962191433
-    second: Pez Payaso Shiny sprite sheet_1
+      213: -8872460335986861914
+    second: Pez Globo Shiny sprite sheet_1
   - first:
-      213: -4726858290865186948
-    second: Pez Payaso Shiny sprite sheet_2
+      213: -3177057398094607326
+    second: Pez Globo Shiny sprite sheet_2
   - first:
-      213: -8530802393576444362
-    second: Pez Payaso Shiny sprite sheet_3
+      213: -1140905007732898410
+    second: Pez Globo Shiny sprite sheet_3
   - first:
-      213: 8690514631339171280
-    second: Pez Payaso Shiny sprite sheet_4
+      213: -7201058062401930259
+    second: Pez Globo Shiny sprite sheet_4
   - first:
-      213: -4741232931859482833
-    second: Pez Payaso Shiny sprite sheet_5
+      213: 5249360303626287795
+    second: Pez Globo Shiny sprite sheet_5
   - first:
-      213: -4251975844650415673
-    second: Pez Payaso Shiny sprite sheet_6
+      213: -8187255075524045999
+    second: Pez Globo Shiny sprite sheet_6
   - first:
-      213: -9031665503675194229
-    second: Pez Payaso Shiny sprite sheet_7
+      213: -70077897676044068
+    second: Pez Globo Shiny sprite sheet_7
   - first:
-      213: -8931839056441512670
-    second: Pez Payaso Shiny sprite sheet_8
+      213: 628454061239600180
+    second: Pez Globo Shiny sprite sheet_8
   - first:
-      213: -5008692556667087059
-    second: Pez Payaso Shiny sprite sheet_9
+      213: 7207155182197576165
+    second: Pez Globo Shiny sprite sheet_9
   - first:
-      213: -8273803069733277939
-    second: Pez Payaso Shiny sprite sheet_10
+      213: 1016441431284228014
+    second: Pez Globo Shiny sprite sheet_10
   - first:
-      213: -3360588570080982585
-    second: Pez Payaso Shiny sprite sheet_11
+      213: 2500391461951370186
+    second: Pez Globo Shiny sprite sheet_11
   - first:
-      213: -6753804656129014030
-    second: Pez Payaso Shiny sprite sheet_12
+      213: -5943708732568397922
+    second: Pez Globo Shiny sprite sheet_12
   - first:
-      213: -1376210040864301649
-    second: Pez Payaso Shiny sprite sheet_13
+      213: 3401673757515255352
+    second: Pez Globo Shiny sprite sheet_13
   - first:
-      213: 2980859123801628461
-    second: Pez Payaso Shiny sprite sheet_14
+      213: -7107377852839168880
+    second: Pez Globo Shiny sprite sheet_14
   - first:
-      213: -1477757421162717023
-    second: Pez Payaso Shiny sprite sheet_15
+      213: 8161059843221858894
+    second: Pez Globo Shiny sprite sheet_15
+  - first:
+      213: -3904953943037543818
+    second: Pez Globo Shiny sprite sheet_16
+  - first:
+      213: 1219868132688279751
+    second: Pez Globo Shiny sprite sheet_17
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -158,7 +164,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_0
+      name: Pez Globo Shiny sprite sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -173,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9888f23eb806037f0800000000000000
-      internalID: -634901393530976119
+      spriteID: cb5b838c564335350800000000000000
+      internalID: 6004200339970504124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_1
+      name: Pez Globo Shiny sprite sheet_1
       rect:
         serializedVersion: 2
         x: 256
@@ -195,14 +201,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 94e77a7ef6508da40800000000000000
-      internalID: 5393066531962191433
+      spriteID: 6a892cd2550bed480800000000000000
+      internalID: -8872460335986861914
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_2
+      name: Pez Globo Shiny sprite sheet_2
       rect:
         serializedVersion: 2
         x: 512
@@ -217,14 +223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c77de5dad63d66eb0800000000000000
-      internalID: -4726858290865186948
+      spriteID: 22c4b831123d8e3d0800000000000000
+      internalID: -3177057398094607326
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_3
+      name: Pez Globo Shiny sprite sheet_3
       rect:
         serializedVersion: 2
         x: 768
@@ -239,14 +245,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 63ee2d1db608c9980800000000000000
-      internalID: -8530802393576444362
+      spriteID: 695cd93b0f0ba20f0800000000000000
+      internalID: -1140905007732898410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_4
+      name: Pez Globo Shiny sprite sheet_4
       rect:
         serializedVersion: 2
         x: 1024
@@ -261,14 +267,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0dd5e4c4309ea9870800000000000000
-      internalID: 8690514631339171280
+      spriteID: debf19758d3b01c90800000000000000
+      internalID: -7201058062401930259
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_5
+      name: Pez Globo Shiny sprite sheet_5
       rect:
         serializedVersion: 2
         x: 1280
@@ -283,14 +289,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f27b123c4c1c33eb0800000000000000
-      internalID: -4741232931859482833
+      spriteID: 3ba7ea3426979d840800000000000000
+      internalID: 5249360303626287795
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_6
+      name: Pez Globo Shiny sprite sheet_6
       rect:
         serializedVersion: 2
         x: 1536
@@ -305,14 +311,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7c9021a4f72fdf4c0800000000000000
-      internalID: -4251975844650415673
+      spriteID: 15310e103e6016e80800000000000000
+      internalID: -8187255075524045999
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_7
+      name: Pez Globo Shiny sprite sheet_7
       rect:
         serializedVersion: 2
         x: 1792
@@ -327,14 +333,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b846a43831419a280800000000000000
-      internalID: -9031665503675194229
+      spriteID: cd8c96af588070ff0800000000000000
+      internalID: -70077897676044068
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_8
+      name: Pez Globo Shiny sprite sheet_8
       rect:
         serializedVersion: 2
         x: 0
@@ -349,14 +355,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 22de7d973bbbb0480800000000000000
-      internalID: -8931839056441512670
+      spriteID: 43486d593a7b8b800800000000000000
+      internalID: 628454061239600180
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_9
+      name: Pez Globo Shiny sprite sheet_9
       rect:
         serializedVersion: 2
         x: 256
@@ -371,14 +377,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d2717ba28ac8d7ab0800000000000000
-      internalID: -5008692556667087059
+      spriteID: 5e1900cf375f40460800000000000000
+      internalID: 7207155182197576165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_10
+      name: Pez Globo Shiny sprite sheet_10
       rect:
         serializedVersion: 2
         x: 512
@@ -393,14 +399,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d0fe20fc1fb8d2d80800000000000000
-      internalID: -8273803069733277939
+      spriteID: eaf9faea8102b1e00800000000000000
+      internalID: 1016441431284228014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_11
+      name: Pez Globo Shiny sprite sheet_11
       rect:
         serializedVersion: 2
         x: 768
@@ -415,14 +421,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7c9c51c208acc51d0800000000000000
-      internalID: -3360588570080982585
+      spriteID: ac3f70979cc23b220800000000000000
+      internalID: 2500391461951370186
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_12
+      name: Pez Globo Shiny sprite sheet_12
       rect:
         serializedVersion: 2
         x: 1024
@@ -437,14 +443,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f60d0dc27aa542a0800000000000000
-      internalID: -6753804656129014030
+      spriteID: e979fda1664b38da0800000000000000
+      internalID: -5943708732568397922
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_13
+      name: Pez Globo Shiny sprite sheet_13
       rect:
         serializedVersion: 2
         x: 1280
@@ -459,14 +465,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fad15f16248b6ece0800000000000000
-      internalID: -1376210040864301649
+      spriteID: 83e0776724c253f20800000000000000
+      internalID: 3401673757515255352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_14
+      name: Pez Globo Shiny sprite sheet_14
       rect:
         serializedVersion: 2
         x: 1536
@@ -481,14 +487,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d2f9daf64932e5920800000000000000
-      internalID: 2980859123801628461
+      spriteID: 094fa05df758d5d90800000000000000
+      internalID: -7107377852839168880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_15
+      name: Pez Globo Shiny sprite sheet_15
       rect:
         serializedVersion: 2
         x: 1792
@@ -503,8 +509,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a026677473fd7be0800000000000000
-      internalID: -1477757421162717023
+      spriteID: e4aa1f130b8e14170800000000000000
+      internalID: 8161059843221858894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pez Globo Shiny sprite sheet_16
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67a7cf00411dec9c0800000000000000
+      internalID: -3904953943037543818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pez Globo Shiny sprite sheet_17
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c834b18a97dde010800000000000000
+      internalID: 1219868132688279751
       vertices: []
       indices: 
       edges: []
@@ -513,7 +563,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 142e4649be1938343a798750171f3956
+    spriteID: 207bde5baeac9c5439a27410562e0304
     internalID: 0
     vertices: []
     indices: 
@@ -525,22 +575,24 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Pez Payaso Shiny sprite sheet_0: -634901393530976119
-      Pez Payaso Shiny sprite sheet_1: 5393066531962191433
-      Pez Payaso Shiny sprite sheet_10: -8273803069733277939
-      Pez Payaso Shiny sprite sheet_11: -3360588570080982585
-      Pez Payaso Shiny sprite sheet_12: -6753804656129014030
-      Pez Payaso Shiny sprite sheet_13: -1376210040864301649
-      Pez Payaso Shiny sprite sheet_14: 2980859123801628461
-      Pez Payaso Shiny sprite sheet_15: -1477757421162717023
-      Pez Payaso Shiny sprite sheet_2: -4726858290865186948
-      Pez Payaso Shiny sprite sheet_3: -8530802393576444362
-      Pez Payaso Shiny sprite sheet_4: 8690514631339171280
-      Pez Payaso Shiny sprite sheet_5: -4741232931859482833
-      Pez Payaso Shiny sprite sheet_6: -4251975844650415673
-      Pez Payaso Shiny sprite sheet_7: -9031665503675194229
-      Pez Payaso Shiny sprite sheet_8: -8931839056441512670
-      Pez Payaso Shiny sprite sheet_9: -5008692556667087059
+      Pez Globo Shiny sprite sheet_0: 6004200339970504124
+      Pez Globo Shiny sprite sheet_1: -8872460335986861914
+      Pez Globo Shiny sprite sheet_10: 1016441431284228014
+      Pez Globo Shiny sprite sheet_11: 2500391461951370186
+      Pez Globo Shiny sprite sheet_12: -5943708732568397922
+      Pez Globo Shiny sprite sheet_13: 3401673757515255352
+      Pez Globo Shiny sprite sheet_14: -7107377852839168880
+      Pez Globo Shiny sprite sheet_15: 8161059843221858894
+      Pez Globo Shiny sprite sheet_16: -3904953943037543818
+      Pez Globo Shiny sprite sheet_17: 1219868132688279751
+      Pez Globo Shiny sprite sheet_2: -3177057398094607326
+      Pez Globo Shiny sprite sheet_3: -1140905007732898410
+      Pez Globo Shiny sprite sheet_4: -7201058062401930259
+      Pez Globo Shiny sprite sheet_5: 5249360303626287795
+      Pez Globo Shiny sprite sheet_6: -8187255075524045999
+      Pez Globo Shiny sprite sheet_7: -70077897676044068
+      Pez Globo Shiny sprite sheet_8: 628454061239600180
+      Pez Globo Shiny sprite sheet_9: 7207155182197576165
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,55 +1,55 @@
 fileFormatVersion: 2
-guid: ac38eaf512af3f542b765667da4f6b8a
+guid: 1cec58842be0c2044bbad43487f178ad
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8900373345763049822
-    second: pez payaso sprite sheet (1)_0
+      213: -3659248380229345523
+    second: pez payaso sprite sheet_0
   - first:
-      213: -5372587985995510158
-    second: pez payaso sprite sheet (1)_1
+      213: 5613453448792294233
+    second: pez payaso sprite sheet_1
   - first:
-      213: -7799660163487675765
-    second: pez payaso sprite sheet (1)_2
+      213: 462208170194201492
+    second: pez payaso sprite sheet_2
   - first:
-      213: -6067430565897597680
-    second: pez payaso sprite sheet (1)_3
+      213: 6291185309173693138
+    second: pez payaso sprite sheet_3
   - first:
-      213: -8031375357747903876
-    second: pez payaso sprite sheet (1)_4
+      213: -6425904187124168467
+    second: pez payaso sprite sheet_4
   - first:
-      213: -7829700105740606615
-    second: pez payaso sprite sheet (1)_5
+      213: -834950341193812865
+    second: pez payaso sprite sheet_5
   - first:
-      213: 9176036224238344340
-    second: pez payaso sprite sheet (1)_6
+      213: -1749519565355230630
+    second: pez payaso sprite sheet_6
   - first:
-      213: -8999175649554734621
-    second: pez payaso sprite sheet (1)_7
+      213: 1550972159648725132
+    second: pez payaso sprite sheet_7
   - first:
-      213: -5956770628826822291
-    second: pez payaso sprite sheet (1)_8
+      213: -8485978762608436393
+    second: pez payaso sprite sheet_8
   - first:
-      213: -5996365837767718150
-    second: pez payaso sprite sheet (1)_9
+      213: -7129844126255871781
+    second: pez payaso sprite sheet_9
   - first:
-      213: 596215889869820722
-    second: pez payaso sprite sheet (1)_10
+      213: -8859918137029969744
+    second: pez payaso sprite sheet_10
   - first:
-      213: -5404858250561200413
-    second: pez payaso sprite sheet (1)_11
+      213: 8775871783141009352
+    second: pez payaso sprite sheet_11
   - first:
-      213: -2044497133560270289
-    second: pez payaso sprite sheet (1)_12
+      213: -1390326344013783345
+    second: pez payaso sprite sheet_12
   - first:
-      213: 984418545986677202
-    second: pez payaso sprite sheet (1)_13
+      213: -3399062898895418856
+    second: pez payaso sprite sheet_13
   - first:
-      213: 4628585112170855865
-    second: pez payaso sprite sheet (1)_14
+      213: -2041443842355430030
+    second: pez payaso sprite sheet_14
   - first:
-      213: 1163744349252256289
-    second: pez payaso sprite sheet (1)_15
+      213: 7899045914579495912
+    second: pez payaso sprite sheet_15
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -158,7 +158,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pez payaso sprite sheet (1)_0
+      name: pez payaso sprite sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2ae307529958b7480800000000000000
-      internalID: -8900373345763049822
+      spriteID: d0f91875cfcb73dc0800000000000000
+      internalID: -3659248380229345523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez payaso sprite sheet (1)_1
+      name: pez payaso sprite sheet_1
       rect:
         serializedVersion: 2
         x: 256
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 27ec43221bbb075b0800000000000000
-      internalID: -5372587985995510158
+      spriteID: 953c47a9b2ef6ed40800000000000000
+      internalID: 5613453448792294233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez payaso sprite sheet (1)_2
+      name: pez payaso sprite sheet_2
       rect:
         serializedVersion: 2
         x: 512
@@ -217,14 +217,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b8a4d8ad76a02c390800000000000000
-      internalID: -7799660163487675765
+      spriteID: 49b65b4c1e71a6600800000000000000
+      internalID: 462208170194201492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez payaso sprite sheet (1)_3
+      name: pez payaso sprite sheet_3
       rect:
         serializedVersion: 2
         x: 768
@@ -239,14 +239,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 01d83540c082ccba0800000000000000
-      internalID: -6067430565897597680
+      spriteID: 2da3471e4b7ce4750800000000000000
+      internalID: 6291185309173693138
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez payaso sprite sheet (1)_4
+      name: pez payaso sprite sheet_4
       rect:
         serializedVersion: 2
         x: 1024
@@ -261,14 +261,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c724c970aa2da8090800000000000000
-      internalID: -8031375357747903876
+      spriteID: de8c4cd003a92d6a0800000000000000
+      internalID: -6425904187124168467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez payaso sprite sheet (1)_5
+      name: pez payaso sprite sheet_5
       rect:
         serializedVersion: 2
         x: 1280
@@ -283,14 +283,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9632e73cc31575390800000000000000
-      internalID: -7829700105740606615
+      spriteID: f743d04a619a964f0800000000000000
+      internalID: -834950341193812865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez payaso sprite sheet (1)_6
+      name: pez payaso sprite sheet_6
       rect:
         serializedVersion: 2
         x: 1536
@@ -305,14 +305,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 498d7d74454d75f70800000000000000
-      internalID: 9176036224238344340
+      spriteID: a5ad763893578b7e0800000000000000
+      internalID: -1749519565355230630
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez payaso sprite sheet (1)_7
+      name: pez payaso sprite sheet_7
       rect:
         serializedVersion: 2
         x: 1792
@@ -327,14 +327,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3e1e1f82d618c1380800000000000000
-      internalID: -8999175649554734621
+      spriteID: c88f16836f8268510800000000000000
+      internalID: 1550972159648725132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez payaso sprite sheet (1)_8
+      name: pez payaso sprite sheet_8
       rect:
         serializedVersion: 2
         x: 0
@@ -349,14 +349,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d690c446cac455da0800000000000000
-      internalID: -5956770628826822291
+      spriteID: 75b173ba64fbb3a80800000000000000
+      internalID: -8485978762608436393
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez payaso sprite sheet (1)_9
+      name: pez payaso sprite sheet_9
       rect:
         serializedVersion: 2
         x: 256
@@ -371,14 +371,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: afa41986a01a8cca0800000000000000
-      internalID: -5996365837767718150
+      spriteID: bd80d9eea84bd0d90800000000000000
+      internalID: -7129844126255871781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez payaso sprite sheet (1)_10
+      name: pez payaso sprite sheet_10
       rect:
         serializedVersion: 2
         x: 512
@@ -393,14 +393,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2335225613f264800800000000000000
-      internalID: 596215889869820722
+      spriteID: 0b8b94f656f3b0580800000000000000
+      internalID: -8859918137029969744
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez payaso sprite sheet (1)_11
+      name: pez payaso sprite sheet_11
       rect:
         serializedVersion: 2
         x: 768
@@ -415,14 +415,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3eed5f9ae061ef4b0800000000000000
-      internalID: -5404858250561200413
+      spriteID: 8c76e74e3e82ac970800000000000000
+      internalID: 8775871783141009352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez payaso sprite sheet (1)_12
+      name: pez payaso sprite sheet_12
       rect:
         serializedVersion: 2
         x: 1024
@@ -437,14 +437,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f22f5d170bc70a3e0800000000000000
-      internalID: -2044497133560270289
+      spriteID: fced03f6e8194bce0800000000000000
+      internalID: -1390326344013783345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez payaso sprite sheet (1)_13
+      name: pez payaso sprite sheet_13
       rect:
         serializedVersion: 2
         x: 1280
@@ -459,14 +459,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2d9a7dfa37b59ad00800000000000000
-      internalID: 984418545986677202
+      spriteID: 81a012e6d4a14d0d0800000000000000
+      internalID: -3399062898895418856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez payaso sprite sheet (1)_14
+      name: pez payaso sprite sheet_14
       rect:
         serializedVersion: 2
         x: 1536
@@ -481,14 +481,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9bdfa9fd2a90c3040800000000000000
-      internalID: 4628585112170855865
+      spriteID: 27dfe7334a55ba3e0800000000000000
+      internalID: -2041443842355430030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pez payaso sprite sheet (1)_15
+      name: pez payaso sprite sheet_15
       rect:
         serializedVersion: 2
         x: 1792
@@ -503,8 +503,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1228c82e153762010800000000000000
-      internalID: 1163744349252256289
+      spriteID: 8ebe20b886c0f9d60800000000000000
+      internalID: 7899045914579495912
       vertices: []
       indices: 
       edges: []
@@ -513,7 +513,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 94a56448946761b46b35f24a9aeea005
+    spriteID: fbdb2ac2e11dfb14aa03c615ed7d44c7
     internalID: 0
     vertices: []
     indices: 
@@ -525,22 +525,22 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      pez payaso sprite sheet (1)_0: -8900373345763049822
-      pez payaso sprite sheet (1)_1: -5372587985995510158
-      pez payaso sprite sheet (1)_10: 596215889869820722
-      pez payaso sprite sheet (1)_11: -5404858250561200413
-      pez payaso sprite sheet (1)_12: -2044497133560270289
-      pez payaso sprite sheet (1)_13: 984418545986677202
-      pez payaso sprite sheet (1)_14: 4628585112170855865
-      pez payaso sprite sheet (1)_15: 1163744349252256289
-      pez payaso sprite sheet (1)_2: -7799660163487675765
-      pez payaso sprite sheet (1)_3: -6067430565897597680
-      pez payaso sprite sheet (1)_4: -8031375357747903876
-      pez payaso sprite sheet (1)_5: -7829700105740606615
-      pez payaso sprite sheet (1)_6: 9176036224238344340
-      pez payaso sprite sheet (1)_7: -8999175649554734621
-      pez payaso sprite sheet (1)_8: -5956770628826822291
-      pez payaso sprite sheet (1)_9: -5996365837767718150
+      pez payaso sprite sheet_0: -3659248380229345523
+      pez payaso sprite sheet_1: 5613453448792294233
+      pez payaso sprite sheet_10: -8859918137029969744
+      pez payaso sprite sheet_11: 8775871783141009352
+      pez payaso sprite sheet_12: -1390326344013783345
+      pez payaso sprite sheet_13: -3399062898895418856
+      pez payaso sprite sheet_14: -2041443842355430030
+      pez payaso sprite sheet_15: 7899045914579495912
+      pez payaso sprite sheet_2: 462208170194201492
+      pez payaso sprite sheet_3: 6291185309173693138
+      pez payaso sprite sheet_4: -6425904187124168467
+      pez payaso sprite sheet_5: -834950341193812865
+      pez payaso sprite sheet_6: -1749519565355230630
+      pez payaso sprite sheet_7: 1550972159648725132
+      pez payaso sprite sheet_8: -8485978762608436393
+      pez payaso sprite sheet_9: -7129844126255871781
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

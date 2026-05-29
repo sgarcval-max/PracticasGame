@@ -1,55 +1,49 @@
 fileFormatVersion: 2
-guid: 309a66ec5cb475f4794411d804616672
+guid: 6565c82ffa5b4bb43ad7daf9046004d8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -634901393530976119
-    second: Pez Payaso Shiny sprite sheet_0
+      213: -8535986941928477678
+    second: pez cirujano sprite sheet_0
   - first:
-      213: 5393066531962191433
-    second: Pez Payaso Shiny sprite sheet_1
+      213: -6884265815281134592
+    second: pez cirujano sprite sheet_1
   - first:
-      213: -4726858290865186948
-    second: Pez Payaso Shiny sprite sheet_2
+      213: -2638245250578476278
+    second: pez cirujano sprite sheet_2
   - first:
-      213: -8530802393576444362
-    second: Pez Payaso Shiny sprite sheet_3
+      213: 3044953635242160090
+    second: pez cirujano sprite sheet_3
   - first:
-      213: 8690514631339171280
-    second: Pez Payaso Shiny sprite sheet_4
+      213: 3761016861969603368
+    second: pez cirujano sprite sheet_4
   - first:
-      213: -4741232931859482833
-    second: Pez Payaso Shiny sprite sheet_5
+      213: 908028506765624694
+    second: pez cirujano sprite sheet_5
   - first:
-      213: -4251975844650415673
-    second: Pez Payaso Shiny sprite sheet_6
+      213: 2812228209679811401
+    second: pez cirujano sprite sheet_6
   - first:
-      213: -9031665503675194229
-    second: Pez Payaso Shiny sprite sheet_7
+      213: 1943866457883868875
+    second: pez cirujano sprite sheet_7
   - first:
-      213: -8931839056441512670
-    second: Pez Payaso Shiny sprite sheet_8
+      213: 4466743398231859918
+    second: pez cirujano sprite sheet_8
   - first:
-      213: -5008692556667087059
-    second: Pez Payaso Shiny sprite sheet_9
+      213: -6735236510820060665
+    second: pez cirujano sprite sheet_9
   - first:
-      213: -8273803069733277939
-    second: Pez Payaso Shiny sprite sheet_10
+      213: -1668870859557064692
+    second: pez cirujano sprite sheet_10
   - first:
-      213: -3360588570080982585
-    second: Pez Payaso Shiny sprite sheet_11
+      213: -397816269594771211
+    second: pez cirujano sprite sheet_11
   - first:
-      213: -6753804656129014030
-    second: Pez Payaso Shiny sprite sheet_12
+      213: -7796470235038172784
+    second: pez cirujano sprite sheet_12
   - first:
-      213: -1376210040864301649
-    second: Pez Payaso Shiny sprite sheet_13
-  - first:
-      213: 2980859123801628461
-    second: Pez Payaso Shiny sprite sheet_14
-  - first:
-      213: -1477757421162717023
-    second: Pez Payaso Shiny sprite sheet_15
+      213: 7112621684047283279
+    second: pez cirujano sprite sheet_13
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -158,7 +152,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_0
+      name: pez cirujano sprite sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -173,14 +167,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9888f23eb806037f0800000000000000
-      internalID: -634901393530976119
+      spriteID: 21ceaf61a151a8980800000000000000
+      internalID: -8535986941928477678
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_1
+      name: pez cirujano sprite sheet_1
       rect:
         serializedVersion: 2
         x: 256
@@ -195,14 +189,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 94e77a7ef6508da40800000000000000
-      internalID: 5393066531962191433
+      spriteID: 0049dc427bc2670a0800000000000000
+      internalID: -6884265815281134592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_2
+      name: pez cirujano sprite sheet_2
       rect:
         serializedVersion: 2
         x: 512
@@ -217,14 +211,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c77de5dad63d66eb0800000000000000
-      internalID: -4726858290865186948
+      spriteID: a0398e03ce1136bd0800000000000000
+      internalID: -2638245250578476278
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_3
+      name: pez cirujano sprite sheet_3
       rect:
         serializedVersion: 2
         x: 768
@@ -239,14 +233,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 63ee2d1db608c9980800000000000000
-      internalID: -8530802393576444362
+      spriteID: adfa42ac239d14a20800000000000000
+      internalID: 3044953635242160090
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_4
+      name: pez cirujano sprite sheet_4
       rect:
         serializedVersion: 2
         x: 1024
@@ -261,14 +255,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0dd5e4c4309ea9870800000000000000
-      internalID: 8690514631339171280
+      spriteID: 82bd3f3c8e0d13430800000000000000
+      internalID: 3761016861969603368
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_5
+      name: pez cirujano sprite sheet_5
       rect:
         serializedVersion: 2
         x: 1280
@@ -283,58 +277,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f27b123c4c1c33eb0800000000000000
-      internalID: -4741232931859482833
+      spriteID: 67581bfad17f99c00800000000000000
+      internalID: 908028506765624694
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_6
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7c9021a4f72fdf4c0800000000000000
-      internalID: -4251975844650415673
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_7
-      rect:
-        serializedVersion: 2
-        x: 1792
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b846a43831419a280800000000000000
-      internalID: -9031665503675194229
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_8
+      name: pez cirujano sprite sheet_6
       rect:
         serializedVersion: 2
         x: 0
@@ -349,14 +299,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 22de7d973bbbb0480800000000000000
-      internalID: -8931839056441512670
+      spriteID: 9434c4928aa070720800000000000000
+      internalID: 2812228209679811401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_9
+      name: pez cirujano sprite sheet_7
       rect:
         serializedVersion: 2
         x: 256
@@ -371,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d2717ba28ac8d7ab0800000000000000
-      internalID: -5008692556667087059
+      spriteID: bcef6f09e300afa10800000000000000
+      internalID: 1943866457883868875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_10
+      name: pez cirujano sprite sheet_8
       rect:
         serializedVersion: 2
         x: 512
@@ -393,14 +343,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d0fe20fc1fb8d2d80800000000000000
-      internalID: -8273803069733277939
+      spriteID: ec26e62747f0dfd30800000000000000
+      internalID: 4466743398231859918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_11
+      name: pez cirujano sprite sheet_9
       rect:
         serializedVersion: 2
         x: 768
@@ -415,14 +365,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7c9c51c208acc51d0800000000000000
-      internalID: -3360588570080982585
+      spriteID: 70234560412a782a0800000000000000
+      internalID: -6735236510820060665
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_12
+      name: pez cirujano sprite sheet_10
       rect:
         serializedVersion: 2
         x: 1024
@@ -437,14 +387,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f60d0dc27aa542a0800000000000000
-      internalID: -6753804656129014030
+      spriteID: c00b9189bcaf6d8e0800000000000000
+      internalID: -1668870859557064692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_13
+      name: pez cirujano sprite sheet_11
       rect:
         serializedVersion: 2
         x: 1280
@@ -459,14 +409,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fad15f16248b6ece0800000000000000
-      internalID: -1376210040864301649
+      spriteID: 5f0cee4e53caa7af0800000000000000
+      internalID: -397816269594771211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_14
+      name: pez cirujano sprite sheet_12
       rect:
         serializedVersion: 2
         x: 1536
@@ -481,14 +431,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d2f9daf64932e5920800000000000000
-      internalID: 2980859123801628461
+      spriteID: 099b4a2f0af5dc390800000000000000
+      internalID: -7796470235038172784
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Payaso Shiny sprite sheet_15
+      name: pez cirujano sprite sheet_13
       rect:
         serializedVersion: 2
         x: 1792
@@ -503,8 +453,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a026677473fd7be0800000000000000
-      internalID: -1477757421162717023
+      spriteID: f440163ccbb15b260800000000000000
+      internalID: 7112621684047283279
       vertices: []
       indices: 
       edges: []
@@ -513,7 +463,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 142e4649be1938343a798750171f3956
+    spriteID: 630e13b37a046784883b6f5a2cca5187
     internalID: 0
     vertices: []
     indices: 
@@ -525,22 +475,20 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Pez Payaso Shiny sprite sheet_0: -634901393530976119
-      Pez Payaso Shiny sprite sheet_1: 5393066531962191433
-      Pez Payaso Shiny sprite sheet_10: -8273803069733277939
-      Pez Payaso Shiny sprite sheet_11: -3360588570080982585
-      Pez Payaso Shiny sprite sheet_12: -6753804656129014030
-      Pez Payaso Shiny sprite sheet_13: -1376210040864301649
-      Pez Payaso Shiny sprite sheet_14: 2980859123801628461
-      Pez Payaso Shiny sprite sheet_15: -1477757421162717023
-      Pez Payaso Shiny sprite sheet_2: -4726858290865186948
-      Pez Payaso Shiny sprite sheet_3: -8530802393576444362
-      Pez Payaso Shiny sprite sheet_4: 8690514631339171280
-      Pez Payaso Shiny sprite sheet_5: -4741232931859482833
-      Pez Payaso Shiny sprite sheet_6: -4251975844650415673
-      Pez Payaso Shiny sprite sheet_7: -9031665503675194229
-      Pez Payaso Shiny sprite sheet_8: -8931839056441512670
-      Pez Payaso Shiny sprite sheet_9: -5008692556667087059
+      pez cirujano sprite sheet_0: -8535986941928477678
+      pez cirujano sprite sheet_1: -6884265815281134592
+      pez cirujano sprite sheet_10: -1668870859557064692
+      pez cirujano sprite sheet_11: -397816269594771211
+      pez cirujano sprite sheet_12: -7796470235038172784
+      pez cirujano sprite sheet_13: 7112621684047283279
+      pez cirujano sprite sheet_2: -2638245250578476278
+      pez cirujano sprite sheet_3: 3044953635242160090
+      pez cirujano sprite sheet_4: 3761016861969603368
+      pez cirujano sprite sheet_5: 908028506765624694
+      pez cirujano sprite sheet_6: 2812228209679811401
+      pez cirujano sprite sheet_7: 1943866457883868875
+      pez cirujano sprite sheet_8: 4466743398231859918
+      pez cirujano sprite sheet_9: -6735236510820060665
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

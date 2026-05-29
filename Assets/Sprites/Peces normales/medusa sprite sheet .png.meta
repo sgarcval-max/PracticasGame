@@ -1,61 +1,40 @@
 fileFormatVersion: 2
-guid: 47f887e5acb599741b4bc5ea494aff7c
+guid: c88a153a1030e324aae691f04784cb92
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6481561017837852138
-    second: Pez Globo sprite sheet_0
+      213: 2369513427233505270
+    second: medusa sprite sheet _0
   - first:
-      213: -6689444702500093888
-    second: Pez Globo sprite sheet_1
+      213: -6818359189464112612
+    second: medusa sprite sheet _1
   - first:
-      213: -2259197492578570220
-    second: Pez Globo sprite sheet_2
+      213: -1054775533910032135
+    second: medusa sprite sheet _2
   - first:
-      213: -8744401968688311910
-    second: Pez Globo sprite sheet_3
+      213: 8347975227293401208
+    second: medusa sprite sheet _3
   - first:
-      213: -4334563777480865202
-    second: Pez Globo sprite sheet_4
+      213: 8866503816962254284
+    second: medusa sprite sheet _4
   - first:
-      213: -4057750802318428324
-    second: Pez Globo sprite sheet_5
+      213: -2226300823352680500
+    second: medusa sprite sheet _5
   - first:
-      213: -2285710249270029092
-    second: Pez Globo sprite sheet_6
+      213: 6328809257469950111
+    second: medusa sprite sheet _6
   - first:
-      213: -2437478228607343238
-    second: Pez Globo sprite sheet_7
+      213: 1130054062173410910
+    second: medusa sprite sheet _7
   - first:
-      213: -2533131019495778437
-    second: Pez Globo sprite sheet_8
+      213: 1565944613582996307
+    second: medusa sprite sheet _8
   - first:
-      213: 8003119910074232266
-    second: Pez Globo sprite sheet_9
+      213: -5502893051401360685
+    second: medusa sprite sheet _9
   - first:
-      213: -1657506334443884795
-    second: Pez Globo sprite sheet_10
-  - first:
-      213: -3269296624006076231
-    second: Pez Globo sprite sheet_11
-  - first:
-      213: 5831151278100704566
-    second: Pez Globo sprite sheet_12
-  - first:
-      213: -480985746048118512
-    second: Pez Globo sprite sheet_13
-  - first:
-      213: -6160047112194345839
-    second: Pez Globo sprite sheet_14
-  - first:
-      213: 3222402771965061646
-    second: Pez Globo sprite sheet_15
-  - first:
-      213: -106310959315859544
-    second: Pez Globo sprite sheet_16
-  - first:
-      213: -3369457624443702929
-    second: Pez Globo sprite sheet_17
+      213: -6308510876033134928
+    second: medusa sprite sheet _10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -164,7 +143,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pez Globo sprite sheet_0
+      name: medusa sprite sheet _0
       rect:
         serializedVersion: 2
         x: 0
@@ -179,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ae59e3aa76123f950800000000000000
-      internalID: 6481561017837852138
+      spriteID: 6ff75c868e332e020800000000000000
+      internalID: 2369513427233505270
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Globo sprite sheet_1
+      name: medusa sprite sheet _1
       rect:
         serializedVersion: 2
         x: 256
@@ -201,14 +180,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0400dda3c715a23a0800000000000000
-      internalID: -6689444702500093888
+      spriteID: c12a8f041725061a0800000000000000
+      internalID: -6818359189464112612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Globo sprite sheet_2
+      name: medusa sprite sheet _2
       rect:
         serializedVersion: 2
         x: 512
@@ -223,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 410b669a9d7b5a0e0800000000000000
-      internalID: -2259197492578570220
+      spriteID: 9f005878d3fac51f0800000000000000
+      internalID: -1054775533910032135
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Globo sprite sheet_3
+      name: medusa sprite sheet _3
       rect:
         serializedVersion: 2
         x: 768
@@ -245,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a915b134db4a5a680800000000000000
-      internalID: -8744401968688311910
+      spriteID: 87085906d37f9d370800000000000000
+      internalID: 8347975227293401208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Globo sprite sheet_4
+      name: medusa sprite sheet _4
       rect:
         serializedVersion: 2
         x: 1024
@@ -267,14 +246,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e4a4afab53988d3c0800000000000000
-      internalID: -4334563777480865202
+      spriteID: cc52ea9ae362c0b70800000000000000
+      internalID: 8866503816962254284
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Globo sprite sheet_5
+      name: medusa sprite sheet _5
       rect:
         serializedVersion: 2
         x: 1280
@@ -289,58 +268,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c57f0c8e429ffa7c0800000000000000
-      internalID: -4057750802318428324
+      spriteID: ccf57e452379a11e0800000000000000
+      internalID: -2226300823352680500
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Globo sprite sheet_6
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cd45ac473a68740e0800000000000000
-      internalID: -2285710249270029092
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pez Globo sprite sheet_7
-      rect:
-        serializedVersion: 2
-        x: 1792
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a756c1427765c2ed0800000000000000
-      internalID: -2437478228607343238
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pez Globo sprite sheet_8
+      name: medusa sprite sheet _6
       rect:
         serializedVersion: 2
         x: 0
@@ -355,14 +290,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b775e6542c288dcd0800000000000000
-      internalID: -2533131019495778437
+      spriteID: f9833bafc7274d750800000000000000
+      internalID: 6328809257469950111
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Globo sprite sheet_9
+      name: medusa sprite sheet _7
       rect:
         serializedVersion: 2
         x: 256
@@ -377,14 +312,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: acda4d6e72bc01f60800000000000000
-      internalID: 8003119910074232266
+      spriteID: e5655d8ae22ceaf00800000000000000
+      internalID: 1130054062173410910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Globo sprite sheet_10
+      name: medusa sprite sheet _8
       rect:
         serializedVersion: 2
         x: 512
@@ -399,14 +334,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 50f238a45ca5ff8e0800000000000000
-      internalID: -1657506334443884795
+      spriteID: 3530d8e445a5bb510800000000000000
+      internalID: 1565944613582996307
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Globo sprite sheet_11
+      name: medusa sprite sheet _9
       rect:
         serializedVersion: 2
         x: 768
@@ -421,14 +356,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9b8ebbcba0021a2d0800000000000000
-      internalID: -3269296624006076231
+      spriteID: 3daa142ecebc1a3b0800000000000000
+      internalID: -5502893051401360685
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pez Globo sprite sheet_12
+      name: medusa sprite sheet _10
       rect:
         serializedVersion: 2
         x: 1024
@@ -443,118 +378,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 63de1c251396ce050800000000000000
-      internalID: 5831151278100704566
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pez Globo sprite sheet_13
-      rect:
-        serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 01196c823023359f0800000000000000
-      internalID: -480985746048118512
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pez Globo sprite sheet_14
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1943cfde9cd138aa0800000000000000
-      internalID: -6160047112194345839
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pez Globo sprite sheet_15
-      rect:
-        serializedVersion: 2
-        x: 1792
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e0a26328f3648bc20800000000000000
-      internalID: 3222402771965061646
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pez Globo sprite sheet_16
-      rect:
-        serializedVersion: 2
-        x: 2048
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8a74f3aeebe468ef0800000000000000
-      internalID: -106310959315859544
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pez Globo sprite sheet_17
-      rect:
-        serializedVersion: 2
-        x: 2304
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f613d4984284d31d0800000000000000
-      internalID: -3369457624443702929
+      spriteID: 0be4b5c38caa378a0800000000000000
+      internalID: -6308510876033134928
       vertices: []
       indices: 
       edges: []
@@ -563,7 +388,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8d72fe47352e97a419835004fb6f846b
+    spriteID: c8daa4d9c18b73b4aa6cd993d45588bd
     internalID: 0
     vertices: []
     indices: 
@@ -575,24 +400,17 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Pez Globo sprite sheet_0: 6481561017837852138
-      Pez Globo sprite sheet_1: -6689444702500093888
-      Pez Globo sprite sheet_10: -1657506334443884795
-      Pez Globo sprite sheet_11: -3269296624006076231
-      Pez Globo sprite sheet_12: 5831151278100704566
-      Pez Globo sprite sheet_13: -480985746048118512
-      Pez Globo sprite sheet_14: -6160047112194345839
-      Pez Globo sprite sheet_15: 3222402771965061646
-      Pez Globo sprite sheet_16: -106310959315859544
-      Pez Globo sprite sheet_17: -3369457624443702929
-      Pez Globo sprite sheet_2: -2259197492578570220
-      Pez Globo sprite sheet_3: -8744401968688311910
-      Pez Globo sprite sheet_4: -4334563777480865202
-      Pez Globo sprite sheet_5: -4057750802318428324
-      Pez Globo sprite sheet_6: -2285710249270029092
-      Pez Globo sprite sheet_7: -2437478228607343238
-      Pez Globo sprite sheet_8: -2533131019495778437
-      Pez Globo sprite sheet_9: 8003119910074232266
+      medusa sprite sheet _0: 2369513427233505270
+      medusa sprite sheet _1: -6818359189464112612
+      medusa sprite sheet _10: -6308510876033134928
+      medusa sprite sheet _2: -1054775533910032135
+      medusa sprite sheet _3: 8347975227293401208
+      medusa sprite sheet _4: 8866503816962254284
+      medusa sprite sheet _5: -2226300823352680500
+      medusa sprite sheet _6: 6328809257469950111
+      medusa sprite sheet _7: 1130054062173410910
+      medusa sprite sheet _8: 1565944613582996307
+      medusa sprite sheet _9: -5502893051401360685
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

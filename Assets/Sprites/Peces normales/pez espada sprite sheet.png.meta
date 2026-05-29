@@ -1,34 +1,40 @@
 fileFormatVersion: 2
-guid: 1decd4b9743fc684f93faa3197a21fc8
+guid: fcec19a45e3d1db4c9b122cd99557b59
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6458848057179346485
-    second: tiburon sprite sheet_0
+      213: -6526044893282130732
+    second: pez espada sprite sheet_0
   - first:
-      213: 8635699375052943686
-    second: tiburon sprite sheet_1
+      213: -8804570801097687517
+    second: pez espada sprite sheet_1
   - first:
-      213: -7718448269241216963
-    second: tiburon sprite sheet_2
+      213: -4773368331588781824
+    second: pez espada sprite sheet_2
   - first:
-      213: -2257206972307902310
-    second: tiburon sprite sheet_3
+      213: -248597639865332989
+    second: pez espada sprite sheet_3
   - first:
-      213: 3531809452082218442
-    second: tiburon sprite sheet_4
+      213: 6389233787089577805
+    second: pez espada sprite sheet_4
   - first:
-      213: -4924684873475285108
-    second: tiburon sprite sheet_5
+      213: -5992183331477615031
+    second: pez espada sprite sheet_5
   - first:
-      213: 6649640304507032165
-    second: tiburon sprite sheet_6
+      213: 6255387465537869690
+    second: pez espada sprite sheet_6
   - first:
-      213: 3187567745026282810
-    second: tiburon sprite sheet_7
+      213: -6280584527918093494
+    second: pez espada sprite sheet_7
   - first:
-      213: -6907862712760631043
-    second: tiburon sprite sheet_8
+      213: 5231199548044398345
+    second: pez espada sprite sheet_8
+  - first:
+      213: 7708872372505308565
+    second: pez espada sprite sheet_9
+  - first:
+      213: -4066024578172789746
+    second: pez espada sprite sheet_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -137,7 +143,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tiburon sprite sheet_0
+      name: pez espada sprite sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -152,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bc96a9599ef8d56a0800000000000000
-      internalID: -6458848057179346485
+      spriteID: 4d4aaabfeb4de65a0800000000000000
+      internalID: -6526044893282130732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiburon sprite sheet_1
+      name: pez espada sprite sheet_1
       rect:
         serializedVersion: 2
         x: 256
@@ -174,14 +180,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 641f715e3da28d770800000000000000
-      internalID: 8635699375052943686
+      spriteID: 32ebbc84181efc580800000000000000
+      internalID: -8804570801097687517
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiburon sprite sheet_2
+      name: pez espada sprite sheet_2
       rect:
         serializedVersion: 2
         x: 512
@@ -196,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3016a6713092e490800000000000000
-      internalID: -7718448269241216963
+      spriteID: 0093d85fac691cdb0800000000000000
+      internalID: -4773368331588781824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiburon sprite sheet_3
+      name: pez espada sprite sheet_3
       rect:
         serializedVersion: 2
         x: 768
@@ -218,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a907d07c73acca0e0800000000000000
-      internalID: -2257206972307902310
+      spriteID: 30b83df73cdcc8cf0800000000000000
+      internalID: -248597639865332989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiburon sprite sheet_4
+      name: pez espada sprite sheet_4
       rect:
         serializedVersion: 2
         x: 1024
@@ -240,14 +246,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ac54abdfbf1830130800000000000000
-      internalID: 3531809452082218442
+      spriteID: d47e56a174e1ba850800000000000000
+      internalID: 6389233787089577805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiburon sprite sheet_5
+      name: pez espada sprite sheet_5
       rect:
         serializedVersion: 2
         x: 0
@@ -262,14 +268,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c8f14cd133108abb0800000000000000
-      internalID: -4924684873475285108
+      spriteID: 94e824a020d77dca0800000000000000
+      internalID: -5992183331477615031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiburon sprite sheet_6
+      name: pez espada sprite sheet_6
       rect:
         serializedVersion: 2
         x: 256
@@ -284,14 +290,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 562134a20a4484c50800000000000000
-      internalID: 6649640304507032165
+      spriteID: a77d0d7e1c99fc650800000000000000
+      internalID: 6255387465537869690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiburon sprite sheet_7
+      name: pez espada sprite sheet_7
       rect:
         serializedVersion: 2
         x: 512
@@ -306,14 +312,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a35d8c3c9f38c3c20800000000000000
-      internalID: 3187567745026282810
+      spriteID: a4ba0a7d5a1e6d8a0800000000000000
+      internalID: -6280584527918093494
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiburon sprite sheet_8
+      name: pez espada sprite sheet_8
       rect:
         serializedVersion: 2
         x: 768
@@ -328,8 +334,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: df08cb056775220a0800000000000000
-      internalID: -6907862712760631043
+      spriteID: 90fce5ad544f89840800000000000000
+      internalID: 5231199548044398345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pez espada sprite sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59d6006549a6bfa60800000000000000
+      internalID: 7708872372505308565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pez espada sprite sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0cd00a50349297c0800000000000000
+      internalID: -4066024578172789746
       vertices: []
       indices: 
       edges: []
@@ -338,7 +388,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f6390624edbf1234089c8ae807f47782
+    spriteID: 004521d3a73ae27418a1fc4d98006307
     internalID: 0
     vertices: []
     indices: 
@@ -350,15 +400,17 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      tiburon sprite sheet_0: -6458848057179346485
-      tiburon sprite sheet_1: 8635699375052943686
-      tiburon sprite sheet_2: -7718448269241216963
-      tiburon sprite sheet_3: -2257206972307902310
-      tiburon sprite sheet_4: 3531809452082218442
-      tiburon sprite sheet_5: -4924684873475285108
-      tiburon sprite sheet_6: 6649640304507032165
-      tiburon sprite sheet_7: 3187567745026282810
-      tiburon sprite sheet_8: -6907862712760631043
+      pez espada sprite sheet_0: -6526044893282130732
+      pez espada sprite sheet_1: -8804570801097687517
+      pez espada sprite sheet_10: -4066024578172789746
+      pez espada sprite sheet_2: -4773368331588781824
+      pez espada sprite sheet_3: -248597639865332989
+      pez espada sprite sheet_4: 6389233787089577805
+      pez espada sprite sheet_5: -5992183331477615031
+      pez espada sprite sheet_6: 6255387465537869690
+      pez espada sprite sheet_7: -6280584527918093494
+      pez espada sprite sheet_8: 5231199548044398345
+      pez espada sprite sheet_9: 7708872372505308565
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
