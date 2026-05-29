@@ -142,4 +142,9 @@ public class SceneTransition : MonoBehaviour
         transitionCanvas.SetActive(false);
         isTransitioning = false;
     }
+
+    public bool IsTransitioning()
+    {
+        return isTransitioning;
+    }
 }

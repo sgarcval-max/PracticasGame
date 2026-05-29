@@ -14,6 +14,8 @@ public class DiverHealth : MonoBehaviour
     private SpriteRenderer sr;
     private GameUI gameUI;
 
+    private bool isShieldActive = false;
+
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -59,7 +61,8 @@ public class DiverHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (isInvincible) return;
+        // No recibe daño si el escudo está activo
+        if (isInvincible || isShieldActive) return;
 
         currentHealth -= damage;
         isInvincible = true;
@@ -101,7 +104,7 @@ public class DiverHealth : MonoBehaviour
 
     public void SetInvincible(bool value)
     {
-        isInvincible = value;
+        isShieldActive = value;
         if (!value)
             sr.enabled = true;
     }

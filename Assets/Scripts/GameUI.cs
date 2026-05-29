@@ -105,6 +105,7 @@ public class GameUI : MonoBehaviour
     {
         if (waveText == null) return;
         waveText.text = "Oleada " + wave;
+        StartCoroutine(FadeText(waveText, true, 0.3f));
     }
 
     public void UpdateTreasure(int collected, int total)
@@ -118,7 +119,6 @@ public class GameUI : MonoBehaviour
 
     public void UpdateSlots(int equippedCount) { }
 
-    // Muestra el mensaje de oleada completada y el contador
     public void ShowWaveComplete(int wave, System.Action onComplete)
     {
         StartCoroutine(WaveCompleteCoroutine(wave, onComplete));
@@ -126,7 +126,10 @@ public class GameUI : MonoBehaviour
 
     IEnumerator WaveCompleteCoroutine(int wave, System.Action onComplete)
     {
-        // Mostrar texto de oleada completada
+        // Ocultamos el texto de oleada con fundido
+        yield return StartCoroutine(FadeText(waveText, false, 0.3f));
+
+        // Mostramos texto de oleada completada
         waveCompleteText.text = "Oleada " + wave + " completada!";
         waveCompleteText.gameObject.SetActive(true);
         countdownText.gameObject.SetActive(true);
@@ -135,19 +138,42 @@ public class GameUI : MonoBehaviour
         for (int i = 3; i > 0; i--)
         {
             countdownText.text = i.ToString();
-
-            // Animación de escala del número
             StartCoroutine(PunchScale(countdownText.transform));
-
             yield return new WaitForSeconds(1f);
         }
 
-        // Ocultar textos
+        // Ocultamos textos
         waveCompleteText.gameObject.SetActive(false);
         countdownText.gameObject.SetActive(false);
 
-        // Llamar al callback para iniciar la siguiente oleada
+        // Volvemos a mostrar el texto de oleada con fundido
+        yield return StartCoroutine(FadeText(waveText, true, 0.3f));
+
         onComplete?.Invoke();
+    }
+
+    IEnumerator FadeText(TextMeshProUGUI text, bool fadeIn, float duration)
+    {
+        if (text == null) yield break;
+
+        float start = fadeIn ? 0f : 1f;
+        float end = fadeIn ? 1f : 0f;
+        float timer = 0f;
+
+        Color color = text.color;
+        color.a = start;
+        text.color = color;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            color.a = Mathf.Lerp(start, end, timer / duration);
+            text.color = color;
+            yield return null;
+        }
+
+        color.a = end;
+        text.color = color;
     }
 
     IEnumerator PunchScale(Transform t)
@@ -174,8 +200,6 @@ public class GameUI : MonoBehaviour
     public void ShowVictory()
     {
         victoryPanel.SetActive(true);
-
-        // Pausamos el juego para que no pueda seguir jugando
         Time.timeScale = 0f;
     }
 

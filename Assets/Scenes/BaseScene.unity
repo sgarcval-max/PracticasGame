@@ -1087,7 +1087,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1743128899}
   m_HandleRect: {fileID: 1743128898}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -6137,6 +6137,8 @@ MonoBehaviour:
   currentMission: Encuentra el cofre dorado
   missionCompleted: 0
   comingFromMenu: 0
+  collectedTreasureBackup: 0
+  caughtFishBackup: 
 --- !u!4 &2002736533
 Transform:
   m_ObjectHideFlags: 0

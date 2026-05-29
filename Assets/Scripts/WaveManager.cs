@@ -20,6 +20,18 @@ public class WaveManager : MonoBehaviour
 
     void Start()
     {
+        // Esperamos a que termine la transición antes de empezar
+        StartCoroutine(DelayedStart());
+    }
+
+    System.Collections.IEnumerator DelayedStart()
+    {
+        // Esperamos a que termine la transición
+        yield return new WaitUntil(() => SceneTransition.Instance == null || !SceneTransition.Instance.IsTransitioning());
+
+        // Pequeño delay extra para que el jugador se prepare
+        yield return new WaitForSeconds(1f);
+
         StartNextWave();
     }
 
