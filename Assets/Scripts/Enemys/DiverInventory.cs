@@ -33,6 +33,8 @@ public class DiverInventory : MonoBehaviour
 
             gameUI?.UpdateSlots(equippedFish.Count);
         }
+
+        GameManager.Instance.collectedTreasureBackup = GameManager.Instance.collectedTreasure;
     }
 
     public void CatchFish(FishType fishType)

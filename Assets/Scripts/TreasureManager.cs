@@ -29,9 +29,12 @@ public class TreasureManager : MonoBehaviour
 
     void Start()
     {
-        // Cargamos el progreso del tesoro del GameManager
         if (GameManager.Instance != null)
+        {
             collectedTreasure = GameManager.Instance.collectedTreasure;
+            // Actualizamos el backup cada vez que entramos al mar
+            GameManager.Instance.collectedTreasureBackup = GameManager.Instance.collectedTreasure;
+        }
 
         gameUI?.UpdateTreasure(collectedTreasure, totalTreasure);
     }

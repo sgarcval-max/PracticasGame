@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public string currentMission = "Encuentra el cofre dorado";
     public bool missionCompleted = false;
     public bool comingFromMenu = false;
+    public int collectedTreasureBackup = 0;
 
     // Copia de los peces antes de entrar al mar
     public List<FishType> caughtFishBackup = new List<FishType>();
@@ -38,11 +39,15 @@ public class GameManager : MonoBehaviour
 
     public void SavePlayerData(DiverInventory inventory, WaveManager waveManager, bool died = false)
     {
-        // Si ha muerto usamos el backup, si no guardamos los peces actuales
         if (died)
+        {
             caughtFish = new List<FishType>(caughtFishBackup);
+            collectedTreasure = collectedTreasureBackup;
+        }
         else
+        {
             caughtFish = new List<FishType>(inventory.caughtFish);
+        }
 
         tamedFish = new List<FishType>(inventory.tamedFish);
         equippedFish = new List<FishType>(inventory.equippedFish);
