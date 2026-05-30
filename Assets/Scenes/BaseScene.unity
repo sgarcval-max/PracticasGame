@@ -1508,10 +1508,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a229e4e9beb47a64b92d0b54965c451e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseToGameOut: {fileID: 32900000, guid: 90032f83f78d65b4093d195f71c0f47b, type: 3}
-  baseToGameIn: {fileID: 32900000, guid: 7d041426a3d46e44eaa95a45a62e6176, type: 3}
-  gameToBaseOut: {fileID: 32900000, guid: d54c3aff6e7f35a4893470c50033a966, type: 3}
-  gameToBaseIn: {fileID: 32900000, guid: 52e97ea1be6d3ed48a90a903f4e3e2d1, type: 3}
+  baseToGameOut: {fileID: 32900000, guid: 458c3aa079c35434b8a7fd89d74aeb5e, type: 3}
+  baseToGameIn: {fileID: 32900000, guid: 3511a823d54f75f48a3571aeee7cf25b, type: 3}
+  gameToBaseOut: {fileID: 32900000, guid: 52642e841d07f704eb395e9e13a93c41, type: 3}
+  gameToBaseIn: {fileID: 32900000, guid: cda38b078c79b8f4592b4fcf274e3c16, type: 3}
 --- !u!4 &273763710
 Transform:
   m_ObjectHideFlags: 0
