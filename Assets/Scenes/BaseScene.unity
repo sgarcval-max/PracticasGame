@@ -3368,6 +3368,56 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &1166512852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1166512854}
+  - component: {fileID: 1166512853}
+  m_Layer: 0
+  m_Name: MusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1166512853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166512852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7438e81e54fc1e14992bee61721e0400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  songs:
+  - {fileID: 8300000, guid: cbde3d527fad6344280ca612efa4eb82, type: 3}
+  - {fileID: 8300000, guid: 90f5e3e1294777f4bb663c6f508ee836, type: 3}
+  - {fileID: 8300000, guid: e67736b8148165147910a563a77eec51, type: 3}
+  - {fileID: 8300000, guid: 914ef8f3b1fdd07488b9f5ca6c78e83f, type: 3}
+  - {fileID: 8300000, guid: a054835ab50190f44aa69f041bc35906, type: 3}
+--- !u!4 &1166512854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166512852}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 283.7527, y: 272.38306, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1189549762
 GameObject:
   m_ObjectHideFlags: 0
@@ -4467,6 +4517,7 @@ GameObject:
   - component: {fileID: 1667383679}
   - component: {fileID: 1667383678}
   - component: {fileID: 1667383681}
+  - component: {fileID: 1667383682}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -4590,6 +4641,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverScale: 1.1
   animSpeed: 8
+--- !u!114 &1667383682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667383676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbfe64806001c542966c488b5e05832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1705577985
 GameObject:
   m_ObjectHideFlags: 0
@@ -5163,6 +5226,7 @@ MonoBehaviour:
   videoImage: {fileID: 268509622}
   cinematicCanvas: {fileID: 639112039}
   baseCanvas: {fileID: 2133059218}
+  fadeDuration: 1
 --- !u!4 &1832522765
 Transform:
   m_ObjectHideFlags: 0
@@ -6470,4 +6534,5 @@ SceneRoots:
   - {fileID: 273763710}
   - {fileID: 2082762358}
   - {fileID: 1832522765}
+  - {fileID: 1166512854}
   - {fileID: 1245790368}

@@ -42,6 +42,9 @@ public class CinematicManager : MonoBehaviour
             return;
         }
 
+        if (AudioManager.Instance != null)
+            videoPlayer.SetDirectAudioVolume(0, AudioManager.Instance.masterVolume * AudioManager.Instance.cinematicVolume);
+
         menuCanvas.SetActive(false);
         skipTextObject.SetActive(false);
         skipTextCanvasGroup.alpha = 0f;
@@ -49,6 +52,12 @@ public class CinematicManager : MonoBehaviour
         fadeImage.gameObject.SetActive(false);
 
         lastMousePos = Mouse.current.position.ReadValue();
+        // Silenciamos música y SFX durante la cinemática
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.musicSource.volume = 0f;
+            AudioManager.Instance.sfxSource.volume = 0f;
+        }
         StartCoroutine(PlayCinematic());
     }
 
@@ -173,6 +182,9 @@ public class CinematicManager : MonoBehaviour
         skipTextObject.SetActive(false);
 
         menuCanvas.SetActive(true);
+
+        // Fade in de la música
+        StartCoroutine(FadeInMusic());
     }
 
     void SkipCinematic()
@@ -181,5 +193,29 @@ public class CinematicManager : MonoBehaviour
         videoPlayer.gameObject.SetActive(false);
         skipTextObject.SetActive(false);
         menuCanvas.SetActive(true);
+
+        // Fade in de la música
+        StartCoroutine(FadeInMusic());
+    }
+
+    IEnumerator FadeInMusic()
+    {
+        if (AudioManager.Instance == null) yield break;
+
+        float targetVolume = AudioManager.Instance.masterVolume * AudioManager.Instance.musicVolume;
+        float timer = 0f;
+
+        AudioManager.Instance.musicSource.volume = 0f;
+        AudioManager.Instance.sfxSource.volume = 0f;
+
+        while (timer < 1f)
+        {
+            timer += Time.deltaTime;
+            AudioManager.Instance.musicSource.volume = Mathf.Lerp(0f, targetVolume, timer);
+            yield return null;
+        }
+
+        AudioManager.Instance.musicSource.volume = targetVolume;
+        AudioManager.Instance.ApplyVolumes();
     }
 }

@@ -100,6 +100,10 @@ public class SceneTransition : MonoBehaviour
         isTransitioning = true;
         transitionCanvas.SetActive(true);
 
+        // Fade out de música
+        if (AudioManager.Instance != null)
+            yield return StartCoroutine(AudioManager.Instance.FadeOutMusic(0.3f));
+
         // Video OUT
         if (outClip != null)
         {
@@ -140,6 +144,11 @@ public class SceneTransition : MonoBehaviour
         }
 
         transitionCanvas.SetActive(false);
+
+        // Fade in de música en la nueva escena
+        if (AudioManager.Instance != null)
+            yield return StartCoroutine(AudioManager.Instance.FadeInMusic(0.5f));
+
         isTransitioning = false;
     }
 

@@ -7,9 +7,11 @@ public class PauseManager : MonoBehaviour
 {
     [Header("UI")]
     public GameObject pausePanel;
+    public GameObject optionsPanel;
     public Button pauseButton;
     public Button resumeButton;
     public Button optionsButton;
+    public Button optionsBackButton;
     public Button baseButton;
     public Button menuButton;
 
@@ -20,15 +22,16 @@ public class PauseManager : MonoBehaviour
         pauseButton.onClick.AddListener(TogglePause);
         resumeButton.onClick.AddListener(Resume);
         optionsButton.onClick.AddListener(OpenOptions);
+        optionsBackButton.onClick.AddListener(CloseOptions);
         baseButton.onClick.AddListener(GoToBase);
         menuButton.onClick.AddListener(GoToMenu);
 
         pausePanel.SetActive(false);
+        optionsPanel.SetActive(false);
     }
 
     void Update()
     {
-        // También pausar con Escape
         if (UnityEngine.InputSystem.Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             TogglePause();
@@ -38,10 +41,7 @@ public class PauseManager : MonoBehaviour
     void TogglePause()
     {
         isPaused = !isPaused;
-
         pausePanel.SetActive(isPaused);
-
-        // Pausar o reanudar el tiempo del juego
         Time.timeScale = isPaused ? 0f : 1f;
     }
 
@@ -49,14 +49,20 @@ public class PauseManager : MonoBehaviour
     {
         isPaused = false;
         pausePanel.SetActive(false);
+        optionsPanel.SetActive(false);
         Time.timeScale = 1f;
     }
 
     void OpenOptions()
     {
-        // De momento solo reanudamos
-        // Luego conectamos con el panel de opciones
-        Debug.Log("Opciones");
+        pausePanel.SetActive(false);
+        optionsPanel.SetActive(true);
+    }
+
+    void CloseOptions()
+    {
+        optionsPanel.SetActive(false);
+        pausePanel.SetActive(true);
     }
 
     void GoToBase()
@@ -84,9 +90,6 @@ public class PauseManager : MonoBehaviour
         WaveManager waveManager = FindFirstObjectByType<WaveManager>();
 
         if (GameManager.Instance != null)
-        {
-            // Guardamos todo incluyendo los peces capturados
             GameManager.Instance.SavePlayerData(inventory, waveManager);
-        }
     }
 }

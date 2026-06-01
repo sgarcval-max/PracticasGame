@@ -13,21 +13,21 @@ public class BaseCinematicManager : MonoBehaviour
     [Header("Base")]
     public GameObject baseCanvas;
 
+    [Header("Audio")]
+    public float fadeDuration = 1f;
+
     void Start()
     {
-        // Leemos de PlayerPrefs en lugar del GameManager
         bool comingFromMenu = PlayerPrefs.GetInt("ComingFromMenu", 0) == 1;
-
-        Debug.Log("ComingFromMenu: " + comingFromMenu);
 
         if (comingFromMenu)
         {
-            // Reseteamos el valor
             PlayerPrefs.SetInt("ComingFromMenu", 0);
             PlayerPrefs.Save();
 
             baseCanvas.SetActive(false);
             cinematicCanvas.SetActive(true);
+
             StartCoroutine(PlayCinematic());
         }
         else
@@ -39,11 +39,22 @@ public class BaseCinematicManager : MonoBehaviour
 
     IEnumerator PlayCinematic()
     {
+        // Silenciamos música y SFX
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.musicSource.volume = 0f;
+            AudioManager.Instance.sfxSource.volume = 0f;
+        }
+
+        // Ajustamos volumen de la cinemática
+        if (AudioManager.Instance != null)
+            videoPlayer.SetDirectAudioVolume(0,
+                AudioManager.Instance.masterVolume * AudioManager.Instance.cinematicVolume);
+
         videoPlayer.Prepare();
         yield return new WaitUntil(() => videoPlayer.isPrepared);
         videoPlayer.Play();
 
-        // Esperamos a que termine el video
         yield return new WaitUntil(() => !videoPlayer.isPlaying);
 
         EndCinematic();
@@ -51,9 +62,28 @@ public class BaseCinematicManager : MonoBehaviour
 
     void EndCinematic()
     {
-        // Desactivamos la cinemática y activamos la base
         cinematicCanvas.SetActive(false);
         videoPlayer.gameObject.SetActive(false);
         baseCanvas.SetActive(true);
+
+        // Fade in de la música
+        StartCoroutine(FadeInMusic());
+    }
+
+    IEnumerator FadeInMusic()
+    {
+        if (AudioManager.Instance == null) yield break;
+
+        float targetVolume = AudioManager.Instance.masterVolume * AudioManager.Instance.musicVolume;
+        float timer = 0f;
+
+        while (timer < fadeDuration)
+        {
+            timer += Time.deltaTime;
+            AudioManager.Instance.musicSource.volume = Mathf.Lerp(0f, targetVolume, timer / fadeDuration);
+            yield return null;
+        }
+
+        AudioManager.Instance.musicSource.volume = targetVolume;
     }
 }
