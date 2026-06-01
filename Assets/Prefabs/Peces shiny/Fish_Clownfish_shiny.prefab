@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 114713286102223471}
   - component: {fileID: 866027431928703670}
   - component: {fileID: 4190407858135318682}
-  - component: {fileID: 7025325821153861919}
   - component: {fileID: 1039936361615779351}
+  - component: {fileID: 1240702893865029591}
   m_Layer: 8
   m_Name: Fish_Clownfish_shiny
   m_TagString: Untagged
@@ -177,25 +177,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &7025325821153861919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 473454235709534082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb1aeee65fe283e4999996fbde9cfa79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  health: 1
-  damage: 1
-  tameChance: 0.07
-  tameableFishPrefab: {fileID: 5037416867543361480, guid: c0eecec56e6eed24799f33ef133e7633, type: 3}
-  fishType: 2
-  tameableColor: {r: 1, g: 0.9, b: 0, a: 1}
 --- !u!114 &1039936361615779351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,3 +189,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c3b6ec395350640b9898926bd913f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1240702893865029591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473454235709534082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ce48c219f4681443b88a89d78ec88d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishType: 2
+  moveSpeed: 1.5
+  changeDirectionTime: 2

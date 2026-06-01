@@ -9641,12 +9641,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aquariumObject: {fileID: 1366778135}
-  pufferfishPrefab: {fileID: 473454235709534082, guid: fbfe9b371bfc12e46ab52d0da41e8324, type: 3}
-  sharkPrefab: {fileID: 473454235709534082, guid: 0ec12b4c708922e4e96a3f3061aba311, type: 3}
-  clownfishPrefab: {fileID: 473454235709534082, guid: 324acafed47aa7a4dab04fb625e3cd33, type: 3}
-  squidPrefab: {fileID: 473454235709534082, guid: df8c8e3baeb91084d9befb16cd2ff100, type: 3}
-  swordfishPrefab: {fileID: 473454235709534082, guid: 0280fdf428a1b1e4fa601322beee73cd, type: 3}
-  cirujanoPrefa: {fileID: 473454235709534082, guid: 9e766fcd957e900468209015c72ea479, type: 3}
+  pufferfishPrefab: {fileID: 473454235709534082, guid: 419fb57f7e99c96478fb814c1dc70934, type: 3}
+  sharkPrefab: {fileID: 473454235709534082, guid: ba9321e4381ccf94aa3de665493134f5, type: 3}
+  clownfishPrefab: {fileID: 473454235709534082, guid: be41488f82932bf41b46fd8b2493685a, type: 3}
+  squidPrefab: {fileID: 473454235709534082, guid: ffccb29798cc9a54786fcc96db27858d, type: 3}
+  swordfishPrefab: {fileID: 473454235709534082, guid: 15dfb351d36a6c847b340ff8c919e636, type: 3}
+  cirujanoPrefa: {fileID: 473454235709534082, guid: 79d828afaa27d7f4e90e3ccb8f1e86a2, type: 3}
   fishInfoPanel: {fileID: 398652185}
   fishInfoName: {fileID: 1926771869}
   fishInfoDescription: {fileID: 1862545760}

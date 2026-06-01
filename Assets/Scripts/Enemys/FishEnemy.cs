@@ -118,19 +118,9 @@ public class FishEnemy : MonoBehaviour
 
     void Die()
     {
-        // Si es domesticable spawneamos el pez domesticable directamente
+        // Solo suelta pez domesticable si era tameable
         if (isTameable && tameableFishPrefab != null)
         {
-            GameObject tameable = Instantiate(tameableFishPrefab, transform.position, Quaternion.identity);
-            TameableFish tf = tameable.GetComponent<TameableFish>();
-            if (tf != null)
-            {
-                tf.fishType = fishType;
-            }
-        }
-        else if (!isTameable && tameableFishPrefab != null && Random.value <= tameChance)
-        {
-            // Si no era domesticable hay una pequeña probabilidad de que suelte uno igual
             GameObject tameable = Instantiate(tameableFishPrefab, transform.position, Quaternion.identity);
             TameableFish tf = tameable.GetComponent<TameableFish>();
             if (tf != null)
@@ -141,9 +131,7 @@ public class FishEnemy : MonoBehaviour
 
         WaveManager waveManager = FindFirstObjectByType<WaveManager>();
         if (waveManager != null)
-        {
             waveManager.OnFishDied();
-        }
 
         Destroy(gameObject);
     }
