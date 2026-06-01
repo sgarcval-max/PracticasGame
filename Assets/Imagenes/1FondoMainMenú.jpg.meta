@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 29792d9d861a68e409b4d9988df66b3e
+guid: 855542c27ccb4444fa8cc08f4d5dba74
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1424660991317745097
-    second: Captura de pantalla 2026-06-01 134411_0
+      213: -357535408084762553
+    second: "1FondoMainMen\xFA_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Captura de pantalla 2026-06-01 134411_0
+      name: "1FondoMainMen\xFA_0"
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1918
-        height: 1078
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9cd99d89f9965c310800000000000000
-      internalID: 1424660991317745097
+      spriteID: 740cb7ec077c90bf0800000000000000
+      internalID: -357535408084762553
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Captura de pantalla 2026-06-01 134411_0: 1424660991317745097
+      "1FondoMainMen\xFA_0": -357535408084762553
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
