@@ -28,6 +28,11 @@ public class BaseManager : MonoBehaviour
     [Header("Buttons")]
     public Button playButton;
 
+    [Header("Opciones")]
+    public GameObject optionsPanel;
+    public Button optionsButton;
+    public Button optionsBackButton;
+
     private TamingMinigame tamingMinigame;
 
     void Start()
@@ -35,6 +40,10 @@ public class BaseManager : MonoBehaviour
         playButton.onClick.AddListener(GoToSea);
         tamingMinigame = FindFirstObjectByType<TamingMinigame>();
         RefreshUI();
+
+        optionsButton.onClick.AddListener(OpenOptions);
+        optionsBackButton.onClick.AddListener(CloseOptions);
+        optionsPanel.SetActive(false);
     }
 
     public void RefreshUI()
@@ -211,5 +220,14 @@ public class BaseManager : MonoBehaviour
             SceneTransition.Instance.TransitionToGame();
         else
             SceneManager.LoadScene("GameScene");
+    }
+    void OpenOptions()
+    {
+        optionsPanel.SetActive(true);
+    }
+
+    void CloseOptions()
+    {
+        optionsPanel.SetActive(false);
     }
 }

@@ -32,7 +32,24 @@ public class AudioManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        // Cargamos volúmenes guardados
+        // Si los AudioSources no están asignados los creamos
+        if (musicSource == null)
+        {
+            musicSource = gameObject.AddComponent<AudioSource>();
+            musicSource.loop = true;
+            musicSource.playOnAwake = false;
+        }
+        if (sfxSource == null)
+        {
+            sfxSource = gameObject.AddComponent<AudioSource>();
+            sfxSource.playOnAwake = false;
+        }
+        if (cinematicSource == null)
+        {
+            cinematicSource = gameObject.AddComponent<AudioSource>();
+            cinematicSource.playOnAwake = false;
+        }
+
         LoadVolumes();
     }
 
@@ -89,6 +106,7 @@ public class AudioManager : MonoBehaviour
     // Reproducir efecto de sonido
     public void PlaySFX(AudioClip clip)
     {
+        Debug.Log("PlaySFX llamado: " + (clip != null ? clip.name : "null") + " sfxSource: " + (sfxSource != null ? "OK" : "NULL"));
         if (clip == null || sfxSource == null) return;
         sfxSource.PlayOneShot(clip, masterVolume * sfxVolume);
     }

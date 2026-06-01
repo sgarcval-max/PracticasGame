@@ -368,6 +368,7 @@ GameObject:
   - component: {fileID: 68390803}
   - component: {fileID: 68390802}
   - component: {fileID: 68390805}
+  - component: {fileID: 68390806}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -491,6 +492,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverScale: 1.1
   animSpeed: 8
+--- !u!114 &68390806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68390800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbfe64806001c542966c488b5e05832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &140256993
 GameObject:
   m_ObjectHideFlags: 0
@@ -5361,6 +5374,7 @@ GameObject:
   - component: {fileID: 1109814882}
   - component: {fileID: 1109814881}
   - component: {fileID: 1109814884}
+  - component: {fileID: 1109814885}
   m_Layer: 5
   m_Name: ResumeButton
   m_TagString: Untagged
@@ -5484,6 +5498,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverScale: 1.1
   animSpeed: 8
+--- !u!114 &1109814885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109814879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbfe64806001c542966c488b5e05832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1115314567
 GameObject:
   m_ObjectHideFlags: 0
@@ -6903,6 +6929,7 @@ GameObject:
   - component: {fileID: 1353822942}
   - component: {fileID: 1353822941}
   - component: {fileID: 1353822944}
+  - component: {fileID: 1353822945}
   m_Layer: 5
   m_Name: PauseOptionsButton
   m_TagString: Untagged
@@ -7026,6 +7053,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverScale: 1.1
   animSpeed: 8
+--- !u!114 &1353822945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353822939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbfe64806001c542966c488b5e05832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1387643567
 GameObject:
   m_ObjectHideFlags: 0
@@ -8273,6 +8312,7 @@ GameObject:
   - component: {fileID: 1676567843}
   - component: {fileID: 1676567842}
   - component: {fileID: 1676567845}
+  - component: {fileID: 1676567846}
   m_Layer: 5
   m_Name: PauseMenuButton (1)
   m_TagString: Untagged
@@ -8396,6 +8436,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverScale: 1.1
   animSpeed: 8
+--- !u!114 &1676567846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676567840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbfe64806001c542966c488b5e05832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1700696303
 GameObject:
   m_ObjectHideFlags: 0
@@ -9389,6 +9441,7 @@ GameObject:
   - component: {fileID: 1940144403}
   - component: {fileID: 1940144402}
   - component: {fileID: 1940144405}
+  - component: {fileID: 1940144406}
   m_Layer: 5
   m_Name: PauseBaseButton
   m_TagString: Untagged
@@ -9512,6 +9565,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverScale: 1.1
   animSpeed: 8
+--- !u!114 &1940144406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940144400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbfe64806001c542966c488b5e05832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1957992466
 GameObject:
   m_ObjectHideFlags: 0

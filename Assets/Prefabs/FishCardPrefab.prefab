@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 8473166101498283862}
   - component: {fileID: 6446815895924469558}
   - component: {fileID: 5827910073673391464}
+  - component: {fileID: 8931782755322885019}
   m_Layer: 5
   m_Name: EquipButton
   m_TagString: Untagged
@@ -332,6 +333,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8931782755322885019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6274387855906714837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbfe64806001c542966c488b5e05832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6650415250918608474
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,6 +357,7 @@ GameObject:
   - component: {fileID: 4451576608679153259}
   - component: {fileID: 9113152521806824446}
   - component: {fileID: 6514862532914105540}
+  - component: {fileID: 853610860721550908}
   m_Layer: 5
   m_Name: UnequipButton
   m_TagString: Untagged
@@ -453,6 +467,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &853610860721550908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6650415250918608474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbfe64806001c542966c488b5e05832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6955285000534734010
 GameObject:
   m_ObjectHideFlags: 0
