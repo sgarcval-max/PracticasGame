@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class FishEnemy : MonoBehaviour
 {
+    [Header("Tameable")]
+    public RuntimeAnimatorController tameableAnimator;
+
     public float speed = 3f;
     public int health = 3;
     public int damage = 1;
@@ -38,12 +41,10 @@ public class FishEnemy : MonoBehaviour
 
         if (isTameable)
         {
-            // Cambiamos el color para que se vea diferente
-            sr.color = tameableColor;
-        }
-        else
-        {
-            sr.color = normalColor;
+            // Cambiamos el Animator Controller al tameable
+            Animator anim = GetComponent<Animator>();
+            if (anim != null && tameableAnimator != null)
+                anim.runtimeAnimatorController = tameableAnimator;
         }
     }
 

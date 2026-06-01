@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 527937137474927449}
   - component: {fileID: 1155707006035470874}
-  - component: {fileID: 7773639215321637640}
+  - component: {fileID: 1203473421301509866}
   - component: {fileID: 866027431928703670}
-  - component: {fileID: 2086398225296719892}
+  - component: {fileID: 4190407858135318682}
+  - component: {fileID: 3481744878716076486}
   - component: {fileID: 7025325821153861919}
-  - component: {fileID: 8259434218229795921}
   m_Layer: 8
-  m_Name: Fish_Cirujano
+  m_Name: Fish_Swordfish_shiny
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.24, y: -2.49, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -8535986941928477678, guid: 6565c82ffa5b4bb43ad7daf9046004d8, type: 3}
+  m_Sprite: {fileID: -5547570068311411251, guid: a3c20e3ff06956844b13ac8163cb2630, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,7 +92,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &7773639215321637640
+--- !u!95 &1203473421301509866
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ Animator:
   m_GameObject: {fileID: 473454235709534082}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ca51fc62c62cf354d836a231bec1258d, type: 2}
+  m_Controller: {fileID: 9100000, guid: f81e9d5ca1537a346a464b948b8539c9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -141,7 +141,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &2086398225296719892
+--- !u!58 &4190407858135318682
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,8 +175,20 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.1479137, y: 0.061630607}
-  m_Radius: 0.63904285
+  m_Offset: {x: -0.007202029, y: -0.0036013126}
+  m_Radius: 0.489195
+--- !u!114 &3481744878716076486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473454235709534082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3c3b6ec395350640b9898926bd913f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7025325821153861919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,23 +201,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb1aeee65fe283e4999996fbde9cfa79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tameableAnimator: {fileID: 9100000, guid: 63ddfac9bf9b2034eb3643b35dd11c26, type: 2}
   speed: 3
   health: 1
   damage: 1
   tameChance: 0.07
   tameableFishPrefab: {fileID: 5037416867543361480, guid: c0eecec56e6eed24799f33ef133e7633, type: 3}
-  fishType: 5
+  fishType: 4
   tameableColor: {r: 1, g: 0.9, b: 0, a: 1}
---- !u!114 &8259434218229795921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 473454235709534082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3c3b6ec395350640b9898926bd913f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

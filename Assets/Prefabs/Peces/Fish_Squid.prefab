@@ -190,6 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb1aeee65fe283e4999996fbde9cfa79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tameableAnimator: {fileID: 9100000, guid: 3a4c6351cf1cace42b2892ffa732a112, type: 2}
   speed: 3
   health: 1
   damage: 1

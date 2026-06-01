@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 527937137474927449}
   - component: {fileID: 1155707006035470874}
-  - component: {fileID: 7773639215321637640}
+  - component: {fileID: 5599275336087737860}
   - component: {fileID: 866027431928703670}
-  - component: {fileID: 2086398225296719892}
+  - component: {fileID: 4805440868971911116}
   - component: {fileID: 7025325821153861919}
-  - component: {fileID: 8259434218229795921}
+  - component: {fileID: 6474830752947401063}
   m_Layer: 8
-  m_Name: Fish_Cirujano
+  m_Name: Fish_Squid_shiny
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -8535986941928477678, guid: 6565c82ffa5b4bb43ad7daf9046004d8, type: 3}
+  m_Sprite: {fileID: -1471852730594546584, guid: f27ca4740eda902428ef5dec5715a7ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,7 +92,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &7773639215321637640
+--- !u!95 &5599275336087737860
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ Animator:
   m_GameObject: {fileID: 473454235709534082}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ca51fc62c62cf354d836a231bec1258d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3a4c6351cf1cace42b2892ffa732a112, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -141,8 +141,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &2086398225296719892
-CircleCollider2D:
+--- !u!70 &4805440868971911116
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -175,8 +175,9 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.1479137, y: 0.061630607}
-  m_Radius: 0.63904285
+  m_Offset: {x: 0.06283581, y: 0.053859055}
+  m_Size: {x: 1.662339, y: 2.2907023}
+  m_Direction: 0
 --- !u!114 &7025325821153861919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,15 +190,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb1aeee65fe283e4999996fbde9cfa79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tameableAnimator: {fileID: 9100000, guid: 63ddfac9bf9b2034eb3643b35dd11c26, type: 2}
   speed: 3
   health: 1
   damage: 1
   tameChance: 0.07
   tameableFishPrefab: {fileID: 5037416867543361480, guid: c0eecec56e6eed24799f33ef133e7633, type: 3}
-  fishType: 5
+  fishType: 3
   tameableColor: {r: 1, g: 0.9, b: 0, a: 1}
---- !u!114 &8259434218229795921
+--- !u!114 &6474830752947401063
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
