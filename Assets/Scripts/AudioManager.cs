@@ -22,6 +22,14 @@ public class AudioManager : MonoBehaviour
     public AudioClip buttonHoverSound;
     public AudioClip buttonClickSound;
 
+    public bool isCinematicPlaying = false; // Añade esta variable arriba
+
+    void Start()
+    {
+        // Aplicamos una vez más después de que todo se haya inicializado
+        LoadVolumes();
+    }
+
     void Awake()
     {
         if (Instance != null)
@@ -34,8 +42,6 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         // ... (tus comprobaciones de AudioSource) ...
-
-        LoadVolumes();
     }
 
     // Esto se ejecuta cada vez que se habilita el objeto
@@ -100,11 +106,14 @@ public class AudioManager : MonoBehaviour
 
     public void ApplyVolumes()
     {
-        if (musicSource != null)
+        // Solo aplicamos volumen a la música si NO hay una cinemática sonando
+        if (musicSource != null && !isCinematicPlaying)
             musicSource.volume = masterVolume * musicVolume;
+        else if (isCinematicPlaying)
+            musicSource.volume = 0f; // Silencio absoluto durante cine
 
         if (sfxSource != null)
-            sfxSource.volume = masterVolume * sfxVolume;
+            sfxSource.volume = 1f;
 
         if (cinematicSource != null)
             cinematicSource.volume = masterVolume * cinematicVolume;

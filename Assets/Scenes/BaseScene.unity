@@ -8606,6 +8606,7 @@ MonoBehaviour:
   videoImage: {fileID: 268509622}
   cinematicCanvas: {fileID: 639112039}
   baseCanvas: {fileID: 2133059218}
+  worldLevel: {fileID: 0}
   fadeDuration: 1
 --- !u!4 &1832522765
 Transform:
