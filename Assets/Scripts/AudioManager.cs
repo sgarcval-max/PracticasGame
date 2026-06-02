@@ -125,12 +125,15 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMusic(AudioClip clip)
     {
-        if (clip == null || musicSource == null) return;
-        if (musicSource.clip == clip && musicSource.isPlaying) return;
+        if (clip == null) return;
 
+        // ELIMINA cualquier línea que diga "if (musicSource.clip == clip) return;"
+
+        musicSource.Stop(); // Detenemos la canción actual SI O SI
         musicSource.clip = clip;
-        musicSource.loop = true;
         musicSource.Play();
+
+        Debug.Log("AudioManager: Reproduciendo " + clip.name);
     }
 
     public void StopMusic()

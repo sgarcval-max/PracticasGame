@@ -6695,7 +6695,7 @@ GameObject:
   - component: {fileID: 1263304307}
   - component: {fileID: 1263304306}
   m_Layer: 0
-  m_Name: MusicManager
+  m_Name: MusicManager1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
