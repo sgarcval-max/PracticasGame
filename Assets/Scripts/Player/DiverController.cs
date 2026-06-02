@@ -14,7 +14,6 @@ public class DiverController : MonoBehaviour
     private Animator animator;
     private Vector2 moveInput;
 
-    // Controla si el jugador puede manejar al buzo
     private bool canControl = true;
 
     void Awake()
@@ -26,14 +25,13 @@ public class DiverController : MonoBehaviour
         rb.gravityScale = 0f;
         rb.linearDamping = linearDrag;
 
-        // FUERZA AL ANIMATOR A IGNORAR EL TIMESCALE = 0
+        // Por defecto empieza en Normal, para que SÍ se pause con el Menú de Pausa
         if (animator != null)
         {
-            animator.updateMode = AnimatorUpdateMode.UnscaledTime;
+            animator.updateMode = AnimatorUpdateMode.Normal;
         }
     }
 
-    // Input System: Solo registra movimiento si canControl es true
     void OnMove(InputValue value)
     {
         if (!canControl)
@@ -46,8 +44,6 @@ public class DiverController : MonoBehaviour
 
     void Update()
     {
-        // Si no hay control (Victoria), forzamos parámetros de IDLE
-        // Al estar en Unscaled Time en el Awake, esto se verá animado aunque el tiempo sea 0
         if (!canControl)
         {
             animator.SetFloat("Speed", 0f);
@@ -57,7 +53,6 @@ public class DiverController : MonoBehaviour
             return;
         }
 
-        // Lógica normal de movimiento
         if (moveInput.x > 0) sr.flipX = false;
         if (moveInput.x < 0) sr.flipX = true;
 
@@ -68,13 +63,10 @@ public class DiverController : MonoBehaviour
         animator.SetBool("IsMoving", isPressingKeys);
         animator.SetFloat("VerticalSpeed", moveInput.y);
         animator.SetFloat("HorizontalSpeed", absHorizontal);
-
-        Debug.Log("VerticalSpeed: " + moveInput.y + " HorizontalSpeed: " + Mathf.Abs(moveInput.x));
     }
 
     void FixedUpdate()
     {
-        // Si el tiempo es 0 o no hay control, las físicas no se aplican
         if (!canControl || Time.timeScale == 0) return;
 
         rb.AddForce(moveInput * moveSpeed, ForceMode2D.Force);
@@ -85,20 +77,32 @@ public class DiverController : MonoBehaviour
         }
     }
 
-    // Método público para quitar/devolver el control desde el GameUI
     public void SetControl(bool value)
     {
         canControl = value;
-
         if (!value)
         {
             moveInput = Vector2.zero;
-            rb.linearVelocity = Vector2.zero; // Frenamos en seco la inercia física
+            rb.linearVelocity = Vector2.zero;
+        }
+    }
+
+    // --- NUEVO MÉTODO EXCLUSIVO PARA LA VICTORIA ---
+    public void SetAnimatorIgnoreTime(bool ignore)
+    {
+        if (animator != null)
+        {
+            animator.updateMode = ignore ? AnimatorUpdateMode.UnscaledTime : AnimatorUpdateMode.Normal;
         }
     }
 
     public void TriggerDeath()
     {
+        // Activamos el trigger del Animator
         animator.SetTrigger("Die");
+
+        // Nos aseguramos de que no haya inercia
+        rb.linearVelocity = Vector2.zero;
+        canControl = false;
     }
 }

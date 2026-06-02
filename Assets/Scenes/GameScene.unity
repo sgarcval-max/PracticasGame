@@ -517,6 +517,7 @@ GameObject:
   - component: {fileID: 140256996}
   - component: {fileID: 140256995}
   - component: {fileID: 140256998}
+  - component: {fileID: 140256999}
   m_Layer: 5
   m_Name: VictoryBaseButton
   m_TagString: Untagged
@@ -640,6 +641,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverScale: 1.1
   animSpeed: 8
+--- !u!114 &140256999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140256993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbfe64806001c542966c488b5e05832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &218590489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2680,6 +2693,7 @@ GameObject:
   - component: {fileID: 683292838}
   - component: {fileID: 683292837}
   - component: {fileID: 683292840}
+  - component: {fileID: 683292841}
   m_Layer: 5
   m_Name: BaseButton
   m_TagString: Untagged
@@ -2803,6 +2817,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverScale: 1.1
   animSpeed: 8
+--- !u!114 &683292841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683292835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbfe64806001c542966c488b5e05832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &684657882
 GameObject:
   m_ObjectHideFlags: 0
@@ -8624,6 +8650,7 @@ GameObject:
   - component: {fileID: 1800621622}
   - component: {fileID: 1800621621}
   - component: {fileID: 1800621624}
+  - component: {fileID: 1800621625}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -8747,6 +8774,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverScale: 1.1
   animSpeed: 8
+--- !u!114 &1800621625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800621619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbfe64806001c542966c488b5e05832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1801860540
 GameObject:
   m_ObjectHideFlags: 0

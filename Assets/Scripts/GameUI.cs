@@ -174,8 +174,20 @@ public class GameUI : MonoBehaviour
 
     public void ShowGameOver()
     {
+        // 1. Mostramos el panel de derrota
         gameOverPanel.SetActive(true);
-        Time.timeScale = 0f; // Pausamos el juego si muere
+
+        // 2. IMPORTANTE: NO ponemos Time.timeScale = 0 aquí.
+        // Queremos que el mundo siga vivo para ver la animación de muerte.
+
+        // 3. Quitamos el control al jugador para que no nade mientras está "muerto"
+        DiverController player = FindFirstObjectByType<DiverController>();
+        if (player != null)
+        {
+            player.SetControl(false);
+            // Llamamos a la animación de muerte que ya tienes en el DiverController
+            player.TriggerDeath();
+        }
     }
 
     // --- AQUÍ CONGELAMOS EL MUNDO PERO EL BUZO SIGUE ALIVIANADO ---
@@ -183,14 +195,14 @@ public class GameUI : MonoBehaviour
     {
         victoryPanel.SetActive(true);
 
-        // 1. Pausamos absolutamente todo el mundo (enemigos, oleadas, temporizadores)
+        // 1. Pausamos absolutamente todo el mundo (enemigos, oleadas)
         Time.timeScale = 0f;
 
-        // 2. Quitamos control al buzo. Como su animator pasa a Unscaled en el Awake, se quedará respirando en IDLE.
         DiverController player = FindFirstObjectByType<DiverController>();
         if (player != null)
         {
             player.SetControl(false);
+            player.SetAnimatorIgnoreTime(true); // ¡AQUÍ! Le decimos que solo AHORA ignore el tiempo
         }
     }
 
@@ -213,6 +225,10 @@ public class GameUI : MonoBehaviour
     private void RestorePlayerControl()
     {
         DiverController player = FindFirstObjectByType<DiverController>();
-        if (player != null) player.SetControl(true);
+        if (player != null)
+        {
+            player.SetControl(true);
+            player.SetAnimatorIgnoreTime(false); // Lo devolvemos a la normalidad al cambiar de escena
+        }
     }
 }
