@@ -10,97 +10,76 @@ public class BaseCinematicManager : MonoBehaviour
     public RawImage videoImage;
     public GameObject cinematicCanvas;
 
+    [Header("Fade Blanco")]
+    public CanvasGroup fadeCanvasGroup; // Arrastra aquí el Canvas Group de la FadeImage
+    public float fadeOutDuration = 1.5f; // Duración del paso de blanco a transparente
+
     [Header("UI & Escenario")]
     public GameObject baseCanvas;
     public GameObject worldLevel;
 
     [Header("Audio & Config")]
-    public float fadeDuration = 1f;
+    public float musicFadeDuration = 1f;
 
     void Awake()
     {
-        // 1. Forzamos que el video esté listo para activarse
         if (videoPlayer != null) videoPlayer.gameObject.SetActive(true);
 
-        // 2. Leemos la condición
+        // Al empezar, el fade blanco debe estar totalmente transparente
+        if (fadeCanvasGroup != null) fadeCanvasGroup.alpha = 0f;
+
         bool comingFromMenu = PlayerPrefs.GetInt("ComingFromMenu", 0) == 1;
-        Debug.Log("¿Viene del menú?: " + comingFromMenu);
 
         if (comingFromMenu)
         {
-            // MODO CINEMÁTICA
             PlayerPrefs.SetInt("ComingFromMenu", 0);
             PlayerPrefs.Save();
 
-            // Apagamos todo lo que NO es cine
             baseCanvas.SetActive(false);
             if (worldLevel != null) worldLevel.SetActive(false);
-
-            // Encendemos el Canvas de cine
             cinematicCanvas.SetActive(true);
 
             StartCoroutine(PlayCinematic());
         }
         else
         {
-            // MODO JUEGO DIRECTO
             cinematicCanvas.SetActive(false);
             baseCanvas.SetActive(true);
             if (worldLevel != null) worldLevel.SetActive(true);
-
-            if (AudioManager.Instance != null)
-            {
-                AudioManager.Instance.isCinematicPlaying = false;
-                AudioManager.Instance.ApplyVolumes();
-                // Si venimos de reinicio, la música debe sonar
-                if (!AudioManager.Instance.musicSource.isPlaying)
-                    AudioManager.Instance.musicSource.Play();
-            }
         }
     }
 
     IEnumerator PlayCinematic()
     {
-        Debug.Log("Iniciando Corrutina de Video...");
-
         if (AudioManager.Instance != null)
         {
             AudioManager.Instance.isCinematicPlaying = true;
-            AudioManager.Instance.musicSource.Stop(); // Silencio total al inicio
+            AudioManager.Instance.musicSource.Stop();
             AudioManager.Instance.musicSource.volume = 0f;
         }
 
-        // Preparamos el audio del video
         if (AudioManager.Instance != null)
         {
             videoPlayer.SetDirectAudioVolume(0,
                 AudioManager.Instance.masterVolume * AudioManager.Instance.cinematicVolume);
         }
 
-        // Preparar y esperar al video
         videoPlayer.Prepare();
+        while (!videoPlayer.isPrepared) yield return null;
 
-        // Esperamos máximo 5 segundos para que no se quede colgado si el video falla
-        float timeout = 0f;
-        while (!videoPlayer.isPrepared && timeout < 5f)
-        {
-            timeout += Time.deltaTime;
-            yield return null;
-        }
-
-        Debug.Log("Video preparado, dándole al Play");
         videoPlayer.Play();
 
-        // Esperar un frame para que isPlaying se vuelva true
         yield return new WaitForEndOfFrame();
+        while (videoPlayer.isPlaying) yield return null;
 
-        // Esperar hasta que el video termine
-        while (videoPlayer.isPlaying)
-        {
-            yield return null;
-        }
+        // --- ¡EL VIDEO HA TERMINADO! ---
 
-        Debug.Log("Video terminado.");
+        // 1. Ponemos la pantalla en blanco al instante
+        if (fadeCanvasGroup != null) fadeCanvasGroup.alpha = 1f;
+
+        // 2. Esperamos un mini momento con la pantalla en blanco
+        yield return new WaitForSeconds(0.2f);
+
         EndCinematic();
     }
 
@@ -109,11 +88,34 @@ public class BaseCinematicManager : MonoBehaviour
         if (AudioManager.Instance != null)
             AudioManager.Instance.isCinematicPlaying = false;
 
-        cinematicCanvas.SetActive(false);
+        // Quitamos el video de fondo
+        videoPlayer.gameObject.SetActive(false);
+
+        // Activamos el juego
         baseCanvas.SetActive(true);
         if (worldLevel != null) worldLevel.SetActive(true);
 
+        // 3. Iniciamos el efecto de desvanecer el blanco y subir la música
+        StartCoroutine(FadeOutWhite());
         StartCoroutine(FadeInMusic());
+    }
+
+    IEnumerator FadeOutWhite()
+    {
+        if (fadeCanvasGroup == null) yield break;
+
+        float timer = 0f;
+        while (timer < fadeOutDuration)
+        {
+            timer += Time.deltaTime;
+            // Va de 1 (blanco sólido) a 0 (transparente)
+            fadeCanvasGroup.alpha = Mathf.Lerp(1f, 0f, timer / fadeOutDuration);
+            yield return null;
+        }
+
+        fadeCanvasGroup.alpha = 0f;
+        // Apagamos el canvas de cine definitivamente
+        cinematicCanvas.SetActive(false);
     }
 
     IEnumerator FadeInMusic()
@@ -121,15 +123,14 @@ public class BaseCinematicManager : MonoBehaviour
         if (AudioManager.Instance == null) yield break;
 
         float targetVolume = AudioManager.Instance.masterVolume * AudioManager.Instance.musicVolume;
-
         AudioManager.Instance.musicSource.volume = 0f;
-        AudioManager.Instance.musicSource.Play(); // Iniciamos la música AQUÍ
+        AudioManager.Instance.musicSource.Play();
 
         float timer = 0f;
-        while (timer < fadeDuration)
+        while (timer < musicFadeDuration)
         {
             timer += Time.deltaTime;
-            AudioManager.Instance.musicSource.volume = Mathf.Lerp(0f, targetVolume, timer / fadeDuration);
+            AudioManager.Instance.musicSource.volume = Mathf.Lerp(0f, targetVolume, timer / musicFadeDuration);
             yield return null;
         }
 

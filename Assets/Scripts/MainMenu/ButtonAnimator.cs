@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ButtonAnimator : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ButtonAnimator : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public float hoverScale = 1.1f;
     public float animSpeed = 8f;
@@ -15,9 +15,16 @@ public class ButtonAnimator : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         targetScale = originalScale;
     }
 
+    void OnDisable()
+    {
+        // SEGURO 1: Si el botón se desactiva, reseteamos la escala al instante
+        // Esto evita que al volver a abrir el panel el botón aparezca grande.
+        transform.localScale = originalScale;
+        targetScale = originalScale;
+    }
+
     void Update()
     {
-        // Usamos unscaledDeltaTime para que funcione aunque el juego esté pausado
         transform.localScale = Vector3.Lerp(
             transform.localScale,
             targetScale,
@@ -32,6 +39,13 @@ public class ButtonAnimator : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        targetScale = originalScale;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        // SEGURO 2: Al hacer clic, forzamos que el objetivo sea la escala original.
+        // Esto soluciona el bug de que se quede "grande" al abrir/cerrar menús.
         targetScale = originalScale;
     }
 }
