@@ -9,7 +9,10 @@ public class BaseManager : MonoBehaviour
     [Header("Mission")]
     public TextMeshProUGUI missionText;
 
-    [Header("Mochila - Peces capturados sin domesticar")]
+    [Header("Mochila - Peces capturados")]
+    public GameObject bagPanel; // ASIGNAR EL PANEL NUEVO
+    public Button openBagButton; // BOTÓN CON EL ICONO DE MOCHILA
+    public Button closeBagButton; // BOTÓN "X" PARA CERRAR
     public Transform bagScrollContent;
     public GameObject fishCardPrefab;
 
@@ -39,11 +42,18 @@ public class BaseManager : MonoBehaviour
     {
         playButton.onClick.AddListener(GoToSea);
         tamingMinigame = FindFirstObjectByType<TamingMinigame>();
-        RefreshUI();
+
+        // Nuevos listeners para la mochila
+        if (openBagButton != null) openBagButton.onClick.AddListener(OpenBag);
+        if (closeBagButton != null) closeBagButton.onClick.AddListener(CloseBag);
 
         optionsButton.onClick.AddListener(OpenOptions);
         optionsBackButton.onClick.AddListener(CloseOptions);
+
         optionsPanel.SetActive(false);
+        if (bagPanel != null) bagPanel.SetActive(false); // Empezar cerrada
+
+        RefreshUI();
     }
 
     public void RefreshUI()
@@ -56,55 +66,55 @@ public class BaseManager : MonoBehaviour
         UpdateEquippedPanel();
     }
 
+    // MÉTODOS NUEVOS PARA EL PANEL
+    public void OpenBag() { bagPanel.SetActive(true); RefreshUI(); }
+    public void CloseBag() { bagPanel.SetActive(false); }
+
     void UpdateMission()
     {
         if (missionText == null) return;
-
         int collected = GameManager.Instance.collectedTreasure;
         int total = 5;
 
         if (GameManager.Instance.missionCompleted)
         {
-            missionText.text = "Misión:\n" + GameManager.Instance.currentMission +
-                               "\n\n " + collected + "/" + total +
-                               "\n\n✓ COMPLETADA!";
+            missionText.text = "Misión:\n" + GameManager.Instance.currentMission + "\n\n " + collected + "/" + total + "\n\n✓ COMPLETADA!";
             missionText.color = new Color(0.2f, 0.8f, 0.2f);
         }
         else
         {
-            missionText.text = "Misión:\n" + GameManager.Instance.currentMission +
-                               "\n\n " + collected + "/" + total +
-                               "\n\nPendiente...";
+            missionText.text = "Misión:\n" + GameManager.Instance.currentMission + "\n\n " + collected + "/" + total + "\n\nPendiente...";
             missionText.color = Color.white;
         }
     }
 
-    // Mochila: peces capturados sin domesticar
     void UpdateBag()
     {
+        if (bagScrollContent == null) return;
+
         foreach (Transform child in bagScrollContent)
             Destroy(child.gameObject);
 
+        // Agrupamos por tipo para las cartas
         Dictionary<FishType, int> fishCount = new Dictionary<FishType, int>();
         foreach (FishType fish in GameManager.Instance.caughtFish)
         {
-            if (fishCount.ContainsKey(fish))
-                fishCount[fish]++;
-            else
-                fishCount[fish] = 1;
+            if (fishCount.ContainsKey(fish)) fishCount[fish]++;
+            else fishCount[fish] = 1;
         }
 
-        int index = 0;
-        foreach (KeyValuePair<FishType, int> entry in fishCount)
+        // Creamos las cartas basándonos en los tipos únicos capturados
+        List<FishType> unique = GetUniqueCaughtFish();
+        for (int i = 0; i < unique.Count; i++)
         {
+            FishType type = unique[i];
             GameObject card = Instantiate(fishCardPrefab, bagScrollContent);
             FishCard fishCard = card.GetComponent<FishCard>();
-            fishCard.SetupBagCard(entry.Key, entry.Value, index, this);
-            index++;
+            // Pasamos el índice de la lista UNIQUE para que StartTaming no falle
+            fishCard.SetupBagCard(type, fishCount[type], i, this);
         }
     }
 
-    // Acuario: peces domesticados
     void UpdateAquarium()
     {
         AquariumManager aquariumManager = FindFirstObjectByType<AquariumManager>();
@@ -136,7 +146,6 @@ public class BaseManager : MonoBehaviour
         }
     }
 
-    // Iniciar minijuego de domesticación
     public void StartTaming(int fishIndex)
     {
         List<FishType> uniqueFish = GetUniqueCaughtFish();
@@ -146,18 +155,8 @@ public class BaseManager : MonoBehaviour
 
         tamingMinigame?.StartMinigame(fish, (success) =>
         {
-            if (success)
-            {
-                // Domesticado con éxito
-                GameManager.Instance.caughtFish.Remove(fish);
-                GameManager.Instance.tamedFish.Add(fish);
-            }
-            else
-            {
-                // Fallo, perdemos el pez
-                GameManager.Instance.caughtFish.Remove(fish);
-            }
-
+            GameManager.Instance.caughtFish.Remove(fish);
+            if (success) GameManager.Instance.tamedFish.Add(fish);
             RefreshUI();
         });
     }
@@ -166,16 +165,9 @@ public class BaseManager : MonoBehaviour
     {
         List<FishType> uniqueFish = GetUniqueTamedFish();
         if (fishIndex >= uniqueFish.Count) return;
-
         FishType fish = uniqueFish[fishIndex];
 
-        if (GameManager.Instance.equippedFish.Count >= 3)
-        {
-            Debug.Log("Ya tienes 3 peces equipados!");
-            return;
-        }
-
-        if (!GameManager.Instance.equippedFish.Contains(fish))
+        if (GameManager.Instance.equippedFish.Count < 3 && !GameManager.Instance.equippedFish.Contains(fish))
         {
             GameManager.Instance.equippedFish.Add(fish);
             RefreshUI();
@@ -186,7 +178,6 @@ public class BaseManager : MonoBehaviour
     {
         List<FishType> uniqueFish = GetUniqueTamedFish();
         if (fishIndex >= uniqueFish.Count) return;
-
         FishType fish = uniqueFish[fishIndex];
         GameManager.Instance.equippedFish.Remove(fish);
         RefreshUI();
@@ -197,8 +188,7 @@ public class BaseManager : MonoBehaviour
         List<FishType> unique = new List<FishType>();
         foreach (FishType fish in GameManager.Instance.caughtFish)
         {
-            if (!unique.Contains(fish))
-                unique.Add(fish);
+            if (!unique.Contains(fish)) unique.Add(fish);
         }
         return unique;
     }
@@ -208,26 +198,17 @@ public class BaseManager : MonoBehaviour
         List<FishType> unique = new List<FishType>();
         foreach (FishType fish in GameManager.Instance.tamedFish)
         {
-            if (!unique.Contains(fish))
-                unique.Add(fish);
+            if (!unique.Contains(fish)) unique.Add(fish);
         }
         return unique;
     }
 
     void GoToSea()
     {
-        if (SceneTransition.Instance != null)
-            SceneTransition.Instance.TransitionToGame();
-        else
-            SceneManager.LoadScene("GameScene");
-    }
-    void OpenOptions()
-    {
-        optionsPanel.SetActive(true);
+        if (SceneTransition.Instance != null) SceneTransition.Instance.TransitionToGame();
+        else SceneManager.LoadScene("GameScene");
     }
 
-    void CloseOptions()
-    {
-        optionsPanel.SetActive(false);
-    }
+    void OpenOptions() => optionsPanel.SetActive(true);
+    void CloseOptions() => optionsPanel.SetActive(false);
 }

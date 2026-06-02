@@ -14,43 +14,37 @@ public class FishCard : MonoBehaviour
     private int fishIndex;
     private BaseManager baseManager;
 
-    // Tarjeta de mochila (pez sin domesticar)
     public void SetupBagCard(FishType type, int count, int index, BaseManager manager)
     {
         fishIndex = index;
         baseManager = manager;
 
         fishIcon.color = FishData.GetColor(type);
-
-        fishName.text = count > 1 ?
-            FishData.GetName(type) + " x" + count :
-            FishData.GetName(type);
-
+        fishName.text = count > 1 ? FishData.GetName(type) + " x" + count : FishData.GetName(type);
         fishDescription.text = "Sin domesticar\nPulsa para intentarlo";
 
         actionButton.gameObject.SetActive(true);
         unequipButton.gameObject.SetActive(false);
 
-        // Botón naranja de domesticar
         actionButton.GetComponent<Image>().color = new Color(0.8f, 0.5f, 0.1f);
-        actionButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Domesticar";
+        actionButton.GetComponentInChildren<TextMeshProUGUI>().text = "Domesticar";
 
+        // IMPORTANTE: Limpiar el botón antes de añadir el listener
+        actionButton.onClick.RemoveAllListeners();
         actionButton.onClick.AddListener(Tame);
     }
 
-    // Tarjeta de acuario (pez domesticado)
     public void SetupAquariumCard(FishType type, int count, int index, BaseManager manager, bool isEquipped)
     {
         fishIndex = index;
         baseManager = manager;
 
         fishIcon.color = FishData.GetColor(type);
-
-        fishName.text = count > 1 ?
-            FishData.GetName(type) + " x" + count :
-            FishData.GetName(type);
-
+        fishName.text = count > 1 ? FishData.GetName(type) + " x" + count : FishData.GetName(type);
         fishDescription.text = FishData.GetDescription(type);
+
+        actionButton.onClick.RemoveAllListeners();
+        unequipButton.onClick.RemoveAllListeners();
 
         if (isEquipped)
         {
@@ -62,11 +56,8 @@ public class FishCard : MonoBehaviour
         {
             actionButton.gameObject.SetActive(true);
             unequipButton.gameObject.SetActive(false);
-
-            // Botón verde de equipar
             actionButton.GetComponent<Image>().color = new Color(0.2f, 0.7f, 0.2f);
-            actionButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Equipar";
-
+            actionButton.GetComponentInChildren<TextMeshProUGUI>().text = "Equipar";
             actionButton.onClick.AddListener(Equip);
         }
     }

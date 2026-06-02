@@ -1,0 +1,2158 @@
+fileFormatVersion: 2
+guid: 3aba422c2a98b7147a1c2a38c3fdb6da
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6667741362629162738
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_0
+  - first:
+      213: -4124969601610008784
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_1
+  - first:
+      213: -3266144610709380454
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_2
+  - first:
+      213: 4103653355953176907
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_3
+  - first:
+      213: 9150771343560305230
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_4
+  - first:
+      213: 5442674135448652679
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_5
+  - first:
+      213: -4245136376093541735
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_6
+  - first:
+      213: -5055262961260745945
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_7
+  - first:
+      213: -7897225249571357028
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_8
+  - first:
+      213: 1383447218091123948
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_9
+  - first:
+      213: -3477770315423854179
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_10
+  - first:
+      213: 5599312276448536465
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_11
+  - first:
+      213: -5603430579847165188
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_12
+  - first:
+      213: 8261809007996273812
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_13
+  - first:
+      213: 1589289148945411217
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_14
+  - first:
+      213: 3483515696356304490
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_15
+  - first:
+      213: 8732738378573477537
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_16
+  - first:
+      213: -6406499989067737734
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_17
+  - first:
+      213: 5052433299237433982
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_18
+  - first:
+      213: -1305054190545701358
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_19
+  - first:
+      213: -7836617750161733710
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_20
+  - first:
+      213: 8075890761441226710
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_21
+  - first:
+      213: -5961999125448416893
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_22
+  - first:
+      213: 3752947206355831611
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_23
+  - first:
+      213: 3778069642996198690
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_24
+  - first:
+      213: 1910326884252818161
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_25
+  - first:
+      213: 2018831177248611239
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_26
+  - first:
+      213: -1893953637491948549
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_27
+  - first:
+      213: -1598904830770401092
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_28
+  - first:
+      213: 4330725650767912406
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_29
+  - first:
+      213: 9186950384622323565
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_30
+  - first:
+      213: 9140298801754399394
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_31
+  - first:
+      213: 7207220160071944109
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_32
+  - first:
+      213: 5284219196681218981
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_33
+  - first:
+      213: -4791628052794981202
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_34
+  - first:
+      213: -5064307065614123842
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_35
+  - first:
+      213: -8984607659829500489
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_36
+  - first:
+      213: 3665992175312487112
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_37
+  - first:
+      213: 8595323048261770190
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_38
+  - first:
+      213: 2869231055057205384
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_39
+  - first:
+      213: 6613539328786524808
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_40
+  - first:
+      213: -4406111285808560540
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_41
+  - first:
+      213: -191756551279563380
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_42
+  - first:
+      213: 3134578651252483313
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_43
+  - first:
+      213: 2739797273582886919
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_44
+  - first:
+      213: 150050212372828793
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_45
+  - first:
+      213: -1908283745235157253
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_46
+  - first:
+      213: -4517313329759278592
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_47
+  - first:
+      213: -8567253099164588260
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_48
+  - first:
+      213: -8455283940650021956
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_49
+  - first:
+      213: 1517637000671528132
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_50
+  - first:
+      213: 1348991681376428242
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_51
+  - first:
+      213: 3103384523889676358
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_52
+  - first:
+      213: -4266064883049321719
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_53
+  - first:
+      213: -6159868054657435860
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_54
+  - first:
+      213: -3023484437599891719
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_55
+  - first:
+      213: 3445776767020677990
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_56
+  - first:
+      213: 1183982409804937886
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_57
+  - first:
+      213: 9165736023417013089
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_58
+  - first:
+      213: -3165835177188979913
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_59
+  - first:
+      213: -7551764939931741307
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_60
+  - first:
+      213: -8243788424874548783
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_61
+  - first:
+      213: -3355569557531285575
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_62
+  - first:
+      213: -2326149077386682989
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_63
+  - first:
+      213: 998842358589123179
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_64
+  - first:
+      213: -5511712817164398236
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_65
+  - first:
+      213: 4739261403299313431
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_66
+  - first:
+      213: 8694132479607756600
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_67
+  - first:
+      213: -8853755182913074105
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_68
+  - first:
+      213: 6566374899237132099
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_69
+  - first:
+      213: -8130099403510687998
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_70
+  - first:
+      213: 8714489198233706543
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_71
+  - first:
+      213: -8436695824877678903
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_72
+  - first:
+      213: -5929892445311019598
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_73
+  - first:
+      213: -8212792999888790228
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_74
+  - first:
+      213: -4746633545037737614
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_75
+  - first:
+      213: -2786322665756797489
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_76
+  - first:
+      213: 6114081151445776747
+    second: pngtree-backpack-trendy-travel-bag-png-image_20399684_77
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2246
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e094f42de8c6773a0800000000000000
+      internalID: -6667741362629162738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_1
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 111
+        width: 1808
+        height: 2382
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03730ca900a21c6c0800000000000000
+      internalID: -4124969601610008784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_2
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 2365
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a926c9508c25ca2d0800000000000000
+      internalID: -3266144610709380454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_3
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 2390
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b41cde23cfa13f830800000000000000
+      internalID: 4103653355953176907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_4
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 2397
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4a6cb9dd021efe70800000000000000
+      internalID: 9150771343560305230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_5
+      rect:
+        serializedVersion: 2
+        x: 2206
+        y: 2308
+        width: 53
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78b8f972a43488b40800000000000000
+      internalID: 5442674135448652679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_6
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 2346
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99afad725fe3615c0800000000000000
+      internalID: -4245136376093541735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_7
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 2247
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72b2dd3ee1918d9b0800000000000000
+      internalID: -5055262961260745945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_8
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 2278
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9ebd001a7b676290800000000000000
+      internalID: -7897225249571357028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_9
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 2162
+        width: 74
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce4e2df3aedf23310800000000000000
+      internalID: 1383447218091123948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_10
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 1914
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9153caf25a7cbfc0800000000000000
+      internalID: -3477770315423854179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_11
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 2085
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 197e23859d0c4bd40800000000000000
+      internalID: 5599312276448536465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_12
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 2110
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfa06ac639d9c32b0800000000000000
+      internalID: -5603430579847165188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_13
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 2028
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4948db31587d7a270800000000000000
+      internalID: 8261809007996273812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_14
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 2066
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19c26408f0a4e0610800000000000000
+      internalID: 1589289148945411217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_15
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1968
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a66a0d2c11fe75030800000000000000
+      internalID: 3483515696356304490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_16
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1999
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a6fa4b894be03970800000000000000
+      internalID: 8732738378573477537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_17
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 1968
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a75d21af33a8717a0800000000000000
+      internalID: -6406499989067737734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_18
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1645
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e72f6641159dd1640800000000000000
+      internalID: 5052433299237433982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_19
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 1764
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21673efc02483ede0800000000000000
+      internalID: -1305054190545701358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_20
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 1790
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b7c6192dadbe3390800000000000000
+      internalID: -7836617750161733710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_21
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 1796
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df20901cd3531070800000000000000
+      internalID: 8075890761441226710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_22
+      rect:
+        serializedVersion: 2
+        x: 2207
+        y: 1707
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38125782269b24da0800000000000000
+      internalID: -5961999125448416893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_23
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 1745
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3b42a7a995251430800000000000000
+      internalID: 3752947206355831611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_24
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 1646
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22da97fb2566e6430800000000000000
+      internalID: 3778069642996198690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_25
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 1677
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fa94cc0e28d28a10800000000000000
+      internalID: 1910326884252818161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_26
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 1561
+        width: 74
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ab136d6244540c10800000000000000
+      internalID: 2018831177248611239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_27
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 1313
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf3cb38833357b5e0800000000000000
+      internalID: -1893953637491948549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_28
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 1484
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb0364c178c8fc9e0800000000000000
+      internalID: -1598904830770401092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_29
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 1509
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dd91b1c804d91c30800000000000000
+      internalID: 4330725650767912406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_30
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 1427
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d674d8443ba9e7f70800000000000000
+      internalID: 9186950384622323565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_31
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 1465
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a2ef73355dd8de70800000000000000
+      internalID: 9140298801754399394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_32
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 1367
+        width: 43
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da74f13dc80350460800000000000000
+      internalID: 7207220160071944109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_33
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1398
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5abeb75cc51555940800000000000000
+      internalID: 5284219196681218981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_34
+      rect:
+        serializedVersion: 2
+        x: 2472
+        y: 1367
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea4cb515ca7b08db0800000000000000
+      internalID: -4791628052794981202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_35
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1044
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebcb1904e87f7b9b0800000000000000
+      internalID: -5064307065614123842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_36
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 1163
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b5eb959fe2405380800000000000000
+      internalID: -8984607659829500489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_37
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 1188
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c2ccdec57830e230800000000000000
+      internalID: 3665992175312487112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_38
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 1195
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecbde5db5c8b84770800000000000000
+      internalID: 8595323048261770190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_39
+      rect:
+        serializedVersion: 2
+        x: 2206
+        y: 1106
+        width: 53
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8883437517e81d720800000000000000
+      internalID: 2869231055057205384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_40
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 1144
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88a6560caf208cb50800000000000000
+      internalID: 6613539328786524808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_41
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 1045
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4668a8051295ad2c0800000000000000
+      internalID: -4406111285808560540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_42
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 1076
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8da0adbe6eb65df0800000000000000
+      internalID: -191756551279563380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_43
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 960
+        width: 74
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f46d64fca2408b20800000000000000
+      internalID: 3134578651252483313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_44
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 712
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 700ed70ba17b50620800000000000000
+      internalID: 2739797273582886919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_45
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 883
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97254f68fd5151200800000000000000
+      internalID: 150050212372828793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_46
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 908
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfe3b925b0a6485e0800000000000000
+      internalID: -1908283745235157253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_47
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 826
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00aaf88d5774f41c0800000000000000
+      internalID: -4517313329759278592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_48
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 864
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c172e6392b00b1980800000000000000
+      internalID: -8567253099164588260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_49
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 766
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbb8d72dd0cc8aa80800000000000000
+      internalID: -8455283940650021956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_50
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 797
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c40403bfcabf0510800000000000000
+      internalID: 1517637000671528132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_51
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 766
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d0266579c498b210800000000000000
+      internalID: 1348991681376428242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_52
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 443
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64093e338cf611b20800000000000000
+      internalID: 3103384523889676358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_53
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 562
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90ba3196794ebc4c0800000000000000
+      internalID: -4266064883049321719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_54
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 588
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c27fdd204a0c38aa0800000000000000
+      internalID: -6159868054657435860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_55
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 594
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fecfe05cec6a06d0800000000000000
+      internalID: -3023484437599891719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_56
+      rect:
+        serializedVersion: 2
+        x: 2207
+        y: 505
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66bbf8d86bbd1df20800000000000000
+      internalID: 3445776767020677990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_57
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 543
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9afbbc8ab95e6010800000000000000
+      internalID: 1183982409804937886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_58
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 444
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 163c5c4e95c333f70800000000000000
+      internalID: 9165736023417013089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_59
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 475
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73b073efda1b014d0800000000000000
+      internalID: -3165835177188979913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_60
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 359
+        width: 74
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5839e105ccdb23790800000000000000
+      internalID: -7551764939931741307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_61
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 111
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d120e3ea1e289d80800000000000000
+      internalID: -8243788424874548783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_62
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 282
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b7ab38144f9e61d0800000000000000
+      internalID: -3355569557531285575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_63
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 307
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39d93c31dbbd7bfd0800000000000000
+      internalID: -2326149077386682989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_64
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 225
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6a615245d99cdd00800000000000000
+      internalID: 998842358589123179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_65
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 263
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 461d2f425667283b0800000000000000
+      internalID: -5511712817164398236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_66
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 165
+        width: 43
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 717ff59f22d35c140800000000000000
+      internalID: 4739261403299313431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_67
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 196
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 837d43d3d63c7a870800000000000000
+      internalID: 8694132479607756600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_68
+      rect:
+        serializedVersion: 2
+        x: 2472
+        y: 165
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74c41320294212580800000000000000
+      internalID: -8853755182913074105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_69
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 96
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34712134e23702b50800000000000000
+      internalID: 6566374899237132099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_70
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 0
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2075129eaa51c2f80800000000000000
+      internalID: -8130099403510687998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_71
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 0
+        width: 96
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f20e2b321c510f870800000000000000
+      internalID: 8714489198233706543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_72
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 0
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ce0528c8d5daea80800000000000000
+      internalID: -8436695824877678903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_73
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 0
+        width: 96
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b5d6f82d3ac4bda0800000000000000
+      internalID: -5929892445311019598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_74
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 0
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2d50d3a74c460e80800000000000000
+      internalID: -8212792999888790228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_75
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 0
+        width: 96
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 271921580f1902eb0800000000000000
+      internalID: -4746633545037737614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_76
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 0
+        width: 35
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc552fd4c4ef459d0800000000000000
+      internalID: -2786322665756797489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-backpack-trendy-travel-bag-png-image_20399684_77
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 0
+        width: 90
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6936d7d96499d450800000000000000
+      internalID: 6114081151445776747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_0: -6667741362629162738
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_1: -4124969601610008784
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_10: -3477770315423854179
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_11: 5599312276448536465
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_12: -5603430579847165188
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_13: 8261809007996273812
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_14: 1589289148945411217
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_15: 3483515696356304490
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_16: 8732738378573477537
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_17: -6406499989067737734
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_18: 5052433299237433982
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_19: -1305054190545701358
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_2: -3266144610709380454
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_20: -7836617750161733710
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_21: 8075890761441226710
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_22: -5961999125448416893
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_23: 3752947206355831611
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_24: 3778069642996198690
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_25: 1910326884252818161
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_26: 2018831177248611239
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_27: -1893953637491948549
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_28: -1598904830770401092
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_29: 4330725650767912406
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_3: 4103653355953176907
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_30: 9186950384622323565
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_31: 9140298801754399394
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_32: 7207220160071944109
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_33: 5284219196681218981
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_34: -4791628052794981202
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_35: -5064307065614123842
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_36: -8984607659829500489
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_37: 3665992175312487112
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_38: 8595323048261770190
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_39: 2869231055057205384
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_4: 9150771343560305230
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_40: 6613539328786524808
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_41: -4406111285808560540
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_42: -191756551279563380
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_43: 3134578651252483313
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_44: 2739797273582886919
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_45: 150050212372828793
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_46: -1908283745235157253
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_47: -4517313329759278592
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_48: -8567253099164588260
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_49: -8455283940650021956
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_5: 5442674135448652679
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_50: 1517637000671528132
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_51: 1348991681376428242
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_52: 3103384523889676358
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_53: -4266064883049321719
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_54: -6159868054657435860
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_55: -3023484437599891719
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_56: 3445776767020677990
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_57: 1183982409804937886
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_58: 9165736023417013089
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_59: -3165835177188979913
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_6: -4245136376093541735
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_60: -7551764939931741307
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_61: -8243788424874548783
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_62: -3355569557531285575
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_63: -2326149077386682989
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_64: 998842358589123179
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_65: -5511712817164398236
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_66: 4739261403299313431
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_67: 8694132479607756600
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_68: -8853755182913074105
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_69: 6566374899237132099
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_7: -5055262961260745945
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_70: -8130099403510687998
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_71: 8714489198233706543
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_72: -8436695824877678903
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_73: -5929892445311019598
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_74: -8212792999888790228
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_75: -4746633545037737614
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_76: -2786322665756797489
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_77: 6114081151445776747
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_8: -7897225249571357028
+      pngtree-backpack-trendy-travel-bag-png-image_20399684_9: 1383447218091123948
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
