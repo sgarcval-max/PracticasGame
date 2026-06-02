@@ -14,7 +14,7 @@ public class BaseManager : MonoBehaviour
     public GameObject bagPanel;
     public Button openBagButton;
     public Button closeBagButton;
-    public float animationSpeed = 8f; // Velocidad de apertura/cierre
+    public float animationSpeed = 8f;
     private Coroutine bagCoroutine;
 
     [Header("Mochila - Contenido")]
@@ -44,19 +44,15 @@ public class BaseManager : MonoBehaviour
     {
         tamingMinigame = FindFirstObjectByType<TamingMinigame>();
 
-        // Listeners de botones principales
         playButton.onClick.AddListener(GoToSea);
         optionsButton.onClick.AddListener(() => optionsPanel.SetActive(true));
         optionsBackButton.onClick.AddListener(() => optionsPanel.SetActive(false));
 
-        // Listeners de la mochila
         openBagButton.onClick.AddListener(OpenBag);
         closeBagButton.onClick.AddListener(CloseBag);
 
-        // Configuración inicial
         optionsPanel.SetActive(false);
 
-        // Inicializamos el panel de la mochila cerrado y a escala 0
         bagPanel.SetActive(false);
         bagPanel.GetComponent<RectTransform>().localScale = Vector3.zero;
 
@@ -73,11 +69,18 @@ public class BaseManager : MonoBehaviour
         UpdateEquippedPanel();
     }
 
-    // --- LÓGICA DE ANIMACIÓN DE LA MOCHILA ---
+    // --- LÓGICA DE ANIMACIÓN Y AUDIO DE LA MOCHILA ---
 
     public void OpenBag()
     {
         if (bagCoroutine != null) StopCoroutine(bagCoroutine);
+
+        // REPRODUCIR SONIDO AL ABRIR
+        if (AudioManager.Instance != null && AudioManager.Instance.bagOpenSound != null)
+        {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.bagOpenSound);
+        }
+
         bagPanel.SetActive(true);
         RefreshUI();
         bagCoroutine = StartCoroutine(AnimateBag(Vector3.one));
@@ -86,6 +89,13 @@ public class BaseManager : MonoBehaviour
     public void CloseBag()
     {
         if (bagCoroutine != null) StopCoroutine(bagCoroutine);
+
+        // REPRODUCIR SONIDO AL CERRAR
+        if (AudioManager.Instance != null && AudioManager.Instance.bagCloseSound != null)
+        {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.bagCloseSound);
+        }
+
         bagCoroutine = StartCoroutine(AnimateBag(Vector3.zero, () => {
             bagPanel.SetActive(false);
         }));
@@ -95,7 +105,6 @@ public class BaseManager : MonoBehaviour
     {
         RectTransform rect = bagPanel.GetComponent<RectTransform>();
 
-        // Usamos un Lerp para que el movimiento sea fluido
         while (Vector3.Distance(rect.localScale, targetScale) > 0.005f)
         {
             rect.localScale = Vector3.Lerp(rect.localScale, targetScale, Time.deltaTime * animationSpeed);

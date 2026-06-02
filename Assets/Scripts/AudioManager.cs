@@ -22,11 +22,14 @@ public class AudioManager : MonoBehaviour
     public AudioClip buttonHoverSound;
     public AudioClip buttonClickSound;
 
-    public bool isCinematicPlaying = false; // Añade esta variable arriba
+    [Header("SFX Mochila")]
+    public AudioClip bagOpenSound;
+    public AudioClip bagCloseSound;
+
+    public bool isCinematicPlaying = false;
 
     void Start()
     {
-        // Aplicamos una vez más después de que todo se haya inicializado
         LoadVolumes();
     }
 
@@ -40,32 +43,26 @@ public class AudioManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
-        // ... (tus comprobaciones de AudioSource) ...
     }
 
-    // Esto se ejecuta cada vez que se habilita el objeto
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    // Esto limpia el evento si el objeto se destruye
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    // Esta función se activará SOLA cada vez que cambies de escena
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("Escena cargada: Refrescando volúmenes...");
-        LoadVolumes(); // Volvemos a cargar y aplicar para asegurar
+        LoadVolumes();
     }
 
     void LoadVolumes()
     {
-        // Usamos 1f como valor por defecto si no existe el registro
         masterVolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
         musicVolume = PlayerPrefs.GetFloat("MusicVolume", 1f);
         sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
@@ -106,32 +103,26 @@ public class AudioManager : MonoBehaviour
 
     public void ApplyVolumes()
     {
-        // Solo aplicamos volumen a la música si NO hay una cinemática sonando
         if (musicSource != null && !isCinematicPlaying)
             musicSource.volume = masterVolume * musicVolume;
         else if (isCinematicPlaying)
-            musicSource.volume = 0f; // Silencio absoluto durante cine
+            musicSource.volume = 0f;
 
         if (sfxSource != null)
-            sfxSource.volume = 1f;
+            sfxSource.volume = masterVolume * sfxVolume; // Corregido para que aplique el volumen real de SFX
 
         if (cinematicSource != null)
             cinematicSource.volume = masterVolume * cinematicVolume;
     }
 
-    // Reproducir efecto de sonido
     public void PlaySFX(AudioClip clip)
     {
         if (clip == null || sfxSource == null) return;
 
-        // FORZAMOS el volumen justo antes de reproducir para "despertar" al componente
         sfxSource.volume = masterVolume * sfxVolume;
-
-        // Reproducimos
         sfxSource.PlayOneShot(clip);
     }
 
-    // Reproducir música
     public void PlayMusic(AudioClip clip)
     {
         if (clip == null || musicSource == null) return;
@@ -142,7 +133,6 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
     }
 
-    // Parar música
     public void StopMusic()
     {
         if (musicSource != null)

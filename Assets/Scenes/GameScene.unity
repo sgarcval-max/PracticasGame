@@ -6328,7 +6328,7 @@ MonoBehaviour:
   equippedFish: 
   collectedTreasure: 0
   currentWave: 0
-  currentMission: Encuentra el cofre dorado
+  currentMission: Encuentra las monedas
   missionCompleted: 0
   comingFromMenu: 0
   collectedTreasureBackup: 0
