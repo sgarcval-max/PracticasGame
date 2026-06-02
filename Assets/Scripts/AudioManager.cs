@@ -1,6 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -32,33 +33,39 @@ public class AudioManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        // Si los AudioSources no están asignados los creamos
-        if (musicSource == null)
-        {
-            musicSource = gameObject.AddComponent<AudioSource>();
-            musicSource.loop = true;
-            musicSource.playOnAwake = false;
-        }
-        if (sfxSource == null)
-        {
-            sfxSource = gameObject.AddComponent<AudioSource>();
-            sfxSource.playOnAwake = false;
-        }
-        if (cinematicSource == null)
-        {
-            cinematicSource = gameObject.AddComponent<AudioSource>();
-            cinematicSource.playOnAwake = false;
-        }
+        // ... (tus comprobaciones de AudioSource) ...
 
         LoadVolumes();
     }
 
+    // Esto se ejecuta cada vez que se habilita el objeto
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    // Esto limpia el evento si el objeto se destruye
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    // Esta función se activará SOLA cada vez que cambies de escena
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("Escena cargada: Refrescando volúmenes...");
+        LoadVolumes(); // Volvemos a cargar y aplicar para asegurar
+    }
+
     void LoadVolumes()
     {
+        // Usamos 1f como valor por defecto si no existe el registro
         masterVolume = PlayerPrefs.GetFloat("MasterVolume", 1f);
         musicVolume = PlayerPrefs.GetFloat("MusicVolume", 1f);
         sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
         cinematicVolume = PlayerPrefs.GetFloat("CinematicVolume", 1f);
+
+        Debug.Log($"Volúmenes cargados - Master: {masterVolume}, SFX: {sfxVolume}");
 
         ApplyVolumes();
     }
@@ -106,9 +113,13 @@ public class AudioManager : MonoBehaviour
     // Reproducir efecto de sonido
     public void PlaySFX(AudioClip clip)
     {
-        Debug.Log("PlaySFX llamado: " + (clip != null ? clip.name : "null") + " sfxSource: " + (sfxSource != null ? "OK" : "NULL"));
         if (clip == null || sfxSource == null) return;
-        sfxSource.PlayOneShot(clip, masterVolume * sfxVolume);
+
+        // FORZAMOS el volumen justo antes de reproducir para "despertar" al componente
+        sfxSource.volume = masterVolume * sfxVolume;
+
+        // Reproducimos
+        sfxSource.PlayOneShot(clip);
     }
 
     // Reproducir música

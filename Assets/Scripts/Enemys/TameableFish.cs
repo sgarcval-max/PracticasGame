@@ -31,33 +31,29 @@ public class TameableFish : MonoBehaviour
     void SetFishSprite()
     {
         WaveManager waveManager = FindFirstObjectByType<WaveManager>();
-        if (waveManager == null)
-        {
-            Debug.Log("WaveManager no encontrado");
-            return;
-        }
-
-        Debug.Log("Buscando sprite para: " + fishType);
+        if (waveManager == null) return;
 
         foreach (GameObject prefab in waveManager.fishPrefabs)
         {
             FishEnemy fe = prefab.GetComponent<FishEnemy>();
-            if (fe != null)
+            if (fe != null && fe.fishType == fishType)
             {
-                Debug.Log("Prefab encontrado: " + fe.fishType);
-                if (fe.fishType == fishType)
+                // CAMBIO AQUÍ: En lugar de prefabSr.sprite, usamos fe.tameableSprite
+                if (fe.tameableSprite != null)
                 {
-                    SpriteRenderer prefabSr = prefab.GetComponent<SpriteRenderer>();
-                    if (prefabSr != null && prefabSr.sprite != null)
-                    {
-                        Debug.Log("Sprite asignado: " + prefabSr.sprite.name);
-                        sr.sprite = prefabSr.sprite;
-                        sr.color = Color.white;
-                        StartCoroutine(GlowEffect());
-                    }
-                    transform.localScale = prefab.transform.localScale;
-                    return;
+                    sr.sprite = fe.tameableSprite;
+                    Debug.Log("Asignado sprite especial de domesticable: " + fe.tameableSprite.name);
                 }
+                else
+                {
+                    // Backup por si te olvidas de asignar el sprite en el inspector
+                    sr.sprite = prefab.GetComponent<SpriteRenderer>().sprite;
+                }
+
+                sr.color = Color.white;
+                transform.localScale = prefab.transform.localScale;
+                StartCoroutine(GlowEffect());
+                return;
             }
         }
     }

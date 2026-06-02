@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class FishEnemy : MonoBehaviour
 {
-    [Header("Tameable")]
+
+    [Header("Tameable Visuals")]
+    public Sprite tameableSprite; // Arrastra aquí el sprite del pez bonito/domesticable
     public RuntimeAnimatorController tameableAnimator;
 
     public float speed = 3f;

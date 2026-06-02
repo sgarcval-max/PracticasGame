@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb1aeee65fe283e4999996fbde9cfa79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tameableSprite: {fileID: -5547570068311411251, guid: a3c20e3ff06956844b13ac8163cb2630, type: 3}
   tameableAnimator: {fileID: 9100000, guid: f81e9d5ca1537a346a464b948b8539c9, type: 2}
   speed: 3
   health: 1
