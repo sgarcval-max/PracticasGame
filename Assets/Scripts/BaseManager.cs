@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Collections;
 using System.Collections.Generic;
 
 public class BaseManager : MonoBehaviour
@@ -9,15 +10,16 @@ public class BaseManager : MonoBehaviour
     [Header("Mission")]
     public TextMeshProUGUI missionText;
 
-    [Header("Mochila - Peces capturados")]
-    public GameObject bagPanel; // ASIGNAR EL PANEL NUEVO
-    public Button openBagButton; // BOTÓN CON EL ICONO DE MOCHILA
-    public Button closeBagButton; // BOTÓN "X" PARA CERRAR
+    [Header("Mochila - Panel y Animación")]
+    public GameObject bagPanel;
+    public Button openBagButton;
+    public Button closeBagButton;
+    public float animationSpeed = 8f; // Velocidad de apertura/cierre
+    private Coroutine bagCoroutine;
+
+    [Header("Mochila - Contenido")]
     public Transform bagScrollContent;
     public GameObject fishCardPrefab;
-
-    [Header("Acuario - Peces domesticados")]
-    public Transform aquariumScrollContent;
 
     [Header("Equipped Panel")]
     public TextMeshProUGUI equippedTitle;
@@ -28,30 +30,35 @@ public class BaseManager : MonoBehaviour
     public TextMeshProUGUI equippedSlot2Text;
     public TextMeshProUGUI equippedSlot3Text;
 
-    [Header("Buttons")]
-    public Button playButton;
-
     [Header("Opciones")]
     public GameObject optionsPanel;
     public Button optionsButton;
     public Button optionsBackButton;
 
+    [Header("Navegación")]
+    public Button playButton;
+
     private TamingMinigame tamingMinigame;
 
     void Start()
     {
-        playButton.onClick.AddListener(GoToSea);
         tamingMinigame = FindFirstObjectByType<TamingMinigame>();
 
-        // Nuevos listeners para la mochila
-        if (openBagButton != null) openBagButton.onClick.AddListener(OpenBag);
-        if (closeBagButton != null) closeBagButton.onClick.AddListener(CloseBag);
+        // Listeners de botones principales
+        playButton.onClick.AddListener(GoToSea);
+        optionsButton.onClick.AddListener(() => optionsPanel.SetActive(true));
+        optionsBackButton.onClick.AddListener(() => optionsPanel.SetActive(false));
 
-        optionsButton.onClick.AddListener(OpenOptions);
-        optionsBackButton.onClick.AddListener(CloseOptions);
+        // Listeners de la mochila
+        openBagButton.onClick.AddListener(OpenBag);
+        closeBagButton.onClick.AddListener(CloseBag);
 
+        // Configuración inicial
         optionsPanel.SetActive(false);
-        if (bagPanel != null) bagPanel.SetActive(false); // Empezar cerrada
+
+        // Inicializamos el panel de la mochila cerrado y a escala 0
+        bagPanel.SetActive(false);
+        bagPanel.GetComponent<RectTransform>().localScale = Vector3.zero;
 
         RefreshUI();
     }
@@ -66,9 +73,40 @@ public class BaseManager : MonoBehaviour
         UpdateEquippedPanel();
     }
 
-    // MÉTODOS NUEVOS PARA EL PANEL
-    public void OpenBag() { bagPanel.SetActive(true); RefreshUI(); }
-    public void CloseBag() { bagPanel.SetActive(false); }
+    // --- LÓGICA DE ANIMACIÓN DE LA MOCHILA ---
+
+    public void OpenBag()
+    {
+        if (bagCoroutine != null) StopCoroutine(bagCoroutine);
+        bagPanel.SetActive(true);
+        RefreshUI();
+        bagCoroutine = StartCoroutine(AnimateBag(Vector3.one));
+    }
+
+    public void CloseBag()
+    {
+        if (bagCoroutine != null) StopCoroutine(bagCoroutine);
+        bagCoroutine = StartCoroutine(AnimateBag(Vector3.zero, () => {
+            bagPanel.SetActive(false);
+        }));
+    }
+
+    private IEnumerator AnimateBag(Vector3 targetScale, System.Action onComplete = null)
+    {
+        RectTransform rect = bagPanel.GetComponent<RectTransform>();
+
+        // Usamos un Lerp para que el movimiento sea fluido
+        while (Vector3.Distance(rect.localScale, targetScale) > 0.005f)
+        {
+            rect.localScale = Vector3.Lerp(rect.localScale, targetScale, Time.deltaTime * animationSpeed);
+            yield return null;
+        }
+
+        rect.localScale = targetScale;
+        onComplete?.Invoke();
+    }
+
+    // --- ACTUALIZACIÓN DE UI ---
 
     void UpdateMission()
     {
@@ -95,7 +133,6 @@ public class BaseManager : MonoBehaviour
         foreach (Transform child in bagScrollContent)
             Destroy(child.gameObject);
 
-        // Agrupamos por tipo para las cartas
         Dictionary<FishType, int> fishCount = new Dictionary<FishType, int>();
         foreach (FishType fish in GameManager.Instance.caughtFish)
         {
@@ -103,14 +140,12 @@ public class BaseManager : MonoBehaviour
             else fishCount[fish] = 1;
         }
 
-        // Creamos las cartas basándonos en los tipos únicos capturados
         List<FishType> unique = GetUniqueCaughtFish();
         for (int i = 0; i < unique.Count; i++)
         {
             FishType type = unique[i];
             GameObject card = Instantiate(fishCardPrefab, bagScrollContent);
             FishCard fishCard = card.GetComponent<FishCard>();
-            // Pasamos el índice de la lista UNIQUE para que StartTaming no falle
             fishCard.SetupBagCard(type, fishCount[type], i, this);
         }
     }
@@ -145,6 +180,8 @@ public class BaseManager : MonoBehaviour
             slotText.text = "Vacío\nEquipa un pez";
         }
     }
+
+    // --- ACCIONES ---
 
     public void StartTaming(int fishIndex)
     {
@@ -183,6 +220,8 @@ public class BaseManager : MonoBehaviour
         RefreshUI();
     }
 
+    // --- HELPERS ---
+
     List<FishType> GetUniqueCaughtFish()
     {
         List<FishType> unique = new List<FishType>();
@@ -208,7 +247,4 @@ public class BaseManager : MonoBehaviour
         if (SceneTransition.Instance != null) SceneTransition.Instance.TransitionToGame();
         else SceneManager.LoadScene("GameScene");
     }
-
-    void OpenOptions() => optionsPanel.SetActive(true);
-    void CloseOptions() => optionsPanel.SetActive(false);
 }
