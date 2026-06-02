@@ -21,14 +21,18 @@ public class BaseManager : MonoBehaviour
     public Transform bagScrollContent;
     public GameObject fishCardPrefab;
 
-    [Header("Equipped Panel")]
-    public TextMeshProUGUI equippedTitle;
-    public Image equippedSlot1;
-    public Image equippedSlot2;
-    public Image equippedSlot3;
-    public TextMeshProUGUI equippedSlot1Text;
-    public TextMeshProUGUI equippedSlot2Text;
-    public TextMeshProUGUI equippedSlot3Text;
+    [Header("Sistema de Equipamiento Físico")]
+    public GameObject physicalFishPrefab;
+    public Transform spawnPoint;
+    private List<GameObject> spawnedFishes = new List<GameObject>();
+
+    [Header("Sprites de los Peces (Asignar en Inspector)")]
+    public Sprite spritePufferfish;
+    public Sprite spriteShark;
+    public Sprite spriteClownfish;
+    public Sprite spriteSquid;
+    public Sprite spriteSwordfish;
+    public Sprite spriteCirujano;
 
     [Header("Opciones")]
     public GameObject optionsPanel;
@@ -52,7 +56,6 @@ public class BaseManager : MonoBehaviour
         closeBagButton.onClick.AddListener(CloseBag);
 
         optionsPanel.SetActive(false);
-
         bagPanel.SetActive(false);
         bagPanel.GetComponent<RectTransform>().localScale = Vector3.zero;
 
@@ -62,24 +65,18 @@ public class BaseManager : MonoBehaviour
     public void RefreshUI()
     {
         if (GameManager.Instance == null) return;
-
         UpdateMission();
         UpdateBag();
         UpdateAquarium();
-        UpdateEquippedPanel();
+        UpdatePhysicalEquippedFishes();
     }
 
-    // --- LÓGICA DE ANIMACIÓN Y AUDIO DE LA MOCHILA ---
-
+    // --- ANIMACIÓN MOCHILA ---
     public void OpenBag()
     {
         if (bagCoroutine != null) StopCoroutine(bagCoroutine);
-
-        // REPRODUCIR SONIDO AL ABRIR
         if (AudioManager.Instance != null && AudioManager.Instance.bagOpenSound != null)
-        {
             AudioManager.Instance.PlaySFX(AudioManager.Instance.bagOpenSound);
-        }
 
         bagPanel.SetActive(true);
         RefreshUI();
@@ -89,40 +86,77 @@ public class BaseManager : MonoBehaviour
     public void CloseBag()
     {
         if (bagCoroutine != null) StopCoroutine(bagCoroutine);
-
-        // REPRODUCIR SONIDO AL CERRAR
         if (AudioManager.Instance != null && AudioManager.Instance.bagCloseSound != null)
-        {
             AudioManager.Instance.PlaySFX(AudioManager.Instance.bagCloseSound);
-        }
 
-        bagCoroutine = StartCoroutine(AnimateBag(Vector3.zero, () => {
-            bagPanel.SetActive(false);
-        }));
+        bagCoroutine = StartCoroutine(AnimateBag(Vector3.zero, () => bagPanel.SetActive(false)));
     }
 
     private IEnumerator AnimateBag(Vector3 targetScale, System.Action onComplete = null)
     {
         RectTransform rect = bagPanel.GetComponent<RectTransform>();
-
         while (Vector3.Distance(rect.localScale, targetScale) > 0.005f)
         {
             rect.localScale = Vector3.Lerp(rect.localScale, targetScale, Time.deltaTime * animationSpeed);
             yield return null;
         }
-
         rect.localScale = targetScale;
         onComplete?.Invoke();
     }
 
-    // --- ACTUALIZACIÓN DE UI ---
+    // --- LÓGICA FÍSICA ---
+    void UpdatePhysicalEquippedFishes()
+    {
+        foreach (GameObject fishObj in spawnedFishes) Destroy(fishObj);
+        spawnedFishes.Clear();
 
+        List<FishType> equipped = GameManager.Instance.equippedFish;
+        for (int i = 0; i < equipped.Count; i++)
+        {
+            SpawnFishInWorld(equipped[i], i);
+        }
+    }
+
+    void SpawnFishInWorld(FishType type, int index)
+    {
+        if (physicalFishPrefab == null || spawnPoint == null) return;
+
+        Vector3 spawnOffset = new Vector3(index * 0.4f, 0f, 0f);
+        GameObject newFish = Instantiate(physicalFishPrefab, spawnPoint.position + spawnOffset, Quaternion.identity);
+
+        // --- AQUÍ AJUSTAMOS EL TAMAÑO ---
+        // Cambia (0.5f, 0.5f, 0.5f) por el tamaño que prefieras
+        newFish.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+
+        PhysicalEquippedFish fishScript = newFish.GetComponent<PhysicalEquippedFish>();
+        if (fishScript != null)
+        {
+            fishScript.Setup(type, GetSpriteForType(type));
+        }
+        spawnedFishes.Add(newFish);
+    }
+
+    // ESTA ES LA PARTE QUE HACÍA QUE SALIERAN TODOS COMO PEZ PAYASO
+    Sprite GetSpriteForType(FishType type)
+    {
+        switch (type)
+        {
+            case FishType.Pufferfish: return spritePufferfish;
+            case FishType.Shark: return spriteShark;
+            case FishType.Clownfish: return spriteClownfish;
+            case FishType.Squid: return spriteSquid;
+            case FishType.Swordfish: return spriteSwordfish;
+            case FishType.Cirujano: return spriteCirujano;
+            default: return spriteClownfish;
+        }
+    }
+
+    // --- MISIONES Y BAG ---
     void UpdateMission()
     {
         if (missionText == null) return;
         int collected = GameManager.Instance.collectedTreasure;
         int total = 5;
-
         if (GameManager.Instance.missionCompleted)
         {
             missionText.text = "Misión:\n" + GameManager.Instance.currentMission + "\n\n " + collected + "/" + total + "\n\n✓ COMPLETADA!";
@@ -138,69 +172,32 @@ public class BaseManager : MonoBehaviour
     void UpdateBag()
     {
         if (bagScrollContent == null) return;
-
-        foreach (Transform child in bagScrollContent)
-            Destroy(child.gameObject);
-
+        foreach (Transform child in bagScrollContent) Destroy(child.gameObject);
         Dictionary<FishType, int> fishCount = new Dictionary<FishType, int>();
         foreach (FishType fish in GameManager.Instance.caughtFish)
         {
             if (fishCount.ContainsKey(fish)) fishCount[fish]++;
             else fishCount[fish] = 1;
         }
-
         List<FishType> unique = GetUniqueCaughtFish();
         for (int i = 0; i < unique.Count; i++)
         {
-            FishType type = unique[i];
             GameObject card = Instantiate(fishCardPrefab, bagScrollContent);
-            FishCard fishCard = card.GetComponent<FishCard>();
-            fishCard.SetupBagCard(type, fishCount[type], i, this);
+            card.GetComponent<FishCard>().SetupBagCard(unique[i], fishCount[unique[i]], i, this);
         }
     }
 
     void UpdateAquarium()
     {
-        AquariumManager aquariumManager = FindFirstObjectByType<AquariumManager>();
-        aquariumManager?.RefreshAquarium();
+        FindFirstObjectByType<AquariumManager>()?.RefreshAquarium();
     }
-
-    void UpdateEquippedPanel()
-    {
-        List<FishType> equipped = GameManager.Instance.equippedFish;
-        equippedTitle.text = "Peces Equipados (" + equipped.Count + "/3)";
-
-        UpdateSlot(equippedSlot1, equippedSlot1Text, equipped, 0);
-        UpdateSlot(equippedSlot2, equippedSlot2Text, equipped, 1);
-        UpdateSlot(equippedSlot3, equippedSlot3Text, equipped, 2);
-    }
-
-    void UpdateSlot(Image slotImage, TextMeshProUGUI slotText, List<FishType> equipped, int index)
-    {
-        if (index < equipped.Count)
-        {
-            FishType fish = equipped[index];
-            slotImage.color = FishData.GetColor(fish);
-            slotText.text = FishData.GetName(fish) + "\n<size=14>" + FishData.GetDescription(fish) + "</size>";
-        }
-        else
-        {
-            slotImage.color = new Color(0.2f, 0.2f, 0.2f);
-            slotText.text = "Vacío\nEquipa un pez";
-        }
-    }
-
-    // --- ACCIONES ---
 
     public void StartTaming(int fishIndex)
     {
         List<FishType> uniqueFish = GetUniqueCaughtFish();
         if (fishIndex >= uniqueFish.Count) return;
-
         FishType fish = uniqueFish[fishIndex];
-
-        tamingMinigame?.StartMinigame(fish, (success) =>
-        {
+        tamingMinigame?.StartMinigame(fish, (success) => {
             GameManager.Instance.caughtFish.Remove(fish);
             if (success) GameManager.Instance.tamedFish.Add(fish);
             RefreshUI();
@@ -212,7 +209,6 @@ public class BaseManager : MonoBehaviour
         List<FishType> uniqueFish = GetUniqueTamedFish();
         if (fishIndex >= uniqueFish.Count) return;
         FishType fish = uniqueFish[fishIndex];
-
         if (GameManager.Instance.equippedFish.Count < 3 && !GameManager.Instance.equippedFish.Contains(fish))
         {
             GameManager.Instance.equippedFish.Add(fish);
@@ -229,25 +225,17 @@ public class BaseManager : MonoBehaviour
         RefreshUI();
     }
 
-    // --- HELPERS ---
-
     List<FishType> GetUniqueCaughtFish()
     {
         List<FishType> unique = new List<FishType>();
-        foreach (FishType fish in GameManager.Instance.caughtFish)
-        {
-            if (!unique.Contains(fish)) unique.Add(fish);
-        }
+        foreach (FishType fish in GameManager.Instance.caughtFish) if (!unique.Contains(fish)) unique.Add(fish);
         return unique;
     }
 
     List<FishType> GetUniqueTamedFish()
     {
         List<FishType> unique = new List<FishType>();
-        foreach (FishType fish in GameManager.Instance.tamedFish)
-        {
-            if (!unique.Contains(fish)) unique.Add(fish);
-        }
+        foreach (FishType fish in GameManager.Instance.tamedFish) if (!unique.Contains(fish)) unique.Add(fish);
         return unique;
     }
 
