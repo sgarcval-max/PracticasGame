@@ -41,6 +41,7 @@ public class BaseManager : MonoBehaviour
 
     [Header("Navegación")]
     public Button playButton;
+    public Button menuButton;
 
     private TamingMinigame tamingMinigame;
 
@@ -51,9 +52,9 @@ public class BaseManager : MonoBehaviour
         playButton.onClick.AddListener(GoToSea);
         optionsButton.onClick.AddListener(() => optionsPanel.SetActive(true));
         optionsBackButton.onClick.AddListener(() => optionsPanel.SetActive(false));
-
         openBagButton.onClick.AddListener(OpenBag);
         closeBagButton.onClick.AddListener(CloseBag);
+        menuButton.onClick.AddListener(GoToMenu);
 
         optionsPanel.SetActive(false);
         bagPanel.SetActive(false);
@@ -123,9 +124,6 @@ public class BaseManager : MonoBehaviour
 
         Vector3 spawnOffset = new Vector3(index * 0.4f, 0f, 0f);
         GameObject newFish = Instantiate(physicalFishPrefab, spawnPoint.position + spawnOffset, Quaternion.identity);
-
-        // --- AQUÍ AJUSTAMOS EL TAMAÑO ---
-        // Cambia (0.5f, 0.5f, 0.5f) por el tamaño que prefieras
         newFish.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
         PhysicalEquippedFish fishScript = newFish.GetComponent<PhysicalEquippedFish>();
@@ -136,7 +134,6 @@ public class BaseManager : MonoBehaviour
         spawnedFishes.Add(newFish);
     }
 
-    // ESTA ES LA PARTE QUE HACÍA QUE SALIERAN TODOS COMO PEZ PAYASO
     Sprite GetSpriteForType(FishType type)
     {
         switch (type)
@@ -173,12 +170,14 @@ public class BaseManager : MonoBehaviour
     {
         if (bagScrollContent == null) return;
         foreach (Transform child in bagScrollContent) Destroy(child.gameObject);
+
         Dictionary<FishType, int> fishCount = new Dictionary<FishType, int>();
         foreach (FishType fish in GameManager.Instance.caughtFish)
         {
             if (fishCount.ContainsKey(fish)) fishCount[fish]++;
             else fishCount[fish] = 1;
         }
+
         List<FishType> unique = GetUniqueCaughtFish();
         for (int i = 0; i < unique.Count; i++)
         {
@@ -228,20 +227,36 @@ public class BaseManager : MonoBehaviour
     List<FishType> GetUniqueCaughtFish()
     {
         List<FishType> unique = new List<FishType>();
-        foreach (FishType fish in GameManager.Instance.caughtFish) if (!unique.Contains(fish)) unique.Add(fish);
+        foreach (FishType fish in GameManager.Instance.caughtFish)
+            if (!unique.Contains(fish)) unique.Add(fish);
         return unique;
     }
 
     List<FishType> GetUniqueTamedFish()
     {
         List<FishType> unique = new List<FishType>();
-        foreach (FishType fish in GameManager.Instance.tamedFish) if (!unique.Contains(fish)) unique.Add(fish);
+        foreach (FishType fish in GameManager.Instance.tamedFish)
+            if (!unique.Contains(fish)) unique.Add(fish);
         return unique;
     }
 
     void GoToSea()
     {
-        if (SceneTransition.Instance != null) SceneTransition.Instance.TransitionToGame();
-        else SceneManager.LoadScene("GameScene");
+        if (SceneTransition.Instance != null)
+            SceneTransition.Instance.TransitionToGame();
+        else
+            SceneManager.LoadScene("GameScene");
+    }
+
+    void GoToMenu()
+    {
+        // Marcamos que venimos de la base
+        PlayerPrefs.SetInt("ComingFromBase", 1);
+        PlayerPrefs.Save();
+
+        if (SceneTransition.Instance != null)
+            SceneTransition.Instance.TransitionToMenuWithFade();
+        else
+            SceneManager.LoadScene("MainMenu");
     }
 }

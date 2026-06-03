@@ -79,7 +79,7 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         if (SceneTransition.Instance != null)
-            SceneTransition.Instance.TransitionToMenuWithFade();
+            SceneTransition.Instance.TransitionToMenuWithBlackFade();
         else
             SceneManager.LoadScene("MainMenu");
     }

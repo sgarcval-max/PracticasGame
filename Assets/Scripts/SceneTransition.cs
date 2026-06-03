@@ -67,7 +67,6 @@ public class SceneTransition : MonoBehaviour
         videoPlayer.playOnAwake = false;
         videoPlayer.skipOnDrop = true;
 
-        // AudioSource para el sonido del video
         AudioSource videoAudio = transitionCanvas.AddComponent<AudioSource>();
         videoAudio.playOnAwake = false;
         videoPlayer.SetTargetAudioSource(0, videoAudio);
@@ -108,11 +107,9 @@ public class SceneTransition : MonoBehaviour
         isTransitioning = true;
         transitionCanvas.SetActive(true);
 
-        // Fade out de música
         if (AudioManager.Instance != null)
             yield return StartCoroutine(AudioManager.Instance.FadeOutMusic(0.3f));
 
-        // Video OUT
         if (outClip != null)
         {
             videoPlayer.clip = outClip;
@@ -137,7 +134,6 @@ public class SceneTransition : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
 
-        // Video IN
         if (inClip != null)
         {
             videoPlayer.clip = inClip;
@@ -153,7 +149,6 @@ public class SceneTransition : MonoBehaviour
 
         transitionCanvas.SetActive(false);
 
-        // Fade in de música en la nueva escena
         if (AudioManager.Instance != null)
             yield return StartCoroutine(AudioManager.Instance.FadeInMusic(0.5f));
 
@@ -164,7 +159,6 @@ public class SceneTransition : MonoBehaviour
     {
         isTransitioning = true;
 
-        // Creamos un canvas separado solo para el fade encima de todo
         GameObject fadeCanvas = new GameObject("FadeCanvas");
         Canvas fc = fadeCanvas.AddComponent<Canvas>();
         fc.renderMode = RenderMode.ScreenSpaceOverlay;
@@ -173,7 +167,79 @@ public class SceneTransition : MonoBehaviour
         fadeCanvas.AddComponent<GraphicRaycaster>();
         DontDestroyOnLoad(fadeCanvas);
 
-        // Imagen negra que ocupa toda la pantalla
+        GameObject whiteObj = new GameObject("WhiteScreen");
+        whiteObj.transform.SetParent(fadeCanvas.transform, false);
+        UnityEngine.UI.Image whiteImage = whiteObj.AddComponent<UnityEngine.UI.Image>();
+        whiteImage.color = new Color(1, 1, 1, 0);
+        whiteImage.raycastTarget = true;
+
+        RectTransform whiteRt = whiteObj.GetComponent<RectTransform>();
+        whiteRt.anchorMin = Vector2.zero;
+        whiteRt.anchorMax = Vector2.one;
+        whiteRt.offsetMin = Vector2.zero;
+        whiteRt.offsetMax = Vector2.zero;
+
+        if (AudioManager.Instance != null)
+            yield return StartCoroutine(AudioManager.Instance.FadeOutMusic(0.5f));
+
+        // Fade a blanco
+        float timer = 0f;
+        while (timer < 0.5f)
+        {
+            timer += Time.unscaledDeltaTime;
+            whiteImage.color = new Color(1, 1, 1, timer / 0.5f);
+            yield return null;
+        }
+        whiteImage.color = Color.white;
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        asyncLoad.allowSceneActivation = false;
+        yield return new WaitForSecondsRealtime(0.3f);
+        asyncLoad.allowSceneActivation = true;
+        yield return new WaitUntil(() => asyncLoad.isDone);
+
+        yield return new WaitForEndOfFrame();
+
+        // Fade desde blanco
+        timer = 0f;
+        while (timer < 0.5f)
+        {
+            timer += Time.unscaledDeltaTime;
+            whiteImage.color = new Color(1, 1, 1, 1 - timer / 0.5f);
+            yield return null;
+        }
+
+        Destroy(fadeCanvas);
+
+        if (AudioManager.Instance != null)
+            yield return StartCoroutine(AudioManager.Instance.FadeInMusic(0.5f));
+
+        isTransitioning = false;
+    }
+
+    public bool IsTransitioning()
+    {
+        return isTransitioning;
+    }
+
+    public void TransitionToMenuWithBlackFade()
+    {
+        if (isTransitioning) return;
+        StartCoroutine(BlackFadeTransition("MainMenu"));
+    }
+
+    IEnumerator BlackFadeTransition(string sceneName)
+    {
+        isTransitioning = true;
+
+        GameObject fadeCanvas = new GameObject("FadeCanvas");
+        Canvas fc = fadeCanvas.AddComponent<Canvas>();
+        fc.renderMode = RenderMode.ScreenSpaceOverlay;
+        fc.sortingOrder = 9999;
+        fadeCanvas.AddComponent<CanvasScaler>();
+        fadeCanvas.AddComponent<GraphicRaycaster>();
+        DontDestroyOnLoad(fadeCanvas);
+
         GameObject blackObj = new GameObject("BlackScreen");
         blackObj.transform.SetParent(fadeCanvas.transform, false);
         UnityEngine.UI.Image blackImage = blackObj.AddComponent<UnityEngine.UI.Image>();
@@ -186,11 +252,10 @@ public class SceneTransition : MonoBehaviour
         blackRt.offsetMin = Vector2.zero;
         blackRt.offsetMax = Vector2.zero;
 
-        // Fade out música
         if (AudioManager.Instance != null)
             yield return StartCoroutine(AudioManager.Instance.FadeOutMusic(0.5f));
 
-        // Fade a negro en GameScene
+        // Fade a negro
         float timer = 0f;
         while (timer < 0.5f)
         {
@@ -200,7 +265,6 @@ public class SceneTransition : MonoBehaviour
         }
         blackImage.color = Color.black;
 
-        // Cargamos MainMenu
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
         asyncLoad.allowSceneActivation = false;
         yield return new WaitForSecondsRealtime(0.3f);
@@ -209,7 +273,7 @@ public class SceneTransition : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
 
-        // Fade desde negro en MainMenu
+        // Fade desde negro
         timer = 0f;
         while (timer < 0.5f)
         {
@@ -220,15 +284,9 @@ public class SceneTransition : MonoBehaviour
 
         Destroy(fadeCanvas);
 
-        // Fade in música
         if (AudioManager.Instance != null)
             yield return StartCoroutine(AudioManager.Instance.FadeInMusic(0.5f));
 
         isTransitioning = false;
-    }
-
-    public bool IsTransitioning()
-    {
-        return isTransitioning;
     }
 }
