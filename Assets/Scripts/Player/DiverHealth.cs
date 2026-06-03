@@ -64,6 +64,9 @@ public class DiverHealth : MonoBehaviour
         // No recibe daño si el escudo está activo
         if (isInvincible || isShieldActive) return;
 
+        FindObjectOfType<TutorialPopUpManager>()?.MostrarTutorial("Dano", "¡Cuidado! Al recibir daño parpadeas. Esto indica que eres invencible por un breve tiempo.");
+        TutorialManager.Instance?.CompletarObjetivo("Dano");
+
         currentHealth -= damage;
         isInvincible = true;
         invincibleTimer = invincibleTime;

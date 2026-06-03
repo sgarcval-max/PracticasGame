@@ -53,5 +53,7 @@ public class ShootingController : MonoBehaviour
 
         // Crear una bala en la posición y rotación del FirePoint
         Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        FindObjectOfType<TutorialPopUpManager>()?.MostrarTutorial("Disparo", "Clic Izquierdo para disparar a los enemigos.");
+        TutorialManager.Instance?.CompletarObjetivo("Disparo");
     }
 }

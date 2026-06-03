@@ -12,6 +12,7 @@ public class MenuManager : MonoBehaviour
 
     [Header("Buttons")]
     public Button playButton;
+    public Button tutorialButton; // <--- NUEVO: Espacio para el botón de Tutorial
     public Button optionsButton;
     public Button quitButton;
     public Button optionsBackButton;
@@ -20,12 +21,22 @@ public class MenuManager : MonoBehaviour
     public float buttonDelay = 0.15f;
     public RectTransform[] buttons;
 
+    [Header("Configuración de Escenas")]
+    public string nombreEscenaJuego = "BaseScene";
+    public string nombreEscenaTutorial = "EscenaTutorial";
+
     void Start()
     {
         playButton.onClick.AddListener(Play);
         optionsButton.onClick.AddListener(OpenOptions);
         quitButton.onClick.AddListener(Quit);
         optionsBackButton.onClick.AddListener(CloseOptions);
+
+        // --- NUEVO: Escuchamos el clic del botón de tutorial ---
+        if (tutorialButton != null)
+        {
+            tutorialButton.onClick.AddListener(OpenTutorial);
+        }
 
         mainPanel.SetActive(true);
         optionsPanel.SetActive(false);
@@ -38,6 +49,7 @@ public class MenuManager : MonoBehaviour
         // Desactivamos ButtonAnimator y ocultamos botones
         foreach (RectTransform btn in buttons)
         {
+            if (btn == null) continue; // Protección por si hay un hueco vacío
             btn.localScale = Vector3.zero;
             ButtonAnimator ba = btn.GetComponent<ButtonAnimator>();
             if (ba != null) ba.enabled = false;
@@ -49,6 +61,7 @@ public class MenuManager : MonoBehaviour
         // Animamos todos los botones casi a la vez
         foreach (RectTransform btn in buttons)
         {
+            if (btn == null) continue;
             StartCoroutine(ScaleIn(btn, 0.3f));
             yield return new WaitForSeconds(0.05f); // Pequeño delay entre cada uno
         }
@@ -59,6 +72,7 @@ public class MenuManager : MonoBehaviour
         // Activamos ButtonAnimator
         foreach (RectTransform btn in buttons)
         {
+            if (btn == null) continue;
             ButtonAnimator ba = btn.GetComponent<ButtonAnimator>();
             if (ba != null) ba.enabled = true;
         }
@@ -71,8 +85,9 @@ public class MenuManager : MonoBehaviour
         {
             timer += Time.deltaTime;
             float t = Mathf.Clamp01(timer / duration);
+
             // Efecto de rebote suave
-            float scale = 1f + Mathf.Sin(t * Mathf.PI) * 0.1f;
+            float scale;
             if (t < 0.6f)
                 scale = Mathf.Lerp(0f, 1.1f, t / 0.6f);
             else
@@ -89,7 +104,15 @@ public class MenuManager : MonoBehaviour
         // Guardamos en PlayerPrefs para que persista entre escenas
         PlayerPrefs.SetInt("ComingFromMenu", 1);
         PlayerPrefs.Save();
-        SceneManager.LoadScene("BaseScene");
+
+        // Carga directa de la escena jugable principal
+        SceneManager.LoadScene(nombreEscenaJuego);
+    }
+
+    // --- NUEVO MÉTODO: Carga la escena de aprendizaje ---
+    void OpenTutorial()
+    {
+        SceneManager.LoadScene(nombreEscenaTutorial);
     }
 
     void OpenOptions()
