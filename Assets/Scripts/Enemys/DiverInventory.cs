@@ -44,8 +44,7 @@ public class DiverInventory : MonoBehaviour
 
         if (GameManager.Instance != null)
             GameManager.Instance.caughtFish = new List<FishType>(caughtFish);
-        FindObjectOfType<TutorialPopUpManager>()?.MostrarTutorial("Captura", "¡Pez capturado! Llévalo al final del nivel para guardarlo.");
-        TutorialManager.Instance?.CompletarObjetivo("Captura");
+        
     }
 
     public void TameFish(FishType fishType)

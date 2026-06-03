@@ -41,8 +41,6 @@ public class DiverController : MonoBehaviour
         }
         moveInput = value.Get<Vector2>();
 
-        FindObjectOfType<TutorialPopUpManager>()?.MostrarTutorial("Movimiento", "Usa WASD para nadar.");
-        TutorialManager.Instance?.CompletarObjetivo("Movimiento");
     }
 
     void Update()

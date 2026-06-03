@@ -7756,9 +7756,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1438136327}
-  - component: {fileID: 1438136326}
-  - component: {fileID: 1438136329}
-  - component: {fileID: 1438136328}
   m_Layer: 0
   m_Name: TutorialManager
   m_TagString: Untagged
@@ -7766,21 +7763,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1438136326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438136325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 393dfd7636fb9fd49902a2685528f129, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panelPopUp: {fileID: 1835805922}
-  textoCuerpo: {fileID: 1645914188}
-  botonCerrar: {fileID: 742822108}
 --- !u!4 &1438136327
 Transform:
   m_ObjectHideFlags: 0
@@ -7796,32 +7778,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1438136328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438136325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7b76932863577042805e468a66423eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objetivosTotales: 4
-  botonFinalizarTutorial: {fileID: 747921521}
---- !u!114 &1438136329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438136325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42731213431200f4abc55bd3215458a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1438970421
 GameObject:
   m_ObjectHideFlags: 0
