@@ -138,4 +138,9 @@ public class OxygenSystem : MonoBehaviour
         if (oxygenUIObject != null)
             oxygenUIObject.localPosition = originalUIPosition;
     }
+
+    public float GetCurrentOxygen()
+    {
+        return currentOxygen;
+    }
 }

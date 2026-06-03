@@ -28,20 +28,31 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         playButton.onClick.AddListener(Play);
+        tutorialButton.onClick.AddListener(GoToTutorial);
         optionsButton.onClick.AddListener(OpenOptions);
         quitButton.onClick.AddListener(Quit);
         optionsBackButton.onClick.AddListener(CloseOptions);
-
-        // --- NUEVO: Escuchamos el clic del botón de tutorial ---
-        if (tutorialButton != null)
-        {
-            tutorialButton.onClick.AddListener(OpenTutorial);
-        }
 
         mainPanel.SetActive(true);
         optionsPanel.SetActive(false);
 
         StartCoroutine(AnimateButtonsIn());
+    }
+
+    void GoToTutorial()
+    {
+        // Usamos el SceneTransition que ya persiste entre escenas
+        StartCoroutine(FadeToTutorial());
+    }
+
+    IEnumerator FadeToTutorial()
+    {
+        // Creamos el canvas en un objeto persistente
+        GameObject persistentObj = new GameObject("TutorialFader");
+        DontDestroyOnLoad(persistentObj);
+        TutorialFader fader = persistentObj.AddComponent<TutorialFader>();
+        fader.StartFade("TutorialScene");
+        yield return null;
     }
 
     IEnumerator AnimateButtonsIn()

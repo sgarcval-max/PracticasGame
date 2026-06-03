@@ -70,6 +70,10 @@ public class DiverHealth : MonoBehaviour
 
         gameUI?.UpdateHealth(currentHealth, maxHealth);
 
+        // Tutorial
+        TutorialDamage td = GetComponent<TutorialDamage>();
+        if (td != null) td.OnDamageReceived();
+
         // Mostrar viñeta roja
         if (DamageVignette.Instance != null)
             DamageVignette.Instance.ShowDamage();

@@ -96,6 +96,10 @@ public class TreasureManager : MonoBehaviour
                 GameManager.Instance.missionCompleted = true;
             gameUI?.ShowVictory();
         }
+
+        // Tutorial
+        TutorialTreasure tt = FindFirstObjectByType<TutorialTreasure>();
+        if (tt != null) tt.OnTreasureCollected();
     }
 
     public bool IsTreasureComplete()

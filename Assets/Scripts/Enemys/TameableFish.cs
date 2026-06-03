@@ -103,6 +103,10 @@ public class TameableFish : MonoBehaviour
             inventory.CatchFish(fishType);
         }
 
+        // Tutorial
+        TutorialFishCaught tfc = FindFirstObjectByType<TutorialFishCaught>();
+        if (tfc != null) tfc.OnFishCaught();
+
         Destroy(gameObject);
     }
 

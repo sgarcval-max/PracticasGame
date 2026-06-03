@@ -1594,7 +1594,7 @@ MonoBehaviour:
   - {fileID: 1872401708}
   - {fileID: 1864637884}
   nombreEscenaJuego: BaseScene
-  nombreEscenaTutorial: EscenaTutorial
+  nombreEscenaTutorial: TutorialScene
 --- !u!4 &540054428
 Transform:
   m_ObjectHideFlags: 0
@@ -3985,7 +3985,7 @@ MonoBehaviour:
   buttonHoverSound: {fileID: 8300000, guid: a3cb9e56c75b12749af0ebaa65d76bb6, type: 3}
   buttonClickSound: {fileID: 8300000, guid: 3e4aaa5afdc11564bbdf286409bf2aae, type: 3}
   bagOpenSound: {fileID: 8300000, guid: 402c65cfd7e77a24a9a3bd13046374ad, type: 3}
-  bagCloseSound: {fileID: 8300000, guid: 402c65cfd7e77a24a9a3bd13046374ad, type: 3}
+  bagCloseSound: {fileID: 8300000, guid: b7fc4dc6ab5c7ea48849b7584295f8a8, type: 3}
   isCinematicPlaying: 0
 --- !u!82 &1440834927
 AudioSource:
