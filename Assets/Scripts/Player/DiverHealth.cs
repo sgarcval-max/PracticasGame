@@ -70,6 +70,10 @@ public class DiverHealth : MonoBehaviour
 
         gameUI?.UpdateHealth(currentHealth, maxHealth);
 
+        // Mostrar viñeta roja
+        if (DamageVignette.Instance != null)
+            DamageVignette.Instance.ShowDamage();
+
         if (currentHealth <= 0)
             Die();
     }

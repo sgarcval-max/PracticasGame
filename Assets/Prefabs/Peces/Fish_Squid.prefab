@@ -192,9 +192,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tameableSprite: {fileID: -1471852730594546584, guid: f27ca4740eda902428ef5dec5715a7ea, type: 3}
   tameableAnimator: {fileID: 9100000, guid: 3a4c6351cf1cace42b2892ffa732a112, type: 2}
-  speed: 3
+  speed: 2
   health: 1
-  damage: 1
+  damage: 2
   tameChance: 0.07
   tameableFishPrefab: {fileID: 5037416867543361480, guid: c0eecec56e6eed24799f33ef133e7633, type: 3}
   fishType: 3
