@@ -10,94 +10,104 @@ public class BaseCinematicManager : MonoBehaviour
     public RawImage videoImage;
     public GameObject cinematicCanvas;
 
-    [Header("Fade Blanco")]
-    public CanvasGroup fadeCanvasGroup; // Arrastra aquí el Canvas Group de la FadeImage
-    public float fadeOutDuration = 1.5f; // Duración del paso de blanco a transparente
+    [Header("Fade Blanco / Fondo Negro")]
+    public CanvasGroup fadeCanvasGroup; // El Canvas Group de la imagen blanca de fundido
+    public float fadeOutDuration = 1.5f;
 
     [Header("UI & Escenario")]
-    public GameObject baseCanvas;
-    public GameObject worldLevel;
+    public GameObject baseCanvas;  // La UI normal del juego (vida, oxigeno...)
+    public GameObject worldLevel;  // El objeto que contiene todo el escenario/mapa
 
     [Header("Audio & Config")]
     public float musicFadeDuration = 1f;
 
     void Awake()
     {
-        if (videoPlayer != null) videoPlayer.gameObject.SetActive(true);
+        // --- PREVENCIÓN DE DESTELLOS (FLICKERING) ---
+        // Apagamos TODO el escenario y la UI antes de que se renderice el primer frame
+        if (worldLevel != null) worldLevel.SetActive(false);
+        if (baseCanvas != null) baseCanvas.SetActive(false);
 
-        // Al empezar, el fade blanco debe estar totalmente transparente
+        // El canvas de la cinemática debe ser lo único visible
+        if (cinematicCanvas != null) cinematicCanvas.SetActive(true);
+
+        // El fade blanco empieza invisible para dejar ver el video
         if (fadeCanvasGroup != null) fadeCanvasGroup.alpha = 0f;
 
+        // Comprobamos si venimos del menú para saber si toca vídeo
         bool comingFromMenu = PlayerPrefs.GetInt("ComingFromMenu", 0) == 1;
 
         if (comingFromMenu)
         {
+            // Limpiamos la bandera para que no se repita al morir/reiniciar
             PlayerPrefs.SetInt("ComingFromMenu", 0);
             PlayerPrefs.Save();
-
-            baseCanvas.SetActive(false);
-            if (worldLevel != null) worldLevel.SetActive(false);
-            cinematicCanvas.SetActive(true);
 
             StartCoroutine(PlayCinematic());
         }
         else
         {
-            cinematicCanvas.SetActive(false);
-            baseCanvas.SetActive(true);
-            if (worldLevel != null) worldLevel.SetActive(true);
+            // Si entramos directamente (testeo), saltamos al juego
+            EndCinematicDirectly();
         }
     }
 
     IEnumerator PlayCinematic()
     {
+        // Parar música de fondo para que no se mezcle con el video
         if (AudioManager.Instance != null)
         {
             AudioManager.Instance.isCinematicPlaying = true;
             AudioManager.Instance.musicSource.Stop();
-            AudioManager.Instance.musicSource.volume = 0f;
         }
 
-        if (AudioManager.Instance != null)
-        {
-            videoPlayer.SetDirectAudioVolume(0,
-                AudioManager.Instance.masterVolume * AudioManager.Instance.cinematicVolume);
-        }
+        // Ponemos la imagen en negro mientras el video carga
+        videoImage.color = Color.black;
 
+        // Preparar el video
         videoPlayer.Prepare();
         while (!videoPlayer.isPrepared) yield return null;
 
+        // El video está listo: restauramos color y damos Play
+        videoImage.color = Color.white;
         videoPlayer.Play();
 
+        // Pequeña espera para asegurar que el primer frame del video ya se está dibujando
         yield return new WaitForEndOfFrame();
+
+        // Bucle que mantiene la cinemática activa mientras el video se reproduzca
         while (videoPlayer.isPlaying) yield return null;
 
-        // --- ¡EL VIDEO HA TERMINADO! ---
-
-        // 1. Ponemos la pantalla en blanco al instante
+        // --- FINAL DEL VIDEO ---
+        // 1. Fundido a blanco instantáneo para ocultar el corte del video
         if (fadeCanvasGroup != null) fadeCanvasGroup.alpha = 1f;
-
-        // 2. Esperamos un mini momento con la pantalla en blanco
         yield return new WaitForSeconds(0.2f);
 
-        EndCinematic();
+        TerminarYActivarJuego();
     }
 
-    void EndCinematic()
+    void TerminarYActivarJuego()
     {
         if (AudioManager.Instance != null)
             AudioManager.Instance.isCinematicPlaying = false;
 
-        // Quitamos el video de fondo
+        // Desactivamos el objeto del video
         videoPlayer.gameObject.SetActive(false);
 
-        // Activamos el juego
-        baseCanvas.SetActive(true);
+        // ACTIVAMOS el escenario y la UI del juego
+        if (baseCanvas != null) baseCanvas.SetActive(true);
         if (worldLevel != null) worldLevel.SetActive(true);
 
-        // 3. Iniciamos el efecto de desvanecer el blanco y subir la música
+        // Iniciamos los efectos visuales y sonoros de entrada
         StartCoroutine(FadeOutWhite());
         StartCoroutine(FadeInMusic());
+    }
+
+    void EndCinematicDirectly()
+    {
+        if (cinematicCanvas != null) cinematicCanvas.SetActive(false);
+        if (baseCanvas != null) baseCanvas.SetActive(true);
+        if (worldLevel != null) worldLevel.SetActive(true);
     }
 
     IEnumerator FadeOutWhite()
@@ -108,14 +118,14 @@ public class BaseCinematicManager : MonoBehaviour
         while (timer < fadeOutDuration)
         {
             timer += Time.deltaTime;
-            // Va de 1 (blanco sólido) a 0 (transparente)
+            // Pasa de 1 (blanco) a 0 (transparente)
             fadeCanvasGroup.alpha = Mathf.Lerp(1f, 0f, timer / fadeOutDuration);
             yield return null;
         }
 
         fadeCanvasGroup.alpha = 0f;
-        // Apagamos el canvas de cine definitivamente
-        cinematicCanvas.SetActive(false);
+        // Apagamos el canvas de cine definitivamente al terminar el fade
+        if (cinematicCanvas != null) cinematicCanvas.SetActive(false);
     }
 
     IEnumerator FadeInMusic()
@@ -133,8 +143,6 @@ public class BaseCinematicManager : MonoBehaviour
             AudioManager.Instance.musicSource.volume = Mathf.Lerp(0f, targetVolume, timer / musicFadeDuration);
             yield return null;
         }
-
         AudioManager.Instance.musicSource.volume = targetVolume;
-        AudioManager.Instance.ApplyVolumes();
     }
 }
