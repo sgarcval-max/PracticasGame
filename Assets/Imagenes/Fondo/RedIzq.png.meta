@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 1a4e62a95de57b140a7f502fa84117a0
+guid: 582106307effff941acfbfd6875769cc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9069146144092877317
-    second: MochilaAbierta_0
+      213: 559826341015148776
+    second: RedIzq_0
+  - first:
+      213: -6614773301392431128
+    second: RedIzq_1
+  - first:
+      213: 2259927342459921662
+    second: RedIzq_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +54,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -75,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MochilaAbierta_0
+      name: RedIzq_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 132
-        width: 629
-        height: 579
+        x: 133
+        y: 757
+        width: 109
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bfd8d31e1abe32280800000000000000
-      internalID: -9069146144092877317
+      spriteID: 8e85d105717e4c700800000000000000
+      internalID: 559826341015148776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedIzq_1
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 664
+        width: 31
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e724cc9aba9334a0800000000000000
+      internalID: -6614773301392431128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedIzq_2
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 275
+        width: 51
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef42481c1ffdc5f10800000000000000
+      internalID: 2259927342459921662
       vertices: []
       indices: 
       edges: []
@@ -148,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MochilaAbierta_0: -9069146144092877317
+      RedIzq_0: 559826341015148776
+      RedIzq_1: -6614773301392431128
+      RedIzq_2: 2259927342459921662
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

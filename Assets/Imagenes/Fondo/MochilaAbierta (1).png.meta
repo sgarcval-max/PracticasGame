@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 3c3c2e87b15c7b3499eb086479a9252d
+guid: 57a0c8770882a94479ef4a4cfec46c78
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6345079993623760681
-    second: PaloRed_0
-  - first:
-      213: -2788583814788385465
-    second: PaloRed_1
+      213: 5804477512468784164
+    second: MochilaAbierta (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -78,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PaloRed_0
+      name: MochilaAbierta (1)_0
       rect:
         serializedVersion: 2
-        x: 133
-        y: 638
-        width: 162
-        height: 438
+        x: 30
+        y: 132
+        width: 629
+        height: 668
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7d03e9c0d5fb1f7a0800000000000000
-      internalID: -6345079993623760681
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PaloRed_1
-      rect:
-        serializedVersion: 2
-        x: 342
-        y: 274
-        width: 51
-        height: 197
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 74572258bc5fc49d0800000000000000
-      internalID: -2788583814788385465
+      spriteID: 424e17d4b85ad8050800000000000000
+      internalID: 5804477512468784164
       vertices: []
       indices: 
       edges: []
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PaloRed_0: -6345079993623760681
-      PaloRed_1: -2788583814788385465
+      MochilaAbierta (1)_0: 5804477512468784164
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

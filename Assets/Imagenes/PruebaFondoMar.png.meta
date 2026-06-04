@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: ac8d50fb5feaee44aa0f0e83762a228f
+guid: 6da289771edf97647ae8066d5e9241e5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5725350615085988850
-    second: PaloDrch_0
-  - first:
-      213: -7709009117950970084
-    second: PaloDrch_1
+      213: -3366426946555629943
+    second: PruebaFondoMar_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 0
   alignment: 0
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PaloDrch_0
+      name: PruebaFondoMar_0
       rect:
         serializedVersion: 2
-        x: 151
-        y: 638
-        width: 144
-        height: 438
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2fbb3cadc08847f40800000000000000
-      internalID: 5725350615085988850
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PaloDrch_1
-      rect:
-        serializedVersion: 2
-        x: 342
-        y: 274
-        width: 51
-        height: 197
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c17f8422d09140590800000000000000
-      internalID: -7709009117950970084
+      spriteID: 98eaf38378c0841d0800000000000000
+      internalID: -3366426946555629943
       vertices: []
       indices: 
       edges: []
@@ -163,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PaloDrch_0: 5725350615085988850
-      PaloDrch_1: -7709009117950970084
+      PruebaFondoMar_0: -3366426946555629943
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

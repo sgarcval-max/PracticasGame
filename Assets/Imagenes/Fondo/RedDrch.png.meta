@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 9e77f69f4124a6a438a7d909c7f0eb41
+guid: 8c982f31ec52a6f4086b63980d9b760c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4662424530769592093
-    second: MochilaCerrada 1_0
+      213: -7353320965325057891
+    second: RedDrch_0
+  - first:
+      213: 4207749434837867171
+    second: RedDrch_1
+  - first:
+      213: -4816610041111263256
+    second: RedDrch_2
+  - first:
+      213: -7225110416565503756
+    second: RedDrch_3
+  - first:
+      213: 7817575303046988695
+    second: RedDrch_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +60,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -75,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MochilaCerrada 1_0
+      name: RedDrch_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 132
-        width: 614
-        height: 579
+        x: 151
+        y: 792
+        width: 113
+        height: 284
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +140,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d1fb69c786244b040800000000000000
-      internalID: 4662424530769592093
+      spriteID: d901e56aa81c3f990800000000000000
+      internalID: -7353320965325057891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedDrch_1
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 747
+        width: 20
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aa9c5f31dde46a30800000000000000
+      internalID: 4207749434837867171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedDrch_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 639
+        width: 38
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e7cbf5efa6f72db0800000000000000
+      internalID: -4816610041111263256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedDrch_3
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 683
+        width: 23
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f873ad3b504bbb90800000000000000
+      internalID: -7225110416565503756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedDrch_4
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 274
+        width: 51
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7938bfe915b9d7c60800000000000000
+      internalID: 7817575303046988695
       vertices: []
       indices: 
       edges: []
@@ -148,7 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MochilaCerrada 1_0: 4662424530769592093
+      RedDrch_0: -7353320965325057891
+      RedDrch_1: 4207749434837867171
+      RedDrch_2: -4816610041111263256
+      RedDrch_3: -7225110416565503756
+      RedDrch_4: 7817575303046988695
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
