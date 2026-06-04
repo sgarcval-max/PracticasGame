@@ -61,7 +61,10 @@ public class BaseToMenuCinematic : MonoBehaviour
         videoPlayer.gameObject.SetActive(false);
         menuCanvas.SetActive(true);
 
-        // Fade in música
+        // Iniciamos el fondo animado
+        MenuBackground bg = FindFirstObjectByType<MenuBackground>();
+        if (bg != null) bg.StartBackground();
+
         StartCoroutine(FadeInMusic());
     }
 

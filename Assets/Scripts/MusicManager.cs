@@ -3,24 +3,36 @@ using System.Collections;
 
 public class MusicManager : MonoBehaviour
 {
-    [Header("Lista de canciones para esta escena")]
+    [Header("Música de esta escena")]
     public AudioClip[] songs;
 
     private int currentSongIndex = 0;
-    private Coroutine playlistCoroutine;
 
     void Start()
     {
-        if (songs.Length == 0)
+        if (songs.Length == 0) return;
+        StartCoroutine(WaitAndPlay());
+    }
+
+    IEnumerator WaitAndPlay()
+    {
+        // Esperamos un frame para que todo se inicialice
+        yield return null;
+        yield return null;
+
+        CinematicManager cm = FindFirstObjectByType<CinematicManager>();
+
+        // Si hay cinemática y no se ha visto esperamos
+        if (cm != null && !CinematicManager.hasPlayedCinematic)
         {
-            Debug.LogWarning("MusicManager: No has puesto canciones en la lista de este objeto.");
-            return;
+            // Silenciamos mientras esperamos
+            if (AudioManager.Instance != null)
+                AudioManager.Instance.musicSource.volume = 0f;
+
+            yield return new WaitUntil(() => !cm.isPlaying);
         }
 
-        // Si por algún motivo ya había una rutina, la limpiamos
-        if (playlistCoroutine != null) StopCoroutine(playlistCoroutine);
-
-        playlistCoroutine = StartCoroutine(PlayPlaylist());
+        StartCoroutine(PlayPlaylist());
     }
 
     IEnumerator PlayPlaylist()
@@ -29,30 +41,12 @@ public class MusicManager : MonoBehaviour
         {
             AudioClip song = songs[currentSongIndex];
 
-            if (song != null && AudioManager.Instance != null)
-            {
-                Debug.Log("MusicManager: Solicitando canción " + currentSongIndex + ": " + song.name);
+            if (AudioManager.Instance != null)
                 AudioManager.Instance.PlayMusic(song);
 
-                // Esperamos la duración del clip usando tiempo real (ignora pausas)
-                // Le restamos 0.1s para asegurar que la transición sea fluida
-                float waitTime = song.length > 0.1f ? song.length - 0.1f : 0.1f;
-                yield return new WaitForSecondsRealtime(waitTime);
-            }
-            else
-            {
-                // Si hay un error, espera 1 segundo y reintenta
-                yield return new WaitForSecondsRealtime(1f);
-            }
+            yield return new WaitForSeconds(song.length);
 
-            // Pasamos a la siguiente canción (Ciclo infinito)
             currentSongIndex = (currentSongIndex + 1) % songs.Length;
         }
-    }
-
-    private void OnDisable()
-    {
-        // Si el objeto se destruye al cambiar de escena, paramos la rutina
-        if (playlistCoroutine != null) StopCoroutine(playlistCoroutine);
     }
 }

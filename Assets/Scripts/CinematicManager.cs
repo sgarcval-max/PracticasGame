@@ -23,12 +23,12 @@ public class CinematicManager : MonoBehaviour
     [Header("Configuración")]
     public float mouseIdleTime = 1.5f;
 
-    private static bool hasPlayedCinematic = false;
+    public static bool hasPlayedCinematic = false;
 
     private float mouseTimer = 0f;
     private Vector2 lastMousePos;
     private bool isSkipTextVisible = false;
-    private bool isPlaying = false;
+    public bool isPlaying = false;
     private bool isSkipping = false;
 
     [Header("Menu")]
@@ -38,12 +38,20 @@ public class CinematicManager : MonoBehaviour
     {
         if (hasPlayedCinematic)
         {
-            SkipCinematic();
+            // Activamos todo directamente
+            menuCanvas.SetActive(true);
+
+            if (videoImage != null)
+                videoImage.gameObject.SetActive(false);
+            if (skipTextObject != null)
+                skipTextObject.SetActive(false);
+            if (fadeImage != null)
+                fadeImage.gameObject.SetActive(false);
+
+            // Forzamos que los elementos del menú se vean
+            StartCoroutine(ForceMenuVisible());
             return;
         }
-
-        if (AudioManager.Instance != null)
-            videoPlayer.SetDirectAudioVolume(0, AudioManager.Instance.masterVolume * AudioManager.Instance.cinematicVolume);
 
         menuCanvas.SetActive(false);
         skipTextObject.SetActive(false);
@@ -52,13 +60,22 @@ public class CinematicManager : MonoBehaviour
         fadeImage.gameObject.SetActive(false);
 
         lastMousePos = Mouse.current.position.ReadValue();
-        // Silenciamos música y SFX durante la cinemática
-        if (AudioManager.Instance != null)
-        {
-            AudioManager.Instance.musicSource.volume = 0f;
-            AudioManager.Instance.sfxSource.volume = 0f;
-        }
         StartCoroutine(PlayCinematic());
+    }
+
+    IEnumerator ForceMenuVisible()
+    {
+        // Esperamos dos frames para que todo se inicialice
+        yield return null;
+        yield return null;
+
+        menuCanvas.SetActive(false);
+        yield return null;
+        menuCanvas.SetActive(true);
+
+        // Iniciamos el fondo
+        MenuBackground bg = FindFirstObjectByType<MenuBackground>();
+        if (bg != null) bg.StartBackground();
     }
 
     void Update()
@@ -183,18 +200,31 @@ public class CinematicManager : MonoBehaviour
 
         menuCanvas.SetActive(true);
 
-        // Fade in de la música
+        // Iniciamos el fondo animado
+        MenuBackground bg = FindFirstObjectByType<MenuBackground>();
+        if (bg != null) bg.StartBackground();
+
         StartCoroutine(FadeInMusic());
     }
 
     void SkipCinematic()
     {
         videoImage.gameObject.SetActive(false);
-        videoPlayer.gameObject.SetActive(false);
-        skipTextObject.SetActive(false);
+
+        // Solo desactivamos el videoPlayer si existe
+        if (videoPlayer != null && videoPlayer.gameObject != null)
+            videoPlayer.gameObject.SetActive(false);
+
+        if (skipTextObject != null)
+            skipTextObject.SetActive(false);
+
+        // Siempre activamos el menú
         menuCanvas.SetActive(true);
 
-        // Fade in de la música
+        // Iniciamos el fondo animado
+        MenuBackground bg = FindFirstObjectByType<MenuBackground>();
+        if (bg != null) bg.StartBackground();
+
         StartCoroutine(FadeInMusic());
     }
 
@@ -217,5 +247,10 @@ public class CinematicManager : MonoBehaviour
 
         AudioManager.Instance.musicSource.volume = targetVolume;
         AudioManager.Instance.ApplyVolumes();
+    }
+
+    public bool IsCinematicFinished()
+    {
+        return !isPlaying;
     }
 }

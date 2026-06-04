@@ -9,20 +9,19 @@ public class TutorialShooting : MonoBehaviour
 
     IEnumerator Start()
     {
-        // Esperamos a que el TutorialManager esté listo
         yield return new WaitUntil(() => TutorialManager.Instance != null);
         ready = true;
     }
 
     void Update()
     {
-        Debug.Log("Shooting - ready: " + ready + " triggered: " + triggered + " panelOpen: " + (TutorialManager.Instance != null ? TutorialManager.Instance.IsPanelOpen().ToString() : "NULL"));
-
         if (!ready || triggered) return;
+
+        // Solo detectamos el disparo si el panel NO está abierto
+        if (TutorialManager.Instance.IsPanelOpen()) return;
 
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            Debug.Log("Click detectado!");
             triggered = true;
             TutorialManager.Instance.TriggerAction(
                 "shooting",

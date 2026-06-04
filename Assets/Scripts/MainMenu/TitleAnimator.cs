@@ -18,16 +18,25 @@ public class TitleAnimator : MonoBehaviour
 
     void Awake()
     {
-        transform.localScale = Vector3.zero;
-        basePosition = transform.position;
-
-        // Curva de zoom con rebote
-        zoomCurve = new AnimationCurve(
-            new Keyframe(0f, 0f, 0f, 0f),
-            new Keyframe(0.7f, 1.1f, 0f, 0f),
-            new Keyframe(0.85f, 0.95f, 0f, 0f),
-            new Keyframe(1f, 1f, 0f, 0f)
-        );
+        // Solo animamos si es la primera vez
+        if (CinematicManager.hasPlayedCinematic)
+        {
+            // Ya se vio la cinemática, ponemos escala normal directamente
+            transform.localScale = Vector3.one;
+            animating = false;
+            basePosition = transform.position;
+        }
+        else
+        {
+            transform.localScale = Vector3.zero;
+            // Curva de zoom con rebote
+            zoomCurve = new AnimationCurve(
+                new Keyframe(0f, 0f, 0f, 0f),
+                new Keyframe(0.7f, 1.1f, 0f, 0f),
+                new Keyframe(0.85f, 0.95f, 0f, 0f),
+                new Keyframe(1f, 1f, 0f, 0f)
+            );
+        }
     }
 
     void Update()

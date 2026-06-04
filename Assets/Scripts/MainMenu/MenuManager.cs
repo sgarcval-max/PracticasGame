@@ -28,15 +28,24 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         playButton.onClick.AddListener(Play);
-        tutorialButton.onClick.AddListener(GoToTutorial);
         optionsButton.onClick.AddListener(OpenOptions);
         quitButton.onClick.AddListener(Quit);
         optionsBackButton.onClick.AddListener(CloseOptions);
+        tutorialButton.onClick.AddListener(GoToTutorial);
 
         mainPanel.SetActive(true);
         optionsPanel.SetActive(false);
 
-        StartCoroutine(AnimateButtonsIn());
+        // Si ya se vio la cinemática no animamos los botones
+        if (CinematicManager.hasPlayedCinematic)
+        {
+            foreach (RectTransform btn in buttons)
+                btn.localScale = Vector3.one;
+        }
+        else
+        {
+            StartCoroutine(AnimateButtonsIn());
+        }
     }
 
     void GoToTutorial()
