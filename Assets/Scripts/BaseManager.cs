@@ -10,6 +10,11 @@ public class BaseManager : MonoBehaviour
     [Header("Mission")]
     public TextMeshProUGUI missionText;
 
+    [Header("Imágenes de la mochila")]
+    public Sprite bagClosedSprite;
+    public Sprite bagOpenSprite;
+    public Image bagButtonImage;
+
     [Header("Mochila - Panel y Animación")]
     public GameObject bagPanel;
     public Button openBagButton;
@@ -79,6 +84,10 @@ public class BaseManager : MonoBehaviour
         if (AudioManager.Instance != null && AudioManager.Instance.bagOpenSound != null)
             AudioManager.Instance.PlaySFX(AudioManager.Instance.bagOpenSound);
 
+        // Cambiamos a imagen de mochila abierta
+        if (bagButtonImage != null && bagOpenSprite != null)
+            bagButtonImage.sprite = bagOpenSprite;
+
         bagPanel.SetActive(true);
         RefreshUI();
         bagCoroutine = StartCoroutine(AnimateBag(Vector3.one));
@@ -89,6 +98,10 @@ public class BaseManager : MonoBehaviour
         if (bagCoroutine != null) StopCoroutine(bagCoroutine);
         if (AudioManager.Instance != null && AudioManager.Instance.bagCloseSound != null)
             AudioManager.Instance.PlaySFX(AudioManager.Instance.bagCloseSound);
+
+        // Cambiamos a imagen de mochila cerrada
+        if (bagButtonImage != null && bagClosedSprite != null)
+            bagButtonImage.sprite = bagClosedSprite;
 
         bagCoroutine = StartCoroutine(AnimateBag(Vector3.zero, () => bagPanel.SetActive(false)));
     }

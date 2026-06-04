@@ -6480,6 +6480,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missionText: {fileID: 756942370}
+  bagClosedSprite: {fileID: 4662424530769592093, guid: 9e77f69f4124a6a438a7d909c7f0eb41, type: 3}
+  bagOpenSprite: {fileID: -9069146144092877317, guid: 1a4e62a95de57b140a7f502fa84117a0, type: 3}
+  bagButtonImage: {fileID: 945079542}
   bagPanel: {fileID: 1454412439}
   openBagButton: {fileID: 945079541}
   closeBagButton: {fileID: 1544763622}
