@@ -1291,6 +1291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d499eb895a62d934cb74b35812b6042f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decoyPrefab: {fileID: 4064312984340354635, guid: 07b3ace09acdbf941bc007b15e90befd, type: 3}
 --- !u!95 &267463670
 Animator:
   serializedVersion: 7
@@ -6115,14 +6116,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.019607844, g: 0.078431375, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: aab51dbc31dfe504a96ad0b07dcda7d3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

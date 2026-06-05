@@ -19,7 +19,25 @@ public class FishCard : MonoBehaviour
         fishIndex = index;
         baseManager = manager;
 
-        fishIcon.color = FishData.GetColor(type);
+        // Ponemos el sprite del pez si existe
+        if (FishSprites.Instance != null)
+        {
+            Sprite sprite = FishSprites.Instance.GetSprite(type);
+            if (sprite != null && fishIcon != null)
+            {
+                fishIcon.sprite = sprite;
+                fishIcon.color = Color.white;
+            }
+            else
+            {
+                fishIcon.color = FishData.GetColor(type);
+            }
+        }
+        else
+        {
+            fishIcon.color = FishData.GetColor(type);
+        }
+
         fishName.text = count > 1 ? FishData.GetName(type) + " x" + count : FishData.GetName(type);
         fishDescription.text = "Sin domesticar\nPulsa para intentarlo";
 
@@ -29,7 +47,6 @@ public class FishCard : MonoBehaviour
         actionButton.GetComponent<Image>().color = new Color(0.8f, 0.5f, 0.1f);
         actionButton.GetComponentInChildren<TextMeshProUGUI>().text = "Domesticar";
 
-        // IMPORTANTE: Limpiar el botón antes de añadir el listener
         actionButton.onClick.RemoveAllListeners();
         actionButton.onClick.AddListener(Tame);
     }
@@ -39,7 +56,25 @@ public class FishCard : MonoBehaviour
         fishIndex = index;
         baseManager = manager;
 
-        fishIcon.color = FishData.GetColor(type);
+        // Ponemos el sprite del pez si existe
+        if (FishSprites.Instance != null)
+        {
+            Sprite sprite = FishSprites.Instance.GetSprite(type);
+            if (sprite != null && fishIcon != null)
+            {
+                fishIcon.sprite = sprite;
+                fishIcon.color = Color.white;
+            }
+            else
+            {
+                fishIcon.color = FishData.GetColor(type);
+            }
+        }
+        else
+        {
+            fishIcon.color = FishData.GetColor(type);
+        }
+
         fishName.text = count > 1 ? FishData.GetName(type) + " x" + count : FishData.GetName(type);
         fishDescription.text = FishData.GetDescription(type);
 

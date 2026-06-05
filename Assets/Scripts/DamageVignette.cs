@@ -23,11 +23,9 @@ public class DamageVignette : MonoBehaviour
     {
         if (vignetteImage == null) return;
 
-        // Fade hacia el target alpha
         vignetteColor.a = Mathf.MoveTowards(vignetteColor.a, targetAlpha, fadeSpeed * Time.deltaTime);
         vignetteImage.color = vignetteColor;
 
-        // Una vez mostrado volvemos a 0
         if (vignetteColor.a >= targetAlpha && targetAlpha > 0f)
             targetAlpha = 0f;
     }
@@ -35,7 +33,15 @@ public class DamageVignette : MonoBehaviour
     public void ShowDamage()
     {
         targetAlpha = 0f;
-        vignetteColor.a = 0.6f;
+        vignetteColor = new Color(1f, 0f, 0f, 0.6f);
+        if (vignetteImage != null)
+            vignetteImage.color = vignetteColor;
+    }
+
+    public void ShowHeal()
+    {
+        targetAlpha = 0f;
+        vignetteColor = new Color(0f, 1f, 0.3f, 0.6f);
         if (vignetteImage != null)
             vignetteImage.color = vignetteColor;
     }

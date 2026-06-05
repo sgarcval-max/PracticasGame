@@ -3,6 +3,10 @@ using UnityEngine.InputSystem;
 
 public class AbilityManager : MonoBehaviour
 {
+
+    [Header("Prefabs de habilidades")]
+    public GameObject decoyPrefab;
+
     private FishAbility[] slots = new FishAbility[3];
 
     private DiverInventory inventory;
@@ -58,7 +62,9 @@ public class AbilityManager : MonoBehaviour
                 ability = gameObject.AddComponent<SharkAbility>();
                 break;
             case FishType.Clownfish:
-                ability = gameObject.AddComponent<ClownfishAbility>();
+                ClownfishAbility clownfish = gameObject.AddComponent<ClownfishAbility>();
+                clownfish.decoyPrefab = decoyPrefab;
+                ability = clownfish;
                 break;
             case FishType.Squid:
                 ability = gameObject.AddComponent<SquidAbility>();
