@@ -231,4 +231,36 @@ public class GameUI : MonoBehaviour
             player.SetAnimatorIgnoreTime(false); // Lo devolvemos a la normalidad al cambiar de escena
         }
     }
+
+    public void FlashHeal()
+    {
+        StartCoroutine(HealFlashCoroutine());
+    }
+
+    IEnumerator HealFlashCoroutine()
+    {
+        if (healthBar == null) yield break;
+
+        Image fill = healthBar.fillRect.GetComponent<Image>();
+        if (fill == null) yield break;
+
+        Color originalColor = fill.color;
+
+        // Ponemos el fill verde
+        fill.color = new Color(0.5f, 1f, 0.5f);
+
+        // Esperamos un momento
+        yield return new WaitForSeconds(0.5f);
+
+        // Volvemos al color original con fade suave
+        float timer = 0f;
+        while (timer < 0.3f)
+        {
+            timer += Time.deltaTime;
+            fill.color = Color.Lerp(new Color(0.5f, 1f, 0.5f), originalColor, timer / 0.3f);
+            yield return null;
+        }
+
+        fill.color = originalColor;
+    }
 }

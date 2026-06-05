@@ -18,6 +18,12 @@ public class DoriAbility : FishAbility
         if (health != null)
         {
             health.Heal(healAmount);
+
+            // Efecto visual en la barra de vida
+            GameUI gameUI = FindFirstObjectByType<GameUI>();
+            if (gameUI != null)
+                gameUI.FlashHeal();
+
             Debug.Log("Curación! +" + healAmount + " vida");
         }
     }
