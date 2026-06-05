@@ -104,6 +104,9 @@ public class BaseManager : MonoBehaviour
             bagButtonImage.sprite = bagClosedSprite;
 
         bagCoroutine = StartCoroutine(AnimateBag(Vector3.zero, () => bagPanel.SetActive(false)));
+
+        BaseTutorialManager.Instance?.TriggerAction("bag", "Mochila",
+    "Aquí están los peces que has capturado en el mar.\nTienes que domesticarlos para poder usarlos.\nPulsa Domesticar para intentarlo!");
     }
 
     private IEnumerator AnimateBag(Vector3 targetScale, System.Action onComplete = null)
@@ -164,6 +167,10 @@ public class BaseManager : MonoBehaviour
     // --- MISIONES Y BAG ---
     void UpdateMission()
     {
+
+        BaseTutorialManager.Instance?.TriggerAction("mission", "Tablón de Misiones",
+    "Aquí puedes ver tu misión actual.\nNecesitas recoger 5 tesoros del mar.\nLos tesoros aparecen aleatoriamente en cada oleada.");
+
         if (missionText == null) return;
         int collected = GameManager.Instance.collectedTreasure;
         int total = 5;
@@ -202,10 +209,18 @@ public class BaseManager : MonoBehaviour
     void UpdateAquarium()
     {
         FindFirstObjectByType<AquariumManager>()?.RefreshAquarium();
+
+        if (GameManager.Instance.tamedFish.Count > 0)
+            BaseTutorialManager.Instance?.TriggerAction("aquarium", "Acuario",
+                "Los peces domesticados viven aquí.\nPon el ratón encima de uno para ver sus habilidades\ny equiparlo para llevarlo al mar.");
     }
 
     public void StartTaming(int fishIndex)
     {
+
+        BaseTutorialManager.Instance?.TriggerAction("taming", "Minijuego",
+    "Para domesticar un pez tienes que pulsar ESPACIO\ncuando el indicador esté en la zona verde.\nSi fallas perderás el pez!");
+
         List<FishType> uniqueFish = GetUniqueCaughtFish();
         if (fishIndex >= uniqueFish.Count) return;
         FishType fish = uniqueFish[fishIndex];
@@ -218,6 +233,10 @@ public class BaseManager : MonoBehaviour
 
     public void EquipFish(int fishIndex)
     {
+
+        BaseTutorialManager.Instance?.TriggerAction("equip", "Equipar Pez",
+    "Puedes llevar hasta 3 peces equipados al mar.\nCada pez te da una habilidad especial.\nÚsalas con las teclas 1, 2 y 3!");
+
         List<FishType> uniqueFish = GetUniqueTamedFish();
         if (fishIndex >= uniqueFish.Count) return;
         FishType fish = uniqueFish[fishIndex];
