@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 using System.Collections.Generic;
 
 public class BaseTutorialManager : MonoBehaviour
@@ -14,11 +15,14 @@ public class BaseTutorialManager : MonoBehaviour
     public TextMeshProUGUI tutorialCounter;
     public Button closeButton;
 
+    [Header("Highlight")]
+    public Image highlightImage;
+
     private HashSet<string> completedActions = new HashSet<string>();
     private bool isPanelOpen = false;
     private int totalActions = 6;
+    private Coroutine highlightCoroutine;
 
-    // Clave para guardar si ya se ha visto el tutorial
     private const string TUTORIAL_KEY = "BaseTutorialSeen";
 
     void Awake()
@@ -29,25 +33,29 @@ public class BaseTutorialManager : MonoBehaviour
     void Start()
     {
         tutorialPanel.SetActive(false);
+
+        if (highlightImage != null)
+            highlightImage.gameObject.SetActive(false);
+
         closeButton.onClick.AddListener(ClosePanel);
 
-        // Mostramos el tutorial de entrada siempre la primera vez
         if (!HasSeenAction("entrance"))
             TriggerAction("entrance", "La Base",
-                "Bienvenido a tu base!\nAquí podrás gestionar tus peces,\nver tus misiones y prepararte para ir al mar.");
+                "Bienvenido a tu base!\nAquí podrás gestionar tus peces,\nver tus misiones y prepararte para volver al mar.",
+                null);
     }
 
-    public void TriggerAction(string actionId, string title, string description)
+    public void TriggerAction(string actionId, string title, string description, RectTransform highlightTarget)
     {
         if (isPanelOpen) return;
         if (HasSeenAction(actionId)) return;
 
         SaveAction(actionId);
         completedActions.Add(actionId);
-        ShowPanel(title, description);
+        ShowPanel(title, description, highlightTarget);
     }
 
-    void ShowPanel(string title, string description)
+    void ShowPanel(string title, string description, RectTransform highlightTarget)
     {
         isPanelOpen = true;
         tutorialTitle.text = title;
@@ -56,21 +64,52 @@ public class BaseTutorialManager : MonoBehaviour
         if (tutorialCounter != null)
             tutorialCounter.text = completedActions.Count + "/" + totalActions;
 
+        // Resaltamos el elemento
+        if (highlightTarget != null && highlightImage != null)
+        {
+            highlightImage.gameObject.SetActive(true);
+            highlightImage.rectTransform.position = highlightTarget.position;
+            highlightImage.rectTransform.sizeDelta = highlightTarget.sizeDelta + new Vector2(20f, 20f);
+
+            if (highlightCoroutine != null) StopCoroutine(highlightCoroutine);
+            highlightCoroutine = StartCoroutine(PulseHighlight());
+        }
+
         tutorialPanel.SetActive(true);
+    }
+
+    IEnumerator PulseHighlight()
+    {
+        if (highlightImage == null) yield break;
+
+        while (isPanelOpen)
+        {
+            float t = Mathf.Sin(Time.unscaledTime * 3f) * 0.5f + 0.5f;
+            highlightImage.color = new Color(1f, 1f, 0f, Mathf.Lerp(0.1f, 0.6f, t));
+            yield return null;
+        }
+
+        highlightImage.color = new Color(1f, 1f, 0f, 0f);
+        highlightImage.gameObject.SetActive(false);
     }
 
     void ClosePanel()
     {
         isPanelOpen = false;
         tutorialPanel.SetActive(false);
+
+        if (highlightCoroutine != null)
+        {
+            StopCoroutine(highlightCoroutine);
+            highlightCoroutine = null;
+        }
+
+        if (highlightImage != null)
+            highlightImage.gameObject.SetActive(false);
     }
 
-    public bool IsPanelOpen()
-    {
-        return isPanelOpen;
-    }
+    public bool IsPanelOpen() => isPanelOpen;
 
-    // Guardamos con PlayerPrefs para que solo salga una vez
     void SaveAction(string actionId)
     {
         PlayerPrefs.SetInt(TUTORIAL_KEY + actionId, 1);
@@ -82,7 +121,6 @@ public class BaseTutorialManager : MonoBehaviour
         return PlayerPrefs.GetInt(TUTORIAL_KEY + actionId, 0) == 1;
     }
 
-    // Para resetear el tutorial si quieres verlo de nuevo
     public void ResetTutorial()
     {
         string[] actions = { "entrance", "bag", "taming", "aquarium", "equip", "mission" };

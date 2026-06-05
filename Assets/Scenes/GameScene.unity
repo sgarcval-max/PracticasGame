@@ -7144,7 +7144,7 @@ GameObject:
   - component: {fileID: 1381411866}
   - component: {fileID: 1381411867}
   m_Layer: 5
-  m_Name: Image
+  m_Name: fondo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7160,8 +7160,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.94, y: 0.94, z: 0.94}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7209,7 +7209,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6da289771edf97647ae8066d5e9241e5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ce59d43c888eb0f4c97d5a7b220e0a07, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10198,6 +10198,7 @@ SceneRoots:
   - {fileID: 512767366}
   - {fileID: 267463663}
   - {fileID: 897806363}
+  - {fileID: 1381411866}
   - {fileID: 1893197223}
   - {fileID: 1801860542}
   - {fileID: 1222483116}
@@ -10205,4 +10206,3 @@ SceneRoots:
   - {fileID: 1387936499}
   - {fileID: 1263304307}
   - {fileID: 392782359}
-  - {fileID: 1381411866}
