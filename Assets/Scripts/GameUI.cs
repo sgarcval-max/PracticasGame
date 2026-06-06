@@ -211,8 +211,6 @@ public class GameUI : MonoBehaviour
         Time.timeScale = 1f;
         if (TutorialSceneFlag.IsTutorial)
             SceneManager.LoadScene("TutorialScene");
-        else if (SceneTransition.Instance != null)
-            SceneTransition.Instance.TransitionToGame();
         else
             SceneManager.LoadScene("GameScene");
     }
