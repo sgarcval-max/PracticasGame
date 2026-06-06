@@ -15,13 +15,18 @@ public class BaseTutorialManager : MonoBehaviour
     public TextMeshProUGUI tutorialCounter;
     public Button closeButton;
 
-    [Header("Highlight")]
-    public Image highlightImage;
+    [Header("Highlights por objeto")]
+    public GameObject highlightMissionBoard;
+    public GameObject highlightAquarium;
+    public GameObject highlightBag;
+    public GameObject highlightTaming;
+    public GameObject highlightEquip;
 
     private HashSet<string> completedActions = new HashSet<string>();
     private bool isPanelOpen = false;
     private int totalActions = 6;
     private Coroutine highlightCoroutine;
+    private GameObject currentHighlight;
 
     private const string TUTORIAL_KEY = "BaseTutorialSeen";
 
@@ -33,44 +38,68 @@ public class BaseTutorialManager : MonoBehaviour
     void Start()
     {
         tutorialPanel.SetActive(false);
-
-        if (highlightImage != null)
-            highlightImage.gameObject.SetActive(false);
-
+        HideAllHighlights();
         closeButton.onClick.AddListener(ClosePanel);
 
         if (!HasSeenAction("entrance"))
             TriggerAction("entrance", "La Base",
                 "Bienvenido a tu base!\nAquí podrás gestionar tus peces,\nver tus misiones y prepararte para volver al mar.",
-                null, null);
+                null);
+    }
+
+    void HideAllHighlights()
+    {
+        if (highlightMissionBoard != null) highlightMissionBoard.SetActive(false);
+        if (highlightAquarium != null) highlightAquarium.SetActive(false);
+        if (highlightBag != null) highlightBag.SetActive(false);
+        if (highlightTaming != null) highlightTaming.SetActive(false);
+        if (highlightEquip != null) highlightEquip.SetActive(false);
+    }
+
+    GameObject GetHighlightForAction(string actionId)
+    {
+        switch (actionId)
+        {
+            case "mission": return highlightMissionBoard;
+            case "aquarium": return highlightAquarium;
+            case "bag": return highlightBag;
+            case "taming": return highlightTaming;
+            case "equip": return highlightEquip;
+            default: return null;
+        }
     }
 
     public void TriggerAction(string actionId, string title, string description, RectTransform rectTarget)
-    {
-        TriggerAction(actionId, title, description, rectTarget, null);
-    }
-
-    public void TriggerAction(string actionId, string title, string description, Transform worldTarget)
-    {
-        TriggerAction(actionId, title, description, null, worldTarget);
-    }
-
-    public void TriggerAction(string actionId, string title, string description)
-    {
-        TriggerAction(actionId, title, description, null, null);
-    }
-
-    private void TriggerAction(string actionId, string title, string description, RectTransform rectTarget, Transform worldTarget)
     {
         if (isPanelOpen) return;
         if (HasSeenAction(actionId)) return;
 
         SaveAction(actionId);
         completedActions.Add(actionId);
-        ShowPanel(title, description, rectTarget, worldTarget);
+        ShowPanel(title, description, actionId);
     }
 
-    void ShowPanel(string title, string description, RectTransform rectTarget, Transform worldTarget)
+    public void TriggerAction(string actionId, string title, string description, Transform worldTarget)
+    {
+        if (isPanelOpen) return;
+        if (HasSeenAction(actionId)) return;
+
+        SaveAction(actionId);
+        completedActions.Add(actionId);
+        ShowPanel(title, description, actionId);
+    }
+
+    public void TriggerAction(string actionId, string title, string description)
+    {
+        if (isPanelOpen) return;
+        if (HasSeenAction(actionId)) return;
+
+        SaveAction(actionId);
+        completedActions.Add(actionId);
+        ShowPanel(title, description, actionId);
+    }
+
+    void ShowPanel(string title, string description, string actionId)
     {
         isPanelOpen = true;
         tutorialTitle.text = title;
@@ -79,71 +108,35 @@ public class BaseTutorialManager : MonoBehaviour
         if (tutorialCounter != null)
             tutorialCounter.text = completedActions.Count + "/" + totalActions;
 
-        if (highlightImage != null)
+        // Activamos el highlight correspondiente
+        HideAllHighlights();
+        currentHighlight = GetHighlightForAction(actionId);
+        if (currentHighlight != null)
         {
-            if (rectTarget != null)
-            {
-                highlightImage.gameObject.SetActive(true);
-                highlightImage.rectTransform.position = rectTarget.position;
-                highlightImage.rectTransform.sizeDelta = rectTarget.rect.size + new Vector2(10f, 10f);
-                highlightImage.rectTransform.pivot = rectTarget.pivot;
-
-                if (highlightCoroutine != null) StopCoroutine(highlightCoroutine);
-                highlightCoroutine = StartCoroutine(PulseHighlight());
-            }
-            else if (worldTarget != null)
-            {
-                highlightImage.gameObject.SetActive(true);
-
-                if (highlightCoroutine != null) StopCoroutine(highlightCoroutine);
-                highlightCoroutine = StartCoroutine(FollowWorldObject(worldTarget));
-            }
-            else
-            {
-                highlightImage.gameObject.SetActive(false);
-            }
+            currentHighlight.SetActive(true);
+            if (highlightCoroutine != null) StopCoroutine(highlightCoroutine);
+            highlightCoroutine = StartCoroutine(PulseHighlight(currentHighlight));
         }
 
         tutorialPanel.SetActive(true);
     }
 
-    IEnumerator FollowWorldObject(Transform worldTarget)
+    IEnumerator PulseHighlight(GameObject highlight)
     {
-        if (highlightImage == null) yield break;
+        Image img = highlight.GetComponent<Image>();
+        if (img == null) yield break;
 
-        Camera cam = Camera.main;
-
-        while (isPanelOpen && worldTarget != null)
-        {
-            Vector3 screenPos = cam.WorldToScreenPoint(worldTarget.position);
-            highlightImage.rectTransform.position = screenPos;
-
-            Vector3 size = worldTarget.localScale * 100f;
-            highlightImage.rectTransform.sizeDelta = new Vector2(size.x + 10f, size.y + 10f);
-
-            float t = Mathf.Sin(Time.unscaledTime * 3f) * 0.5f + 0.5f;
-            highlightImage.color = new Color(1f, 1f, 0f, Mathf.Lerp(0.1f, 0.6f, t));
-
-            yield return null;
-        }
-
-        highlightImage.color = new Color(1f, 1f, 0f, 0f);
-        highlightImage.gameObject.SetActive(false);
-    }
-
-    IEnumerator PulseHighlight()
-    {
-        if (highlightImage == null) yield break;
+        Color originalColor = img.color;
 
         while (isPanelOpen)
         {
             float t = Mathf.Sin(Time.unscaledTime * 3f) * 0.5f + 0.5f;
-            highlightImage.color = new Color(1f, 1f, 0f, Mathf.Lerp(0.1f, 0.6f, t));
+            img.color = new Color(originalColor.r, originalColor.g, originalColor.b,
+                Mathf.Lerp(0.1f, 0.8f, t));
             yield return null;
         }
 
-        highlightImage.color = new Color(1f, 1f, 0f, 0f);
-        highlightImage.gameObject.SetActive(false);
+        img.color = originalColor;
     }
 
     void ClosePanel()
@@ -157,19 +150,13 @@ public class BaseTutorialManager : MonoBehaviour
             highlightCoroutine = null;
         }
 
-        if (highlightImage != null)
-            highlightImage.gameObject.SetActive(false);
+        HideAllHighlights();
 
         // Si acabamos de ver la bienvenida mostramos el tablón automáticamente
         if (completedActions.Contains("entrance") && !HasSeenAction("mission"))
         {
-            BaseManager bm = FindFirstObjectByType<BaseManager>();
-            if (bm != null)
-            {
-                TriggerAction("mission", "Tablón de Misiones",
-                    "Aquí puedes ver tu misión actual.\nNecesitas recoger 5 tesoros del mar.\nLos tesoros aparecen aleatoriamente en cada oleada.",
-                    bm.missionBoardTransform);
-            }
+            TriggerAction("mission", "Tablón de Misiones",
+                "Aquí puedes ver tu misión actual.\nNecesitas recoger 5 tesoros del mar.\nLos tesoros aparecen aleatoriamente en cada oleada.");
         }
     }
 
