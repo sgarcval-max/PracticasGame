@@ -2504,15 +2504,15 @@ RectTransform:
   m_GameObject: {fileID: 258641341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7.9, y: 7.9, z: 7.9}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 18.7, y: 10.46, z: 10.26}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2133059222}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -58, y: -43}
-  m_SizeDelta: {x: 244.1, y: 137.12}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &261666643
 GameObject:
@@ -6908,8 +6908,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bagButtonRect: {fileID: 0}
-  missionBoardRect: {fileID: 258641344}
-  aquariumRect: {fileID: 0}
+  missionBoardTransform: {fileID: 449487992}
+  aquariumTransform: {fileID: 794579933}
   missionText: {fileID: 756942370}
   bagClosedSprite: {fileID: -8730944319951494932, guid: bde3272b71c35e545b5c9034a21f744b, type: 3}
   bagOpenSprite: {fileID: 5804477512468784164, guid: 57a0c8770882a94479ef4a4cfec46c78, type: 3}

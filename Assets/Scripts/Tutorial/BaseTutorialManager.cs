@@ -42,20 +42,35 @@ public class BaseTutorialManager : MonoBehaviour
         if (!HasSeenAction("entrance"))
             TriggerAction("entrance", "La Base",
                 "Bienvenido a tu base!\nAquí podrás gestionar tus peces,\nver tus misiones y prepararte para volver al mar.",
-                null);
+                null, null);
     }
 
-    public void TriggerAction(string actionId, string title, string description, RectTransform highlightTarget)
+    public void TriggerAction(string actionId, string title, string description, RectTransform rectTarget)
+    {
+        TriggerAction(actionId, title, description, rectTarget, null);
+    }
+
+    public void TriggerAction(string actionId, string title, string description, Transform worldTarget)
+    {
+        TriggerAction(actionId, title, description, null, worldTarget);
+    }
+
+    public void TriggerAction(string actionId, string title, string description)
+    {
+        TriggerAction(actionId, title, description, null, null);
+    }
+
+    private void TriggerAction(string actionId, string title, string description, RectTransform rectTarget, Transform worldTarget)
     {
         if (isPanelOpen) return;
         if (HasSeenAction(actionId)) return;
 
         SaveAction(actionId);
         completedActions.Add(actionId);
-        ShowPanel(title, description, highlightTarget);
+        ShowPanel(title, description, rectTarget, worldTarget);
     }
 
-    void ShowPanel(string title, string description, RectTransform highlightTarget)
+    void ShowPanel(string title, string description, RectTransform rectTarget, Transform worldTarget)
     {
         isPanelOpen = true;
         tutorialTitle.text = title;
@@ -64,18 +79,56 @@ public class BaseTutorialManager : MonoBehaviour
         if (tutorialCounter != null)
             tutorialCounter.text = completedActions.Count + "/" + totalActions;
 
-        // Resaltamos el elemento
-        if (highlightTarget != null && highlightImage != null)
+        if (highlightImage != null)
         {
-            highlightImage.gameObject.SetActive(true);
-            highlightImage.rectTransform.position = highlightTarget.position;
-            highlightImage.rectTransform.sizeDelta = highlightTarget.sizeDelta + new Vector2(20f, 20f);
+            if (rectTarget != null)
+            {
+                highlightImage.gameObject.SetActive(true);
+                highlightImage.rectTransform.position = rectTarget.position;
+                highlightImage.rectTransform.sizeDelta = rectTarget.rect.size + new Vector2(10f, 10f);
+                highlightImage.rectTransform.pivot = rectTarget.pivot;
 
-            if (highlightCoroutine != null) StopCoroutine(highlightCoroutine);
-            highlightCoroutine = StartCoroutine(PulseHighlight());
+                if (highlightCoroutine != null) StopCoroutine(highlightCoroutine);
+                highlightCoroutine = StartCoroutine(PulseHighlight());
+            }
+            else if (worldTarget != null)
+            {
+                highlightImage.gameObject.SetActive(true);
+
+                if (highlightCoroutine != null) StopCoroutine(highlightCoroutine);
+                highlightCoroutine = StartCoroutine(FollowWorldObject(worldTarget));
+            }
+            else
+            {
+                highlightImage.gameObject.SetActive(false);
+            }
         }
 
         tutorialPanel.SetActive(true);
+    }
+
+    IEnumerator FollowWorldObject(Transform worldTarget)
+    {
+        if (highlightImage == null) yield break;
+
+        Camera cam = Camera.main;
+
+        while (isPanelOpen && worldTarget != null)
+        {
+            Vector3 screenPos = cam.WorldToScreenPoint(worldTarget.position);
+            highlightImage.rectTransform.position = screenPos;
+
+            Vector3 size = worldTarget.localScale * 100f;
+            highlightImage.rectTransform.sizeDelta = new Vector2(size.x + 10f, size.y + 10f);
+
+            float t = Mathf.Sin(Time.unscaledTime * 3f) * 0.5f + 0.5f;
+            highlightImage.color = new Color(1f, 1f, 0f, Mathf.Lerp(0.1f, 0.6f, t));
+
+            yield return null;
+        }
+
+        highlightImage.color = new Color(1f, 1f, 0f, 0f);
+        highlightImage.gameObject.SetActive(false);
     }
 
     IEnumerator PulseHighlight()
@@ -106,6 +159,18 @@ public class BaseTutorialManager : MonoBehaviour
 
         if (highlightImage != null)
             highlightImage.gameObject.SetActive(false);
+
+        // Si acabamos de ver la bienvenida mostramos el tablón automáticamente
+        if (completedActions.Contains("entrance") && !HasSeenAction("mission"))
+        {
+            BaseManager bm = FindFirstObjectByType<BaseManager>();
+            if (bm != null)
+            {
+                TriggerAction("mission", "Tablón de Misiones",
+                    "Aquí puedes ver tu misión actual.\nNecesitas recoger 5 tesoros del mar.\nLos tesoros aparecen aleatoriamente en cada oleada.",
+                    bm.missionBoardTransform);
+            }
+        }
     }
 
     public bool IsPanelOpen() => isPanelOpen;

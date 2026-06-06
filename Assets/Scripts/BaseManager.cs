@@ -9,8 +9,8 @@ public class BaseManager : MonoBehaviour
 {
     [Header("Referencias para Tutorial")]
     public RectTransform bagButtonRect;
-    public RectTransform missionBoardRect;
-    public RectTransform aquariumRect;
+    public Transform missionBoardTransform;
+    public Transform aquariumTransform;
 
     [Header("Mission")]
     public TextMeshProUGUI missionText;
@@ -82,14 +82,12 @@ public class BaseManager : MonoBehaviour
         UpdatePhysicalEquippedFishes();
     }
 
-    // --- ANIMACIÓN MOCHILA ---
     public void OpenBag()
     {
         if (bagCoroutine != null) StopCoroutine(bagCoroutine);
         if (AudioManager.Instance != null && AudioManager.Instance.bagOpenSound != null)
             AudioManager.Instance.PlaySFX(AudioManager.Instance.bagOpenSound);
 
-        // Cambiamos a imagen de mochila abierta
         if (bagButtonImage != null && bagOpenSprite != null)
             bagButtonImage.sprite = bagOpenSprite;
 
@@ -98,8 +96,8 @@ public class BaseManager : MonoBehaviour
         bagCoroutine = StartCoroutine(AnimateBag(Vector3.one));
 
         BaseTutorialManager.Instance?.TriggerAction("bag", "Mochila",
-    "Aquí están los peces que has capturado en el mar.\nTienes que domesticarlos para poder usarlos.\nPulsa Domesticar para intentarlo!",
-    bagButtonRect);
+            "Aquí están los peces que has capturado en el mar.\nTienes que domesticarlos para poder usarlos.\nPulsa Domesticar para intentarlo si tienes algun pez!",
+            bagButtonRect);
     }
 
     public void CloseBag()
@@ -108,7 +106,6 @@ public class BaseManager : MonoBehaviour
         if (AudioManager.Instance != null && AudioManager.Instance.bagCloseSound != null)
             AudioManager.Instance.PlaySFX(AudioManager.Instance.bagCloseSound);
 
-        // Cambiamos a imagen de mochila cerrada
         if (bagButtonImage != null && bagClosedSprite != null)
             bagButtonImage.sprite = bagClosedSprite;
 
@@ -127,7 +124,6 @@ public class BaseManager : MonoBehaviour
         onComplete?.Invoke();
     }
 
-    // --- LÓGICA FÍSICA ---
     void UpdatePhysicalEquippedFishes()
     {
         foreach (GameObject fishObj in spawnedFishes) Destroy(fishObj);
@@ -135,9 +131,7 @@ public class BaseManager : MonoBehaviour
 
         List<FishType> equipped = GameManager.Instance.equippedFish;
         for (int i = 0; i < equipped.Count; i++)
-        {
             SpawnFishInWorld(equipped[i], i);
-        }
     }
 
     void SpawnFishInWorld(FishType type, int index)
@@ -150,9 +144,8 @@ public class BaseManager : MonoBehaviour
 
         PhysicalEquippedFish fishScript = newFish.GetComponent<PhysicalEquippedFish>();
         if (fishScript != null)
-        {
             fishScript.Setup(type, GetSpriteForType(type));
-        }
+
         spawnedFishes.Add(newFish);
     }
 
@@ -170,17 +163,13 @@ public class BaseManager : MonoBehaviour
         }
     }
 
-    // --- MISIONES Y BAG ---
     void UpdateMission()
     {
-
-        BaseTutorialManager.Instance?.TriggerAction("mission", "Tablón de Misiones",
-    "Aquí puedes ver tu misión actual.\nNecesitas recoger 5 tesoros del mar.\nLos tesoros aparecen aleatoriamente en cada oleada.",
-    missionBoardRect);
-
         if (missionText == null) return;
+
         int collected = GameManager.Instance.collectedTreasure;
         int total = 5;
+
         if (GameManager.Instance.missionCompleted)
         {
             missionText.text = "Misión:\n" + GameManager.Instance.currentMission + "\n\n " + collected + "/" + total + "\n\n✓ COMPLETADA!";
@@ -220,15 +209,14 @@ public class BaseManager : MonoBehaviour
         if (GameManager.Instance.tamedFish.Count > 0)
             BaseTutorialManager.Instance?.TriggerAction("aquarium", "Acuario",
                 "Los peces domesticados viven aquí.\nPon el ratón encima de uno para ver sus habilidades\ny equiparlo para llevarlo al mar.",
-                aquariumRect);
+                aquariumTransform);
     }
 
     public void StartTaming(int fishIndex)
     {
-
         BaseTutorialManager.Instance?.TriggerAction("taming", "Minijuego",
-    "Para domesticar un pez tienes que pulsar ESPACIO\ncuando el indicador esté en la zona verde.\nSi fallas perderás el pez!",
-    bagButtonRect);
+            "Para domesticar un pez tienes que pulsar ESPACIO\ncuando el indicador esté en la zona verde.\nSi fallas perderás el pez!",
+            bagButtonRect);
 
         List<FishType> uniqueFish = GetUniqueCaughtFish();
         if (fishIndex >= uniqueFish.Count) return;
@@ -242,10 +230,9 @@ public class BaseManager : MonoBehaviour
 
     public void EquipFish(int fishIndex)
     {
-
         BaseTutorialManager.Instance?.TriggerAction("equip", "Equipar Pez",
-    "Puedes llevar hasta 3 peces equipados al mar.\nCada pez te da una habilidad especial.\nÚsalas con las teclas 1, 2 y 3!",
-    aquariumRect);
+            "Puedes llevar hasta 3 peces equipados al mar.\nCada pez te da una habilidad especial.\nÚsalas con las teclas 1, 2 y 3!",
+            aquariumTransform);
 
         List<FishType> uniqueFish = GetUniqueTamedFish();
         if (fishIndex >= uniqueFish.Count) return;
@@ -292,7 +279,6 @@ public class BaseManager : MonoBehaviour
 
     void GoToMenu()
     {
-        // Marcamos que venimos de la base
         PlayerPrefs.SetInt("ComingFromBase", 1);
         PlayerPrefs.Save();
 
