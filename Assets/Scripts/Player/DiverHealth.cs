@@ -30,7 +30,7 @@ public class DiverHealth : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current.bKey.wasPressedThisFrame)
+        if (Keyboard.current.bKey.wasPressedThisFrame && !TutorialSceneFlag.IsTutorial)
         {
             DiverInventory inventory = GetComponent<DiverInventory>();
             WaveManager waveManager = FindFirstObjectByType<WaveManager>();

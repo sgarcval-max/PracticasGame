@@ -209,9 +209,12 @@ public class GameUI : MonoBehaviour
     void Restart()
     {
         Time.timeScale = 1f;
-        RestorePlayerControl();
-        if (SceneTransition.Instance != null) SceneTransition.Instance.TransitionToGame();
-        else SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (TutorialSceneFlag.IsTutorial)
+            SceneManager.LoadScene("TutorialScene");
+        else if (SceneTransition.Instance != null)
+            SceneTransition.Instance.TransitionToGame();
+        else
+            SceneManager.LoadScene("GameScene");
     }
 
     void GoToBase()
