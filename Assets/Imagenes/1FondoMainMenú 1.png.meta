@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 2385634facc36d54e98beac113e7cb69
+guid: f49480a45875a414c94ef22bc9504882
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 434210638885717027
-    second: HP_bar_Background_0
+      213: -4326706400232931904
+    second: "1FondoMainMen\xFA 1_0"
+  - first:
+      213: -3515427091647515436
+    second: "1FondoMainMen\xFA 1_1"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,9 +49,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -75,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HP_bar_Background_0
+      name: "1FondoMainMen\xFA 1_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1024
-        height: 256
+        x: 21
+        y: 408
+        width: 1890
+        height: 339
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3248a788640a60600800000000000000
-      internalID: 434210638885717027
+      spriteID: 0cdf4bee37374f3c0800000000000000
+      internalID: -4326706400232931904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "1FondoMainMen\xFA 1_1"
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 707
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d4b0988fa1b63fc0800000000000000
+      internalID: -3515427091647515436
       vertices: []
       indices: 
       edges: []
@@ -138,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      HP_bar_Background_0: 434210638885717027
+      "1FondoMainMen\xFA 1_0": -4326706400232931904
+      "1FondoMainMen\xFA 1_1": -3515427091647515436
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
