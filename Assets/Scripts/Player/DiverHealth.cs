@@ -88,12 +88,18 @@ public class DiverHealth : MonoBehaviour
         if (controller != null)
             controller.TriggerDeath();
 
-        if (GameManager.Instance != null)
+        if (!TutorialSceneFlag.IsTutorial)
         {
-            DiverInventory inventory = GetComponent<DiverInventory>();
-            WaveManager waveManager = FindFirstObjectByType<WaveManager>();
-            // Pasamos died = true para que use el backup
-            GameManager.Instance.SavePlayerData(inventory, waveManager, true);
+            // Solo guardamos progreso si NO estamos en el tutorial
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.caughtFish = new List<FishType>(GameManager.Instance.caughtFishBackup);
+                GameManager.Instance.collectedTreasure = GameManager.Instance.collectedTreasureBackup;
+
+                DiverInventory inventory = GetComponent<DiverInventory>();
+                WaveManager waveManager = FindFirstObjectByType<WaveManager>();
+                GameManager.Instance.SavePlayerData(inventory, waveManager, true);
+            }
         }
 
         StartCoroutine(DeathCoroutine());

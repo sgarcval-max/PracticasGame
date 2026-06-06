@@ -29,11 +29,15 @@ public class TreasureManager : MonoBehaviour
 
     void Start()
     {
-        if (GameManager.Instance != null)
+        if (GameManager.Instance != null && !TutorialSceneFlag.IsTutorial)
         {
             collectedTreasure = GameManager.Instance.collectedTreasure;
-            // Actualizamos el backup cada vez que entramos al mar
             GameManager.Instance.collectedTreasureBackup = GameManager.Instance.collectedTreasure;
+        }
+        else
+        {
+            // En el tutorial siempre empezamos desde 0
+            collectedTreasure = 0;
         }
 
         gameUI?.UpdateTreasure(collectedTreasure, totalTreasure);
@@ -83,23 +87,27 @@ public class TreasureManager : MonoBehaviour
         collectedTreasure += value;
         gameUI?.UpdateTreasure(collectedTreasure, totalTreasure);
 
-        // Guardamos el progreso en el GameManager
-        if (GameManager.Instance != null)
-            GameManager.Instance.collectedTreasure = collectedTreasure;
-
-        Debug.Log("Tesoro recogido: " + collectedTreasure + "/" + totalTreasure);
-
-        if (collectedTreasure >= totalTreasure)
+        // Solo guardamos en el GameManager si NO estamos en el tutorial
+        if (!TutorialSceneFlag.IsTutorial)
         {
-            Debug.Log("Tesoro completo! Aparece el boss!");
             if (GameManager.Instance != null)
-                GameManager.Instance.missionCompleted = true;
-            gameUI?.ShowVictory();
+                GameManager.Instance.collectedTreasure = collectedTreasure;
         }
 
         // Tutorial
         TutorialTreasure tt = FindFirstObjectByType<TutorialTreasure>();
         if (tt != null) tt.OnTreasureCollected();
+
+        Debug.Log("Tesoro recogido: " + collectedTreasure + "/" + totalTreasure);
+
+        if (collectedTreasure >= totalTreasure)
+        {
+            if (!TutorialSceneFlag.IsTutorial && GameManager.Instance != null)
+            {
+                GameManager.Instance.missionCompleted = true;
+            }
+            gameUI?.ShowVictory();
+        }
     }
 
     public bool IsTreasureComplete()

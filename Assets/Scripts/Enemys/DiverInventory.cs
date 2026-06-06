@@ -42,9 +42,12 @@ public class DiverInventory : MonoBehaviour
         caughtFish.Add(fishType);
         Debug.Log("Pez capturado en mochila: " + fishType);
 
-        if (GameManager.Instance != null)
-            GameManager.Instance.caughtFish = new List<FishType>(caughtFish);
-        
+        // Solo guardamos en el GameManager si NO estamos en el tutorial
+        if (!TutorialSceneFlag.IsTutorial)
+        {
+            if (GameManager.Instance != null)
+                GameManager.Instance.caughtFish = new List<FishType>(caughtFish);
+        }
     }
 
     public void TameFish(FishType fishType)
