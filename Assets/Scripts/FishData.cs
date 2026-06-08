@@ -10,7 +10,7 @@ public static class FishData
             case FishType.Pufferfish: return "Pez Globo";
             case FishType.Shark: return "Tiburón";
             case FishType.Clownfish: return "Pez Payaso";
-            case FishType.Squid: return "Calamar";
+            case FishType.Squid: return "Medusa";
             case FishType.Swordfish: return "Pez Espada";
             case FishType.Cirujano: return "Cirujano";
             default: return "Desconocido";
@@ -22,17 +22,17 @@ public static class FishData
         switch (type)
         {
             case FishType.Pufferfish:
-                return "💥 Explosión\nDaña y empuja a todos los enemigos cercanos.";
+                return "Explosión\nDaña y empuja a todos los enemigos cercanos.";
             case FishType.Shark:
-                return "🛡️ Escudo\nTe vuelve invencible durante unos segundos.";
+                return "Escudo\nTe vuelve invencible durante unos segundos.";
             case FishType.Clownfish:
-                return "🎭 Señuelo\nCrea un señuelo que atrae a los enemigos.";
+                return "Señuelo\nCrea un señuelo que atrae a los enemigos.";
             case FishType.Squid:
-                return "🌑 Tinta\nRalentiza a todos los enemigos cercanos.";
+                return "Electricidad\nRalentiza a todos los enemigos cercanos.";
             case FishType.Swordfish:
-                return "⚡ Dash\nSales disparado hacia el cursor dañando enemigos.";
+                return "Dash\nSales disparado hacia el cursor dañando enemigos.";
             case FishType.Cirujano:
-                return "💙 Curación\nRecupera 1 punto de vida.";
+                return "Curación\nRecupera 1 punto de vida.";
            
             default:
                 return "Habilidad desconocida.";
