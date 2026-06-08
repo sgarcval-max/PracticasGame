@@ -14279,7 +14279,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Volver al Mar
+  m_text: Ir al Mar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b86f2c6f6d812b449ab2cd9c25985d6, type: 2}
   m_sharedMaterial: {fileID: 654890395309644443, guid: 3b86f2c6f6d812b449ab2cd9c25985d6, type: 2}
