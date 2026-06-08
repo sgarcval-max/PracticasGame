@@ -20,19 +20,34 @@ public class WaveManager : MonoBehaviour
 
     void Start()
     {
-        // Esperamos a que termine la transición antes de empezar
         StartCoroutine(DelayedStart());
     }
 
     System.Collections.IEnumerator DelayedStart()
     {
-        // Esperamos a que termine la transición
         yield return new WaitUntil(() => SceneTransition.Instance == null || !SceneTransition.Instance.IsTransitioning());
+        yield return new WaitForSeconds(2f);
 
-        // Pequeño delay extra para que el jugador se prepare
-        yield return new WaitForSeconds(1f);
+        // En el tutorial siempre empezamos desde oleada 0
+        if (!TutorialSceneFlag.IsTutorial && GameManager.Instance != null && GameManager.Instance.currentWave > 0)
+        {
+            // Restauramos la oleada donde nos quedamos
+            currentWave = GameManager.Instance.currentWave;
 
-        StartNextWave();
+            // Calculamos los peces según la oleada actual
+            int increments = (currentWave) / 5;
+            int fishCount = fishPerWave + increments * fishIncreaseEvery5Waves;
+            fishAlive = fishCount;
+
+            gameUI?.UpdateWave(currentWave + 1);
+
+            Debug.Log("Continuando desde oleada " + currentWave);
+            StartNextWave();
+        }
+        else
+        {
+            StartNextWave();
+        }
     }
 
     void StartNextWave()

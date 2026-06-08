@@ -43,14 +43,16 @@ public class GameManager : MonoBehaviour
         {
             caughtFish = new List<FishType>(caughtFishBackup);
             collectedTreasure = collectedTreasureBackup;
+            // Al morir reseteamos las oleadas
+            currentWave = 0;
         }
         else
         {
             caughtFish = new List<FishType>(inventory.caughtFish);
+            currentWave = waveManager != null ? waveManager.GetCurrentWave() : 0;
         }
 
         tamedFish = new List<FishType>(inventory.tamedFish);
         equippedFish = new List<FishType>(inventory.equippedFish);
-        currentWave = waveManager != null ? waveManager.GetCurrentWave() : 0;
     }
 }
