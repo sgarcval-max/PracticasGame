@@ -12,6 +12,7 @@ public class AbilityManager : MonoBehaviour
     private DiverInventory inventory;
 
     public GameObject slowEffectPrefab;
+    public GameObject explosionEffectPrefab;
 
     void Awake()
     {
@@ -58,7 +59,9 @@ public class AbilityManager : MonoBehaviour
         switch (fishType)
         {
             case FishType.Pufferfish:
-                ability = gameObject.AddComponent<PufferfishAbility>();
+                PufferfishAbility pufferfish = gameObject.AddComponent<PufferfishAbility>();
+                pufferfish.explosionEffectPrefab = explosionEffectPrefab;
+                ability = pufferfish;
                 break;
             case FishType.Shark:
                 ability = gameObject.AddComponent<SharkAbility>();
