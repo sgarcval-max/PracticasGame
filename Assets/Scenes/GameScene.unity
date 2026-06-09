@@ -1292,6 +1292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decoyPrefab: {fileID: 4064312984340354635, guid: 07b3ace09acdbf941bc007b15e90befd, type: 3}
+  slowEffectPrefab: {fileID: 5166288805820169188, guid: 190048052b4f20b4994d6d094d64292b, type: 3}
 --- !u!95 &267463670
 Animator:
   serializedVersion: 7

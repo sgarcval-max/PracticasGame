@@ -11,6 +11,8 @@ public class AbilityManager : MonoBehaviour
 
     private DiverInventory inventory;
 
+    public GameObject slowEffectPrefab;
+
     void Awake()
     {
         inventory = GetComponent<DiverInventory>();
@@ -67,7 +69,9 @@ public class AbilityManager : MonoBehaviour
                 ability = clownfish;
                 break;
             case FishType.Squid:
-                ability = gameObject.AddComponent<SquidAbility>();
+                SquidAbility squid = gameObject.AddComponent<SquidAbility>();
+                squid.slowEffectPrefab = slowEffectPrefab;
+                ability = squid;
                 break;
             case FishType.Swordfish:
                 ability = gameObject.AddComponent<SwordfishAbility>();
