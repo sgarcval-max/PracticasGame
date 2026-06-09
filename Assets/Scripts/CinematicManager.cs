@@ -194,37 +194,39 @@ public class CinematicManager : MonoBehaviour
         hasPlayedCinematic = true;
         isPlaying = false;
 
+        // Preparamos el background antes de mostrarlo
+        MenuBackground bg = FindFirstObjectByType<MenuBackground>();
+        if (bg != null)
+        {
+            bg.PrepareBackground();
+        }
+
         videoImage.gameObject.SetActive(false);
         videoPlayer.gameObject.SetActive(false);
         skipTextObject.SetActive(false);
-
         menuCanvas.SetActive(true);
 
-        // Iniciamos el fondo animado
-        MenuBackground bg = FindFirstObjectByType<MenuBackground>();
-        if (bg != null) bg.StartBackground();
-
+        StartCoroutine(StartBackgroundAfterDelay(bg));
         StartCoroutine(FadeInMusic());
+    }
+
+    IEnumerator StartBackgroundAfterDelay(MenuBackground bg)
+    {
+        yield return new WaitForEndOfFrame();
+        if (bg != null) bg.StartBackground();
     }
 
     void SkipCinematic()
     {
+        MenuBackground bg = FindFirstObjectByType<MenuBackground>();
+        if (bg != null) bg.PrepareBackground();
+
         videoImage.gameObject.SetActive(false);
-
-        // Solo desactivamos el videoPlayer si existe
-        if (videoPlayer != null && videoPlayer.gameObject != null)
-            videoPlayer.gameObject.SetActive(false);
-
-        if (skipTextObject != null)
-            skipTextObject.SetActive(false);
-
-        // Siempre activamos el menú
+        videoPlayer.gameObject.SetActive(false);
+        skipTextObject.SetActive(false);
         menuCanvas.SetActive(true);
 
-        // Iniciamos el fondo animado
-        MenuBackground bg = FindFirstObjectByType<MenuBackground>();
-        if (bg != null) bg.StartBackground();
-
+        StartCoroutine(StartBackgroundAfterDelay(bg));
         StartCoroutine(FadeInMusic());
     }
 

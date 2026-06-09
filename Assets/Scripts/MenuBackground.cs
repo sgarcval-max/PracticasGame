@@ -5,7 +5,12 @@ public class MenuBackground : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
 
-    // Llamar este método cuando el menú aparece
+    public void PrepareBackground()
+    {
+        if (videoPlayer != null)
+            videoPlayer.Prepare();
+    }
+
     public void StartBackground()
     {
         if (videoPlayer != null)
