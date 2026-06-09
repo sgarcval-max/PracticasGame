@@ -41,10 +41,22 @@ public class BaseTutorialManager : MonoBehaviour
         HideAllHighlights();
         closeButton.onClick.AddListener(ClosePanel);
 
+        // Cargamos las acciones completadas desde PlayerPrefs
+        LoadCompletedActions();
+
         if (!HasSeenAction("entrance"))
             TriggerAction("entrance", "La Base",
-                "Bienvenido a tu base!\nAquí podrás gestionar tus peces,\nver tus misiones y prepararte para volver al mar.",
-                null);
+                "Bienvenido a tu base!\nAquí podrás gestionar tus peces,\nver tus misiones y prepararte para volver al mar.");
+    }
+
+    void LoadCompletedActions()
+    {
+        string[] actions = { "entrance", "bag", "taming", "aquarium", "equip", "mission" };
+        foreach (string action in actions)
+        {
+            if (HasSeenAction(action))
+                completedActions.Add(action);
+        }
     }
 
     void HideAllHighlights()
@@ -152,11 +164,22 @@ public class BaseTutorialManager : MonoBehaviour
 
         HideAllHighlights();
 
-        // Si acabamos de ver la bienvenida mostramos el tablón automáticamente
+        // Después de la bienvenida → tablón de misiones
         if (completedActions.Contains("entrance") && !HasSeenAction("mission"))
         {
             TriggerAction("mission", "Tablón de Misiones",
                 "Aquí puedes ver tu misión actual.\nNecesitas recoger 5 tesoros del mar.\nLos tesoros aparecen aleatoriamente en cada oleada.");
+            return;
+        }
+
+        // Después del tablón → mochila automáticamente
+        if (completedActions.Contains("mission") && !HasSeenAction("bag"))
+        {
+            BaseManager bm = FindFirstObjectByType<BaseManager>();
+            TriggerAction("bag", "Mochila",
+                "Aquí están los peces que has capturado en el mar.\nTienes que domesticarlos para poder usarlos.\nPulsa Domesticar para intentarlo!",
+                bm?.bagButtonRect);
+            return;
         }
     }
 
