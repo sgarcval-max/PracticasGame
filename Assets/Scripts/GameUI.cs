@@ -19,6 +19,9 @@ public class GameUI : MonoBehaviour
     public Image slot1;
     public Image slot2;
     public Image slot3;
+    public Image slot1FishIcon;
+    public Image slot2FishIcon;
+    public Image slot3FishIcon;
     public TextMeshProUGUI slot1Text;
     public TextMeshProUGUI slot2Text;
     public TextMeshProUGUI slot3Text;
@@ -38,6 +41,7 @@ public class GameUI : MonoBehaviour
 
     private Color slotEmpty = new Color(0.2f, 0.2f, 0.2f, 0.8f);
     private Color slotCooldown = new Color(0.8f, 0.2f, 0.2f, 1f);
+    private Color slotReady = new Color(1f, 1f, 1f, 1f); // Corregido: Variable declarada con éxito
 
     private AbilityManager abilityManager;
 
@@ -66,29 +70,55 @@ public class GameUI : MonoBehaviour
     void RefreshSlotColors()
     {
         if (abilityManager == null) return;
-        UpdateSlotColor(slot1, slot1Text, abilityManager.GetSlot(0));
-        UpdateSlotColor(slot2, slot2Text, abilityManager.GetSlot(1));
-        UpdateSlotColor(slot3, slot3Text, abilityManager.GetSlot(2));
+
+        UpdateSlotColor(slot1, slot1FishIcon, slot1Text, abilityManager.GetSlot(0));
+        UpdateSlotColor(slot2, slot2FishIcon, slot2Text, abilityManager.GetSlot(1));
+        UpdateSlotColor(slot3, slot3FishIcon, slot3Text, abilityManager.GetSlot(2));
     }
 
-    void UpdateSlotColor(Image slot, TextMeshProUGUI text, FishAbility ability)
+    void UpdateSlotColor(Image slot, Image fishIcon, TextMeshProUGUI text, FishAbility ability)
     {
         if (slot == null) return;
 
         if (ability == null)
         {
             slot.color = slotEmpty;
-            if (text != null) text.text = "Vacío";
+            if (text != null) text.text = "";
+            if (fishIcon != null) fishIcon.gameObject.SetActive(false);
         }
         else if (ability.IsReady())
         {
-            slot.color = FishData.GetColor(ability.fishType);
-            if (text != null) text.text = FishData.GetName(ability.fishType);
+            slot.color = slotReady;
+            if (text != null) text.text = "";
+
+            // Mostramos la imagen del pez
+            if (fishIcon != null && FishSprites.Instance != null)
+            {
+                Sprite sprite = FishSprites.Instance.GetSprite(ability.fishType);
+                if (sprite != null)
+                {
+                    fishIcon.sprite = sprite;
+                    fishIcon.color = Color.white; // Nos aseguramos de restaurar su color original
+                    fishIcon.gameObject.SetActive(true);
+                }
+            }
         }
         else
         {
             slot.color = slotCooldown;
-            if (text != null) text.text = FishData.GetName(ability.fishType) + "\n";
+            if (text != null) text.text = "";
+
+            // Mostramos la imagen del pez con color oscurecido
+            if (fishIcon != null && FishSprites.Instance != null)
+            {
+                Sprite sprite = FishSprites.Instance.GetSprite(ability.fishType);
+                if (sprite != null)
+                {
+                    fishIcon.sprite = sprite;
+                    fishIcon.color = new Color(0.5f, 0.5f, 0.5f, 1f);
+                    fishIcon.gameObject.SetActive(true);
+                }
+            }
         }
     }
 
@@ -149,7 +179,7 @@ public class GameUI : MonoBehaviour
         Color color = text.color;
         while (timer < duration)
         {
-            timer += Time.unscaledDeltaTime; // UnscaledDeltaTime para que la UI no se congele en la victoria
+            timer += Time.unscaledDeltaTime;
             color.a = Mathf.Lerp(start, end, timer / duration);
             text.color = color;
             yield return null;
@@ -165,7 +195,7 @@ public class GameUI : MonoBehaviour
         float timer = 0f;
         while (timer < 0.3f)
         {
-            timer += Time.unscaledDeltaTime; // UnscaledDeltaTime para que la animación funcione en pausa
+            timer += Time.unscaledDeltaTime;
             t.localScale = Vector3.Lerp(Vector3.one * 1.5f, original, timer / 0.3f);
             yield return null;
         }
@@ -174,35 +204,26 @@ public class GameUI : MonoBehaviour
 
     public void ShowGameOver()
     {
-        // 1. Mostramos el panel de derrota
         gameOverPanel.SetActive(true);
 
-        // 2. IMPORTANTE: NO ponemos Time.timeScale = 0 aquí.
-        // Queremos que el mundo siga vivo para ver la animación de muerte.
-
-        // 3. Quitamos el control al jugador para que no nade mientras está "muerto"
         DiverController player = FindFirstObjectByType<DiverController>();
         if (player != null)
         {
             player.SetControl(false);
-            // Llamamos a la animación de muerte que ya tienes en el DiverController
             player.TriggerDeath();
         }
     }
 
-    // --- AQUÍ CONGELAMOS EL MUNDO PERO EL BUZO SIGUE ALIVIANADO ---
     public void ShowVictory()
     {
         victoryPanel.SetActive(true);
-
-        // 1. Pausamos absolutamente todo el mundo (enemigos, oleadas)
         Time.timeScale = 0f;
 
         DiverController player = FindFirstObjectByType<DiverController>();
         if (player != null)
         {
             player.SetControl(false);
-            player.SetAnimatorIgnoreTime(true); // ¡AQUÍ! Le decimos que solo AHORA ignore el tiempo
+            player.SetAnimatorIgnoreTime(true);
         }
     }
 
@@ -229,7 +250,7 @@ public class GameUI : MonoBehaviour
         if (player != null)
         {
             player.SetControl(true);
-            player.SetAnimatorIgnoreTime(false); // Lo devolvemos a la normalidad al cambiar de escena
+            player.SetAnimatorIgnoreTime(false);
         }
     }
 
@@ -246,14 +267,10 @@ public class GameUI : MonoBehaviour
         if (fill == null) yield break;
 
         Color originalColor = fill.color;
-
-        // Ponemos el fill verde
         fill.color = new Color(0.5f, 1f, 0.5f);
 
-        // Esperamos un momento
         yield return new WaitForSeconds(0.5f);
 
-        // Volvemos al color original con fade suave
         float timer = 0f;
         while (timer < 0.3f)
         {
