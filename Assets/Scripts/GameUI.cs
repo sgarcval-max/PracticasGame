@@ -26,6 +26,14 @@ public class GameUI : MonoBehaviour
     public TextMeshProUGUI slot2Text;
     public TextMeshProUGUI slot3Text;
 
+    [Header("Sprites de peces para slots")]
+    public Sprite spritePufferfish;
+    public Sprite spriteShark;
+    public Sprite spriteClownfish;
+    public Sprite spriteSquid;
+    public Sprite spriteSwordfish;
+    public Sprite spriteCirujano;
+
     [Header("Wave Complete")]
     public TextMeshProUGUI waveCompleteText;
     public TextMeshProUGUI countdownText;
@@ -83,7 +91,7 @@ public class GameUI : MonoBehaviour
         if (ability == null)
         {
             slot.color = slotEmpty;
-            if (text != null) text.text = "";
+            if (text != null) text.text = "Vacío";
             if (fishIcon != null) fishIcon.gameObject.SetActive(false);
         }
         else if (ability.IsReady())
@@ -91,14 +99,13 @@ public class GameUI : MonoBehaviour
             slot.color = slotReady;
             if (text != null) text.text = "";
 
-            // Mostramos la imagen del pez
-            if (fishIcon != null && FishSprites.Instance != null)
+            if (fishIcon != null)
             {
-                Sprite sprite = FishSprites.Instance.GetSprite(ability.fishType);
+                Sprite sprite = GetFishSprite(ability.fishType);
                 if (sprite != null)
                 {
                     fishIcon.sprite = sprite;
-                    fishIcon.color = Color.white; // Nos aseguramos de restaurar su color original
+                    fishIcon.color = Color.white;
                     fishIcon.gameObject.SetActive(true);
                 }
             }
@@ -108,10 +115,9 @@ public class GameUI : MonoBehaviour
             slot.color = slotCooldown;
             if (text != null) text.text = "";
 
-            // Mostramos la imagen del pez con color oscurecido
-            if (fishIcon != null && FishSprites.Instance != null)
+            if (fishIcon != null)
             {
-                Sprite sprite = FishSprites.Instance.GetSprite(ability.fishType);
+                Sprite sprite = GetFishSprite(ability.fishType);
                 if (sprite != null)
                 {
                     fishIcon.sprite = sprite;
@@ -280,5 +286,19 @@ public class GameUI : MonoBehaviour
         }
 
         fill.color = originalColor;
+    }
+
+    Sprite GetFishSprite(FishType type)
+    {
+        switch (type)
+        {
+            case FishType.Pufferfish: return spritePufferfish;
+            case FishType.Shark: return spriteShark;
+            case FishType.Clownfish: return spriteClownfish;
+            case FishType.Squid: return spriteSquid;
+            case FishType.Swordfish: return spriteSwordfish;
+            case FishType.Cirujano: return spriteCirujano;
+            default: return null;
+        }
     }
 }
