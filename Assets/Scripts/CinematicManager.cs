@@ -121,10 +121,21 @@ public class CinematicManager : MonoBehaviour
         yield return new WaitUntil(() => videoPlayer.isPrepared);
         videoPlayer.Play();
 
-        // Esperamos a que termine el video
+        // --- CORREGIDO ---
+        // Eliminada la llamada a PrepareBackground() que causaba el error
+
+        // Esperamos a que termine el video menos 0.1 segundos
+        yield return new WaitUntil(() =>
+            videoPlayer.frameCount > 0 &&
+            videoPlayer.frame >= (long)videoPlayer.frameCount - 3);
+
+        // Activamos el background justo antes de que acabe de forma directa
+        MenuBackground bg = FindFirstObjectByType<MenuBackground>();
+        if (bg != null) bg.StartBackground();
+
+        // Esperamos el último frame
         yield return new WaitUntil(() => !videoPlayer.isPlaying);
 
-        // Si no se ha saltado mostramos el menú directamente sin fade
         if (!isSkipping)
             EndCinematic();
     }
@@ -164,12 +175,11 @@ public class CinematicManager : MonoBehaviour
         // Solo paramos el video cuando ya está todo negro
         videoPlayer.Stop();
 
-        EndCinematic();
+        SkipCinematic(); // Llamamos a la versión limpia de saltar cinemática
     }
 
     IEnumerator FadeToMenu()
     {
-        // Fundido a negro al terminar el video
         yield return StartCoroutine(FadeToBlack());
         EndCinematic();
     }
@@ -194,19 +204,15 @@ public class CinematicManager : MonoBehaviour
         hasPlayedCinematic = true;
         isPlaying = false;
 
-        // Preparamos el background antes de mostrarlo
+        if (videoImage != null) videoImage.gameObject.SetActive(false);
+        if (videoPlayer != null) videoPlayer.gameObject.SetActive(false);
+        if (skipTextObject != null) skipTextObject.SetActive(false);
+        if (menuCanvas != null) menuCanvas.SetActive(true);
+
+        // Activamos el fondo de manera segura
         MenuBackground bg = FindFirstObjectByType<MenuBackground>();
-        if (bg != null)
-        {
-            bg.PrepareBackground();
-        }
+        if (bg != null) bg.StartBackground();
 
-        videoImage.gameObject.SetActive(false);
-        videoPlayer.gameObject.SetActive(false);
-        skipTextObject.SetActive(false);
-        menuCanvas.SetActive(true);
-
-        StartCoroutine(StartBackgroundAfterDelay(bg));
         StartCoroutine(FadeInMusic());
     }
 
@@ -218,15 +224,19 @@ public class CinematicManager : MonoBehaviour
 
     void SkipCinematic()
     {
+        hasPlayedCinematic = true;
+        isPlaying = false;
+
+        if (videoImage != null) videoImage.gameObject.SetActive(false);
+        if (videoPlayer != null) videoPlayer.gameObject.SetActive(false);
+        if (skipTextObject != null) skipTextObject.SetActive(false);
+        if (menuCanvas != null) menuCanvas.SetActive(true);
+
+        // --- CORREGIDO ---
+        // Reemplazada la lógica antigua por el encendido directo y seguro del fondo
         MenuBackground bg = FindFirstObjectByType<MenuBackground>();
-        if (bg != null) bg.PrepareBackground();
+        if (bg != null) bg.StartBackground();
 
-        videoImage.gameObject.SetActive(false);
-        videoPlayer.gameObject.SetActive(false);
-        skipTextObject.SetActive(false);
-        menuCanvas.SetActive(true);
-
-        StartCoroutine(StartBackgroundAfterDelay(bg));
         StartCoroutine(FadeInMusic());
     }
 
