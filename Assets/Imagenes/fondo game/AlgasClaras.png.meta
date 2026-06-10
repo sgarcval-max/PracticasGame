@@ -1,0 +1,1066 @@
+fileFormatVersion: 2
+guid: c724d8253f1be314e83f1aa98d758dfe
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7121595547939113040
+    second: AlgasClaras_0
+  - first:
+      213: -3036994645560085080
+    second: AlgasClaras_1
+  - first:
+      213: 1755406326564037645
+    second: AlgasClaras_2
+  - first:
+      213: -6368051083040165480
+    second: AlgasClaras_3
+  - first:
+      213: 4040436412682544247
+    second: AlgasClaras_4
+  - first:
+      213: 4345184261954293323
+    second: AlgasClaras_5
+  - first:
+      213: -7024273084855414635
+    second: AlgasClaras_6
+  - first:
+      213: -3715579626326547337
+    second: AlgasClaras_7
+  - first:
+      213: -2183352009471117688
+    second: AlgasClaras_8
+  - first:
+      213: -7284432442922760223
+    second: AlgasClaras_9
+  - first:
+      213: 8263702129434302157
+    second: AlgasClaras_10
+  - first:
+      213: 253034888723647394
+    second: AlgasClaras_11
+  - first:
+      213: -2117326610710764935
+    second: AlgasClaras_12
+  - first:
+      213: -5012830760137289621
+    second: AlgasClaras_13
+  - first:
+      213: -3721147349672660311
+    second: AlgasClaras_14
+  - first:
+      213: -917005677262978392
+    second: AlgasClaras_15
+  - first:
+      213: 5708395888239167733
+    second: AlgasClaras_16
+  - first:
+      213: -9098072569925112959
+    second: AlgasClaras_17
+  - first:
+      213: -7949322898760387938
+    second: AlgasClaras_18
+  - first:
+      213: 1606088275939762868
+    second: AlgasClaras_19
+  - first:
+      213: -4353040561034336824
+    second: AlgasClaras_20
+  - first:
+      213: 4446886398819821406
+    second: AlgasClaras_21
+  - first:
+      213: 3134339105355820372
+    second: AlgasClaras_22
+  - first:
+      213: 7180570768329763609
+    second: AlgasClaras_23
+  - first:
+      213: -1006530987001492023
+    second: AlgasClaras_24
+  - first:
+      213: -6671483348528912254
+    second: AlgasClaras_25
+  - first:
+      213: 394422971971772603
+    second: AlgasClaras_26
+  - first:
+      213: -4460058055004033504
+    second: AlgasClaras_27
+  - first:
+      213: -3898794330969850380
+    second: AlgasClaras_28
+  - first:
+      213: 5697054718167273905
+    second: AlgasClaras_29
+  - first:
+      213: -1965046011187061506
+    second: AlgasClaras_30
+  - first:
+      213: 941586656049511846
+    second: AlgasClaras_31
+  - first:
+      213: -245225606292976943
+    second: AlgasClaras_32
+  - first:
+      213: -7169649795471398383
+    second: AlgasClaras_33
+  - first:
+      213: 8597243854611090044
+    second: AlgasClaras_34
+  - first:
+      213: 3372863471831758831
+    second: AlgasClaras_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AlgasClaras_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 0
+        width: 74
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b7f51bb4920b2d90800000000000000
+      internalID: -7121595547939113040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_1
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 80
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a5b0a6e57d6ad5d0800000000000000
+      internalID: -3036994645560085080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_2
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 0
+        width: 27
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d04a253e0c47c5810800000000000000
+      internalID: 1755406326564037645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_3
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 0
+        width: 37
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89179d3874320a7a0800000000000000
+      internalID: -6368051083040165480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_4
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 0
+        width: 74
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7742f7b9283821830800000000000000
+      internalID: 4040436412682544247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_5
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 0
+        width: 18
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4e476180123d4c30800000000000000
+      internalID: 4345184261954293323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_6
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 0
+        width: 20
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5901bd378d4c48e90800000000000000
+      internalID: -7024273084855414635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_7
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 0
+        width: 13
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 774a02e040c9f6cc0800000000000000
+      internalID: -3715579626326547337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_8
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 0
+        width: 24
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 886b6df4aec23b1e0800000000000000
+      internalID: -2183352009471117688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_9
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 0
+        width: 20
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e70249a94f78ea90800000000000000
+      internalID: -7284432442922760223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_10
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 0
+        width: 11
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc61292cd419ea270800000000000000
+      internalID: 8263702129434302157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_11
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 0
+        width: 12
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ab472204e5f28300800000000000000
+      internalID: 253034888723647394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_12
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 0
+        width: 16
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9726a176aaebd92e0800000000000000
+      internalID: -2117326610710764935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_13
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 0
+        width: 19
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b609dd69bf8de6ab0800000000000000
+      internalID: -5012830760137289621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_14
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 0
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a2ffd17334db5cc0800000000000000
+      internalID: -3721147349672660311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_15
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 0
+        width: 14
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a249bde1342643f0800000000000000
+      internalID: -917005677262978392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_16
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 74
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f8cbc3e0db483f40800000000000000
+      internalID: 5708395888239167733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_17
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 0
+        width: 21
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18b63e883372db180800000000000000
+      internalID: -9098072569925112959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_18
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 0
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e92328ed0f45ea190800000000000000
+      internalID: -7949322898760387938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_19
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 0
+        width: 19
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b22f4d07c8f94610800000000000000
+      internalID: 1606088275939762868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_20
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 0
+        width: 19
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c56ea25ca4e693c0800000000000000
+      internalID: -4353040561034336824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_21
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 0
+        width: 13
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e57eb2e7e9386bd30800000000000000
+      internalID: 4446886398819821406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_22
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 0
+        width: 43
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45d69545fc86f7b20800000000000000
+      internalID: 3134339105355820372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_23
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 0
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91b69dac11386a360800000000000000
+      internalID: 7180570768329763609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_24
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 0
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cd4a5076651802f0800000000000000
+      internalID: -1006530987001492023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_25
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 0
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2882006dd312a63a0800000000000000
+      internalID: -6671483348528912254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_26
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 0
+        width: 74
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb0a1af6a95497500800000000000000
+      internalID: 394422971971772603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_27
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 0
+        width: 15
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02e6dd154d0ba12c0800000000000000
+      internalID: -4460058055004033504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_28
+      rect:
+        serializedVersion: 2
+        x: 1541
+        y: 0
+        width: 13
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fd3c327633b4e9c0800000000000000
+      internalID: -3898794330969850380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_29
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 0
+        width: 12
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b1d256f411001f40800000000000000
+      internalID: 5697054718167273905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_30
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 0
+        width: 27
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efc95e76011cab4e0800000000000000
+      internalID: -1965046011187061506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_31
+      rect:
+        serializedVersion: 2
+        x: 1633
+        y: 0
+        width: 20
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ad341f2310311d00800000000000000
+      internalID: 941586656049511846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_32
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 0
+        width: 19
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dac31f3c98c89cf0800000000000000
+      internalID: -245225606292976943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_33
+      rect:
+        serializedVersion: 2
+        x: 1701
+        y: 0
+        width: 12
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11aa9f85f79408c90800000000000000
+      internalID: -7169649795471398383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_34
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 0
+        width: 22
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7a01815cbb8f4770800000000000000
+      internalID: 8597243854611090044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AlgasClaras_35
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 32
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe73c6a1571dece20800000000000000
+      internalID: 3372863471831758831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AlgasClaras_0: -7121595547939113040
+      AlgasClaras_1: -3036994645560085080
+      AlgasClaras_10: 8263702129434302157
+      AlgasClaras_11: 253034888723647394
+      AlgasClaras_12: -2117326610710764935
+      AlgasClaras_13: -5012830760137289621
+      AlgasClaras_14: -3721147349672660311
+      AlgasClaras_15: -917005677262978392
+      AlgasClaras_16: 5708395888239167733
+      AlgasClaras_17: -9098072569925112959
+      AlgasClaras_18: -7949322898760387938
+      AlgasClaras_19: 1606088275939762868
+      AlgasClaras_2: 1755406326564037645
+      AlgasClaras_20: -4353040561034336824
+      AlgasClaras_21: 4446886398819821406
+      AlgasClaras_22: 3134339105355820372
+      AlgasClaras_23: 7180570768329763609
+      AlgasClaras_24: -1006530987001492023
+      AlgasClaras_25: -6671483348528912254
+      AlgasClaras_26: 394422971971772603
+      AlgasClaras_27: -4460058055004033504
+      AlgasClaras_28: -3898794330969850380
+      AlgasClaras_29: 5697054718167273905
+      AlgasClaras_3: -6368051083040165480
+      AlgasClaras_30: -1965046011187061506
+      AlgasClaras_31: 941586656049511846
+      AlgasClaras_32: -245225606292976943
+      AlgasClaras_33: -7169649795471398383
+      AlgasClaras_34: 8597243854611090044
+      AlgasClaras_35: 3372863471831758831
+      AlgasClaras_4: 4040436412682544247
+      AlgasClaras_5: 4345184261954293323
+      AlgasClaras_6: -7024273084855414635
+      AlgasClaras_7: -3715579626326547337
+      AlgasClaras_8: -2183352009471117688
+      AlgasClaras_9: -7284432442922760223
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
