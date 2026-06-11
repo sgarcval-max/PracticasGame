@@ -1297,6 +1297,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decoyPrefab: {fileID: 0}
+  slowEffectPrefab: {fileID: 0}
+  explosionEffectPrefab: {fileID: 0}
 --- !u!95 &267463670
 Animator:
   serializedVersion: 7
@@ -6134,7 +6136,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -6219,9 +6221,18 @@ MonoBehaviour:
   slot1: {fileID: 986225246}
   slot2: {fileID: 1123130012}
   slot3: {fileID: 323827844}
+  slot1FishIcon: {fileID: 0}
+  slot2FishIcon: {fileID: 0}
+  slot3FishIcon: {fileID: 0}
   slot1Text: {fileID: 773313084}
   slot2Text: {fileID: 407194089}
   slot3Text: {fileID: 1586029207}
+  spritePufferfish: {fileID: 0}
+  spriteShark: {fileID: 0}
+  spriteClownfish: {fileID: 0}
+  spriteSquid: {fileID: 0}
+  spriteSwordfish: {fileID: 0}
+  spriteCirujano: {fileID: 0}
   waveCompleteText: {fileID: 218590490}
   countdownText: {fileID: 1884247660}
   gameOverPanel: {fileID: 285035931}
