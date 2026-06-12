@@ -2,49 +2,51 @@ using UnityEngine;
 
 public class PlayerColliderAdjuster : MonoBehaviour
 {
-    private CapsuleCollider2D col;
-    private Animator animator;
-
-    [Header("Tamaños del collider por estado")]
-    public Vector2 idleSize = new Vector2(0.5f, 0.8f);
-    public Vector2 idleOffset = new Vector2(0f, 0f);
-
-    public Vector2 movingSize = new Vector2(0.6f, 0.7f);
-    public Vector2 movingOffset = new Vector2(0f, -0.05f);
-
-    public Vector2 verticalSize = new Vector2(0.5f, 0.9f);
-    public Vector2 verticalOffset = new Vector2(0f, 0f);
+    private PolygonCollider2D col;
+    private SpriteRenderer sr;
+    private Sprite lastSprite;
+    private bool lastFlipX;
 
     void Awake()
     {
-        col = GetComponent<CapsuleCollider2D>();
-        animator = GetComponent<Animator>();
+        col = GetComponent<PolygonCollider2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        if (col == null || animator == null) return;
+        if (col == null || sr == null || sr.sprite == null) return;
 
-        float horizontal = animator.GetFloat("HorizontalSpeed");
-        float vertical = animator.GetFloat("VerticalSpeed");
-        bool isMoving = animator.GetBool("IsMoving");
+        if (sr.sprite != lastSprite || sr.flipX != lastFlipX)
+        {
+            lastSprite = sr.sprite;
+            lastFlipX = sr.flipX;
+            UpdateColliderShape();
+        }
+    }
 
-        if (!isMoving)
+    void UpdateColliderShape()
+    {
+        Sprite sprite = sr.sprite;
+        int shapeCount = sprite.GetPhysicsShapeCount();
+
+        col.pathCount = shapeCount;
+
+        var points = new System.Collections.Generic.List<Vector2>();
+
+        for (int i = 0; i < shapeCount; i++)
         {
-            col.size = idleSize;
-            col.offset = idleOffset;
-        }
-        else if (Mathf.Abs(vertical) > 0.5f && horizontal < 0.1f)
-        {
-            // Solo arriba o solo abajo
-            col.size = verticalSize;
-            col.offset = verticalOffset;
-        }
-        else
-        {
-            // Movimiento horizontal
-            col.size = movingSize;
-            col.offset = movingOffset;
+            points.Clear();
+            sprite.GetPhysicsShape(i, points);
+
+            // Si está volteado invertimos la X de cada punto
+            if (sr.flipX)
+            {
+                for (int j = 0; j < points.Count; j++)
+                    points[j] = new Vector2(-points[j].x, points[j].y);
+            }
+
+            col.SetPath(i, points.ToArray());
         }
     }
 }

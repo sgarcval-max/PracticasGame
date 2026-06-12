@@ -43,6 +43,14 @@ public class PauseManager : MonoBehaviour
         isPaused = !isPaused;
         pausePanel.SetActive(isPaused);
         Time.timeScale = isPaused ? 0f : 1f;
+
+        if (GameUI.isCountdownActive && AudioManager.Instance != null)
+        {
+            if (isPaused)
+                AudioManager.Instance.countdownSource.Pause();
+            else
+                AudioManager.Instance.countdownSource.UnPause();
+        }
     }
 
     void Resume()
@@ -51,6 +59,9 @@ public class PauseManager : MonoBehaviour
         pausePanel.SetActive(false);
         optionsPanel.SetActive(false);
         Time.timeScale = 1f;
+
+        if (GameUI.isCountdownActive && AudioManager.Instance != null)
+            AudioManager.Instance.countdownSource.UnPause();
     }
 
     void OpenOptions()

@@ -53,6 +53,8 @@ public class GameUI : MonoBehaviour
 
     private AbilityManager abilityManager;
 
+    public static bool isCountdownActive = false;
+
     void Awake()
     {
         abilityManager = FindFirstObjectByType<AbilityManager>();
@@ -164,15 +166,16 @@ public class GameUI : MonoBehaviour
         waveCompleteText.gameObject.SetActive(true);
         countdownText.gameObject.SetActive(true);
 
-        // Reproducimos el sonido de cuenta regresiva
-        AudioSource countdownSource = null;
+        isCountdownActive = true;
+
+        AudioSource countdownSrc = null;
         if (AudioManager.Instance != null && AudioManager.Instance.countdownSound != null)
         {
-            countdownSource = AudioManager.Instance.sfxSource;
-            countdownSource.clip = AudioManager.Instance.countdownSound;
-            countdownSource.loop = true;
-            countdownSource.volume = AudioManager.Instance.masterVolume * AudioManager.Instance.sfxVolume;
-            countdownSource.Play();
+            countdownSrc = AudioManager.Instance.countdownSource;
+            countdownSrc.clip = AudioManager.Instance.countdownSound;
+            countdownSrc.loop = true;
+            countdownSrc.volume = AudioManager.Instance.masterVolume * AudioManager.Instance.sfxVolume;
+            countdownSrc.Play();
         }
 
         for (int i = 3; i > 0; i--)
@@ -182,9 +185,10 @@ public class GameUI : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
 
-        // Fundido rápido del sonido
-        if (countdownSource != null)
-            yield return StartCoroutine(FadeOutSFX(countdownSource, 0.2f));
+        isCountdownActive = false;
+
+        if (countdownSrc != null)
+            yield return StartCoroutine(FadeOutSFX(countdownSrc, 0.2f));
 
         waveCompleteText.gameObject.SetActive(false);
         countdownText.gameObject.SetActive(false);
@@ -247,7 +251,7 @@ public class GameUI : MonoBehaviour
         gameOverPanel.SetActive(true);
 
         if (AudioManager.Instance != null && AudioManager.Instance.gameOverSound != null)
-            AudioManager.Instance.PlaySFX(AudioManager.Instance.gameOverSound);
+            AudioManager.Instance.PlayMusicSFX(AudioManager.Instance.gameOverSound);
     }
 
     public void ShowVictory()
@@ -256,7 +260,7 @@ public class GameUI : MonoBehaviour
         Time.timeScale = 0f;
 
         if (AudioManager.Instance != null && AudioManager.Instance.victorySound != null)
-            AudioManager.Instance.PlaySFX(AudioManager.Instance.victorySound);
+            AudioManager.Instance.PlayMusicSFX(AudioManager.Instance.victorySound);
     }
 
     void Restart()
@@ -326,5 +330,16 @@ public class GameUI : MonoBehaviour
             case FishType.Cirujano: return spriteCirujano;
             default: return null;
         }
+    }
+
+    void OnDestroy()
+    {
+        if (AudioManager.Instance != null && AudioManager.Instance.countdownSource != null)
+        {
+            AudioManager.Instance.countdownSource.Stop();
+            AudioManager.Instance.countdownSource.loop = false;
+        }
+
+        isCountdownActive = false;
     }
 }

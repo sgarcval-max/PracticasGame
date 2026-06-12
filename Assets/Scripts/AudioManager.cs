@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource musicSource;
     public AudioSource sfxSource;
     public AudioSource cinematicSource;
+    public AudioSource countdownSource;
 
     [Header("Volúmenes iniciales")]
     [Range(0f, 1f)] public float masterVolume = 1f;
@@ -46,6 +47,12 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
             return;
+        }
+
+        if (countdownSource == null)
+        {
+            countdownSource = gameObject.AddComponent<AudioSource>();
+            countdownSource.playOnAwake = false;
         }
 
         Instance = this;
@@ -120,6 +127,9 @@ public class AudioManager : MonoBehaviour
 
         if (cinematicSource != null)
             cinematicSource.volume = masterVolume * cinematicVolume;
+
+        if (countdownSource != null && countdownSource.isPlaying)
+            countdownSource.volume = masterVolume * sfxVolume;
     }
 
     public void PlaySFX(AudioClip clip)
@@ -179,5 +189,15 @@ public class AudioManager : MonoBehaviour
         }
 
         musicSource.volume = targetVolume;
+    }
+
+    public void PlayMusicSFX(AudioClip clip, bool loop = false)
+    {
+        if (clip == null || sfxSource == null) return;
+
+        sfxSource.clip = clip;
+        sfxSource.loop = loop;
+        sfxSource.volume = masterVolume * musicVolume;
+        sfxSource.Play();
     }
 }
