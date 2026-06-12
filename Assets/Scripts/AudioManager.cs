@@ -26,6 +26,13 @@ public class AudioManager : MonoBehaviour
     public AudioClip bagOpenSound;
     public AudioClip bagCloseSound;
 
+    [Header("SFX Paneles")]
+    public AudioClip victorySound;
+    public AudioClip gameOverSound;
+
+    [Header("SFX Cuenta Regresiva")]
+    public AudioClip countdownSound;
+
     public bool isCinematicPlaying = false;
 
     void Start()

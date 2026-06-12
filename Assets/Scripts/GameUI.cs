@@ -159,9 +159,21 @@ public class GameUI : MonoBehaviour
     IEnumerator WaveCompleteCoroutine(int wave, System.Action onComplete)
     {
         yield return StartCoroutine(FadeText(waveText, false, 0.3f));
+
         waveCompleteText.text = "Oleada " + wave + " completada!";
         waveCompleteText.gameObject.SetActive(true);
         countdownText.gameObject.SetActive(true);
+
+        // Reproducimos el sonido de cuenta regresiva
+        AudioSource countdownSource = null;
+        if (AudioManager.Instance != null && AudioManager.Instance.countdownSound != null)
+        {
+            countdownSource = AudioManager.Instance.sfxSource;
+            countdownSource.clip = AudioManager.Instance.countdownSound;
+            countdownSource.loop = true;
+            countdownSource.volume = AudioManager.Instance.masterVolume * AudioManager.Instance.sfxVolume;
+            countdownSource.Play();
+        }
 
         for (int i = 3; i > 0; i--)
         {
@@ -170,10 +182,32 @@ public class GameUI : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
 
+        // Fundido rápido del sonido
+        if (countdownSource != null)
+            yield return StartCoroutine(FadeOutSFX(countdownSource, 0.2f));
+
         waveCompleteText.gameObject.SetActive(false);
         countdownText.gameObject.SetActive(false);
+
         yield return StartCoroutine(FadeText(waveText, true, 0.3f));
+
         onComplete?.Invoke();
+    }
+
+    IEnumerator FadeOutSFX(AudioSource source, float duration)
+    {
+        float startVolume = source.volume;
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            source.volume = Mathf.Lerp(startVolume, 0f, timer / duration);
+            yield return null;
+        }
+
+        source.Stop();
+        source.loop = false;
     }
 
     IEnumerator FadeText(TextMeshProUGUI text, bool fadeIn, float duration)
@@ -212,12 +246,8 @@ public class GameUI : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
 
-        DiverController player = FindFirstObjectByType<DiverController>();
-        if (player != null)
-        {
-            player.SetControl(false);
-            player.TriggerDeath();
-        }
+        if (AudioManager.Instance != null && AudioManager.Instance.gameOverSound != null)
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.gameOverSound);
     }
 
     public void ShowVictory()
@@ -225,12 +255,8 @@ public class GameUI : MonoBehaviour
         victoryPanel.SetActive(true);
         Time.timeScale = 0f;
 
-        DiverController player = FindFirstObjectByType<DiverController>();
-        if (player != null)
-        {
-            player.SetControl(false);
-            player.SetAnimatorIgnoreTime(true);
-        }
+        if (AudioManager.Instance != null && AudioManager.Instance.victorySound != null)
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.victorySound);
     }
 
     void Restart()

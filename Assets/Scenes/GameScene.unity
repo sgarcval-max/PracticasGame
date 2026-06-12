@@ -1108,6 +1108,7 @@ GameObject:
   - component: {fileID: 267463668}
   - component: {fileID: 267463669}
   - component: {fileID: 267463671}
+  - component: {fileID: 267463672}
   - component: {fileID: 267463664}
   m_Layer: 6
   m_Name: Diver
@@ -1415,6 +1416,24 @@ MonoBehaviour:
   fullColor: {r: 0.4, g: 0.8, b: 1, a: 1}
   lowColor: {r: 1, g: 0.3, b: 0.3, a: 1}
   lowOxygenThreshold: 30
+--- !u!114 &267463672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267463658}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c589effb8b01bc45a6a39f3ce073b24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleSize: {x: 0.68, y: 2.28}
+  idleOffset: {x: 0, y: 0}
+  movingSize: {x: 2.28, y: 2.28}
+  movingOffset: {x: 0, y: -0.05}
+  verticalSize: {x: 0.5, y: 0.9}
+  verticalOffset: {x: 0, y: 0}
 --- !u!1 &285035931
 GameObject:
   m_ObjectHideFlags: 0
