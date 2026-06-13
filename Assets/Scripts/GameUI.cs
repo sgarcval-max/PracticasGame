@@ -251,7 +251,7 @@ public class GameUI : MonoBehaviour
         gameOverPanel.SetActive(true);
 
         if (AudioManager.Instance != null && AudioManager.Instance.gameOverSound != null)
-            AudioManager.Instance.PlayMusicSFX(AudioManager.Instance.gameOverSound);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.gameOverSound);
     }
 
     public void ShowVictory()
@@ -260,7 +260,7 @@ public class GameUI : MonoBehaviour
         Time.timeScale = 0f;
 
         if (AudioManager.Instance != null && AudioManager.Instance.victorySound != null)
-            AudioManager.Instance.PlayMusicSFX(AudioManager.Instance.victorySound);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.victorySound);
     }
 
     void Restart()
