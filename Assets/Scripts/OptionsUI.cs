@@ -16,9 +16,16 @@ public class OptionsUI : MonoBehaviour
     public TextMeshProUGUI sfxText;
     public TextMeshProUGUI cinematicText;
 
+    [Header("Sonido del slider")]
+    public AudioClip sliderTickSound;
+
+    private int lastMasterTick;
+    private int lastMusicTick;
+    private int lastSFXTick;
+    private int lastCinematicTick;
+
     void Start()
     {
-        // Cargamos los valores guardados
         if (AudioManager.Instance != null)
         {
             masterSlider.value = AudioManager.Instance.masterVolume;
@@ -27,39 +34,69 @@ public class OptionsUI : MonoBehaviour
             cinematicSlider.value = AudioManager.Instance.cinematicVolume;
         }
 
+        lastMasterTick = GetTick(masterSlider.value);
+        lastMusicTick = GetTick(musicSlider.value);
+        lastSFXTick = GetTick(sfxSlider.value);
+        lastCinematicTick = GetTick(cinematicSlider.value);
+
         UpdateTexts();
 
-        // Conectamos los sliders
         masterSlider.onValueChanged.AddListener(OnMasterChanged);
         musicSlider.onValueChanged.AddListener(OnMusicChanged);
         sfxSlider.onValueChanged.AddListener(OnSFXChanged);
         cinematicSlider.onValueChanged.AddListener(OnCinematicChanged);
     }
 
+    int GetTick(float value)
+    {
+        return Mathf.FloorToInt(value * 10);
+    }
+
+    void PlayTickIfNeeded(float value, ref int lastTick)
+    {
+        int currentTick = GetTick(value);
+        if (currentTick != lastTick)
+        {
+            lastTick = currentTick;
+            PlayTickSound();
+        }
+    }
+
+    void PlayTickSound()
+    {
+        if (AudioManager.Instance == null) return;
+        AudioClip clip = sliderTickSound != null ? sliderTickSound : AudioManager.Instance.buttonClickSound;
+        if (clip != null)
+            AudioManager.Instance.PlaySFX(clip);
+    }
+
     void OnMasterChanged(float value)
     {
         AudioManager.Instance?.SetMasterVolume(value);
         masterText.text = Mathf.RoundToInt(value * 100) + "%";
+        PlayTickIfNeeded(value, ref lastMasterTick);
     }
 
     void OnMusicChanged(float value)
     {
         AudioManager.Instance?.SetMusicVolume(value);
         musicText.text = Mathf.RoundToInt(value * 100) + "%";
+        PlayTickIfNeeded(value, ref lastMusicTick);
     }
 
     void OnSFXChanged(float value)
     {
         AudioManager.Instance?.SetSFXVolume(value);
         sfxText.text = Mathf.RoundToInt(value * 100) + "%";
+        PlayTickIfNeeded(value, ref lastSFXTick);
     }
 
     void OnCinematicChanged(float value)
     {
         AudioManager.Instance?.SetCinematicVolume(value);
         cinematicText.text = Mathf.RoundToInt(value * 100) + "%";
+        PlayTickIfNeeded(value, ref lastCinematicTick);
 
-        // Actualizamos el volumen del VideoPlayer si hay una cinemática activa
         CinematicManager cm = FindFirstObjectByType<CinematicManager>();
         if (cm != null && cm.videoPlayer != null)
         {

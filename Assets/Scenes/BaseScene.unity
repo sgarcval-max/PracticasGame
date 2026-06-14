@@ -9472,6 +9472,7 @@ MonoBehaviour:
   musicText: {fileID: 47490992}
   sfxText: {fileID: 1421606428}
   cinematicText: {fileID: 1588020030}
+  sliderTickSound: {fileID: 8300000, guid: 434be6749a177c84c8e2e4f09e3abfb3, type: 3}
 --- !u!114 &1377508087
 MonoBehaviour:
   m_ObjectHideFlags: 0

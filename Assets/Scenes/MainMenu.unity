@@ -6656,6 +6656,7 @@ MonoBehaviour:
   musicText: {fileID: 1463805441}
   sfxText: {fileID: 2009488171}
   cinematicText: {fileID: 436457816}
+  sliderTickSound: {fileID: 8300000, guid: 434be6749a177c84c8e2e4f09e3abfb3, type: 3}
 --- !u!1 &2009488169
 GameObject:
   m_ObjectHideFlags: 0
