@@ -72,7 +72,6 @@ public class DiverHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        // No recibe daño si el escudo está activo
         if (isInvincible || isShieldActive) return;
 
         currentHealth -= damage;
@@ -81,11 +80,32 @@ public class DiverHealth : MonoBehaviour
 
         gameUI?.UpdateHealth(currentHealth, maxHealth);
 
+        // Sonido de daño aleatorio entre los dos efectos
+        if (AudioManager.Instance != null)
+        {
+            AudioClip[] damageSounds = new AudioClip[]
+            {
+            AudioManager.Instance.damageSound1,
+            AudioManager.Instance.damageSound2
+            };
+
+            // Filtramos los que no sean null
+            System.Collections.Generic.List<AudioClip> validSounds = new System.Collections.Generic.List<AudioClip>();
+            foreach (AudioClip clip in damageSounds)
+                if (clip != null) validSounds.Add(clip);
+
+            if (validSounds.Count > 0)
+            {
+                AudioClip chosen = validSounds[Random.Range(0, validSounds.Count)];
+                AudioManager.Instance.PlaySFX(chosen);
+            }
+        }
+
         // Tutorial
         TutorialDamage td = GetComponent<TutorialDamage>();
         if (td != null) td.OnDamageReceived();
 
-        // Mostrar viñeta roja
+        // Viñeta roja
         if (DamageVignette.Instance != null)
             DamageVignette.Instance.ShowDamage();
 

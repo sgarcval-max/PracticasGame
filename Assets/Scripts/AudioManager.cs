@@ -37,6 +37,10 @@ public class AudioManager : MonoBehaviour
     [Header("SFX Tesoro")]
     public AudioClip treasureSound;
 
+    [Header("SFX Daño")]
+    public AudioClip damageSound1;
+    public AudioClip damageSound2;
+
     public bool isCinematicPlaying = false;
 
     void Start()

@@ -4130,6 +4130,8 @@ MonoBehaviour:
   gameOverSound: {fileID: 8300000, guid: bde24fc509071eb4f8ef16281d861f17, type: 3}
   countdownSound: {fileID: 8300000, guid: f50bfed80facf9e44a4d97845f9489f7, type: 3}
   treasureSound: {fileID: 8300000, guid: 78dfcad2c7f6d894aaf158f26bab38ee, type: 3}
+  damageSound1: {fileID: 8300000, guid: 17acd48aa2f67ff4e9861dc9e028f077, type: 3}
+  damageSound2: {fileID: 8300000, guid: f1b630c2737671244b24d0f5cac1de4a, type: 3}
   isCinematicPlaying: 0
 --- !u!82 &1440834927
 AudioSource:
