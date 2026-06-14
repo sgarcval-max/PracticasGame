@@ -32,11 +32,22 @@ public class DiverHealth : MonoBehaviour
     {
         if (Keyboard.current.bKey.wasPressedThisFrame && !TutorialSceneFlag.IsTutorial)
         {
+            // Paramos el countdown si está activo
+            if (AudioManager.Instance != null && AudioManager.Instance.countdownSource != null)
+            {
+                AudioManager.Instance.countdownSource.Stop();
+                AudioManager.Instance.countdownSource.loop = false;
+            }
+            GameUI.isCountdownActive = false;
+
             DiverInventory inventory = GetComponent<DiverInventory>();
             WaveManager waveManager = FindFirstObjectByType<WaveManager>();
 
             if (GameManager.Instance != null)
+            {
+                GameManager.Instance.currentWave = waveManager != null ? waveManager.GetCurrentWave() : 0;
                 GameManager.Instance.SavePlayerData(inventory, waveManager);
+            }
 
             Time.timeScale = 1f;
 

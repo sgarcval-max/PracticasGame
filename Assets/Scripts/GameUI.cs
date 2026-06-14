@@ -250,13 +250,13 @@ public class GameUI : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
 
-        // Paramos el countdown si está activo
+        // Paramos el countdown
         if (AudioManager.Instance != null && AudioManager.Instance.countdownSource != null)
         {
             AudioManager.Instance.countdownSource.Stop();
             AudioManager.Instance.countdownSource.loop = false;
-            isCountdownActive = false;
         }
+        isCountdownActive = false;
 
         if (AudioManager.Instance != null && AudioManager.Instance.gameOverSound != null)
         {
@@ -270,13 +270,13 @@ public class GameUI : MonoBehaviour
         victoryPanel.SetActive(true);
         Time.timeScale = 0f;
 
-        // Paramos el countdown si está activo
+        // Paramos el countdown
         if (AudioManager.Instance != null && AudioManager.Instance.countdownSource != null)
         {
             AudioManager.Instance.countdownSource.Stop();
             AudioManager.Instance.countdownSource.loop = false;
-            isCountdownActive = false;
         }
+        isCountdownActive = false;
 
         if (AudioManager.Instance != null && AudioManager.Instance.victorySound != null)
         {

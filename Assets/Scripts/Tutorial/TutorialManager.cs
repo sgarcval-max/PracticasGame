@@ -160,9 +160,13 @@ public class TutorialManager : MonoBehaviour
     {
         Time.timeScale = 1f;
 
-        // Marcamos que el tutorial ha terminado
-        PlayerPrefs.SetInt("TutorialActive", 0);
-        PlayerPrefs.Save();
+        // Paramos el countdown si está activo
+        if (AudioManager.Instance != null && AudioManager.Instance.countdownSource != null)
+        {
+            AudioManager.Instance.countdownSource.Stop();
+            AudioManager.Instance.countdownSource.loop = false;
+        }
+        GameUI.isCountdownActive = false;
 
         RestoreRealData();
         StartCoroutine(FadeToMenu());

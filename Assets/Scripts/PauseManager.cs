@@ -80,6 +80,15 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SaveProgress();
+
+        // Paramos el countdown si está activo
+        if (AudioManager.Instance != null && AudioManager.Instance.countdownSource != null)
+        {
+            AudioManager.Instance.countdownSource.Stop();
+            AudioManager.Instance.countdownSource.loop = false;
+        }
+        GameUI.isCountdownActive = false;
+
         if (SceneTransition.Instance != null)
             SceneTransition.Instance.TransitionToBase();
         else
@@ -89,6 +98,15 @@ public class PauseManager : MonoBehaviour
     void GoToMenu()
     {
         Time.timeScale = 1f;
+
+        // Paramos el countdown si está activo
+        if (AudioManager.Instance != null && AudioManager.Instance.countdownSource != null)
+        {
+            AudioManager.Instance.countdownSource.Stop();
+            AudioManager.Instance.countdownSource.loop = false;
+        }
+        GameUI.isCountdownActive = false;
+
         if (SceneTransition.Instance != null)
             SceneTransition.Instance.TransitionToMenuWithBlackFade();
         else
