@@ -250,8 +250,19 @@ public class GameUI : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
 
+        // Paramos el countdown si está activo
+        if (AudioManager.Instance != null && AudioManager.Instance.countdownSource != null)
+        {
+            AudioManager.Instance.countdownSource.Stop();
+            AudioManager.Instance.countdownSource.loop = false;
+            isCountdownActive = false;
+        }
+
         if (AudioManager.Instance != null && AudioManager.Instance.gameOverSound != null)
+        {
             AudioManager.Instance.PlaySFX(AudioManager.Instance.gameOverSound);
+            StartCoroutine(DuckMusic(AudioManager.Instance.gameOverSound.length));
+        }
     }
 
     public void ShowVictory()
@@ -259,13 +270,95 @@ public class GameUI : MonoBehaviour
         victoryPanel.SetActive(true);
         Time.timeScale = 0f;
 
+        // Paramos el countdown si está activo
+        if (AudioManager.Instance != null && AudioManager.Instance.countdownSource != null)
+        {
+            AudioManager.Instance.countdownSource.Stop();
+            AudioManager.Instance.countdownSource.loop = false;
+            isCountdownActive = false;
+        }
+
         if (AudioManager.Instance != null && AudioManager.Instance.victorySound != null)
+        {
             AudioManager.Instance.PlaySFX(AudioManager.Instance.victorySound);
+            StartCoroutine(DuckMusic(AudioManager.Instance.victorySound.length));
+        }
+    }
+
+    IEnumerator DuckMusic(float duration)
+    {
+        if (AudioManager.Instance == null) yield break;
+
+        float originalVolume = AudioManager.Instance.musicSource.volume;
+        float targetVolume = originalVolume * 0.2f;
+        float fadeTime = 0.5f;
+        float timer = 0f;
+
+        // Bajamos la música
+        while (timer < fadeTime)
+        {
+            timer += Time.unscaledDeltaTime;
+            AudioManager.Instance.musicSource.volume = Mathf.Lerp(originalVolume, targetVolume, timer / fadeTime);
+            yield return null;
+        }
+
+        // Esperamos a que acabe el sonido
+        yield return new WaitForSecondsRealtime(duration);
+
+        // Subimos la música
+        timer = 0f;
+        while (timer < fadeTime)
+        {
+            timer += Time.unscaledDeltaTime;
+            AudioManager.Instance.musicSource.volume = Mathf.Lerp(targetVolume, originalVolume, timer / fadeTime);
+            yield return null;
+        }
+
+        AudioManager.Instance.musicSource.volume = originalVolume;
     }
 
     void Restart()
     {
         Time.timeScale = 1f;
+        StartCoroutine(FadeAndRestart());
+    }
+
+    IEnumerator FadeAndRestart()
+    {
+        // Creamos canvas en un objeto persistente
+        GameObject persistentObj = new GameObject("RestartFader");
+        DontDestroyOnLoad(persistentObj);
+
+        Canvas fc = persistentObj.AddComponent<Canvas>();
+        fc.renderMode = RenderMode.ScreenSpaceOverlay;
+        fc.sortingOrder = 9999;
+        persistentObj.AddComponent<CanvasScaler>();
+
+        GameObject blackObj = new GameObject("BlackScreen");
+        blackObj.transform.SetParent(persistentObj.transform, false);
+        UnityEngine.UI.Image blackImage = blackObj.AddComponent<UnityEngine.UI.Image>();
+        blackImage.color = new Color(0, 0, 0, 0);
+
+        RectTransform rt = blackObj.GetComponent<RectTransform>();
+        rt.anchorMin = Vector2.zero;
+        rt.anchorMax = Vector2.one;
+        rt.offsetMin = Vector2.zero;
+        rt.offsetMax = Vector2.zero;
+
+        // Fade in negro
+        float timer = 0f;
+        while (timer < 0.5f)
+        {
+            timer += Time.deltaTime;
+            blackImage.color = new Color(0, 0, 0, timer / 0.5f);
+            yield return null;
+        }
+        blackImage.color = Color.black;
+
+        // Añadimos el componente que hará el fade out en la nueva escena
+        RestartFader fader = persistentObj.AddComponent<RestartFader>();
+        fader.blackImage = blackImage;
+
         if (TutorialSceneFlag.IsTutorial)
             SceneManager.LoadScene("TutorialScene");
         else
@@ -334,12 +427,32 @@ public class GameUI : MonoBehaviour
 
     void OnDestroy()
     {
+        isCountdownActive = false;
+
         if (AudioManager.Instance != null && AudioManager.Instance.countdownSource != null)
         {
-            AudioManager.Instance.countdownSource.Stop();
-            AudioManager.Instance.countdownSource.loop = false;
+            StartCoroutine(FadeOutAndStopCountdown());
+        }
+    }
+
+    IEnumerator FadeOutAndStopCountdown()
+    {
+        AudioSource src = AudioManager.Instance.countdownSource;
+        float timer = 0f;
+        float startVolume = src.volume;
+
+        while (timer < 0.3f)
+        {
+            timer += Time.deltaTime;
+            if (src != null)
+                src.volume = Mathf.Lerp(startVolume, 0f, timer / 0.3f);
+            yield return null;
         }
 
-        isCountdownActive = false;
+        if (src != null)
+        {
+            src.Stop();
+            src.loop = false;
+        }
     }
 }

@@ -87,25 +87,24 @@ public class TreasureManager : MonoBehaviour
         collectedTreasure += value;
         gameUI?.UpdateTreasure(collectedTreasure, totalTreasure);
 
-        // Solo guardamos en el GameManager si NO estamos en el tutorial
+        // Sonido de tesoro
+        if (AudioManager.Instance != null && AudioManager.Instance.treasureSound != null)
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.treasureSound);
+
         if (!TutorialSceneFlag.IsTutorial)
         {
             if (GameManager.Instance != null)
                 GameManager.Instance.collectedTreasure = collectedTreasure;
         }
 
-        // Tutorial
         TutorialTreasure tt = FindFirstObjectByType<TutorialTreasure>();
         if (tt != null) tt.OnTreasureCollected();
-
-        Debug.Log("Tesoro recogido: " + collectedTreasure + "/" + totalTreasure);
 
         if (collectedTreasure >= totalTreasure)
         {
             if (!TutorialSceneFlag.IsTutorial && GameManager.Instance != null)
-            {
                 GameManager.Instance.missionCompleted = true;
-            }
+
             gameUI?.ShowVictory();
         }
     }

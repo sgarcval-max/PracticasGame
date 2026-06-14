@@ -34,6 +34,9 @@ public class AudioManager : MonoBehaviour
     [Header("SFX Cuenta Regresiva")]
     public AudioClip countdownSound;
 
+    [Header("SFX Tesoro")]
+    public AudioClip treasureSound;
+
     public bool isCinematicPlaying = false;
 
     void Start()
